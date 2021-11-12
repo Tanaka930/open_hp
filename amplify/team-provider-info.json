@@ -1,0 +1,23 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-openhp-dev-122725-authRole",
+            "UnauthRoleArn": "arn:aws:iam::305200819046:role/amplify-openhp-dev-122725-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::305200819046:role/amplify-openhp-dev-122725-authRole",
+            "Region": "ap-northeast-1",
+            "DeploymentBucketName": "amplify-openhp-dev-122725-deployment",
+            "UnauthRoleName": "amplify-openhp-dev-122725-unauthRole",
+            "StackName": "amplify-openhp-dev-122725",
+            "StackId": "arn:aws:cloudformation:ap-northeast-1:305200819046:stack/amplify-openhp-dev-122725/7b794e50-4368-11ec-8acc-068ca1ce4eab",
+            "AmplifyAppId": "d1kli3kx28lr2r"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d1kli3kx28lr2r",
+                    "type": "cicd"
+                }
+            }
+        }
+    }
+}

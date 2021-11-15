@@ -1,8 +1,8 @@
 /* eslint-disable */
 // prettier-ignore
 export const pagesPath = {
-  isr: {
-    $url: (url?: { hash?: string }) => ({ pathname: '/isr' as const, hash: url?.hash })
+  $404: {
+    $url: (url?: { hash?: string }) => ({ pathname: '/404' as const, hash: url?.hash })
   },
   $url: (url?: { hash?: string }) => ({ pathname: '/' as const, hash: url?.hash })
 }

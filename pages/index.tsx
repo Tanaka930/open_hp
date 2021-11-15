@@ -5,52 +5,20 @@ import Link from 'next/link'
 
 import { client } from '../src/libs/client';
 
-// interface Article {
-//   id: string
-//   title: string
-//   publishedAt: string
-// }
+interface News {
+  title: string
+  publishedAt: string
+}
 
-// interface Contents {
-//   contents: Article[]
-// }
-
-// export default function Home({
-//   news,
-// }: {
-//   news: { id: string; title: string; publishedAt: string }[]
-// }): JSX.Element {
-//   return (
-//     <div className="flex flex-col items-center justify-center min-h-screen py-2">
-//       <Head>
-//         <title>Create Next App</title>
-//         <link rel="icon" href="/favicon.ico" />
-//       </Head>
-//       <div>
-//         <ul>
-//           {news.map((news) => (
-//             <li key={news.id}>
-//               <p>{news.title}</p>
-//             </li>
-//           ))}
-//         </ul>
-//       </div>
-//     </div>
-//   )
-// }
-
-// export const getStaticProps = async () => {
-//   const data: Contents = await client.get({ endpoint: 'news' })
-//   return {
-//     props: {
-//       news: data.contents,
-//     },
-//   }
-// }
+interface Contents {
+  contents: News[]
+}
 
 
 
-export default function Home(news: any) {
+
+
+export default function Home(news: Contents) {
 
   console.log(news)
   return (

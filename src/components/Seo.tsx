@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { openGraph } from '../libs/helper';
+import { openGraph } from '../lib/helper';
 
 // サイトのメタデータ
 const defaultMeta = {

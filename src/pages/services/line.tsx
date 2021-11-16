@@ -8,7 +8,7 @@ export default function Home(){
   return(
     <Layout>
       <Seo templateTitle='Home' />
-        top
+        line
       <ButtonLink className='mt-6' href='/components' variant='light'>
         See all components
       </ButtonLink>

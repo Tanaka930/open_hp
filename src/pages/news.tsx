@@ -17,7 +17,7 @@ export default function Home(news: Contents){
   console.log(news)
   return(
     <Layout>
-      <Seo templateTitle='Home' />
+      <Seo templateTitle='News' />
         news
       <ButtonLink className='mt-6' href='/components' variant='light'>
         See all components

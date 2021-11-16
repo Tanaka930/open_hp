@@ -7,8 +7,8 @@ import Seo from '@/components/Seo';
 export default function Home(){
   return(
     <Layout>
-      <Seo templateTitle='Home' />
-        top
+      <Seo templateTitle='EC' />
+        ec
       <ButtonLink className='mt-6' href='/components' variant='light'>
         See all components
       </ButtonLink>

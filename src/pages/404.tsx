@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { RiAlarmWarningFill } from 'react-icons/ri';
 
-import Layout from '../components/layout/Layout';
-import CustomLink from '../components/links/CustomLink';
-import Seo from '../components/Seo';
+import Layout from '@/components/layout/Layout';
+import CustomLink from '@/components/links/CustomLink';
+import Seo from '@/components/Seo';
 
 export default function NotFoundPage() {
   return (

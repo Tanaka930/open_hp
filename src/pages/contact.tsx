@@ -1,4 +1,4 @@
-export default function Form() {
+export default function Contact() {
   const registerUser = async (event: any) => {
     
     // ↓リロード関係の関数?

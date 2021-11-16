@@ -31,6 +31,10 @@ export default function Home(news: Contents){
     <Layout>
       <Seo templateTitle='Home' />
       テスト
+      <ButtonLink className='mt-6' href='/components' variant='light'>
+        See all components
+      </ButtonLink>
+
     </Layout>
   )
 }

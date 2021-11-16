@@ -1,10 +1,16 @@
 export default function Form() {
   const registerUser = async (event: any) => {
+    
+    // ↓リロード関係の関数?
+    // 以下をつけない時、送信ボタン押したらリロードがかかりました
     event.preventDefault()
- 
-    const res = await fetch('/api/send', {
+
+    const res = await fetch('./api/send', {
       body: JSON.stringify({
-        email: process.env.RESEPT_MAIL,
+        // ここに送信したい宛先を記入
+        // ↓ここenvから読めへんかった。できればenvから読みたい
+        email: 'test@example.com',
+        // メッセージ内容をいかに格納
         message: event.target.message.value
       }),
       headers: {
@@ -13,11 +19,14 @@ export default function Form() {
       method: 'POST'
     })
  
+    // 今のところ使ってないが、res.jsonのデータを格納
     const result = await res.json()
   }
  
+  // 以下のテンプレートはマークアップ時に整形する
   return (
     <div className="container mt-5">
+      {/* {フォーム先を上で記載した関数当てにする} */}
       <form onSubmit={registerUser}>
         <div className="mb-3">
           <label htmlFor="message" className="form-label">問合せ内容</label>

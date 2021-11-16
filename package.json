@@ -9,6 +9,7 @@
     "path": "pathpida -o ./src/lib"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.6.0",
     "clsx": "^1.1.1",
     "microcms-js-sdk": "^2.0.0",
     "next": "12.0.3",

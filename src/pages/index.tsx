@@ -11,11 +11,6 @@ export default function Home(){
     <Layout>
       <Seo templateTitle='Home' />
       <TopAnimation />
-      top
-      <ButtonLink className='mt-6' href='/components' variant='light'>
-        See all components
-      </ButtonLink>
-
     </Layout>
   )
 }

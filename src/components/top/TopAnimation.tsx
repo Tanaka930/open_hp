@@ -1,4 +1,4 @@
-import styles from '@/components/top/top.module.css'
+import styles from '@/components/top/css/top.module.css'
 import TopText from '@/components/top/TopText'
 
 

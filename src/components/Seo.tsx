@@ -9,7 +9,7 @@ const defaultMeta = {
   description:
     '私たちはジャンルを問わず店舗経営をされているオーナーの皆様に様々なサービス・アイデアを提供し、そのビジネスの可能性を開いていきたい、そんな思いを持って日々邁進しております。',
   url: 'https://openstore-japan.com',
-  image: 'https://theodorusclarence.com/favicon/large-og.jpg',
+  image: 'https://drive.google.com/file/d/1zX45kGkJ37vtWnEUC2Qo0k01iYCvbzRy/view?usp=sharing',
   type: 'website',
   robots: 'follow, index',
 };

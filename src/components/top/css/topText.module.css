@@ -19,3 +19,14 @@
   left: 10%;
   font-size: 1.6rem;
 }
+/* .companyLogo {
+  position: relative;
+  top: 5%;
+  left: 10%;
+} */
+.companyText {
+  position: relative;
+  top: 10%;
+  left: 10%;
+  font-size: 3rem;
+}

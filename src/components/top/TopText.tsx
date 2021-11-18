@@ -9,7 +9,7 @@ export default function TopText(){
       </span>
       <br/>
       <span className={topTextStyles.topTextNo2}>
-        全ての場所に
+        すべての場所に
       </span>
       <br />
       <span className={topTextStyles.topTextEn}>

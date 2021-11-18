@@ -1,11 +1,12 @@
 import Image from 'next/image'
+import ReadMoreButton from '@/components/buttons/ReadMore'
 
 export default function Service(){
   return(
     <>
     {/* オリジナルのカラーパレットの設定まだしていないです */}
-    <section className='bg-gray-300 h-screen w-full'>
-      <h2 className='text-7xl w-full text-center py-10'>Services</h2>
+    <section className='bg-gray-100 h-screen w-full'>
+      <h2 className='text-7xl w-full text-center pt-24 pb-10'>Services</h2>
       <h3 className='text-1xl w-full text-center py-10'>オープンストアは関わるすべての人を笑顔にします!!</h3>
       <div className='w-full text-center space-x-8 flex justify-center py-18'>
         <div className='float-left'>
@@ -20,6 +21,9 @@ export default function Service(){
           <Image src="/images/top/service/DX.png" width={300} height={200} alt="オープンストア店舗DX関連事業" />
           <h4>店舗DX</h4>
         </div>
+      </div>
+      <div className='mt-24'>
+        <ReadMoreButton href="/about" />
       </div>
     </section>
     </>

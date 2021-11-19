@@ -15,7 +15,7 @@ const links = [
 //   // setIncompleteTodos(newIncompleteTodos);
 // };
 
-export default function HeaderMenu {
+export default function HeaderMenu() {
 
   return (
     <>

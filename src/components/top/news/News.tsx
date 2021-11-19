@@ -11,11 +11,15 @@ export default function News({newses}: {newses:any}){
         <ol className='space-y-8 w-4/12 text-left'>
           {newses.map((news:any) => (
             <li key={news.id}>
-              <Moment format="YYYY年MM月DD日">
-                {news.createdAt}
-              </Moment>
-              :
-              {news.title}
+              <Link href={`/news/${news.id}`}>
+                <a>
+                  <Moment format="YYYY年MM月DD日">
+                    {news.createdAt}
+                  </Moment>
+                  :
+                  {news.title}
+                </a>
+              </Link>
             </li>
           ))}
         </ol>

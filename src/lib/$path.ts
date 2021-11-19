@@ -11,7 +11,10 @@ export const pagesPath = {
     $url: (url?: { hash?: string }) => ({ pathname: '/contact' as const, hash: url?.hash })
   },
   news: {
-    $url: (url?: { hash?: string }) => ({ pathname: '/news' as const, hash: url?.hash })
+    $url: (url?: { hash?: string }) => ({ pathname: '/news' as const, hash: url?.hash }),
+    _id: (id: string | number) => ({
+      $url: (url?: { hash?: string }) => ({ pathname: '/news/[id]' as const, query: { id }, hash: url?.hash })
+    })
   },
   recruit: {
     $url: (url?: { hash?: string }) => ({ pathname: '/recruit' as const, hash: url?.hash })

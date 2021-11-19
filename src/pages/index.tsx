@@ -3,6 +3,7 @@ import Layout from '@/components/layout/Layout';
 import ButtonLink from '@/components/links/ButtonLink';
 import Seo from '@/components/Seo';
 
+
 // トップアニメーション用のコンポーネント
 import TopAnimation from '@/components/top/TopAnimation'
 
@@ -11,7 +12,6 @@ import Service from '@/components/top/service/Service'
 
 // shopify expertのロゴ表示のコンポーネント
 import ExpertLogo from '@/components/top/shopifyExpert/ExpertLogo'
-
 
 export default function Home(){
   return(

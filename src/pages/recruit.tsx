@@ -1,3 +1,5 @@
+import Layout from "@/components/layout/Layout"
+
 export default function Recruit() {
   const registerUser = async (event: any) => {
     
@@ -25,17 +27,19 @@ export default function Recruit() {
  
   // 以下のテンプレートはマークアップ時に整形する
   return (
-    <div className="container mt-5">
-      {/* {フォーム先を上で記載した関数当てにする} */}
-      <form onSubmit={registerUser}>
-        <div className="mb-3">
-          <label htmlFor="message" className="form-label">問合せ内容</label>
-          <textarea id="message" name="message" className="form-control"></textarea>
-        </div>
-        <div className="mb-3">
-          <button type="submit" className="btn btn-primary">送信</button>
-        </div>
-      </form>
-    </div>
+    <Layout>
+      <div className="container mt-5">
+        {/* {フォーム先を上で記載した関数当てにする} */}
+        <form onSubmit={registerUser}>
+          <div className="mb-3">
+            <label htmlFor="message" className="form-label">問合せ内容</label>
+            <textarea id="message" name="message" className="form-control"></textarea>
+          </div>
+          <div className="mb-3">
+            <button type="submit" className="btn btn-primary">送信</button>
+          </div>
+        </form>
+      </div>
+    </Layout>
   )
 }

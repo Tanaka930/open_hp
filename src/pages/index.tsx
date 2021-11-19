@@ -12,6 +12,9 @@ import Service from '@/components/top/service/Service'
 // shopify expertのロゴ表示のコンポーネント
 import ExpertLogo from '@/components/top/shopifyExpert/ExpertLogo'
 
+// ニュース一覧表示用のコンポーネント
+import News from '@/components/top/news/News'
+
 
 export default function Home(){
   return(
@@ -20,6 +23,7 @@ export default function Home(){
       <TopAnimation />
       <Service />
       <ExpertLogo />
+      <News />
       
     </Layout>
   )

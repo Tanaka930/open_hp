@@ -52,6 +52,10 @@ module.exports = {
       animation: {
         flicker: 'flicker 3s linear infinite',
       },
+      backgroundImage: {
+        'rec': "url('/images/layout/rec.png')",
+        'contact': "url('/images/layout/contact.png')",
+      },
     },
   },
   variants: {

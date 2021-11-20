@@ -1,20 +1,19 @@
 import React, {useState} from 'react';
 import UnstyledLink from '../links/UnstyledLink';
 // import Menu from './Menu';
-import Link from 'next/dist/client/link';
-import Logo from "/openLogo.png";
+import Link from 'next/link';
 
-import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 
 
-const user = {
-  name: 'Tom Cook',
-  email: 'tom@example.com',
-  imageUrl:
-    'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-}
+// const user = {
+//   name: 'Tom Cook',
+//   email: 'tom@example.com',
+//   imageUrl:
+//     'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+// }
+
 const navigation = [
   { name: 'Service', href: '/service', current: true },
   { name: 'About', href: '/about', current: false },
@@ -52,12 +51,13 @@ export default function Header() {
                 <div className="flex items-center justify-between h-16">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <img
-                        className="h-5"
-                        src="/openLogo.png"
-                        alt="openstore"
-                      />
-                      
+                      <Link href='/'>
+                        <img
+                          className="h-5"
+                          src="/images/layout/Logo.png"
+                          alt="openstore"
+                        />
+                      </Link>
                     </div>
                   </div>
 

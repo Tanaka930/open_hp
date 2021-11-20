@@ -1,5 +1,3 @@
-import * as React from 'react';
-import Layout from '@/components/layout/Layout';
 import ButtonLink from '@/components/links/ButtonLink';
 import Seo from '@/components/Seo';
 import { client } from "@/lib/client";
@@ -26,7 +24,7 @@ import Recruit from '@/components/top/recruit/Recruit';
 
 export default function Home(props:any){
   return(
-    <Layout>
+    <>
       <Seo templateTitle='Home' />
       <TopAnimation />
       <Service />
@@ -34,7 +32,7 @@ export default function Home(props:any){
       <News newses={props.news.contents}/>
       <About />
       <Recruit />
-    </Layout>
+    </>
   )
 }
 

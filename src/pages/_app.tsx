@@ -4,10 +4,16 @@ import 'tailwindcss/tailwind.css';
 import '@/styles/colors.css';
 import '@/styles/menu.css'
 
+import Layout from '@/components/layout/Layout';
+
 
 import type { AppProps } from 'next/app';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  )
 }
 export default MyApp;

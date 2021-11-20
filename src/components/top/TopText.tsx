@@ -3,7 +3,6 @@ import topTextStyles from '@/components/top/css/topText.module.css'
 export default function TopText(){
   return(
     <>
-      <h1 className={topTextStyles.companyText}>OPEN STORE</h1>
       <span className={topTextStyles.topTextNo1}>
         <span className={topTextStyles.topTextYuor}>あなた</span>の価値を
       </span>

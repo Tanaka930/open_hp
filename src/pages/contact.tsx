@@ -1,4 +1,4 @@
-import Layout from '@/components/layout/Layout';
+
 
 export default function Contact() {
   const registerUser = async (event: any) => {
@@ -27,7 +27,7 @@ export default function Contact() {
  
   // 以下のテンプレートはマークアップ時に整形する
   return (
-    <Layout>
+    <>
       <div className="container mt-5">
         {/* {フォーム先を上で記載した関数当てにする} */}
         <form onSubmit={registerUser}>
@@ -40,6 +40,6 @@ export default function Contact() {
           </div>
         </form>
       </div>
-    </Layout>
+    </>
   )
 }

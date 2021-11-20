@@ -20,6 +20,9 @@ import News from '@/components/top/news/News'
 // 会社情報用のコンポーネント
 import About from '@/components/top/about/About'
 
+// 採用情報用のコンポーネント
+import Recruit from '@/components/top/recruit/Recruit';
+
 
 export default function Home(props:any){
   return(
@@ -30,6 +33,7 @@ export default function Home(props:any){
       <ExpertLogo />
       <News newses={props.news.contents}/>
       <About />
+      <Recruit />
     </Layout>
   )
 }

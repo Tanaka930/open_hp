@@ -24,7 +24,7 @@ export default function News({newses}: {newses:any}){
           ))}
         </ol>
       </div>
-      <div className='mt-12 pb-12'>
+      <div className='my-24'>
           <ReadMoreButton href="/about" />
         </div>
     </section>

@@ -17,6 +17,9 @@ import ExpertLogo from '@/components/top/shopifyExpert/ExpertLogo'
 // ニュース一覧表示用のコンポーネント
 import News from '@/components/top/news/News'
 
+// 会社情報用のコンポーネント
+import About from '@/components/top/about/About'
+
 
 export default function Home(props:any){
   return(
@@ -26,6 +29,7 @@ export default function Home(props:any){
       <Service />
       <ExpertLogo />
       <News newses={props.news.contents}/>
+      <About />
     </Layout>
   )
 }

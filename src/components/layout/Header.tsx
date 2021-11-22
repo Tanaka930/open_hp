@@ -43,12 +43,12 @@ export default function Header() {
         <body class="h-full">
         ```
       */}
-       <div className="min-h-full">
+       <div className="absolute w-screen">
         <Disclosure as="nav" className="">
           {({ open }) => (
             <>
-              <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16">
+              <div className="max-w-screen-2xl mx-auto px-2 sm:px-6 lg:px-8">
+                <div className="flex items-center justify-between h-8 md:h-16">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
                       <Link href='/'>
@@ -63,7 +63,7 @@ export default function Header() {
 
                   <div className="-mr-2 flex ">
                     {/* Mobile menu button */}
-                    <Disclosure.Button className=" inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:text-gray-400 focus:outline-none">
+                    <Disclosure.Button className=" inline-flex items-center justify-center p-2 rounded-md text-gray-800 focus:outline-none">
                       <span className="sr-only">Open main menu</span>
                       {open ? (
                         <XIcon className="block h-6 w-6" aria-hidden="true" />

@@ -1,6 +1,7 @@
 import { client } from '@/lib/client';
 import ButtonLink from '@/components/links/ButtonLink';
 import Seo from '@/components/Seo';
+import TopContent from "@/components/layout/TopContent"
 
 interface News {
   title: string
@@ -16,7 +17,7 @@ export default function Home(news: Contents){
   return(
     <>
       <Seo templateTitle='News' />
-        news
+      <TopContent bg="bg-top_service" title="News" />
       <ButtonLink className='mt-6' href='/components' variant='light'>
         See all components
       </ButtonLink>

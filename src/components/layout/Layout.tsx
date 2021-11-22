@@ -6,11 +6,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   // Put Header or Footer Here
   return (
     <>
-      <Header />
-      <main>
-        {children}
-      </main>
-      <Footer />
+      {/* <div className="container "> */}
+        <Header />
+        <main>
+          {children}
+        </main>
+        <Footer />
+      {/* </div> */}
     </>
   )
 }

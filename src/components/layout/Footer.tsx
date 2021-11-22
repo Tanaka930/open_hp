@@ -9,19 +9,19 @@ const links = [
 export default function Footer() {
   return (
     <>
-      <div className="text-white text-shadow font-bold md:flex flex-wrap h-80 text-4xl">
-        <div className="flex items-center justify-center bg-rec bg-cover bg-no-repeat md:w-1/2">
+      <div className="text-white text-shadow font-bold md:flex flex-wrap text-4xl">
+        <div className="flex items-center justify-center bg-rec bg-cover bg-no-repeat h-32 md:w-1/2 md:h-80">
           <span className="">採用情報</span>
         </div>
-        <div className="flex items-center justify-center bg-contact bg-cover bg-no-repeat md:w-1/2">
+        <div className="flex items-center justify-center bg-contact bg-cover bg-no-repeat h-32 md:w-1/2 md:h-80">
           <span className="">お問い合わせ</span>
         </div>
       </div>
       <footer className="bg-white pt-4 pb-10 sm:py-10 lg:py-12">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 lg:grid-rows-1 gap-12 lg:gap-8 pt-10 lg:pt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 lg:grid-rows-1 gap-12 lg:gap-8 pt-5 md:pt-10 lg:pt-12">
             <div className="col-span-full lg:col-span-2 lg:row-span-1">
-              <div className="lg:-mt-2 mb-8">
+              <div className="lg:-mt-2 md:mb-8">
                 <Link href="/">
                   <img
                     className="h-7"
@@ -37,21 +37,21 @@ export default function Footer() {
               <div className="flex flex-row">
                 <Link href="/">
                   <img
-                    className="pr-5"
+                    className="pr-5 h-10"
                     src="/images/icons/LINE.png"
                     alt="openstore-logo"
                   />
                 </Link>
                 <Link href="/">
                   <img
-                    className="pr-5"
+                    className="pr-5 h-10"
                     src="/images/icons/facebook.png"
                     alt="openstore-logo"
                   />
                 </Link>
                 <Link href="/">
                   <img
-                    className=""
+                    className=" h-10"
                     src="/images/icons/instagram.png"
                     alt="openstore-logo"
                   />

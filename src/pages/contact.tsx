@@ -1,4 +1,4 @@
-
+import TopContent from "@/components/layout/TopContent"
 
 export default function Contact() {
   const registerUser = async (event: any) => {
@@ -28,6 +28,7 @@ export default function Contact() {
   // 以下のテンプレートはマークアップ時に整形する
   return (
     <>
+      <TopContent bg="bg-top_service" title="Contact" />
       <div className="container mt-5">
         {/* {フォーム先を上で記載した関数当てにする} */}
         <form onSubmit={registerUser}>

@@ -55,6 +55,7 @@ module.exports = {
       backgroundImage: {
         'rec': "url('/images/layout/rec.png')",
         'contact': "url('/images/layout/contact.png')",
+        'top_service': "url('/images/layout/service.png')",
       },
     },
   },

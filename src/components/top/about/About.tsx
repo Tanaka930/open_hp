@@ -8,10 +8,10 @@ export default function About(){
     <section className='h-auto w-full'>
       <h2 className='text-4xl md:text-7xl w-full text-center pb-4 md:pb-10'>About</h2>
       <div className='w-full md:flex md:justify-center md:space-x-14'>
-        <div className='md:float-left w-auto'>
+        <div className='w-auto'>
           <Image src="/images/top/about/about.png" width={450} height={253} alt="オープンストア社内" />
         </div>
-        <div className='md:float-left md:w-4/12'>
+        <div className='md:w-4/12'>
           <h3 className='text-2xl md:text-4xl'>会社概要</h3>
           <p className='my-4 md:my-8'>
             オープンストアは、お客様との対話に重きを置き、本質的な課題を汲み取りお客様にとって最適な販路拡大や集客方法におけるノウハウなどを一貫してサポートします。

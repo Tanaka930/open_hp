@@ -40,21 +40,21 @@ export default function Footer() {
                   <img
                     className="pr-5 h-10"
                     src="/images/icons/LINE.png"
-                    alt="openstore-logo"
+                    alt="openstore-line-logo"
                   />
                 </Link>
                 <Link href="/">
                   <img
                     className="pr-5 h-10"
                     src="/images/icons/facebook.png"
-                    alt="openstore-logo"
+                    alt="openstore-facebook-logo"
                   />
                 </Link>
                 <Link href="/">
                   <img
                     className="h-10"
-                    src="/images/icons/instagram2.png"
-                    alt="openstore-logo"
+                    src="/images/icons/instagram.png"
+                    alt="openstore-instagram-logo"
                   />
                 </Link>
               </div>

@@ -38,21 +38,21 @@ export default function Footer() {
               <div className="flex pl-2 md:justify-end md:pr-44">
                 <Link href="https://page.line.me/246xdhfu">
                   <img
-                    className="pr-5 h-10"
+                    className="pr-5 h-10 cursor-pointer"
                     src="/images/icons/LINE.png"
                     alt="openstore-line-logo"
                   />
                 </Link>
                 <Link href="https://www.facebook.com/openstorejapan">
                   <img
-                    className="pr-5 h-10"
+                    className="pr-5 h-10 cursor-pointer"
                     src="/images/icons/facebook.png"
                     alt="openstore-facebook-logo"
                   />
                 </Link>
                 <Link href="https://www.instagram.com/open_store_inc/">
                   <img
-                    className="h-10"
+                    className="h-10 cursor-pointer"
                     src="/images/icons/instagram.png"
                     alt="openstore-instagram-logo"
                   />

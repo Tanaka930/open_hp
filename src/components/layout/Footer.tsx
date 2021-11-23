@@ -52,8 +52,8 @@ export default function Footer() {
                 </Link>
                 <Link href="/">
                   <img
-                    className=" h-10"
-                    src="/images/icons/instagram.png"
+                    className="h-10"
+                    src="/images/icons/instagram2.png"
                     alt="openstore-logo"
                   />
                 </Link>

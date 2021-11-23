@@ -3,21 +3,35 @@
 }
 .topTextNo1 {
   position: relative;
-  top: 45%;
+  top: 40%;
   left: 10%;
   font-size: 4.8rem;
+  @media screen and (max-width: 767px) {
+    font-size: 3rem;
+    top: 40%;
+    left: 5%;
+  }
 }
 .topTextNo2 {
   position: relative;
-  top: 45%;
+  top: 40%;
   left: 10%;
   font-size: 4.8rem;
+  @media screen and (max-width: 767px) {
+    font-size: 3rem;
+    top: 40%;
+    left: 5%;
+  }
 }
 .topTextEn {
   position: relative;
-  top: 45%;
+  top: 40%;
   left: 10%;
   font-size: 1.6rem;
+  @media screen and (max-width: 767px) {
+    font-size: 1.2rem;
+    top: 40%;
+  }
 }
 /* .companyLogo {
   position: relative;

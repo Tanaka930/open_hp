@@ -3,6 +3,7 @@ import topTextStyles from '@/components/top/css/topText.module.scss'
 export default function TopText(){
   return(
     <>
+    <div className={topTextStyles.topTextBox}>
       <span className={topTextStyles.topTextNo1}>
         <span className={topTextStyles.topTextYuor}>あなた</span>の価値を
       </span>
@@ -14,6 +15,7 @@ export default function TopText(){
       <span className={topTextStyles.topTextEn}>
         - Branding your value everywhere -
       </span>
+    </div>
     </>
   );
 }

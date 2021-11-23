@@ -1,36 +1,32 @@
 .topTextYuor {
   color: #0c8e86;
 }
-.topTextNo1 {
+.topTextBox {
   position: relative;
   top: 40%;
   left: 10%;
+  @media screen and (max-width: 767px) {
+    font-size: 3rem;
+    top: 40%;
+    left: 5%;
+  }
+}
+.topTextNo1 {
   font-size: 4.8rem;
   @media screen and (max-width: 767px) {
     font-size: 3rem;
-    top: 80%;
-    left: 5%;
   }
 }
 .topTextNo2 {
-  position: relative;
-  top: 40%;
-  left: 10%;
   font-size: 4.8rem;
   @media screen and (max-width: 767px) {
     font-size: 3rem;
-    top: 80%;
-    left: 5%;
   }
 }
 .topTextEn {
-  position: relative;
-  top: 40%;
-  left: 10%;
   font-size: 1.6rem;
   @media screen and (max-width: 767px) {
     font-size: 1.2rem;
-    top: 80%;
   }
 }
 /* .companyLogo {

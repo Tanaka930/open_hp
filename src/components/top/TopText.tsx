@@ -1,4 +1,4 @@
-import topTextStyles from '@/components/top/css/topText.module.css'
+import topTextStyles from '@/components/top/css/topText.module.scss'
 
 export default function TopText(){
   return(

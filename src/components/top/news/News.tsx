@@ -6,9 +6,9 @@ import Moment from 'react-moment'
 export default function News({newses}: {newses:any}){
   return(
     <section className='bg-gray-100 h-auto w-full'>
-      <h2 className='text-7xl w-full text-center pt-24 pb-10 '>News</h2>
+      <h2 className='text-4xl md:text-7xl w-full text-center md:pb-10 '>News</h2>
       <div className='flex justify-center'>
-        <ol className='space-y-8 w-4/12 text-left'>
+        <ol className='space-y-8 w-4/5 md:w-4/12 text-left'>
           {newses.map((news:any) => (
             <li key={news.id}>
               <Link href={`/news/${news.id}`}>
@@ -24,7 +24,7 @@ export default function News({newses}: {newses:any}){
           ))}
         </ol>
       </div>
-      <div className='my-24'>
+      <div className='mt-12 md:mt-24'>
           <ReadMoreButton href="/about" />
         </div>
     </section>

@@ -19,8 +19,9 @@ export default function Footer() {
       </div>
       <footer className="bg-white pt-4 pb-10 sm:py-10 lg:py-12">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 lg:grid-rows-1 gap-12 lg:gap-8 pt-5 md:pt-10 lg:pt-12">
-            <div className="col-span-full lg:col-span-2 lg:row-span-1">
+          <div className="flex flex-wrap pt-5 md:flex-wrap md:pt-10 lg:pt-12">
+
+            <div className="md:w-1/2">
               <div className="lg:-mt-2 md:mb-8">
                 <Link href="/">
                   <img
@@ -33,8 +34,8 @@ export default function Footer() {
               {/* <!-- logo - end --> */}
             </div>
 
-            <div>
-              <div className="flex flex-row">
+            <div className="order-2 w-full pt-8 md:w-1/2 md:pt-0">
+              <div className="flex pl-2 md:justify-end md:pr-44">
                 <Link href="/">
                   <img
                     className="pr-5 h-10"
@@ -59,7 +60,8 @@ export default function Footer() {
               </div>
             </div>
 
-            <div>
+            {/* <!-- 企業情報 - start --> */}
+            <div className="w-full pt-8 order-last md:place-self-center md:order-3 md:w-1/3">
               <ul className="md:pl-5">
                 <li>
                   <p className="text-lg">オープンストア株式会社</p>
@@ -70,17 +72,17 @@ export default function Footer() {
                 <li>
                   <p className="text-sm mt-2">大阪府大阪市淀川区木川東４丁目５−３ オパル新大阪ビル</p>
                 </li>
-                <li>
+                <li className="mt-2">
                   <a href="tel:0667709626" className="text-sm">(06)6770-9626</a>
                 </li>
-                <li>
+                <li className="mt-2">
                   <a href="mailto:contact@openstore-japan.com<" className="text-sm">contact@openstore-japan.com</a>
                 </li>
               </ul>
             </div>
 
-            {/* <!-- nav - start --> */}
-            <div>
+            {/* <!-- products - start --> */}
+            <div className="w-1/2 pt-8 order-4 md:pl-40 md:w-1/3">
               <div className="text-gray-800 font-bold tracking-widest uppercase mb-4">Products</div>
 
               <nav className="flex flex-col gap-4">
@@ -103,8 +105,8 @@ export default function Footer() {
             </div>
             {/* <!-- nav - end -->
 
-            <!-- nav - start --> */}
-            <div>
+            <!-- company - start --> */}
+            <div className="w-1/2 order-5 pt-8 md:pl-40 md:w-1/3">
               <div className="text-gray-800 font-bold tracking-widest uppercase mb-4">Company</div>
 
               <nav className="flex flex-col gap-4">

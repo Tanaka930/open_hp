@@ -23,7 +23,7 @@ export default function Service(){
         </div>
       </div>
       <div className='mt-12 md:mt-24'>
-        <ReadMoreButton href="/about" />
+        <ReadMoreButton href="/service" />
       </div>
     </section>
     </>

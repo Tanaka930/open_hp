@@ -11,6 +11,9 @@ import RightText from '@/components/layout/RightText'
 // 説明文2用のコンポーネント
 import LeftText from '@/components/layout/LeftText'
 
+// もっと見るボタンのコンポーネント
+import ReadMoreButton from '@/components/buttons/ReadMore'
+
 interface TopTextWord{
   text: string
 }
@@ -21,13 +24,6 @@ interface Explanation{
   height: string,
   alt_text: string
 }
-// interface Explanation2{
-//   text: string,
-//   image: string,
-//   width: string,
-//   height: string,
-//   alt_text: string
-// }
 
 export default function Home(){
   const topTextWord: TopTextWord = {
@@ -67,6 +63,10 @@ export default function Home(){
         height={explanation2.height}
         alt_text={explanation2.alt_text}
         />
+      <div className='mb-24'>
+        {/* LP作成後にリンク貼り替え */}
+        <ReadMoreButton href="https://jp.pornhub.com/" />
+      </div>
     </>
   )
 }

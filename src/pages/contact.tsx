@@ -1,3 +1,4 @@
+import Seo from "@/components/Seo"
 import TopContent from "@/components/layout/TopContent"
 
 export default function Contact() {
@@ -28,6 +29,7 @@ export default function Contact() {
   // 以下のテンプレートはマークアップ時に整形する
   return (
     <>
+      <Seo templateTitle='Contact' />
       <TopContent bg="bg-top_service" title="Contact" />
       <div className="container mt-5">
         {/* {フォーム先を上で記載した関数当てにする} */}

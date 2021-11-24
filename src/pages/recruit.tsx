@@ -1,3 +1,4 @@
+import Seo from "@/components/Seo"
 import TopContent from "@/components/layout/TopContent"
 
 export default function Recruit() {
@@ -28,6 +29,7 @@ export default function Recruit() {
   // 以下のテンプレートはマークアップ時に整形する
   return (
     <>
+      <Seo templateTitle='Recruit' />
       <TopContent bg="bg-top_service" title="Recruit" />
       <div className="container mt-5">
         {/* {フォーム先を上で記載した関数当てにする} */}

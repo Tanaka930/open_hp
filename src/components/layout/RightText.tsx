@@ -1,0 +1,29 @@
+import Image from 'next/image'
+type Props = {
+  image: string;
+  text: string;
+  width: string;
+  height: string;
+  alt_text: string;
+}
+
+export default function RightText(props: Props){
+  return(
+    <>
+      <div className='flex justify-center space-x-20'>
+        {/* <div className={`${props.bg} bg-cover bg-no-repeat w-5/12`}> */} 
+        <Image 
+          src={`${props.image}`} 
+          width={`${props.width}`} 
+          height={`${props.height}`} 
+          alt={`${props.alt_text}`} 
+          />
+        <div className='w-3/12'>
+          <span className='text-xl'>
+            {props.text}        
+          </span>
+        </div>
+      </div>
+    </>
+  );
+}

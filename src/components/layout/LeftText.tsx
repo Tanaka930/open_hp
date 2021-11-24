@@ -11,20 +11,21 @@ export default function LeftText(props: Props){
   return(
     <>
       <div>
-        <section className='flex justify-center space-x-20'>
-          {/* <div className={`${props.bg} bg-cover bg-no-repeat w-5/12`}> */} 
-          {/* <Image 
+        <section className='md:flex md:justify-center md:space-x-20'>
+          <div className='block md:hidden w-auto'>
+          <Image 
             src={`${props.image}`} 
             width={`${props.width}`} 
             height={`${props.height}`} 
             alt={`${props.alt_text}`} 
-            /> */}
-          <div className='w-3/12'>
+            />
+          </div>
+          <div className='md:w-3/12'>
             <span className='text-xl'>
               {props.text}        
             </span>
           </div>
-          <div>
+          <div className='hidden md:block'>
             <Image 
               src={`${props.image}`} 
               width={`${props.width}`} 

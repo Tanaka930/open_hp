@@ -27,6 +27,8 @@ interface Explanation{
 }
 interface Suppliers{
   datas: any[]
+  // いつか２次元配列にする
+  datas2: any[]
 }
 
 interface Achievement{
@@ -61,6 +63,17 @@ export default function Home(){
       {
         image: '/images/service/dx/softbank.png'
       }
+    ],
+    datas2: [
+      {
+        image: '/images/service/dx/airpay.png'
+      },
+      {
+        image: '/images/service/dx/linepay.png'
+      },
+      {
+        image: '/images/service/dx/merpay.png'
+      }
     ]
   }
   const achievement: Achievement = {
@@ -83,6 +96,7 @@ export default function Home(){
       <Suppliers 
         topText='お取引先'
         datas={suppliers.datas}
+        datas2={suppliers.datas2}
         />
       <InstallationResults 
         title={achievement.title}

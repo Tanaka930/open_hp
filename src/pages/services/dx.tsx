@@ -11,6 +11,9 @@ import RightText from '@/components/layout/RightText'
 // 説明文1用のコンポーネント
 import Suppliers from '@/components/layout/Suppliers'
 
+// 実績用のコンポーネント
+import InstallationResults from '@/components/layout/InstallationResults'
+
 interface TopTextWord{
   text: string
 }
@@ -22,10 +25,14 @@ interface Explanation{
   height: string,
   alt_text: string
 }
-interface Achievement{
+interface Suppliers{
   datas: any[]
 }
 
+interface Achievement{
+  title: string,
+  image: string
+}
 
 export default function Home(){
   const topTextWord: TopTextWord = {
@@ -40,7 +47,7 @@ export default function Home(){
     alt_text: 'オープンストアの店舗DX事業'
   }
 
-  const achievement: Achievement = {
+  const suppliers: Suppliers = {
     datas: [
       {
         image: '/images/service/dx/au.png'
@@ -55,6 +62,10 @@ export default function Home(){
         image: '/images/service/dx/softbank.png'
       }
     ]
+  }
+  const achievement: Achievement = {
+    title: '納入実績',
+    image: '/images/service/dx/glaph.png'
   }
 
   return(
@@ -71,8 +82,12 @@ export default function Home(){
         />
       <Suppliers 
         topText='お取引先'
-        datas={achievement.datas}
+        datas={suppliers.datas}
         />
+      <InstallationResults 
+        title={achievement.title}
+        image={achievement.image}
+      />
     </>
   )
 }

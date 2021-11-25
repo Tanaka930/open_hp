@@ -11,13 +11,13 @@ export default function Achievement(props: Props){
     <section>
       <h2 className='text-4xl'>実績</h2>
       <div className='flex items-center w-full justify-center'>
-        <div className='w-1/2'>
+        <div className='w-full  md:w-1/2'>
           {props.datas.map((data:any) => (
-            <div className='float-left w-1/2'>
+            <div className='float-left md:w-1/2'>
             <Link href={`${data.link}`}>
               <div className='w-full '>
                 <a>
-                  <div className='px-12 my-12' >
+                  <div className='md:px-12 my-6 md:my-12' >
                     <Image 
                       src={`${data.image}`}
                       width='400'

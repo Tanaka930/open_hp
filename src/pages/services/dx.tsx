@@ -8,6 +8,9 @@ import TopText from '@/components/layout/LowerTopText'
 // 説明文1用のコンポーネント
 import RightText from '@/components/layout/RightText'
 
+// 説明文1用のコンポーネント
+import Suppliers from '@/components/layout/Suppliers'
+
 interface TopTextWord{
   text: string
 }
@@ -19,6 +22,10 @@ interface Explanation{
   height: string,
   alt_text: string
 }
+interface Achievement{
+  datas: any[]
+}
+
 
 export default function Home(){
   const topTextWord: TopTextWord = {
@@ -26,20 +33,46 @@ export default function Home(){
   }
 
   const explanation1: Explanation = {
-    text: 'Shopifyは、世界シェアNo.1を誇り、175ヶ国で利用されているECサイトのプラットフォームです。 開設ショップ数は現在100万件以上に達しており、日本国内においてもその存在感を増してきています。 オープンストアでは、shopifyを活用したECサイトの制作から、サイト分析・改善、SEO対策、SNS対策、販促サポートなど ECサイトの運営ノウハウをお客様に提供しています。',
+    text: '店舗DX化が求められる中で、コンサルティングを始めとした、キャッシュレス決済や、通信インフラの整備・見直しなどのお客様に合った運営ツールのご提供・サポートを行ってます。Webマーケティングにおいては、LPの制作、広告、SNSなどを活用し、幅広くお客様の集客をサポートいたします。',
     image: '/images/service/dx/dx1.png',
-    width: '350',
-    height: '280',
-    alt_text: 'オープンストアとshopify'
+    width: '430',
+    height: '256',
+    alt_text: 'オープンストアの店舗DX事業'
+  }
+
+  const achievement: Achievement = {
+    datas: [
+      {
+        image: '/images/service/dx/au.png'
+      },
+      {
+        image: '/images/service/dx/nuro.png'
+      },
+      {
+        image: '/images/service/dx/rakuten.png'
+      },
+      {
+        image: '/images/service/dx/softbank.png'
+      }
+    ]
   }
 
   return(
     <>
-      <Seo templateTitle='DX' />
-      <TopContent bg="bg-top_service" title="DX" />
-      <ButtonLink className='mt-6' href='/components' variant='light'>
-        See all components
-      </ButtonLink>
+      <Seo templateTitle='オープンストアDX事業' />
+      <TopContent bg="bg-dx_top" title="DX" />
+      <TopText text={topTextWord.text} />
+      <RightText 
+        text={explanation1.text} 
+        image={explanation1.image}
+        width={explanation1.width}
+        height={explanation1.height}
+        alt_text={explanation1.alt_text}
+        />
+      <Suppliers 
+        topText='お取引先'
+        datas={achievement.datas}
+        />
     </>
   )
 }

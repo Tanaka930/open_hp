@@ -7,9 +7,9 @@ type Props = {
 export default function Suppliers(props: Props){
   return(
     <>
-      <section className='bg-white'>
-        <h2 className='text-4xl'>{props.topText}</h2>
-        <div className='flex items-center w-full justify-center'>
+      <section >
+        <h2 className='text-2xl md:text-4xl'>{props.topText}</h2>
+        <div className='flex items-center w-full justify-center space-x-4'>
           {props.datas.map((data:any) => (
             <div>
               <Image 

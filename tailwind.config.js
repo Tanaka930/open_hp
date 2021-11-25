@@ -56,7 +56,8 @@ module.exports = {
         'rec': "url('/images/layout/rec.png')",
         'contact': "url('/images/layout/contact.png')",
         'top_service': "url('/images/layout/service.png')",
-        'ec_top':"url('/images/service/ec/EC-TOP.png')"
+        'ec_top':"url('/images/service/ec/EC-TOP.png')",
+        'lien_top':"url('/images/service/line/linetop.png')"
       },
     },
   },

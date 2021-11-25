@@ -14,6 +14,10 @@ import LeftText from '@/components/layout/LeftText'
 // もっと見るボタンのコンポーネント
 import ReadMoreButton from '@/components/buttons/ReadMore'
 
+// 実績用のコンポーネント追加
+import Achievement from '@/components/layout/Achievement'
+
+
 interface TopTextWord{
   text: string
 }
@@ -23,6 +27,10 @@ interface Explanation{
   width: string,
   height: string,
   alt_text: string
+}
+
+interface Achievement{
+  datas: any[]
 }
 
 export default function Home(){
@@ -43,6 +51,31 @@ export default function Home(){
     width: '450',
     height: '234',
     alt_text: 'オープンストアはshopify expert'
+  }
+
+  const achievement: Achievement = {
+    datas: [
+      {
+        link: 'https://example.com',
+        image: '/images/service/ec/shimizuko.png',
+        text: '清水っ粉様'
+      },
+      {
+        link: 'https://example.com',
+        image: '/images/service/ec/hareken.png',
+        text: 'HAREKEN様'
+      },
+      {
+        link: 'https://example.com',
+        image: '/images/service/ec/cosmos.png',
+        text: 'COSMOS様'
+      },
+      {
+        link: 'https://example.com',
+        image: '/images/service/ec/horushop.png',
+        text: 'HORUSHOP様'
+      }
+    ]
   }
   return(
     <>
@@ -67,6 +100,7 @@ export default function Home(){
         {/* LP作成後にリンク貼り替え */}
         <ReadMoreButton href="https://jp.pornhub.com/" />
       </div>
+      <Achievement datas={achievement.datas} />
     </>
   )
 }

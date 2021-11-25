@@ -8,23 +8,32 @@ type Props = {
 export default function Achievement(props: Props){
   return(
     <>
-    <section className='flex items-center justify-center'>
-      {props.datas.map((data:any) => (
-        <Link href={`${data.link}`}>
-          <a>
-            <div className='w-2/6'>
-              <Image 
-                src={`${data.image}`}
-                width='345'
-                height='205'
-              />
-              <span>
-                {data.text}
-              </span>
+    <section>
+      <h2 className='text-4xl'>実績</h2>
+      <div className='flex items-center w-full justify-center'>
+        <div className='w-1/2'>
+          {props.datas.map((data:any) => (
+            <div className='float-left w-1/2'>
+            <Link href={`${data.link}`}>
+              <div className='w-full '>
+                <a>
+                  <div className='px-12 my-12' >
+                    <Image 
+                      src={`${data.image}`}
+                      width='400'
+                      height='400'
+                    />
+                    <div className='text-center'>
+                      {data.text}
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </Link>
             </div>
-          </a>
-        </Link>
-      ))}
+          ))}
+        </div>
+      </div>
     </section>
     </>
   );

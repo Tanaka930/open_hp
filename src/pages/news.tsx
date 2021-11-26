@@ -32,7 +32,7 @@ export const getStaticProps = async () => {
   const key = {
     headers: {'X-MICROCMS-API-KEY': process.env.NEXT_PUBLIC_MICRO_CMS_API_KEY},
   };
-  const data = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/news?offset=0&limit=2`, key)
+  const data = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/news?offset=0&limit=6`, key)
     .then(res => res.json())
     .catch(() => null);
 

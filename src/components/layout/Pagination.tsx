@@ -8,7 +8,7 @@ type Props = {
 export default function Pagination(props: Props){
 
   // console.log(props.totalCount)
-  const PER_PAGE = 2;
+  const PER_PAGE = 6;
 
   const range = (start:number ,end:number) =>
     [...Array(end - start + 1)].map((_, i) => start + i)

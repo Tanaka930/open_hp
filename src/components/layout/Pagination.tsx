@@ -23,9 +23,6 @@ export default function Pagination(props: Props){
         </a>
       </li>
       {range(1, Math.ceil(props.totalCount / PER_PAGE)).map((number:number, index:number) => (
-        // <li className="mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg">
-        //   <a className="font-bold" href={ `${props.pathName}/page/${number}`}>{number}</a>
-        // </li>
         <TextColor pageNum={props.pageNum} num={number} pathName={props.pathName} />
       ))}
       <li className="mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg">

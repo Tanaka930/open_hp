@@ -39,7 +39,8 @@ export const getStaticProps = async () => {
   return {
     props: {
       news: data.contents,
-      totalCount: data.totalCount
+      totalCount: data.totalCount,
+      pageNum: 1
     },
   };
 };

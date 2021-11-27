@@ -19,13 +19,16 @@ export default function ContentList({contents,contentTitle}: {contents:any ,cont
             <div className="xl:w-1/3 md:w-1/2 p-4">
               <a>
                 <div className="bg-white p-2 rounded-lg cursor-pointer">
-                  <ContetImage image= {content.image}/>
+                  <ContetImage image= {content.image} altText={content.text}/>
                   <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">
                     <Moment format="YYYY年MM月DD日">
                       {content.createdAt}
                     </Moment>
                   </h3>
                   <h2 className="text-lg text-gray-900 font-medium title-font mb-4">{content.title}</h2>
+                  <p className="leading-relaxed text-base">
+                    {content.text.substr( 0, 50 )}
+                  </p> 
                 </div>
               </a>
             </div>

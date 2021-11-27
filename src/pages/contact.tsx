@@ -23,8 +23,11 @@ export default function Contact() {
   const { executeRecaptcha } = useGoogleReCaptcha();
 
   const onSubmit  = async (data: FormData) => {
+    console.log("executeRecaptcha", executeRecaptcha);
     if (executeRecaptcha) {
       const reCaptchaToken = await executeRecaptcha('contactPage');
+      console.log("reCaptchaToken",reCaptchaToken);
+      
 
       const apiEndPoint = './api/recaptcha';
       
@@ -36,10 +39,10 @@ export default function Contact() {
         body: JSON.stringify({
           token: reCaptchaToken,
         }),
-      });
+      }); 
 
-      alert("送信されました。\nお問い合わせありがとうございます。")
-      reset()
+      // alert("送信されました。\nお問い合わせありがとうございます。")
+      // reset()
 
       let message = "タイトル: " + data.title +
                     "\nカテゴリ: " + data.category +
@@ -57,11 +60,16 @@ export default function Contact() {
         },
         method: 'POST'
       })
+      await console.log("res",res);
+
+      await res.status === 200 && alert("送信されました。\nお問い合わせありがとうございます。") && reset()
     } else {
         alert("エラーが発生しました")
+        console.error()
     }
     // 今のところ使ってないが、res.jsonのデータを格納
     // const result = await res.json()
+    
   };
 
   // 以下のテンプレートはマークアップ時に整形する

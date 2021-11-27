@@ -22,6 +22,7 @@ import About from '@/components/top/about/About'
 import Recruit from '@/components/top/recruit/Recruit';
 
 
+
 export default function Home(props:any){
   return(
     <>

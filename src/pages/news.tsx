@@ -1,7 +1,12 @@
-import { client } from '@/lib/client';
 import ButtonLink from '@/components/links/ButtonLink';
 import Seo from '@/components/Seo';
 import TopContent from "@/components/layout/TopContent"
+
+// 一覧表示用のコンポーネント
+import ContentList from '@/components/layout/listTemplate/ContentList'
+
+// ページネーション用のコンポーネント
+import  Pagination from '@/components/layout/listTemplate/Pagination';
 
 interface News {
   title: string
@@ -12,28 +17,30 @@ interface Contents {
   contents: News[]
 }
 
-export default function Home(news: Contents){
-  console.log(news)
+export default function Home(contents: Contents){
   return(
     <>
       <Seo templateTitle='News' />
       <TopContent bg="bg-top_service" title="News" />
-      <ButtonLink className='mt-6' href='/components' variant='light'>
-        See all components
-      </ButtonLink>
-
+      <ContentList contents={contents} contentTitle='news' />
     </>
   )
 }
 
+
 export const getStaticProps = async () => {
-  const data = await client.get({
-    endpoint: 'news',
-  });
+  const key = {
+    headers: {'X-MICROCMS-API-KEY': process.env.NEXT_PUBLIC_MICRO_CMS_API_KEY},
+  };
+  const data = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/news?offset=0&limit=6`, key)
+    .then(res => res.json())
+    .catch(() => null);
 
   return {
     props: {
-      news: data,
+      news: data.contents,
+      totalCount: data.totalCount,
+      pageNum: 1
     },
   };
 };

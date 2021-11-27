@@ -18,7 +18,7 @@ export default function TextColor(props: Props){
       </Link>
     );
   }else{
-    if(Math.abs(props.pageNum- props.num) <= 2){
+    if(Math.abs(props.pageNum- props.num) <= Number(process.env.paginateCount)){
       return(
         <Link href={ `${props.pathName}/page/${props.num}`}>
           <li className="mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg cursor-pointer">

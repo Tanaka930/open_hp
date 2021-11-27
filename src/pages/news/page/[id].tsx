@@ -14,7 +14,7 @@ interface Contents {
   contents: News[]
 }
 
-const PER_PAGE = 6; 
+const PER_PAGE = Number(process.env.onePageContent); 
 
 export default function Home(contents: Contents){
   return(
@@ -36,8 +36,6 @@ export const getStaticPaths = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/news`, key)
 
   const repos = await res.json();
-
-  const pageNumbers = [];
 
   const range = (start:number, end:number) =>
         [...Array(end - start + 1)].map((_, i) => start + i)

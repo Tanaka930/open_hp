@@ -25,7 +25,7 @@ export default function News({newses}: {newses:any}){
         </ol>
       </div>
       <div className='mt-12 md:mt-24'>
-          <ReadMoreButton href="/about" />
+          <ReadMoreButton href="/news" />
         </div>
     </section>
   );

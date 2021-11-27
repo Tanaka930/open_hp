@@ -2,10 +2,10 @@ import ReadMoreButton from '@/components/buttons/ReadMore'
 import Link from "next/link";
 import Moment from 'react-moment'
 import Image from 'next/image'
-import ContetImage from '@/components/layout/ContentListImage'
+import ContetImage from '@/components/layout/listTemplate/ContentListImage'
 
 // ページネーション用のコンポーネント
-import  Pagination from '@/components/layout/Pagination';
+import  Pagination from '@/components/layout/listTemplate/Pagination';
 
 export default function ContentList({contents,contentTitle}: {contents:any ,contentTitle:string}){
 

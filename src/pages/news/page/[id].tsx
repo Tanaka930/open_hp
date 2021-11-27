@@ -3,7 +3,7 @@ import Seo from '@/components/Seo';
 import TopContent from "@/components/layout/TopContent"
 
 // 一覧表示用のコンポーネント
-import ContentList from '@/components/layout/ContentList'
+import ContentList from '@/components/layout/listTemplate/ContentList'
 
 interface News {
   title: string

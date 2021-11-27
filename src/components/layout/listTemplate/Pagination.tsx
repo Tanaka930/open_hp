@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import TextColor from '@/components/layout/PaginationColor'
-import PreviousPage from '@/components/layout/PaginationPrevious'
-import NextPage from '@/components/layout/PaginationNext'
+import TextColor from '@/components/layout/listTemplate/PaginationColor'
+import PreviousPage from '@/components/layout/listTemplate/PaginationPrevious'
+import NextPage from '@/components/layout/listTemplate/PaginationNext'
 
 
 

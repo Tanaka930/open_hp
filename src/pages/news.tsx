@@ -3,10 +3,10 @@ import Seo from '@/components/Seo';
 import TopContent from "@/components/layout/TopContent"
 
 // 一覧表示用のコンポーネント
-import ContentList from '@/components/layout/ContentList'
+import ContentList from '@/components/layout/listTemplate/ContentList'
 
 // ページネーション用のコンポーネント
-import  Pagination from '@/components/layout/Pagination';
+import  Pagination from '@/components/layout/listTemplate/Pagination';
 
 interface News {
   title: string

@@ -39,7 +39,7 @@ export default function Home(props:any){
 // データを取得し、テンプレートに受け渡す
 export const getStaticProps = async () => {
   const key = {
-    headers: {'X-MICROCMS-API-KEY': process.env.NEXT_PUBLIC_MICRO_CMS_API_KEY},
+    headers: {'X-MICROCMS-API-KEY': String(process.env.NEXT_PUBLIC_MICRO_CMS_API_KEY)},
   };
   const news = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/news?offset=0&limit=5`, key)
     .then(res => res.json())

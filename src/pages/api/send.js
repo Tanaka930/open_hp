@@ -10,23 +10,23 @@ export default function handler(req, res) {
     // 送信内容を以下で記載
     const msg = {
       // 送り先
-      to: req.body.email,
+      to: process.env.NEXT_PUBLIC_TO_MAIL,
 
       // 送り元
-      from: process.env.FROM_MAIL,
+      from: process.env.NEXT_PUBLIC_FROM_MAIL,
 
       // メール題名
-      subject: '題名',
+      subject: '自社HP お問い合わせ',
 
       // メール本文
-      text: req.body.message,
-      htmk: req.body.message
+      text: req.body.message
     };
  
     (async () => {
       try {
         // メール送信実行
         const res = await sgMail.send(msg);
+        reset()
         
       } catch (error) {
         // 以下エラー処理

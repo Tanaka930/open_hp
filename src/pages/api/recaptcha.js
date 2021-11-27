@@ -1,4 +1,4 @@
-export default function handler(event, context, callback) { 
+export const sendMail  = async(event, context, callback) =>  { 
   // リクエストボディの内容を取得
   //  実際の処理ではお問い合わせ内容（名前やメールアドレス、お問い合わせ内容など）も取得しています
   const { token } = JSON.parse(event.body);
@@ -28,7 +28,7 @@ export default function handler(event, context, callback) {
   
   if (!recaptchaResult.success && recaptchaResult.hostname !== hostname) {
     // reCAPTCHAによるチェックが失敗した際の処理を記述する
-
+    console.error('サーバーエラー');
   } else {
     // reCAPTCHA承認成功時の処理
     res.status(200)

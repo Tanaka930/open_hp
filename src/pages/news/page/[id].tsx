@@ -6,8 +6,8 @@ import TopContent from "@/components/layout/TopContent"
 import ContentList from '@/components/layout/listTemplate/ContentList'
 
 interface News {
-  title: string
-  publishedAt: string
+  title: string;
+  publishedAt: string;
 }
 
 interface Contents {
@@ -50,7 +50,7 @@ export const getStaticProps = async (context:any) => {
   const id = context.params.id;
 
   const key = {
-    headers: { 'X-MICROCMS-API-KEY': String(process.env.NEXT_PUBLIC_MICRO_CMS_API_KEY) }
+    headers: { 'X-MICROCMS-API-KEY': String(process.env.NEXT_PUBLIC_MICRO_CMS_API_KEY)}
   };
 
   const data = await fetch(

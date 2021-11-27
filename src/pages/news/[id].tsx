@@ -1,17 +1,24 @@
 import {client} from '@/lib/client'
 
 export default function NewsId({news}:{news:any}) {
-  return(
-    <section>
-      <h1>{news.title}</h1>
-      <p>{news.createdAt}</p>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `${news.text}`,
-        }}
-      />
-    </section>
-  );
+  if(typeof news != "undefined"){
+    return(
+      <section>
+        <h1>{news.title}</h1>
+        <p>{news.createdAt}</p>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `${news.text}`,
+          }}
+        />
+      </section>
+    );
+  }else{
+    return(
+      <>
+      </>
+    );
+  }
 }
 
 export const getStaticPaths = async() => {

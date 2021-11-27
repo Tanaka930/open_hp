@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 type Props = {
   pathName: string;
   pageNum: number;
@@ -8,14 +8,16 @@ type Props = {
 export default function PaginationNext(props: Props){
 
   const chack = props.totalCount / props.pre_page;
-
+  const link = Number(props.pageNum) + 1
   if(chack >= props.pageNum){
     return(
-      <li className="mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg">
-        <a className="flex items-center font-bold" href={ `${props.pathName}/page/${props.pageNum + 1}`}>
+      <Link href={`${props.pathName}/page/${link}`}>
+        <li className="mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg cursor-pointer">
+          <a className="flex items-center font-bold">
             <span className="mx-1">Next</span>
-        </a>
-      </li>
+          </a>
+        </li>
+      </Link>
     );
   }else{
     return(

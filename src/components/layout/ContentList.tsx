@@ -1,11 +1,14 @@
 import ReadMoreButton from '@/components/buttons/ReadMore'
 import Link from "next/link";
 import Moment from 'react-moment'
+import Image from 'next/image'
+import ContetImage from '@/components/layout/ContentListImage'
 
 // ページネーション用のコンポーネント
 import  Pagination from '@/components/layout/Pagination';
 
 export default function ContentList({contents,contentTitle}: {contents:any ,contentTitle:string}){
+
   return(
     <>
       <section className="text-gray-600 body-font">
@@ -15,8 +18,8 @@ export default function ContentList({contents,contentTitle}: {contents:any ,cont
             <Link href={`/${contentTitle}/${content.id}`}>
             <div className="xl:w-1/3 md:w-1/2 p-4">
               <a>
-                <div className="bg-white p-6 rounded-lg cursor-pointer">
-                  <img className="lg:h-60 xl:h-56 md:h-64 sm:h-72 xs:h-72 h-72  rounded w-full object-cover object-center mb-6" src="https://kuyou.id/content/images/ctc_2020021605150668915.jpg" alt="Image Size 720x400" />
+                <div className="bg-white p-2 rounded-lg cursor-pointer">
+                  <ContetImage image= {content.image}/>
                   <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">
                     <Moment format="YYYY年MM月DD日">
                       {content.createdAt}

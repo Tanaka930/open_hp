@@ -8,29 +8,6 @@ import  Pagination from '@/components/layout/Pagination';
 export default function ContentList({contents,contentTitle}: {contents:any ,contentTitle:string}){
   return(
     <>
-      {/* <section className='bg-gray-100 h-auto w-full'>
-        <h2 className='text-4xl md:text-7xl w-full text-center md:pb-10 '>News</h2>
-        <div className='flex justify-center'>
-          <ol className='space-y-8 w-4/5 md:w-4/12 text-left'>
-            {contents.news.map((content:any) => (
-              <div key={content.id}>
-                <Link href={`/${contentTitle}/${content.id}`}>
-                  <div className=''>
-                    <a>
-                      <Moment format="YYYY年MM月DD日">
-                        {content.createdAt}
-                      </Moment>
-                      :
-                      {content.title}
-                    </a>
-                  </div>
-                </Link>
-              </div>
-            ))}
-          </ol>
-          <Pagination totalCount={contents.totalCount} pathName='/news/'/>
-        </div>
-      </section> */}
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto max-w-7x1">
           <div className="flex flex-wrap -m-4">

@@ -5,9 +5,6 @@ import TopContent from "@/components/layout/TopContent"
 // 一覧表示用のコンポーネント
 import ContentList from '@/components/layout/ContentList'
 
-// ページネーション用のコンポーネント
-import  Pagination from '@/components/layout/Pagination';
-
 interface News {
   title: string
   publishedAt: string
@@ -66,7 +63,8 @@ export const getStaticProps = async (context:any) => {
   return {
     props: {
       news: data.contents,
-      totalCount: data.totalCount
+      totalCount: data.totalCount,
+      pageNum: Number(id)
     }
   };
 };

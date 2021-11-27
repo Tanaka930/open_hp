@@ -1,6 +1,7 @@
 import Seo from "@/components/Seo"
 import TopContent from "@/components/layout/TopContent"
 import { useForm } from "react-hook-form";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 
 
 type FormData = {
@@ -19,25 +20,46 @@ export default function Contact() {
         }
         = useForm<FormData>();
 
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
   const onSubmit  = async (data: FormData) => {
+    if (executeRecaptcha) {
+      const reCaptchaToken = await executeRecaptcha('contactPage');
 
-    reset()
-    let message = "タイトル: " + data.title +
-                  "\nカテゴリ: " + data.category +
-                  "\n氏名: " + data.name +
-                  "\nメールアドレス: " + data.email +
-                  "\nお問い合わせ内容: " + data.message
+      const apiEndPoint = './api/recaptcha';
+      
+      await fetch(apiEndPoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          token: reCaptchaToken,
+        }),
+      });
 
-    const res = await fetch('./api/send', {
-      body: JSON.stringify({
-        // メッセージ内容をいかに格納
-        message: message
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      method: 'POST'
-    })
+      alert("送信されました。\nお問い合わせありがとうございます。")
+      reset()
+
+      let message = "タイトル: " + data.title +
+                    "\nカテゴリ: " + data.category +
+                    "\n氏名: " + data.name +
+                    "\nメールアドレス: " + data.email +
+                    "\nお問い合わせ内容: " + data.message
+  
+      const res = await fetch('./api/send', {
+        body: JSON.stringify({
+          // メッセージ内容をいかに格納
+          message: message
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: 'POST'
+      })
+    } else {
+        alert("エラーが発生しました")
+    }
     // 今のところ使ってないが、res.jsonのデータを格納
     // const result = await res.json()
   };

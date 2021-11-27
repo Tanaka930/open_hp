@@ -15,7 +15,7 @@ export const sendMail  = async(event, context, callback) =>  {
   const hostname = origin.replace(/https:\/\//, '');
   
   // reCAPTCHAによるチェックの実施
-  const recaptchaRes = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+  const recaptchaRes = fetch('https://www.google.com/recaptcha/api/siteverify', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -24,7 +24,7 @@ export const sendMail  = async(event, context, callback) =>  {
   });
   
   // チェック結果が代入される
-  const recaptchaResult = await recaptchaRes.json();
+  const recaptchaResult = recaptchaRes.json();
   
   if (!recaptchaResult.success && recaptchaResult.hostname !== hostname) {
     // reCAPTCHAによるチェックが失敗した際の処理を記述する

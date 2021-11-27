@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import TextColor from '@/components/layout/PaginationColor'
-import Previous from '@/components/layout/PaginationPrevious'
+import PreviousPage from '@/components/layout/PaginationPrevious'
+import NextPage from '@/components/layout/PaginationNext'
+
 
 
 type Props = {
@@ -18,20 +20,11 @@ export default function Pagination(props: Props){
 
   return(
     <ul className="flex items-center justify-center">
-      {/* <li className="mx-1 px-3 py-2 bg-gray-200 text-gray-500 rounded-lg">
-        <a className="flex items-center font-bold" href="#">
-            <span className="mx-1">previous</span>
-        </a>
-      </li> */}
-      <Previous pathName={props.pathName} pageNum={props.pageNum} />
+      <PreviousPage pathName={props.pathName} pageNum={props.pageNum} />
       {range(1, Math.ceil(props.totalCount / PER_PAGE)).map((number:number, index:number) => (
         <TextColor pageNum={props.pageNum} num={number} pathName={props.pathName} />
       ))}
-      <li className="mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg">
-        <a className="flex items-center font-bold" href="#">
-            <span className="mx-1">Next</span>
-        </a>
-      </li>
+      <NextPage pathName={props.pathName} pageNum={props.pageNum} totalCount={props.totalCount} pre_page={PER_PAGE} />
     </ul>
   );
 

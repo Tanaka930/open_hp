@@ -10,6 +10,8 @@ import Culture from '@/components/recruit/Culture'
 // 求める人物像のコンポーネント
 import Human from '@/components/recruit/Human'
 
+import Staff from '@/components/recruit/Staff'
+
 export default function Recruit() {
   const registerUser = async (event: any) => {
     
@@ -42,6 +44,7 @@ export default function Recruit() {
       <TopContent bg="bg-top_service" title="Recruit" />
       <Culture />
       <Human />
+      <Staff />
       <div className="container mt-5">
         {/* {フォーム先を上で記載した関数当てにする} */}
         <form onSubmit={registerUser}>

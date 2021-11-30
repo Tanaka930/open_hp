@@ -13,9 +13,6 @@ export default function handler(req, res) {
         // body: `secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${token}`,
         body: `secret=6LeNtWAdAAAAAIydsTiX5D4K7tRJlxeYDckobENR&response=${token}`,
       });
-
-      return res;
-      
       // console.log("res", res)
       
     } catch (error) {
@@ -27,9 +24,10 @@ export default function handler(req, res) {
     }
   })();
 
-  if (res.statusCode == 200) {
+  // if (res.statusCode == 200) {
     res.status(200).json()
-  }else{
-    res.status(500).json()
-  }
+  // }else{
+  //   console.error(error.response.body)
+  //   res.status(500).json()
+  // }
 }

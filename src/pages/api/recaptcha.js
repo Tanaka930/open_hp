@@ -10,7 +10,8 @@ export default function handler(req, res) {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: `secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${token}`,
+        // body: `secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${token}`,
+        body: `secret=6LeNtWAdAAAAAIydsTiX5D4K7tRJlxeYDckobENR&response=${token}`,
       });
 
       return res;

@@ -22,7 +22,18 @@ export default function NewsId({news}:{news:any}) {
 }
 
 export const getStaticPaths = async() => {
-  const news = await client.get({ endpoint: "news" });
+
+  // 少しづつ呼び出して処理する方法を考えるべき
+  const offset:number = 0;
+  const limit:number = 80;
+
+  const news = await client.get({ 
+    endpoint: "news",
+    queries: {
+      offset,
+      limit
+    }
+  });
 
   const paths = news.contents.map((content:any) => `/news/${content.id}`);
   
@@ -30,6 +41,7 @@ export const getStaticPaths = async() => {
 }
 
 export const getStaticProps = async (context:any) => {
+
   const id = context.params.id;
   const news = await client.get({ endpoint: "news", contentId: id });
 

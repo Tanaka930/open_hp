@@ -10,7 +10,11 @@ import Culture from '@/components/recruit/Culture'
 // 求める人物像のコンポーネント
 import Human from '@/components/recruit/Human'
 
+// スタッフの声用のコンポーネント
 import Staff from '@/components/recruit/Staff'
+
+// 求人用のコンポーネント
+import Job from '@/components/recruit/Job'
 
 export default function Recruit() {
   const registerUser = async (event: any) => {
@@ -45,6 +49,7 @@ export default function Recruit() {
       <Culture />
       <Human />
       <Staff />
+      <Job />
       <div className="container mt-5">
         {/* {フォーム先を上で記載した関数当てにする} */}
         <form onSubmit={registerUser}>

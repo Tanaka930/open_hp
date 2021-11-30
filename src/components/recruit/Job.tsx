@@ -13,7 +13,7 @@ export default function Job(){
     jobDatas:[
       {
         title:'営業',
-        text:'あああああああああああああああああaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        text:'あああああああああああああああああ'
       },
       {
         title:'事務',
@@ -27,10 +27,10 @@ export default function Job(){
 
   return(
     <>
-      <section className='h-auto w-full'>
-        <div className="from-pink-50 to-indigo-100 place-items-center">
-          <div className="w-6/12 mx-auto rounded">
-
+      <section className='h-auto w-full flex justify-center space-x-10'>
+        <h2 className='text-4xl w-auto'>求人情報</h2>
+        <div className="w-3/12 from-pink-50 to-indigo-100 place-items-center">
+          <div className="w-full rounded">
             {jobDatas.map((jobData) => (
               <JobDetail 
                 title={jobData.title}

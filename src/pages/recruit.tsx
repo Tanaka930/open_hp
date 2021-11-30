@@ -1,6 +1,12 @@
 import Seo from "@/components/Seo"
 import TopContent from "@/components/layout/TopContent"
 
+// トップテキスト用のコンポーネント
+import TopText from '@/components/layout/LowerTopText'
+
+// 文化用のコンポーネント
+import Culture from "@/components/recruit/Culture"
+
 export default function Recruit() {
   const registerUser = async (event: any) => {
     
@@ -31,6 +37,7 @@ export default function Recruit() {
     <>
       <Seo templateTitle='Recruit' />
       <TopContent bg="bg-top_service" title="Recruit" />
+      <Culture />
       <div className="container mt-5">
         {/* {フォーム先を上で記載した関数当てにする} */}
         <form onSubmit={registerUser}>

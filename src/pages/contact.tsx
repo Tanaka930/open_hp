@@ -31,41 +31,45 @@ export default function Contact() {
 
       const apiEndPoint = './api/recaptcha';
       
-      await fetch(apiEndPoint, {
-        method: 'POST',
+      const res = await fetch(apiEndPoint, {
+        body: JSON.stringify({
+          // トークン認証
+          token: reCaptchaToken,
+        }),
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          token: reCaptchaToken,
-        }),
+        method: 'POST',
       }); 
 
-      // alert("送信されました。\nお問い合わせありがとうございます。")
-      // reset()
+      if (res.status === 200) {
+        alert("送信されました。\nお問い合わせありがとうございます。")
+        reset()
 
-      let message = "タイトル: " + data.title +
-                    "\nカテゴリ: " + data.category +
-                    "\n氏名: " + data.name +
-                    "\nメールアドレス: " + data.email +
-                    "\nお問い合わせ内容: " + data.message
-  
-      const res = await fetch('./api/send', {
+        let message = "タイトル: " + data.title +
+        "\nカテゴリ: " + data.category +
+        "\n氏名: " + data.name +
+        "\nメールアドレス: " + data.email +
+        "\nお問い合わせ内容: " + data.message
+
+        const res = await fetch('./api/send', {
         body: JSON.stringify({
-          // メッセージ内容をいかに格納
-          message: message
+        // メッセージ内容をいかに格納
+        message: message
         }),
         headers: {
-          'Content-Type': 'application/json'
+        'Content-Type': 'application/json'
         },
         method: 'POST'
-      })
-      await console.log("res",res);
+        })
+        await console.log("res",res);
 
-      await res.status === 200 && alert("送信されました。\nお問い合わせありがとうございます。") && reset()
+        await res.status === 200 && alert("送信されました。\nお問い合わせありがとうございます。") && reset()
+
+      }
     } else {
         alert("エラーが発生しました")
-        console.error()
+        console.error("recaptcha認証エラー")
     }
     // 今のところ使ってないが、res.jsonのデータを格納
     // const result = await res.json()

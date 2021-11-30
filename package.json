@@ -13,6 +13,7 @@
     "@heroicons/react": "^1.0.5",
     "@sendgrid/mail": "^7.6.0",
     "@tailwindcss/forms": "^0.3.4",
+    "axios": "^0.24.0",
     "clsx": "^1.1.1",
     "microcms-js-sdk": "^2.0.0",
     "moment": "^2.29.1",

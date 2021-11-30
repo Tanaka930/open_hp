@@ -29,6 +29,7 @@ interface Suppliers{
   datas: any[]
   // いつか２次元配列にする
   datas2: any[]
+  datas3: any[]
 }
 
 interface Achievement{
@@ -52,27 +53,38 @@ export default function Home(){
   const suppliers: Suppliers = {
     datas: [
       {
-        image: '/images/service/dx/au.png'
-      },
-      {
-        image: '/images/service/dx/nuro.png'
+        image: '/images/service/dx/softbank.png'
       },
       {
         image: '/images/service/dx/rakuten.png'
       },
       {
-        image: '/images/service/dx/softbank.png'
+        image: '/images/service/dx/nuro.png'
       }
     ],
     datas2: [
       {
-        image: '/images/service/dx/airpay.png'
+        image: '/images/service/dx/merpay-d.png'
       },
+      {
+        image: '/images/service/dx/logo_l_aupay.png'
+      },
+      {
+        image: '/images/service/dx/paypay.png'
+      },
+      {
+        image: '/images/service/dx/r-pay.png'
+      }
+    ],
+    datas3: [
       {
         image: '/images/service/dx/linepay.png'
       },
       {
-        image: '/images/service/dx/merpay.png'
+        image: '/images/service/dx/airpay.png'
+      },
+      {
+        image: '/images/service/dx/stores.png'
       }
     ]
   }
@@ -97,6 +109,7 @@ export default function Home(){
         topText='お取引先'
         datas={suppliers.datas}
         datas2={suppliers.datas2}
+        datas3={suppliers.datas3}
         />
       <InstallationResults 
         title={achievement.title}

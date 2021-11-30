@@ -25,22 +25,3 @@ export default function handler(req, res) {
 
   res.status(200).json()
 }
-
-
-// import axios from "axios"
-
-// exports.VerifyRecaptcha = functions.region("asia-northeast-1").https.onRequest(async (req, res) => {
-//     // フロントで発行したトークンを受け取る
-//     const token = req.query.token;
-
-//     // 
-//     await axios
-//         .post(
-//             `https://www.google.com/recaptcha/api/siteverify?secret="シークレットキーを入れる"&response=${token}`,
-//         )
-//         .then((result) => {
-//             console.log(result.data)
-//         })
-//         .catch(() => {
-//             throw new functions.https.HttpsError("internal", "Internal Server Error");
-//         }))

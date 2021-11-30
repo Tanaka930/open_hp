@@ -1,9 +1,8 @@
 export default function handler(req, res) {
 
   (async () => {
-    const {token} = req.body
-    console.log(token)
-    console.log(process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY)
+    // const {token} = req.body
+
     try {
       // recaptcha送信
       const res =  await fetch('https://www.google.com/recaptcha/api/siteverify', {
@@ -13,6 +12,8 @@ export default function handler(req, res) {
         },
         body: `secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${token}`,
       });
+      
+      // console.log("res", res)
       
     } catch (error) {
       // 以下エラー処理

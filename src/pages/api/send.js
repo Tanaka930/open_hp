@@ -25,8 +25,7 @@ export default function handler(req, res) {
     (async () => {
       try {
         // メール送信実行
-        const res = await sgMail.send(msg);
-        reset()
+        await sgMail.send(msg);
         
       } catch (error) {
         // 以下エラー処理
@@ -38,5 +37,5 @@ export default function handler(req, res) {
     })();
   }
  
-  res.status(200)
+  res.status(200).json()
 }

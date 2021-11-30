@@ -10,12 +10,17 @@ export default function Footer() {
   return (
     <>
       <div className="text-white text-shadow font-bold md:flex flex-wrap text-4xl">
-        <div className="flex items-center justify-center bg-rec bg-cover bg-no-repeat h-32 md:w-1/2 md:h-80">
-          <span className="">採用情報</span>
-        </div>
-        <div className="flex items-center justify-center bg-contact bg-cover bg-no-repeat h-32 md:w-1/2 md:h-80">
-          <span className="">お問い合わせ</span>
-        </div>
+        <Link href='/recruit'>
+          
+          <a className="flex items-center justify-center bg-rec bg-cover bg-no-repeat h-32 md:w-1/2 md:h-80  cursor-pointer">
+            <span className="">採用情報</span>
+          </a>
+        </Link>
+        <Link href='/contact'>
+          <a className="flex items-center justify-center bg-contact bg-cover bg-no-repeat h-32 md:w-1/2 md:h-80 cursor-pointer">
+            <span className="">お問い合わせ</span>
+          </a>
+        </Link>
       </div>
       <footer className="bg-white pt-4 pb-10 sm:py-10 lg:py-12">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">

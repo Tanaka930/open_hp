@@ -1,7 +1,7 @@
 export default function handler(req, res) {
 
   (async () => {
-    // const {token} = req.body
+    const {token} = req.body
 
     try {
       // recaptcha送信
@@ -12,6 +12,8 @@ export default function handler(req, res) {
         },
         body: `secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${token}`,
       });
+
+      return res;
       
       // console.log("res", res)
       
@@ -24,5 +26,9 @@ export default function handler(req, res) {
     }
   })();
 
-  res.status(200).json()
+  if (res.statusCode == 200) {
+    res.status(200).json()
+  }else{
+    res.status(500).json()
+  }
 }

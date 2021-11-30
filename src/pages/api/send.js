@@ -10,10 +10,11 @@ export default function handler(req, res) {
     // 送信内容を以下で記載
     const msg = {
       // 送り先
-      to: process.env.NEXT_PUBLIC_TO_MAIL,
+      to: 'yuma.tanaka@openstore-japan.com',
 
       // 送り元
-      from: process.env.NEXT_PUBLIC_FROM_MAIL,
+      // from: process.env.NEXT_PUBLIC_FROM_MAIL,
+      from: 'info@l-store.jp',
 
       // メール題名
       subject: '自社HP お問い合わせ',

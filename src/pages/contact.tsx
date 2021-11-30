@@ -27,11 +27,10 @@ export default function Contact() {
     if (executeRecaptcha) {
       const reCaptchaToken = await executeRecaptcha('contactPage');
       console.log("reCaptchaToken",reCaptchaToken);
-      
 
       const apiEndPoint = './api/recaptcha';
       
-      const res = await fetch(apiEndPoint, {
+      const recaptchaRes = await fetch(apiEndPoint, {
         body: JSON.stringify({
           // トークン認証
           token: reCaptchaToken,
@@ -42,9 +41,9 @@ export default function Contact() {
         method: 'POST',
       }); 
 
-      if (res.status === 200) {
-        alert("送信されました。\nお問い合わせありがとうございます。")
-        reset()
+      console.log("recaptchaRes", recaptchaRes)
+
+      if (recaptchaRes.status === 200) {
 
         let message = "タイトル: " + data.title +
         "\nカテゴリ: " + data.category +
@@ -52,7 +51,7 @@ export default function Contact() {
         "\nメールアドレス: " + data.email +
         "\nお問い合わせ内容: " + data.message
 
-        const res = await fetch('./api/send', {
+        const sendGridRes = await fetch('./api/send', {
         body: JSON.stringify({
         // メッセージ内容をいかに格納
         message: message
@@ -62,13 +61,22 @@ export default function Contact() {
         },
         method: 'POST'
         })
-        await console.log("res",res);
 
-        await res.status === 200 && alert("送信されました。\nお問い合わせありがとうございます。") && reset()
+        console.log("sendGridRes",sendGridRes);
+        if (sendGridRes.status === 200) {
+          reset()
+          alert("正しく送信されました。\nお問い合わせありがとうございます。")
+        } else {
+          alert("正しく送信されませんでした。もう一度やり直してください。")
+          console.error("sendGridRes.status",sendGridRes.status);
+        }
 
+      } else {
+        alert("認証エラーが発生しました。もう一度やり直してください。")
+        console.error("recaptchaRes.status", recaptchaRes.status)
       }
     } else {
-        alert("エラーが発生しました")
+        alert("エラーが発生しました。もう一度やり直してください。")
         console.error("recaptcha認証エラー")
     }
     // 今のところ使ってないが、res.jsonのデータを格納

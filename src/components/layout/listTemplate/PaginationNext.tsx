@@ -11,7 +11,7 @@ export default function PaginationNext(props: Props){
   const link = Number(props.pageNum) + 1
   if(chack >= props.pageNum){
     return(
-      <Link href={`${props.pathName}/page/${link}`}>
+      <Link href={`${props.pathName}page/${link}`}>
         <li className="mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg cursor-pointer">
           <a className="flex items-center font-bold">
             <span className="mx-1">Next</span>

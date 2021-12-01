@@ -1,11 +1,118 @@
 import {client} from '@/lib/client'
 
+import TopContent from "@/components/layout/TopContent"
+
+import Seo from '@/components/Seo';
+
+import LowerTopText from '@/components/layout/LowerTopText';
+
 export default function JobId({jobs}:{jobs:any}) {
   if(typeof jobs != "undefined"){
+
+
     return(
-      <section>
-        <h2>{jobs.title}</h2>
-      </section>
+      <>
+        <Seo templateTitle={`オープンストア ${jobs.title}`} />
+        <TopContent bg="bg-top_service" title={jobs.category.title} />
+        <div className='flex items-center justify-center mt-12 md:mt-24'>
+          <span className='text-2xl md:text-4xl'>
+            募集要項
+          </span>
+        </div>
+        <section className="flex items-center justify-center">
+          <div className="container w-7/12">
+            <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
+              <thead className="text-white">
+                <tr className="bg-green-200 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                  <th className="p-3 text-left w-1/4"></th>
+                  <th className="p-3 text-left"></th>
+                </tr>
+                <tr className="bg-green-200 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                  <th className="p-3 text-left  w-1/4"></th>
+                  <th className="p-3 text-left"></th>
+                </tr>
+                <tr className="bg-green-200 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                  <th className="p-3 text-left w-1/4"></th>
+                  <th className="p-3 text-left"></th>
+                </tr>
+                <tr className="bg-green-200 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                  <th className="p-3 text-left  w-1/4"></th>
+                  <th className="p-3 text-left"></th>
+                </tr>
+              </thead>
+              <tbody className="flex-1 sm:flex-none text-xl">
+                <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+                  <td className="border-grey-light border p-6">応募概要</td>
+                  <td className="border-grey-light border p-6 truncate">{jobs.title}</td>
+                </tr>
+                <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+                  <td className="border-grey-light border p-6">給与</td>
+                  <td className="border-grey-light border p-6 truncate">{jobs.Salary}</td>
+                </tr>
+                <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+                  <td className="border-grey-light border p-6">賞与</td>
+                  <td className="border-grey-light border p-6 truncate">{jobs.bonus}</td>
+                </tr>
+                <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+                  <td className="border-grey-light border p-6">勤務地</td>
+                  <td className="border-grey-light border p-6 truncate">{jobs.location}</td>
+                </tr>
+                <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+                  <td className="border-grey-light border p-6">勤務時間</td>
+                  <td className="border-grey-light border p-6 truncate">{jobs.workTime}</td>
+                </tr>
+                <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+                  <td className="border-grey-light border p-6">休日</td>
+                  <td className="border-grey-light border p-6 truncate">{jobs.holiday}</td>
+                </tr>
+                <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+                  <td className="border-grey-light border p-6">各種保険</td>
+                  <td className="border-grey-light border p-6 truncate">{jobs.insurance}</td>
+                </tr>
+                <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+                  <td className="border-grey-light border p-6">福利厚生</td>
+                  <td className="border-grey-light border p-6 truncate">{jobs.welfare}</td>
+                </tr>
+                <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+                  <td className="border-grey-light border p-6">評価</td>
+                  <td className="border-grey-light border p-6 truncate">{jobs.evaluation}</td>
+                </tr>
+                <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+                  <td className="border-grey-light border p-6">備考</td>
+                  <td className="border-grey-light border p-6 truncate">{jobs.remarks}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <style jsx>
+            {`
+            html,
+            body {
+              height: 100%;
+            }
+
+            @media (min-width: 640px) {
+              table {
+                display: inline-table !important;
+              }
+
+              thead tr:not(:first-child) {
+                display: none;
+              }
+            }
+
+            td:not(:last-child) {
+              border-bottom: 0;
+            }
+
+            th:not(:last-child) {
+              border-bottom: 2px solid rgba(0, 0, 0, .1);
+            }
+          `}
+          </style>
+        </section>
+      </>
     );
   }else{
     return(

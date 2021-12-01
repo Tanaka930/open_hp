@@ -16,7 +16,16 @@ import Staff from '@/components/recruit/Staff'
 // 求人用のコンポーネント
 import Job from '@/components/recruit/Job'
 
-export default function Recruit() {
+interface Category{
+  title: string
+  text:string
+}
+
+interface Categories{
+  categories: Category[]
+}
+
+export default function Recruit(categories: Categories) {
   const registerUser = async (event: any) => {
     
     // ↓リロード関係の関数?
@@ -49,7 +58,7 @@ export default function Recruit() {
       <Culture />
       <Human />
       <Staff />
-      <Job />
+      <Job categories={categories}/>
       <div className="container mt-5">
         {/* {フォーム先を上で記載した関数当てにする} */}
         <form onSubmit={registerUser}>
@@ -65,3 +74,18 @@ export default function Recruit() {
     </>
   )
 }
+
+export const getStaticProps = async () => {
+  const key = {
+    headers: {'X-MICROCMS-API-KEY': String(process.env.NEXT_PUBLIC_MICRO_CMS_API_KEY)},
+  };
+  const data = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/job_category`, key)
+    .then(res => res.json())
+    .catch(() => null);
+
+  return {
+    props: {
+      category: data.contents,
+    },
+  };
+};

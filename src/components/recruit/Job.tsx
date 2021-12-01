@@ -6,7 +6,8 @@ interface Jobs{
   jobDatas: any[]
 }
 
-export default function Job(){
+export default function Job({categories}:{categories:any}){
+  console.log(categories)
 
 
   const jobs: Jobs ={
@@ -22,7 +23,7 @@ export default function Job(){
     ]
   }
 
-  const [jobDatas, setJobDatas] = useState(jobs.jobDatas)
+  const [jobDatas, setJobDatas] = useState(categories.category)
 
 
   return(
@@ -31,7 +32,7 @@ export default function Job(){
         <h2 className='text-4xl w-auto'>求人情報</h2>
         <div className="w-4/12 from-pink-50 to-indigo-100 place-items-center">
           <div className="w-full rounded">
-            {jobDatas.map((jobData) => (
+            {jobDatas.map((jobData:any) => (
               <JobDetail 
                 title={jobData.title}
                 text={jobData.text}

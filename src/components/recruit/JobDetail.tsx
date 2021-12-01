@@ -1,7 +1,8 @@
 import { useState } from "react";
 type Props = {
-  title: string,
-  text: string
+  // title: string,
+  // text: string
+  jobData: any
 }
 export default function JobDetail(props: Props){
   const [expanded, setExpanded] = useState(false)
@@ -11,14 +12,17 @@ export default function JobDetail(props: Props){
         <div className="h-1 w-full mx-auto border-b"></div>
         <div className="transition hover:bg-green-50" onClick={() => setExpanded(!expanded)}>
           <div className="cursor-pointer transition flex space-x-5 px-5 items-center h-16 text-left">
-              <h3 className='text-2xl w-full'>{props.title}</h3>
+              <h3 className='text-2xl w-full'>{props.jobData.categoryTitle}</h3>
               <span className="fas fa-plus">{!expanded && <span>＋</span>}{expanded && <span>ー</span>}</span>
           </div>
           {expanded && 
             <div className="px-5 pt-0">
                 <p className="leading-6 w-full font-light">
-                  {props.text}
+                  {props.jobData.text}
                 </p>
+                {props.jobData.jobDatas.map((data:any) => (
+                  <p>{data.title}</p>
+                ))}
                 <button className="rounded-full bg-green-600 text-white font-medium font-lg px-6 py-2 my-5 ml-9">詳しく見る</button>
             </div>
           }

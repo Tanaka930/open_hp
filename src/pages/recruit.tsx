@@ -79,13 +79,56 @@ export const getStaticProps = async () => {
   const key = {
     headers: {'X-MICROCMS-API-KEY': String(process.env.NEXT_PUBLIC_MICRO_CMS_API_KEY)},
   };
-  const data = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/job_category`, key)
+
+  // カテゴリー情報を取得
+  const category_data = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/job_category`, key)
     .then(res => res.json())
     .catch(() => null);
 
+  const job_data = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/jobs?offset=0&limit=20`, key)
+  .then(res => res.json())
+  .catch(() => null);
+
+  // 一覧表示用のリスト
+  const jobsList: Array<object> = [];
+
+  category_data.contents.map((data:any) => {
+
+    const jobsInnerList: Array<object> = [];
+
+    job_data.contents.map((innerData:any) => {
+      if(data.id == innerData.category.id){
+        jobsInnerList.push(
+          {
+            jobId: innerData.id,
+            title: innerData.title,
+            salary: innerData.Salary,
+            bonus: innerData.bonus,
+            location: innerData.location,
+            workTime: innerData.workTime,
+            holiday: innerData.holiday,
+            welfare: innerData.welfare,
+            evaluation: innerData.evaluation,
+            remarks: innerData.remarks
+          }
+        )
+      }
+    })
+
+    jobsList.push(
+      {
+        categoryId: data.id,
+        categoryTitle: data.title,
+        text: data.text,
+        jobDatas: jobsInnerList
+      }
+    )
+
+  })
+
   return {
     props: {
-      category: data.contents,
+      category: jobsList,
     },
   };
 };

@@ -2,26 +2,10 @@ import { useState } from "react";
 
 import JobDetail from '@/components/recruit/JobDetail'
 
-interface Jobs{
-  jobDatas: any[]
-}
 
 export default function Job({categories}:{categories:any}){
-  console.log(categories)
 
 
-  const jobs: Jobs ={
-    jobDatas:[
-      {
-        title:'営業',
-        text:'あああああああああああああああああ'
-      },
-      {
-        title:'事務',
-        text:'いいいいいいいいいいいいいいいいい'
-      },
-    ]
-  }
 
   const [jobDatas, setJobDatas] = useState(categories.category)
 
@@ -34,8 +18,7 @@ export default function Job({categories}:{categories:any}){
           <div className="w-full rounded">
             {jobDatas.map((jobData:any) => (
               <JobDetail 
-                title={jobData.title}
-                text={jobData.text}
+                jobData={jobData}
               />
             ))}
           </div>

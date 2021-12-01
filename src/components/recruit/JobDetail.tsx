@@ -27,8 +27,8 @@ export default function JobDetail(props: Props){
                 {props.jobData.jobDatas.map((data:any) => (
                   <li>
                     <Link href={`/jobs/${data.jobId}`}>
-                      <div className='cursor-pointer'>
-                        <a>
+                      <div>
+                        <a className='cursor-pointer'>
                           {data.title}
                         </a>
                       </div>

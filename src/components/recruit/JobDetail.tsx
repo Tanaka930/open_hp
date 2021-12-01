@@ -15,7 +15,7 @@ export default function JobDetail(props: Props){
         <div className="h-1 w-full mx-auto border-b"></div>
         <div className="transition hover:bg-green-50">
           <div className="transition flex space-x-5 px-5 items-center h-16 text-left">
-              <h3 className='text-2xl w-full'>{props.jobData.categoryTitle}</h3>
+              <h3 className='text-lg md:text-2xl w-full'>{props.jobData.categoryTitle}</h3>
               <span className="fas fa-plus cursor-pointer"  onClick={() => setExpanded(!expanded)}>{!expanded && <span>＋</span>}{expanded && <span>ー</span>}</span>
           </div>
           {expanded && 
@@ -23,7 +23,7 @@ export default function JobDetail(props: Props){
                 <p className="leading-6 w-full font-light">
                   {props.jobData.text}
                 </p>
-                <ul className='space-y-4 text-xl p-8'>
+                <ul className='space-y-4 text-base md:text-xl p-8'>
                 {props.jobData.jobDatas.map((data:any) => (
                   <li>
                     <Link href={`/jobs/${data.jobId}`}>

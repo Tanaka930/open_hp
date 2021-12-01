@@ -21,7 +21,7 @@ export default function Human(){
       <section className='h-auto w-full'>
         <h2 className='text-4xl'>求める人物像</h2>
         <div className='p-12 flex justify-center w-full'>
-          <ul className='list-decimal space-y-14 text-2xl'>
+          <ul className='list-decimal space-y-14 text-xl md:text-2xl'>
             {textList.map((text:string) => (
               <li>{text}</li>
             ))}

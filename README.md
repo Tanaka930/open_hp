@@ -1,3 +1,19 @@
+## OPEN STORE HP
+
+- Freme Work: NEXT.js
+
+- Library: React, Typescript
+
+- Server: AWS Amplify CloudFront
+
+- api: microCMS Api, SendGridApi, GoogleRecaptchaApi
+
+
+
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

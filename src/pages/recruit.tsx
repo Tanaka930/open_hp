@@ -1,7 +1,31 @@
 import Seo from "@/components/Seo"
 import TopContent from "@/components/layout/TopContent"
 
-export default function Recruit() {
+// トップテキスト用のコンポーネント
+import TopText from '@/components/layout/LowerTopText'
+
+// 文化用のコンポーネント
+import Culture from '@/components/recruit/Culture'
+
+// 求める人物像のコンポーネント
+import Human from '@/components/recruit/Human'
+
+// スタッフの声用のコンポーネント
+import Staff from '@/components/recruit/Staff'
+
+// 求人用のコンポーネント
+import Job from '@/components/recruit/Job'
+
+interface Category{
+  title: string
+  text:string
+}
+
+interface Categories{
+  categories: Category[]
+}
+
+export default function Recruit(categories: Categories) {
   const registerUser = async (event: any) => {
     
     // ↓リロード関係の関数?
@@ -31,6 +55,10 @@ export default function Recruit() {
     <>
       <Seo templateTitle='Recruit' />
       <TopContent bg="bg-top_service" title="Recruit" />
+      <Culture />
+      <Human />
+      <Staff />
+      <Job categories={categories}/>
       <div className="container mt-5">
         {/* {フォーム先を上で記載した関数当てにする} */}
         <form onSubmit={registerUser}>
@@ -46,3 +74,53 @@ export default function Recruit() {
     </>
   )
 }
+
+export const getStaticProps = async () => {
+  const key = {
+    headers: {'X-MICROCMS-API-KEY': String(process.env.NEXT_PUBLIC_MICRO_CMS_API_KEY)},
+  };
+
+  // カテゴリー情報を取得
+  const category_data = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/job_category`, key)
+    .then(res => res.json())
+    .catch(() => null);
+
+  const job_data = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/jobs?offset=0&limit=20`, key)
+  .then(res => res.json())
+  .catch(() => null);
+
+  // 一覧表示用のリスト
+  const jobsList: Array<object> = [];
+
+  category_data.contents.map((data:any) => {
+
+    const jobsInnerList: Array<object> = [];
+
+    job_data.contents.map((innerData:any) => {
+      if(data.id == innerData.category.id){
+        jobsInnerList.push(
+          {
+            jobId: innerData.id,
+            title: innerData.title,
+          }
+        )
+      }
+    })
+
+    jobsList.push(
+      {
+        categoryId: data.id,
+        categoryTitle: data.title,
+        text: data.text,
+        jobDatas: jobsInnerList
+      }
+    )
+
+  })
+
+  return {
+    props: {
+      category: jobsList,
+    },
+  };
+};

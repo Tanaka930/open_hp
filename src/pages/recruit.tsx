@@ -102,14 +102,6 @@ export const getStaticProps = async () => {
           {
             jobId: innerData.id,
             title: innerData.title,
-            salary: innerData.Salary,
-            bonus: innerData.bonus,
-            location: innerData.location,
-            workTime: innerData.workTime,
-            holiday: innerData.holiday,
-            welfare: innerData.welfare,
-            evaluation: innerData.evaluation,
-            remarks: innerData.remarks
           }
         )
       }

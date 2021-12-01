@@ -10,6 +10,11 @@ export const pagesPath = {
   contact: {
     $url: (url?: { hash?: string }) => ({ pathname: '/contact' as const, hash: url?.hash })
   },
+  jobs: {
+    _id: (id: string | number) => ({
+      $url: (url?: { hash?: string }) => ({ pathname: '/jobs/[id]' as const, query: { id }, hash: url?.hash })
+    })
+  },
   news: {
     $url: (url?: { hash?: string }) => ({ pathname: '/news' as const, hash: url?.hash }),
     _id: (id: string | number) => ({

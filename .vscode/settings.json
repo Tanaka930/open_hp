@@ -9,6 +9,7 @@
     "amplify/backend/awscloudformation": true
   },
   "cSpell.words": [
+    "clsx",
     "headlessui",
     "heroicons",
     "microcms",
@@ -16,7 +17,8 @@
     "pathpida",
     "Recaptcha",
     "semibold",
-    "tailwindcss"
+    "tailwindcss",
+    "Unstyled"
   ],
   "editor.tabSize": 2,
   "workbench.tree.indent": 2,

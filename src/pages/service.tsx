@@ -14,7 +14,7 @@ export default function Home(){
 
         <div className="text-center mt-24 md:mt-10 md:w-1/3">
           <div className="">
-            <Image src="/images/top/service/EC.png" width={100} height={100} alt="オープンストアEC関連事業" />
+            <Image src="/images/service/shopify.png" width={110} height={110} alt="オープンストアEC関連事業" />
           </div>
           <div className="px-8 pt-4 md:pt-16">
             <div className="border-l-2 border-blue-300">
@@ -33,7 +33,7 @@ export default function Home(){
 
         <div className="text-center mt-24 md:mt-10 md:w-1/3 md:border-solid md:border-l md:border-r">
         <div className="">
-            <Image src="/images/top/service/EC.png" width={100} height={100} alt="オープンストアEC関連事業" />
+            <Image src="/images/service/line.png" width={110} height={110} alt="オープンストアEC関連事業" />
           </div>
           <div className="px-8 pt-4 md:pt-16">
             <div className="border-l-2 border-blue-300">
@@ -53,7 +53,7 @@ export default function Home(){
 
         <div className="text-center mt-24 md:mt-10 md:w-1/3">
         <div className="">
-            <Image src="/images/top/service/EC.png" width={100} height={100} alt="オープンストアEC関連事業" />
+            <Image src="/images/service/dx.png" width={110} height={110} alt="オープンストアEC関連事業" />
           </div>
           <div className="px-8 pt-4 md:pt-16">
             <div className="border-l-2 border-blue-300">

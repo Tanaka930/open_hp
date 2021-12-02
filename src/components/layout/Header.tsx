@@ -3,7 +3,7 @@ import UnstyledLink from '../links/UnstyledLink';
 // import Menu from './Menu';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { HamburgerArrow } from 'react-animated-burgers'
+import { HamburgerStand } from 'react-animated-burgers'
 
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
@@ -45,7 +45,7 @@ export default function Header() {
       <div className="absolute w-screen">
         <Disclosure as="nav" className="">
           <>
-            <div className="max-w-screen-2xl mx-auto px-2 pt-4">
+            <div className="max-w-screen-2xl mx-auto px-2 pt-4 sm:px-12">
               <div className="flex items-center justify-between h-8 md:h-16">
                 <div className="flex items-center">
                   <div className="z-20 flex-shrink-0">
@@ -61,7 +61,7 @@ export default function Header() {
 
                 <div className="-mr-2 flex ">
                   {/* menu button */}
-                  <HamburgerArrow isActive={isActive} buttonWidth={30} toggleButton={menuFunction} className="z-20" buttonColor="" barColor="#010305"/>
+                  <HamburgerStand isActive={isActive} buttonWidth={30} toggleButton={menuFunction} className="z-20" buttonColor="" barColor="#010305"/>
                   {/* <Disclosure.Button className=" inline-flex items-center justify-center p-2 rounded-md text-gray-800 focus:outline-none">
                     <span className="menu" onClick={() => menuFunction()}></span>
                       {openMenu ? (

@@ -26,7 +26,7 @@ export default function Home(){
               </p>
             </div>
             <Link href="/services/ec">
-              <span className="text-green-600 hover:text-green-300 border-b-2 border-green-600 hover:border-green-300">view more →</span>
+              <span className="text-green-600 hover:text-green-300 border-b-2 border-green-600 hover:border-green-300 cursor-pointer">view more →</span>
             </Link>
           </div>
         </div>
@@ -46,7 +46,7 @@ export default function Home(){
               </p>
             </div>
             <Link href="/services/line">
-              <span className="text-green-600 hover:text-green-300 border-b-2 border-green-600 hover:border-green-300">view more →</span>
+              <span className="text-green-600 hover:text-green-300 border-b-2 border-green-600 hover:border-green-300 cursor-pointer">view more →</span>
             </Link>
           </div>
         </div>
@@ -65,7 +65,7 @@ export default function Home(){
               </p>
             </div>
             <Link href="/services/dx">
-              <span className="text-green-600 hover:text-green-300 border-b-2 border-green-600 hover:border-green-300">view more →</span>
+              <span className="text-green-600 hover:text-green-300 border-b-2 border-green-600 hover:border-green-300 cursor-pointer">view more →</span>
             </Link>
           </div>
         </div>

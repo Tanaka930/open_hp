@@ -1,11 +1,10 @@
-import ButtonLink from '@/components/links/ButtonLink';
 import Seo from '@/components/Seo';
 import TopContent from '@/components/layout/TopContent';
-import Image from 'next/image';
-import Link from 'next/link';
+import ServiceContent from '@/components/service/ServicesContent';
 
 
-export default function Home(){
+export default function Service(){
+
   return(
     <>
       <Seo templateTitle='Service' />
@@ -69,7 +68,6 @@ export default function Home(){
             </Link>
           </div>
         </div>
-
       </div>
     </>
   )

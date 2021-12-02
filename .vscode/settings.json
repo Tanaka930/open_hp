@@ -9,6 +9,7 @@
     "amplify/backend/awscloudformation": true
   },
   "cSpell.words": [
+    "clsx",
     "headlessui",
     "heroicons",
     "microcms",
@@ -16,6 +17,16 @@
     "pathpida",
     "Recaptcha",
     "semibold",
-    "tailwindcss"
-  ]
+    "tailwindcss",
+    "Unstyled"
+  ],
+  "editor.tabSize": 2,
+  "workbench.tree.indent": 2,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "tailwindCSS.experimental.classRegex": [
+  ],
+  "editor.quickSuggestions": {
+    "strings": true
+  }
 }

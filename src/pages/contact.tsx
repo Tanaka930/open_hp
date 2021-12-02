@@ -51,10 +51,17 @@ export default function Contact() {
         "\nメールアドレス: " + data.email +
         "\nお問い合わせ内容: " + data.message
 
-        const sendGridRes = await fetch('./api/send', {
+        const sendGridRes = await fetch('https://api.staticforms.xyz/submit', {
         body: JSON.stringify({
         // メッセージ内容をいかに格納
-        message: message
+        // message: message
+          name: '',
+          email: 'kaito.hasegawa@openstore-japan.com',
+          subject: '自社HP お問い合わせ',
+          honeypot: '',
+          message: message,
+          replyTo: '@',
+          accessKey: process.env.NEXT_PUBLIC_MAIL_KEY
         }),
         headers: {
         'Content-Type': 'application/json'

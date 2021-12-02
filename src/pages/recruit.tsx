@@ -16,6 +16,9 @@ import Staff from '@/components/recruit/Staff'
 // 求人用のコンポーネント
 import Job from '@/components/recruit/Job'
 
+import { useForm } from "react-hook-form";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
+
 interface Category{
   title: string
   text:string
@@ -25,29 +28,91 @@ interface Categories{
   categories: Category[]
 }
 
-export default function Recruit(categories: Categories) {
-  const registerUser = async (event: any) => {
-    
-    // ↓リロード関係の関数?
-    // 以下をつけない時、送信ボタン押したらリロードがかかりました
-    event.preventDefault()
+type FormData = {
+  name: string;
+  mailf: string;
+  mails: string;
+  tell: string
+  category: string;
+  remark: string;
+  message: string;
+};
 
-    const res = await fetch('./api/send', {
-      body: JSON.stringify({
-        // ここに送信したい宛先を記入
-        // ↓ここenvから読めへんかった。できればenvから読みたい
-        email: 'test@example.com',
+export default function Recruit(categories: Categories) {
+  const { register,
+          handleSubmit,
+          reset,
+          formState: { errors }
+        }
+        = useForm<FormData>();
+
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
+  const onSubmit = async (data: any) => {
+    console.log("executeRecaptcha", executeRecaptcha);
+    if (executeRecaptcha) {
+      const reCaptchaToken = await executeRecaptcha('contactPage');
+      console.log("reCaptchaToken",reCaptchaToken);
+
+      const apiEndPoint = './api/recaptcha';
+      
+      const recaptchaRes = await fetch(apiEndPoint, {
+        body: JSON.stringify({
+          // トークン認証
+          token: reCaptchaToken,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+      }); 
+
+      console.log("recaptchaRes", recaptchaRes)
+
+      if (recaptchaRes.status === 200) {
+
+        let message = "お名前: " + data.name +
+        "\nメールアドレス: " + data.mailf +
+        "\n職種: " + data.category +
+        "\nお電話番号: " + data.tell +
+        "\n備考: " + data.remark +
+        "\nメッセージ: " + data.message
+
+        const sendGridRes = await fetch('https://api.staticforms.xyz/submit', {
+        body: JSON.stringify({
         // メッセージ内容をいかに格納
-        message: event.target.message.value
-      }),
-      headers: {
+        // message: message
+          name: '',
+          email: 'kaito.hasegawa@openstore-japan.com',
+          subject: '自社HP 求人のお問い合わせ',
+          honeypot: '',
+          message: message,
+          replyTo: '@',
+          accessKey: process.env.NEXT_PUBLIC_MAIL_KEY
+        }),
+        headers: {
         'Content-Type': 'application/json'
-      },
-      method: 'POST'
-    })
- 
-    // 今のところ使ってないが、res.jsonのデータを格納
-    const result = await res.json()
+        },
+        method: 'POST'
+        })
+
+        console.log("sendGridRes",sendGridRes);
+        if (sendGridRes.status === 200) {
+          reset()
+          alert("正しく送信されました。\nお問い合わせありがとうございます。")
+        } else {
+          alert("正しく送信されませんでした。もう一度やり直してください。")
+          console.error("sendGridRes.status",sendGridRes.status);
+        }
+
+      } else {
+        alert("認証エラーが発生しました。もう一度やり直してください。")
+        console.error("recaptchaRes.status", recaptchaRes.status)
+      }
+    } else {
+        alert("エラーが発生しました。もう一度やり直してください。")
+        console.error("recaptcha認証エラー")
+    }
   }
  
   // 以下のテンプレートはマークアップ時に整形する
@@ -59,18 +124,158 @@ export default function Recruit(categories: Categories) {
       <Human />
       <Staff />
       <Job categories={categories}/>
-      <div className="container mt-5">
-        {/* {フォーム先を上で記載した関数当てにする} */}
-        <form onSubmit={registerUser}>
-          <div className="mb-3">
-            <label htmlFor="message" className="form-label">問合せ内容</label>
-            <textarea id="message" name="message" className="form-control"></textarea>
+
+      <section className="w-full">
+        <div className="bg-gradient-to-b from-green-400 to-green-200 h-96"></div>
+        <div className="max-w-5xl mx-auto px-6 sm:px-6 lg:px-8 mb-12">
+          <div className="bg-white w-full shadow rounded p-8 sm:p-12 -mt-72">
+            <p className="text-3xl font-bold leading-7 text-center">求人への応募</p>
+            <form onSubmit={handleSubmit(onSubmit)}>
+
+              <div className="md:flex items-center mt-12">
+                <div className="w-full flex flex-col">
+                  <label htmlFor="name" className="font-semibold leading-none">お名前</label>
+                  <input 
+                    autoComplete="name"
+                    {...register("name", {
+                      required: "入力必須項目です。",
+                      maxLength: {
+                        value: 24,
+                        message: "全角12文字以内で入力してください。"
+                      }
+                    })}
+                    className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                  />
+
+                  {errors.name && <span className="text-red-600 text-sm pt-2">{errors.name.message}</span>}
+                </div>
+              </div>
+
+              <div className="md:flex items-center mt-12">
+                <div className="w-full flex flex-col">
+                  <label htmlFor="mailf" className="font-semibold leading-none">メールアドレス</label>
+                  <input 
+                    autoComplete="mailf"
+                    {...register("mailf", {
+                      required: "入力必須項目です。",
+                      pattern: {
+                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                        message: "正しいメールアドレスを入力してください。"
+                      }
+                    })}
+                    className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                  />
+
+                  {errors.mailf && <span className="text-red-600 text-sm pt-2">{errors.mailf.message}</span>}
+                </div>
+              </div>
+
+
+              <div className="md:flex items-center mt-12">
+                <div className="w-full flex flex-col">
+                  <label htmlFor="mails" className="font-semibold leading-none">メールアドレス確認</label>
+                  <input 
+                    autoComplete="mails"
+                    {...register("mails", {
+                      required: "入力必須項目です。",
+                      pattern: {
+                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                        message: "正しいメールアドレスを入力してください。"
+                      }
+                    })}
+                    className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                  />
+
+                  {errors.mails && <span className="text-red-600 text-sm pt-2">{errors.mails.message}</span>}
+                </div>
+              </div>
+
+              <div className="md:flex items-center mt-12">
+                <div className="w-full flex flex-col">
+                  <label htmlFor="tell" className="font-semibold leading-none">お電話番号</label>
+                  <input 
+                    autoComplete="tell"
+                    {...register("tell", {
+                      pattern: {
+                        value: /^(0{1}\d{9,10})$/i,
+                        message: "正しい電話番号を入力してください。"
+                      }
+                    })}
+                    className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                  />
+
+                  {errors.tell && <span className="text-red-600 text-sm pt-2">{errors.tell.message}</span>}
+                </div>
+              </div>
+
+              <div className="md:flex items-center mt-8">
+                <div className="w-full flex flex-col">
+                  <label htmlFor="category" className="font-semibold leading-none">職種</label>
+                  <select
+                    autoComplete="category"
+                    {...register("category", {
+                      required: "選択必須項目です。"
+                    })}
+                    className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                  >
+                    <option value="">--選択してください--</option>
+                    <option value="営業">営業</option>
+                    <option value="事務">事務</option>
+                    <option value="アポインター">アポインター</option>
+                    <option value="エンジニア・デザイナー">エンジニア・デザイナー</option>
+                    <option value="業務委託">業務委託</option>
+                  </select>
+                  {errors.category && <span className="text-red-600 text-sm pt-2 md: w-full">{errors.category.message}</span>}
+                </div>
+              </div>
+
+              <div className="md:flex items-center mt-8">
+                <div className="w-full flex flex-col">
+                  <label htmlFor="remark" className="font-semibold leading-none">備考</label>
+                  <input
+                    autoComplete="remark"
+                    {...register("remark", {
+                      maxLength: {
+                        value: 100,
+                        message: "全角50文字以内で入力してください。"
+                      }
+                    })}
+                    className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                  />
+                  {errors.remark && <span className="text-red-600 text-sm pt-2">{errors.remark.message}</span>}
+                </div>
+              </div>
+
+              <div>
+                <div className="w-full flex flex-col mt-8">
+                  <label htmlFor="message" className="font-semibold leading-none">お問い合わせ内容</label>
+                  <textarea
+                    autoComplete="message"
+                    {...register("message", {
+                      required: "入力必須項目です。",
+                      maxLength: {
+                        value: 10000,
+                        message: "全角500文字以内で入力してください。" 
+                      }
+                    })}
+                    className="h-40 text-base leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                  >
+                  </textarea>
+                  {errors.message && <span className="text-red-600 text-sm pt-2">{errors.message.message}</span>}
+                </div>
+              </div>
+
+              <div className="flex items-center justify-center w-full">
+                <input
+                  type="submit"
+                  className="mt-9 font-semibold leading-none text-white py-4 px-10 bg-green-700 rounded hover:bg-green-600 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 focus:outline-none"
+                />
+              </div>
+
+            </form>
           </div>
-          <div className="mb-3">
-            <button type="submit" className="btn btn-primary">送信</button>
-          </div>
-        </form>
-      </div>
+        </div>
+      </section>
     </>
   )
 }

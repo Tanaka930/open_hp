@@ -86,8 +86,6 @@ export default function Contact() {
         alert("エラーが発生しました。もう一度やり直してください。")
         console.error("recaptcha認証エラー")
     }
-    // 今のところ使ってないが、res.jsonのデータを格納
-    // const result = await res.json()
     
   };
 

@@ -111,16 +111,7 @@ export default function Home(data: Data){
                     <Image src={data.data.aboutMainImage.url} width={data.data.aboutMainImage.width} height={data.data.aboutMainImage.height} alt={data.data.aboutMain.width} />
                   </div>
                   <div className="px-4 pb-12 md:w-2/3 md:mx-auto"  dangerouslySetInnerHTML={{ __html: data.data.aboutMain }} >
-                    {/* <p>
-                    責任（ある）と自由<br />
-                    オープンストアの理念として「責任と自由」というスローガンをモットーにしています。<br /><br /><br />
-                    人は生まれながらにして自由であるように、多様化する現代社会においても「自分らしくありたい」と願うのは至極当然なものだと考えます。<br /><br />
-                    オープンストアでの自由の定義とは「心から信頼し合える仲間と互いに認め合い、チームのために個性を活かせる環境」を示します。<br /><br />
-                    一方、定義した自由の中で自分らしく居る為には、ひいては自身の欠点や強みを受け入れてくれる環境には「責任」が伴います。<br />
-                    オープンストアでの責任の定義とは「敬意と誠意を持って価値観の違う仲間の状況や心理を汲みとる努力を絶え間なく続け、自身の選択を（信念を？）最後まで全うすること」<br /><br />
-                    そして自由というその願いを実現するために、オープンストアでは一見変わっているものの、私たちが確信と誇りを持っているカルチャーが根付いています。<br />
-                    ここではそのカルチャーについて紹介します。
-                    </p> */}
+
                   </div>
                 </div>
 
@@ -132,24 +123,6 @@ export default function Home(data: Data){
                     <div className="">
                       <h3 className="text-center text-xl pt-8 pb-4 md:text-3xl md:pt-11 md:pb-7">代表挨拶</h3>
                       <div className=" md:w-2/3 md:mx-auto" dangerouslySetInnerHTML={{ __html: data.data.aboutMessage }}>
-                        {/* <p>
-                        今日私たちは100年に一度のパンデミックによる激動の時代を生きています。
-                        <br/>新型コロナウイルスによる経済的損失はリーマンショックを超えるとも言われています。
-                        このコロナ禍ではオフライン(対面)縮小・オンライン拡大といった新しい生活様式への変化が進んでいます。
-                        <br/>そしてこの流れはビジネスにおいても例外ではなく、DXやデジタルシフトを進め、
-                        販路拡大を行うことが大きな鍵になっています。
-                        <br/>そんな中、私たちオープンストア株式会社はオンライン市場に大きな希望の光を見出し、
-                        こうした逆境を大きな変革・チャンスと捉えています。
-                        <br/>私たちはお客様との対話を通じて本質的な課題を汲み取り、販路拡大や集客方法における
-                        ノウハウなどを一貫してサポートします。 そして私たちは、お客さまにとって必要不可欠なパートーナーとして末長く寄り添って
-                        お付き合いすることができる技術と情熱を持った担当者が揃っているという自負があります。
-                        <br/>確かに予測できないトラブルはつきものですし様々な障害が立ちはだかるものですが、
-                        それでもいつも夢の実現を妨げているのは自分自身です。
-                        <br/>やり方がわからない。時間がない。ニーズがない。結果が補償できない。」
-                        <br/>などの多くの心の声が妨げとなっています。 これらの障壁を一つ一つ乗り越え、
-                        夢の実現に向けてのお手伝いを、
-                        <br/>ぜひ私たちオープンストア株式会社にお任せください。
-                        </p> */}
                       </div>
                     </div>
                   </div>
@@ -184,7 +157,7 @@ export default function Home(data: Data){
                         <tr className="border-b border-solid border-gray-400">
                           <th className="block w-full pt-4 px-5 pb-1 tracking-wider align-top md:w-1/4 md:p-8 md:table-cell">所在地</th>
                           <td className="block w-full px-5 pb-4 text-gray-700 tracking-wide md:w-3/4 md:p-8 md:table-cell">
-                            {/* <address className="mt-2">
+                            <address className="mt-2">
                               大阪本社 <br />
                               〒532-0012 <br />
                               大阪府大阪市淀川区木川東４丁目５−３ オパル新大阪ビル
@@ -199,9 +172,7 @@ export default function Home(data: Data){
                             </address>
                             <div className="w-full h-56 md:h-80 mt-2">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1762.6671323891949!2d139.73046696182254!3d35.70812892337855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cfff3d69d6b%3A0xb44eac71e387b406!2z44CSMTYyLTA4MDEg5p2x5Lqs6YO95paw5a6_5Yy65bGx5ZC555S677yS77yW77yR4oiS77yV!5e0!3m2!1sja!2sjp!4v1638430854696!5m2!1sja!2sjp" width="100%" height="100%" loading="lazy"></iframe>
-                            </div> */}
-                            {/* {data.data.location} */}
-                            <div className=" md:w-2/3" dangerouslySetInnerHTML={{ __html: data.data.location }} />
+                            </div>
                           </td>
                         </tr>
                       </tbody>

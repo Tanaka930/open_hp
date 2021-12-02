@@ -4,6 +4,7 @@ import UnstyledLink from '../links/UnstyledLink';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { HamburgerStand } from 'react-animated-burgers'
+import { useMedia } from 'use-media';
 
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
@@ -23,10 +24,18 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
+function getScreenSize() {
+
+  console.log(" 画面サイズの横幅 ");
+  console.log(window.parent.screen.width);
+
+  console.log(" 画面サイズの高さ ");
+  console.log(window.parent.screen.height);
+}
+
 export default function Header() {
 
   const router = useRouter();
-  console.log(router.pathname);
 
   const [isActive, setIsActive] = useState(false);
 
@@ -34,18 +43,15 @@ export default function Header() {
     setIsActive(!isActive);
   }
 
-  // const [openMenu, setOpenMenu] = useState(false);
-
-  // const menuFunction = () => {
-  //   setOpenMenu(!openMenu);
-  // }
+  const isWide = useMedia({ maxWidth: "767px" });
 
   return (
     <>
-      <div className="absolute w-screen">
+
+      <div className="fixed z-10 w-screen">
         <Disclosure as="nav" className="">
           <>
-            <div className="max-w-screen-2xl mx-auto px-2 pt-4 sm:px-12">
+            <div className="max-w-screen-2xl mx-auto pl-2 pr-4 pt-4 sm:px-12 2xl:px-0">
               <div className="flex items-center justify-between h-8 md:h-16">
                 <div className="flex items-center">
                   <div className="z-20 flex-shrink-0">
@@ -61,7 +67,7 @@ export default function Header() {
 
                 <div className="-mr-2 flex ">
                   {/* menu button */}
-                  <HamburgerStand isActive={isActive} buttonWidth={30} toggleButton={menuFunction} className="z-20" buttonColor="" barColor="#010305"/>
+                  <HamburgerStand isActive={isActive} buttonWidth={isWide ? 25 : 35} toggleButton={menuFunction} className="z-20" buttonColor="" barColor="#010305"/>
                   {/* <Disclosure.Button className=" inline-flex items-center justify-center p-2 rounded-md text-gray-800 focus:outline-none">
                     <span className="menu" onClick={() => menuFunction()}></span>
                       {openMenu ? (

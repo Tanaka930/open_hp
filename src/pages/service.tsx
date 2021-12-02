@@ -1,6 +1,8 @@
 import Seo from '@/components/Seo';
 import TopContent from '@/components/layout/TopContent';
 import ServiceContent from '@/components/service/ServicesContent';
+import Image from 'next/image'
+import Link from "next/link";
 
 
 export default function Service(){

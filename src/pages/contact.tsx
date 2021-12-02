@@ -189,19 +189,18 @@ export default function Contact() {
                   {errors.message && <span className="text-red-600 text-sm pt-2">{errors.message.message}</span>}
                 </div>
               </div>
-
-              <div>
-                <p className="t">This site is protected by reCAPTCHA and the Google<a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.</p>
-              </div>
-
+              
               <div className="flex items-center justify-center w-full">
                 <input
                   type="submit"
                   className="mt-9 font-semibold leading-none text-white py-4 px-10 bg-blue-700 rounded hover:bg-blue-600 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 focus:outline-none"
                 />
               </div>
-
             </form>
+
+            <div className="mt-8 md:mt-12">
+              <p className="text-xs md:text-sm text-gray-900">This site is protected by reCAPTCHA and the Google<a href="https://policies.google.com/privacy" target="_blank" className="text-blue-600">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" className="text-blue-600">Terms of Service</a> apply.</p>
+            </div>
           </div>
         </div>
       </div>

@@ -98,3 +98,6 @@
     background-size: 0 2px, 100% 2px;
   }
 }
+
+/* リキャプチャバッチ非表示 */
+.grecaptcha-badge { visibility: hidden; }

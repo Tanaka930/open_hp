@@ -15,7 +15,6 @@ interface Content {
 
 
 export default function ServiceContent(content: Content){
-  console.log(content)
   return(
     <>
       <div className={content.border}>

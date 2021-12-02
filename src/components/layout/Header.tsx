@@ -48,7 +48,7 @@ export default function Header() {
             <div className="max-w-screen-2xl mx-auto px-2 pt-4">
               <div className="flex items-center justify-between h-8 md:h-16">
                 <div className="flex items-center">
-                  <div className="flex-shrink-0">
+                  <div className="z-20 flex-shrink-0">
                     <Link href='/'>
                       <img
                         className="h-7 md:h-10"
@@ -61,7 +61,7 @@ export default function Header() {
 
                 <div className="-mr-2 flex ">
                   {/* menu button */}
-                  <HamburgerArrow isActive={isActive} toggleButton={menuFunction} className="z-50" buttonColor="" barColor="#010305"/>
+                  <HamburgerArrow isActive={isActive} buttonWidth={30} toggleButton={menuFunction} className="z-20" buttonColor="" barColor="#010305"/>
                   {/* <Disclosure.Button className=" inline-flex items-center justify-center p-2 rounded-md text-gray-800 focus:outline-none">
                     <span className="menu" onClick={() => menuFunction()}></span>
                       {openMenu ? (
@@ -93,18 +93,18 @@ export default function Header() {
               </div>
             </Disclosure.Panel> */}
             {isActive ? (
-              <div className="z-40 fixed top-0 w-screen">
+              <div className="fixed z-10 top-0 w-screen">
                 
-                <div className="bg-green-600 h-screen translate-x-0 transition-all duration-300 ease-linear z-40 px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <div className="bg-green-600 h-screen translate-x-0 transition-all duration-300 ease-linear px-2 pt-2 pb-3 space-y-1 sm:px-3">
                   <div className="h-12"></div>
                   {navigation.map((item) => (
-                    <div>
+                    <div className="pt-8 md:pt-11">
                       <a
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-white hover:bg-gray-700 hover:text-gray-300 ',
-                          'block px-3 py-2 rounded-md text-base font-medium'
+                          item.current ? 'bg-gray-900 text-white hover:text-yellow-500' : 'text-white hover:text-yellow-500 ',
+                          'block px-3 py-2 rounded-md text-5xl font-medium md:text-6xl md:text-center'
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >
@@ -115,17 +115,17 @@ export default function Header() {
                 </div>
               </div>
             ):(
-              <div className=" z-40 fixed top-0 w-screen">
-                <div className="bg-green-600 h-screen translate-x-full transition-all duration-300 ease-linear z-40 px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              <div className="fixed top-0 w-screen pointer-events-none">
+                <div className="bg-green-600 h-screen translate-x-full transition-all duration-300 ease-linear px-2 pt-2 pb-3 space-y-1 sm:px-3">
                   <div className="h-12"></div>
                   {navigation.map((item) => (
-                    <div>
+                    <div className="pt-8">
                       <a
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'block px-3 py-2 rounded-md text-base font-medium'
+                          item.current ? 'bg-gray-900 text-white hover:text-yellow-500 ' : 'text-gray-300 hover:text-yellow-500 ',
+                          'block px-3 py-2 rounded-md text-5xl font-medium md:text-6xl md:text-center'
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >

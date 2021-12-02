@@ -9,28 +9,65 @@ export default function Service(){
     <>
       <Seo templateTitle='Service' />
       <TopContent bg="bg-top_service" title="Service" />
-      <div className="md:flex md:justify-between md:mx-40 py-20 md:py-24">
-        <ServiceContent
-          img="/images/top/service/EC.png"
-          title="Shopify"
-          text="オリジナルブランドの作成からECサイトの構築、集客、運用まで一括でサポートいたします。オープンストアにはEC構築、運用のエキスパートが多数在籍しておりますので、安心してお任せください。"
-          href="/services/ec"
-          border="text-center pb-12 md:py-10 md:w-1/3"
-        />
-        <ServiceContent
-          img="/images/top/service/EC.png"
-          title="L-STORE"
-          text="LINEを通じた顧客管理、リピーターの獲得をサポートいたします。公式LINEに関することは気軽にご相談ください。オープンストアならではのノウハウをお客様にあった形でご提案いたします。"
-          href="/services/line"
-          border="text-center py-12 bg-gray-100 md:bg-white md:pt-10 md:w-1/3 md:border-solid md:border-l md:border-r"
-        />
-        <ServiceContent
-          img="/images/top/service/EC.png"
-          title="店舗DX"
-          text="キャッシュレス決済の導入から、通信環境の提供まで幅広くご提案いたします。お取引数、4000店舗超と確かな実績があります。経験豊富な専属の担当者がサポートさせていただきます。"
-          href="/services/dx"
-          border="text-center pt-12 md:pt-10 md:w-1/3"
-        />
+      <div className="md:flex md:justify-between md:mx-40 my-24 md:my-10">
+
+        <div className="text-center mt-24 md:mt-10 md:w-1/3">
+          <div className="">
+            <Image src="/images/service/shopify.png" width={110} height={110} alt="オープンストアEC関連事業" />
+          </div>
+          <div className="px-8 pt-4 md:pt-16">
+            <div className="border-l-2 border-blue-300">
+              <h4 className="text-left text-lg pl-2">Shopify</h4>
+            </div>
+            <div className="pb-4 md:pb-24">
+              <p className="">
+              オリジナルブランドの作成からECサイトの構築、集客、運用まで一括でサポートいたします。オープンストアにはEC構築、運用のエキスパートが多数在籍しておりますので、安心してお任せください。
+              </p>
+            </div>
+            <Link href="/services/ec">
+              <span className="text-green-600 hover:text-green-300 border-b-2 border-green-600 hover:border-green-300 cursor-pointer">view more →</span>
+            </Link>
+          </div>
+        </div>
+
+        <div className="text-center mt-24 md:mt-10 md:w-1/3 md:border-solid md:border-l md:border-r">
+        <div className="">
+            <Image src="/images/service/line.png" width={110} height={110} alt="オープンストアEC関連事業" />
+          </div>
+          <div className="px-8 pt-4 md:pt-16">
+            <div className="border-l-2 border-blue-300">
+              <h4 className="text-left text-lg pl-2">L-STORE</h4>
+            </div>
+            <div className="pb-4 md:pb-24">
+              <p className="">
+              LINEを通じた顧客管理、リピーターの獲得をサポートいたします。公式LINEに関することは気軽にご相談ください。オープンストアならではのノウハウをお客様にあった形でご提案いたします。
+
+              </p>
+            </div>
+            <Link href="/services/line">
+              <span className="text-green-600 hover:text-green-300 border-b-2 border-green-600 hover:border-green-300 cursor-pointer">view more →</span>
+            </Link>
+          </div>
+        </div>
+
+        <div className="text-center mt-24 md:mt-10 md:w-1/3">
+        <div className="">
+            <Image src="/images/service/dx.png" width={110} height={110} alt="オープンストアEC関連事業" />
+          </div>
+          <div className="px-8 pt-4 md:pt-16">
+            <div className="border-l-2 border-blue-300">
+              <h4 className="text-left text-lg pl-2">店舗DX</h4>
+            </div>
+            <div className="pb-4 md:pb-24">
+              <p className="">
+              キャッシュレス決済の導入から、通信環境の提供まで幅広くご提案いたします。お取引数、4000店舗超と確かな実績があります。経験豊富な専属の担当者がサポートさせていただきます。
+              </p>
+            </div>
+            <Link href="/services/dx">
+              <span className="text-green-600 hover:text-green-300 border-b-2 border-green-600 hover:border-green-300 cursor-pointer">view more →</span>
+            </Link>
+          </div>
+        </div>
       </div>
     </>
   )

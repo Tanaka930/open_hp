@@ -49,69 +49,73 @@ export default function Recruit(categories: Categories) {
   const { executeRecaptcha } = useGoogleReCaptcha();
 
   const onSubmit = async (data: any) => {
-    console.log("executeRecaptcha", executeRecaptcha);
-    if (executeRecaptcha) {
-      const reCaptchaToken = await executeRecaptcha('contactPage');
-      console.log("reCaptchaToken",reCaptchaToken);
+    if(data.mailf == data.mails){
+      console.log("executeRecaptcha", executeRecaptcha);
+      if (executeRecaptcha) {
+        const reCaptchaToken = await executeRecaptcha('contactPage');
+        console.log("reCaptchaToken",reCaptchaToken);
 
-      const apiEndPoint = './api/recaptcha';
-      
-      const recaptchaRes = await fetch(apiEndPoint, {
-        body: JSON.stringify({
-          // トークン認証
-          token: reCaptchaToken,
-        }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        method: 'POST',
-      }); 
+        const apiEndPoint = './api/recaptcha';
+        
+        const recaptchaRes = await fetch(apiEndPoint, {
+          body: JSON.stringify({
+            // トークン認証
+            token: reCaptchaToken,
+          }),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          method: 'POST',
+        }); 
 
-      console.log("recaptchaRes", recaptchaRes)
+        console.log("recaptchaRes", recaptchaRes)
 
-      if (recaptchaRes.status === 200) {
+        if (recaptchaRes.status === 200) {
 
-        let message = "お名前: " + data.name +
-        "\nメールアドレス: " + data.mailf +
-        "\n職種: " + data.category +
-        "\nお電話番号: " + data.tell +
-        "\n備考: " + data.remark +
-        "\nメッセージ: " + data.message
+          let message = "お名前: " + data.name +
+          "\nメールアドレス: " + data.mailf +
+          "\n職種: " + data.category +
+          "\nお電話番号: " + data.tell +
+          "\n備考: " + data.remark +
+          "\nメッセージ: " + data.message
 
-        const sendGridRes = await fetch('https://api.staticforms.xyz/submit', {
-        body: JSON.stringify({
-        // メッセージ内容をいかに格納
-        // message: message
-          name: '',
-          email: 'kaito.hasegawa@openstore-japan.com',
-          subject: '自社HP 求人のお問い合わせ',
-          honeypot: '',
-          message: message,
-          replyTo: '@',
-          accessKey: process.env.NEXT_PUBLIC_MAIL_KEY
-        }),
-        headers: {
-        'Content-Type': 'application/json'
-        },
-        method: 'POST'
-        })
+          const sendGridRes = await fetch('https://api.staticforms.xyz/submit', {
+          body: JSON.stringify({
+          // メッセージ内容をいかに格納
+          // message: message
+            name: '',
+            email: 'kaito.hasegawa@openstore-japan.com',
+            subject: '自社HP 求人のお問い合わせ',
+            honeypot: '',
+            message: message,
+            replyTo: '@',
+            accessKey: process.env.NEXT_PUBLIC_MAIL_KEY
+          }),
+          headers: {
+          'Content-Type': 'application/json'
+          },
+          method: 'POST'
+          })
 
-        console.log("sendGridRes",sendGridRes);
-        if (sendGridRes.status === 200) {
-          reset()
-          alert("正しく送信されました。\nお問い合わせありがとうございます。")
+          console.log("sendGridRes",sendGridRes);
+          if (sendGridRes.status === 200) {
+            reset()
+            alert("正しく送信されました。\nお問い合わせありがとうございます。")
+          } else {
+            alert("正しく送信されませんでした。もう一度やり直してください。")
+            console.error("sendGridRes.status",sendGridRes.status);
+          }
+
         } else {
-          alert("正しく送信されませんでした。もう一度やり直してください。")
-          console.error("sendGridRes.status",sendGridRes.status);
+          alert("認証エラーが発生しました。もう一度やり直してください。")
+          console.error("recaptchaRes.status", recaptchaRes.status)
         }
-
       } else {
-        alert("認証エラーが発生しました。もう一度やり直してください。")
-        console.error("recaptchaRes.status", recaptchaRes.status)
+          alert("エラーが発生しました。もう一度やり直してください。")
+          console.error("recaptcha認証エラー")
       }
-    } else {
-        alert("エラーが発生しました。もう一度やり直してください。")
-        console.error("recaptcha認証エラー")
+    }else{
+      alert("メールアドレスが一致しません。もう一度ご確認ください。")
     }
   }
  

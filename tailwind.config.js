@@ -66,6 +66,9 @@ module.exports = {
         'lien_top':"url('/images/service/line/linetop.png')",
         'dx_top':"url('/images/service/dx/dxtop.png')"
       },
+      height: {
+        xl: '768px',
+      }
     },
   },
   variants: {

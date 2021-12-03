@@ -28,7 +28,7 @@ export default function BlogList(props: Props){
         <main className="mt-10">
           <NewBlog BlogObject={props.blogList[0]} />
 
-          <div className="block lg:flex lg:space-x-2 lg:p-0 mt-10 mb-10">
+          <div className="block lg:flex lg:space-x-2 lg:p-0 my-10 mx-20">
 
             <div className="w-full lg:w-2/3">
               {props.blogList.map((blog:any) => (

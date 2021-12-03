@@ -1,3 +1,5 @@
+import Moment from 'react-moment'
+
 
 type Props = {
   blogList: Array<any>;
@@ -21,18 +23,22 @@ export default function BlogList(props: Props){
                   background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.7));
                 }
               `}</style>
-              <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" className="absolute left-0 top-0 w-full h-full rounded z-0 object-cover" />
+              <img src={props.blogList[0].thumbnail.url} className="absolute left-0 top-0 w-full h-full rounded z-0 object-cover" />
               <div className="p-4 absolute bottom-0 left-0 z-6">
-                <span className="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2">Nutrition</span>
+                <span className="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2">最新記事</span>
                 <h2 className="text-4xl font-semibold text-gray-100 leading-tight">
-                  Pellentesque a consectetur velit, ac molestie ipsum. Donec sodales, massa et auctor.
+                  {props.blogList[0].title}
                 </h2>
                 <div className="flex mt-3">
-                  <img src="https://randomuser.me/api/portraits/men/97.jpg"
+                  <img src={props.blogList[0].upUser.userImage.url}
                     className="h-10 w-10 rounded-full mr-2 object-cover" />
                   <div>
-                    <p className="font-semibold text-gray-200 text-sm"> Mike Sullivan </p>
-                    <p className="font-semibold text-gray-400 text-xs"> 14 Aug </p>
+                    <p className="font-semibold text-gray-200 text-sm"> {props.blogList[0].upUser.user} </p>
+                    <p className="font-semibold text-gray-400 text-xs"> 
+                      <Moment format="YYYY年MM月DD日">
+                        {props.blogList[0].createDay} 
+                      </Moment>
+                      </p>
                   </div>
                 </div>
               </div>

@@ -13,7 +13,9 @@ interface UpUser{
 }
 
 interface Blog{
+  id: string;
   title: string;
+  previewWord: string;
   thumbnail: string;
   createDay: string;
   category: Category;

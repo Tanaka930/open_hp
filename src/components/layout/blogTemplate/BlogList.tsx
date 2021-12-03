@@ -1,89 +1,32 @@
 import Moment from 'react-moment'
 
+import NewBlog from '@/components/layout/blogTemplate/NewBlog';
+
+import BlogListBox from '@/components/layout/blogTemplate/BlogListBox'
+
 
 type Props = {
   blogList: Array<any>;
 }
 
+
 export default function BlogList(props: Props){
-  console.log(props.blogList[0])
   return(
     <>
       <div className="max-w-screen-xl mx-auto pt-10">
 
         <main className="mt-10">
-          <div className="block md:flex md:space-x-2 lg:p-0">
-            <a 
-              className="mb-4 md:mb-0 w-full relative rounded inline-block h-96" 
-              href="./blog.html"
-            >
-              <div className="absolute left-0 bottom-0 w-full h-full z-5 image1"></div>
-              <style jsx>{`
-                .image1 {
-                  background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.7));
-                }
-              `}</style>
-              <img src={props.blogList[0].thumbnail.url} className="absolute left-0 top-0 w-full h-full rounded z-0 object-cover" />
-              <div className="p-4 absolute bottom-0 left-0 z-6">
-                <span className="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2">最新記事</span>
-                <h2 className="text-4xl font-semibold text-gray-100 leading-tight">
-                  {props.blogList[0].title}
-                </h2>
-                <div className="flex mt-3">
-                  <img src={props.blogList[0].upUser.userImage.url}
-                    className="h-10 w-10 rounded-full mr-2 object-cover" />
-                  <div>
-                    <p className="font-semibold text-gray-200 text-sm"> {props.blogList[0].upUser.user} </p>
-                    <p className="font-semibold text-gray-400 text-xs"> 
-                      <Moment format="YYYY年MM月DD日">
-                        {props.blogList[0].createDay} 
-                      </Moment>
-                      </p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
+          <NewBlog BlogObject={props.blogList[0]} />
 
           <div className="block lg:flex lg:space-x-2 lg:p-0 mt-10 mb-10">
 
             <div className="w-full lg:w-2/3">
-
-              <a className="block rounded w-full lg:flex mb-10"
-                href="./blog-single-1.html"
-              >
-                <div 
-                  className="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-75 image3"
-                  title="deit is very important"
-                >
-              <style jsx>{`
-                .image3 {
-                  background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80');
-                }
-              `}</style>
-                </div>
-                <div className="bg-white rounded px-4 flex flex-col justify-between leading-normal">
-                  <div>
-                    <div className="mt-3 md:mt-0 text-gray-700 font-bold text-2xl mb-2">
-                      Aliquam venenatis nisl id purus rhoncus, in efficitur sem hendrerit.
-                    </div>
-                    <p className="text-gray-700 text-base">
-                      Duis euismod est quis lacus elementum, eu laoreet dolor consectetur. 
-                      Pellentesque sed neque vel tellus lacinia elementum. Proin consequat ullamcorper eleifend.
-                    </p>
-                  </div>
-                  <div className="flex mt-3">
-                    <img src="https://randomuser.me/api/portraits/men/86.jpg"
-                      className="h-10 w-10 rounded-full mr-2 object-cover" />
-                    <div>
-                      <p className="font-semibold text-gray-700 text-sm capitalize"> eduard franz </p>
-                      <p className="text-gray-600 text-xs"> 14 Aug </p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-
+              {props.blogList.map((blog:any) => (
+                <BlogListBox blog={blog} />
+              ))}
             </div>
+
+            
 
             <div className="w-full lg:w-1/3">
               <div className="mb-4">

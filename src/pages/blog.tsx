@@ -23,14 +23,19 @@ interface Blog{
 }
 
 interface BlogList{
-  blogList: Array<Blog>
+  blogList: Array<Blog>;
+  blogCategory: any;
+  blogUser: any;
 }
 
+
+
 export default function Blog(blogList: BlogList){
+
   return(
     <>
       <Seo templateTitle='blog' />
-      <BlogList blogList={blogList.blogList}/>
+      <BlogList blogList={blogList.blogList} blogCategory={blogList.blogCategory} blogUser={blogList.blogUser} />
     </>
   );
 }
@@ -41,14 +46,26 @@ export const getStaticProps = async () => {
   };
 
   // カテゴリー情報を取得
+  const blog_cate = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/blog_category`, key)
+  .then(res => res.json())
+  .catch(() => null); 
 
+  // 執筆者情報を取得
+  const blog_user = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/user`, key)
+  .then(res => res.json())
+  .catch(() => null); 
+
+  // ブログ情報を取得
   const blog_data = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/blog?offset=0&limit=20`, key)
   .then(res => res.json())
   .catch(() => null);
 
+
   return {
     props: {
       blogList: blog_data.contents,
+      blogCategory: blog_cate.contents,
+      blogUser: blog_user.contents
     },
   };
 };

@@ -58,7 +58,7 @@ export default function Footer() {
                 <Link href="https://www.instagram.com/open_store_inc/">
                   <img
                     className="h-10 cursor-pointer"
-                    src="/images/icons/instagram.png"
+                    src="https://images.microcms-assets.io/assets/17edce1601e949eaaf07394154ac903d/737cb1eff3084d0cac7fb54f9e4c4cdf/Instagram.png"
                     alt="openstore-instagram-logo"
                   />
                 </Link>

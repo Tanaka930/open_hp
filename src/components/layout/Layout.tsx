@@ -8,7 +8,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       {/* <div className="container "> */}
         <Header />
-        <main>
+        <main> 
           {children}
         </main>
         <Footer />

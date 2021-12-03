@@ -1,24 +1,33 @@
 import Link from 'next/link';
 import UnstyledLink from '@/components/links/UnstyledLink';
+import FooterMenu from './FooterMenu';
 
-const links = [
-  { href: '/', label: 'Route 1' },
-  { href: '/', label: 'Route 2' },
-];
+const links1 = [
+  { label: 'About', href: '/about'  },
+  { label: 'News', href: '/news' },
+  { label: 'Recruit', href: '/recruit' },
+  { label: 'Contact', href: '/contact' },
+]
+
+const links2 = [
+  { label: 'Service', href: '/service' },
+  { label: 'EC', href: '/services/ec'  },
+  { label: 'DX', href: '/services/dx' },
+  { label: 'LINE', href: '/services/line' },
+]
 
 export default function Footer() {
   return (
     <>
       <div className="text-white text-shadow font-bold md:flex flex-wrap text-4xl">
         <Link href='/recruit'>
-          
           <a className="flex items-center justify-center bg-rec bg-cover bg-no-repeat h-32 md:w-1/2 md:h-80  cursor-pointer">
-            <span className="">採用情報</span>
+            採用情報
           </a>
         </Link>
         <Link href='/contact'>
           <a className="flex items-center justify-center bg-contact bg-cover bg-no-repeat h-32 md:w-1/2 md:h-80 cursor-pointer">
-            <span className="">お問い合わせ</span>
+            お問い合わせ
           </a>
         </Link>
       </div>
@@ -29,11 +38,13 @@ export default function Footer() {
             <div className="md:w-1/2">
               <div className="lg:-mt-2 md:mb-8">
                 <Link href="/">
-                  <img
-                    className="h-7"
-                    src="/images/layout/Logo.png"
-                    alt="openstore-logo"
-                  />
+                  <a>
+                    <img
+                      className="h-7"
+                      src="/images/layout/Logo.png"
+                      alt="openstore-logo"
+                    />
+                  </a>
                 </Link>
               </div>
               {/* <!-- logo - end --> */}
@@ -42,11 +53,13 @@ export default function Footer() {
             <div className="order-2 w-full pt-8 md:w-1/2 md:pt-0">
               <div className="flex pl-2 md:justify-end md:pr-44">
                 <Link href="https://page.line.me/246xdhfu">
-                  <img
-                    className="pr-5 h-10 cursor-pointer"
-                    src="/images/icons/LINE.png"
-                    alt="openstore-line-logo"
-                  />
+                  <a>
+                    <img
+                      className="pr-5 h-10 cursor-pointer"
+                      src="/images/icons/LINE.png"
+                      alt="openstore-line-logo"
+                    />
+                  </a>
                 </Link>
                 <Link href="https://www.facebook.com/openstorejapan">
                   <img
@@ -87,52 +100,11 @@ export default function Footer() {
             </div>
 
             {/* <!-- products - start --> */}
-            <div className="w-1/2 pt-8 order-4 md:pl-40 md:w-1/3">
-              <div className="text-gray-800 font-bold tracking-widest uppercase mb-4">Products</div>
-
-              <nav className="flex flex-col gap-4">
-                <div>
-                  <a href="/service" className="text-gray-500 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Services</a>
-                </div>
-
-                <div>
-                  <a href="/services/ec" className="text-gray-500 hover:text-indigo-500 active:text-indigo-600 transition duration-100">EC</a>
-                </div>
-
-                <div>
-                  <a href="/services/dx" className="text-gray-500 hover:text-indigo-500 active:text-indigo-600 transition duration-100">DX</a>
-                </div>
-
-                <div>
-                  <a href="/services/line" className="text-gray-500 hover:text-indigo-500 active:text-indigo-600 transition duration-100">LINE</a>
-                </div>
-              </nav>
-            </div>
+            <FooterMenu links={links1}/>
             {/* <!-- nav - end -->
 
             <!-- company - start --> */}
-            <div className="w-1/2 order-5 pt-8 md:pl-40 md:w-1/3">
-              <div className="text-gray-800 font-bold tracking-widest uppercase mb-4">Company</div>
-
-              <nav className="flex flex-col gap-4">
-                <div>
-                  <a href="/about" className="text-gray-500 hover:text-indigo-500 active:text-indigo-600 transition duration-100">About</a>
-                </div>
-
-                <div>
-                  <a href="/recruit" className="text-gray-500 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Recruit</a>
-                </div>
-
-                <div>
-                  <a href="/news" className="text-gray-500 hover:text-indigo-500 active:text-indigo-600 transition duration-100">News</a>
-                </div>
-
-                <div>
-                  <a href="/contact" className="text-gray-500 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Contact</a>
-                </div>
-
-              </nav>
-            </div>
+            <FooterMenu links={links2}/>
             {/* <!-- nav - end -->
 
             <!-- nav - start --> */}

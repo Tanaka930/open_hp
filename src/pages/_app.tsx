@@ -6,14 +6,21 @@ import '@/styles/menu.css'
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import Layout from '@/components/layout/Layout';
 
+import {SearchContext} from '@/pages/context/searchContext'
+
 import type { AppProps } from 'next/app';
 
+import React, { useState } from 'react';
+
 function MyApp({ Component, pageProps }: AppProps) {
+  const [search, setSearch] = useState<string>('');
   return (
     <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY} language="ja">
+      <SearchContext.Provider value={{ search, setSearch }}>
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      </SearchContext.Provider>
     </GoogleReCaptchaProvider>
   )
 }

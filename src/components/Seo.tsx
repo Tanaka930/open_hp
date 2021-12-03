@@ -34,7 +34,9 @@ export default function Seo(props: SeoProps){
     ? `${props.templateTitle} | ${meta.siteName}`
     : meta.title;
 
-  meta.image = openGraph({
+  meta.image = '	https://d350jvzsjcjxs3.cloudfront.net/images/layout/Logo_green2.png'
+
+  meta.date = openGraph({
     description: meta.description,
     siteName: props.templateTitle ? meta.siteName : meta.title,
     templateTitle: props.templateTitle,

@@ -2,12 +2,18 @@ import Link from 'next/link';
 import UnstyledLink from '@/components/links/UnstyledLink';
 import FooterMenu from './FooterMenu';
 
-const links = [
-  { label: 'Service', href: '/service' },
+const links1 = [
   { label: 'About', href: '/about'  },
   { label: 'News', href: '/news' },
   { label: 'Recruit', href: '/recruit' },
   { label: 'Contact', href: '/contact' },
+]
+
+const links2 = [
+  { label: 'Service', href: '/service' },
+  { label: 'EC', href: '/services/ec'  },
+  { label: 'DX', href: '/services/dx' },
+  { label: 'LINE', href: '/services/line' },
 ]
 
 export default function Footer() {
@@ -94,32 +100,11 @@ export default function Footer() {
             </div>
 
             {/* <!-- products - start --> */}
-            <FooterMenu links={links}/>
+            <FooterMenu links={links1}/>
             {/* <!-- nav - end -->
 
             <!-- company - start --> */}
-            <div className="w-1/2 order-5 pt-8 md:pl-40 md:w-1/3">
-              {/* <div className="text-gray-800 font-bold tracking-widest uppercase mb-4">Company</div> */}
-
-              <nav className="flex flex-col gap-4">
-                <div>
-                  <a href="/about" className="text-gray-800 font-bold hover:text-indigo-500 active:text-indigo-600 transition duration-100">About</a>
-                </div>
-
-                <div>
-                  <a href="/recruit" className="text-gray-800 font-bold hover:text-indigo-500 active:text-indigo-600 transition duration-100">Recruit</a>
-                </div>
-
-                <div>
-                  <a href="/news" className="text-gray-800 font-bold hover:text-indigo-500 active:text-indigo-600 transition duration-100">News</a>
-                </div>
-
-                <div>
-                  <a href="/contact" className="text-gray-800 font-bold hover:text-indigo-500 active:text-indigo-600 transition duration-100">Contact</a>
-                </div>
-
-              </nav>
-            </div>
+            <FooterMenu links={links2}/>
             {/* <!-- nav - end -->
 
             <!-- nav - start --> */}

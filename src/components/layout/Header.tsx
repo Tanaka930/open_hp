@@ -6,10 +6,6 @@ import { useRouter } from 'next/router';
 import { HamburgerStand } from 'react-animated-burgers'
 import { useMedia } from 'use-media';
 
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
-import { ClassValue } from 'clsx';
-
 
 const navigation = [
   { name: 'Service', href: '/service', current: false },
@@ -22,15 +18,6 @@ const navigation = [
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
-}
-
-function getScreenSize() {
-
-  console.log(" 画面サイズの横幅 ");
-  console.log(window.parent.screen.width);
-
-  console.log(" 画面サイズの高さ ");
-  console.log(window.parent.screen.height);
 }
 
 export default function Header() {
@@ -49,8 +36,6 @@ export default function Header() {
     <>
 
       <div className="fixed z-10 w-screen">
-        <Disclosure as="nav" className="">
-          <>
             <div className="max-w-screen-2xl mx-auto pl-2 pr-4 pt-4 sm:px-12 2xl:px-0">
               <div className="flex items-center justify-between h-8 md:h-16">
                 <div className="flex items-center">
@@ -88,7 +73,7 @@ export default function Header() {
                       >
                         <a className={classNames(
                           item.current ? 'bg-gray-900 text-white hover:text-yellow-500' : 'text-white hover:text-yellow-500 ',
-                          'block px-3 py-2 rounded-md text-5xl font-medium md:text-6xl md:text-center'
+                          'block px-3 py-2 rounded-md text-5xl font-medium active:text-yellow-600 md:text-6xl md:text-center'
                         )}>
                           {item.name}
                         </a>
@@ -107,7 +92,7 @@ export default function Header() {
                         href={item.href}
                         className={classNames(
                           item.current ? 'bg-gray-900 text-white hover:text-yellow-500 ' : 'text-gray-300 hover:text-yellow-500 ',
-                          'block px-3 py-2 rounded-md text-5xl font-medium md:text-6xl md:text-center'
+                          'block px-3 py-2 rounded-md text-5xl font-medium active:text-yellow-600 md:text-6xl md:text-center'
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >
@@ -118,8 +103,6 @@ export default function Header() {
                 </div>
               </div>
             )}
-          </>
-        </Disclosure>
       </div>
     </>
   )

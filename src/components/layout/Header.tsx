@@ -80,9 +80,8 @@ export default function Header() {
                 <div className="bg-green-600 h-screen translate-x-0 transition-all duration-300 ease-linear px-2 pt-2 pb-3 space-y-1 sm:px-3">
                   <div className="h-12"></div>
                   {navigation.map((item) => (
-                    <div className="pt-8 md:pt-11" onClick={()=>menuFunction()}>
+                    <div key ={item.name} className="pt-8 md:pt-11" onClick={()=>menuFunction()}>
                       <Link
-                        key={item.name}
                         href={item.href}
                         aria-current={item.current ? 'page' : undefined}
                         
@@ -103,9 +102,8 @@ export default function Header() {
                 <div className="bg-green-600 h-screen translate-x-full transition-all duration-300 ease-linear px-2 pt-2 pb-3 space-y-1 sm:px-3">
                   <div className="h-12"></div>
                   {navigation.map((item) => (
-                    <div className="pt-8">
+                    <div key={item.name} className="pt-8">
                       <a
-                        key={item.name}
                         href={item.href}
                         className={classNames(
                           item.current ? 'bg-gray-900 text-white hover:text-yellow-500 ' : 'text-gray-300 hover:text-yellow-500 ',

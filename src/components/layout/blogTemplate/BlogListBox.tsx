@@ -14,12 +14,12 @@ export default function BlogListBox(props: Props){
           className="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-75 image3"
           title="deit is very important"
         >
-        <style jsx>{`
-          .image3 {
-            background-image: url('${props.blog.thumbnail.url}');
-          }
-        `}
-        </style>
+          <style jsx>{`
+            .image3 {
+              background-image: url('${props.blog.thumbnail.url}');
+            }
+          `}
+          </style>
         </div>
         <div className="bg-white rounded px-4 flex flex-col justify-between leading-normal">
           <div>
@@ -41,6 +41,9 @@ export default function BlogListBox(props: Props){
               </Moment>
               </p>
             </div>
+          </div>
+          <div>
+            カテゴリー:<span className="p-4">{props.blog.category.category}</span>
           </div>
         </div>
       </a>

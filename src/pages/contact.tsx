@@ -93,7 +93,7 @@ export default function Contact() {
   return (
     <>
       <Seo templateTitle='Contact' />
-      <TopContent bg="bg-top_service" title="Contact" />
+      <TopContent bg="bg-top_contact" title="Contact" />
 
       <div className="w-full">
         <div className="bg-gradient-to-b from-blue-800 to-blue-600 h-96"></div>

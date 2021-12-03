@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import UnstyledLink from '@/components/links/UnstyledLink';
-import FooterMenu from './FooterMenu';
+import FooterMenu from './footer/FooterMenu';
 
 const links1 = [
   { label: 'About', href: '/about'  },
@@ -47,11 +47,10 @@ export default function Footer() {
                   </a>
                 </Link>
               </div>
-              {/* <!-- logo - end --> */}
             </div>
 
             <div className="order-2 w-full pt-8 md:w-1/2 md:pt-0">
-              <div className="flex pl-2 md:justify-end md:pr-44">
+              <div className="flex pl-2 md:justify-end lg:pr-44">
                 <Link href="https://page.line.me/246xdhfu">
                   <a>
                     <img
@@ -99,45 +98,8 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* <!-- products - start --> */}
             <FooterMenu links={links1}/>
-            {/* <!-- nav - end -->
-
-            <!-- company - start --> */}
             <FooterMenu links={links2}/>
-            {/* <!-- nav - end -->
-
-            <!-- nav - start --> */}
-
-            {/* <div>
-              <div className="text-gray-800 font-bold tracking-widest uppercase mb-4">Support</div>
-
-              <nav className="flex flex-col gap-4">
-
-
-              </nav>
-            </div> */}
-            {/* <!-- nav - end -->
-
-            <!-- nav - start --> */}
-            {/* <div>
-              <div className="text-gray-800 font-bold tracking-widest uppercase mb-4">Legal</div>
-
-              <nav className="flex flex-col gap-4">
-                <div>
-                  <a href="#" className="text-gray-500 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Terms of Service</a>
-                </div>
-
-                <div>
-                  <a href="#" className="text-gray-500 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Privacy Policy</a>
-                </div>
-
-                <div>
-                  <a href="#" className="text-gray-500 hover:text-indigo-500 active:text-indigo-600 transition duration-100">Cookie settings</a>
-                </div>
-              </nav>
-            </div> */}
-            {/* <!-- nav - end --> */}
           </div>
         </div>
       </footer>

@@ -41,7 +41,7 @@ export default function Home(data: Data){
   return(
     <>
       <Seo templateTitle='About' />
-      <TopContent bg="bg-top_service" title="About" />
+      <TopContent bg="bg-top_about" title="About" />
 
       <div className="flex flex-wrap mx-4 my-12 md:justify-center">
         <div className="w-full md:w-3/4">

@@ -55,7 +55,13 @@ module.exports = {
       backgroundImage: {
         'rec': "url('/images/layout/rec.png')",
         'contact': "url('/images/layout/contact.png')",
+        // TOP画像
         'top_service': "url('/images/layout/service.png')",
+        'top_about': "url('/images/layout/top_about.png')",
+        'top_news': "url('/images/layout/top_news.png')",
+        'top_recruit': "url('/images/layout/top_recruit.png')",
+        'top_contact': "url('/images/layout/top_contact.png')",
+
         'ec_top':"url('/images/service/ec/EC-TOP.png')",
         'lien_top':"url('/images/service/line/linetop.png')",
         'dx_top':"url('/images/service/dx/dxtop.png')"

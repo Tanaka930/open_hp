@@ -6,11 +6,16 @@ import BlogListBox from '@/components/layout/blogTemplate/BlogListBox'
 
 import BlogSearch from '@/components/layout/blogTemplate/BlogSearch'
 
+// ページネーション用のコンポーネント
+import  Pagination from '@/components/layout/listTemplate/Pagination';
+
 
 type Props = {
   blogList: Array<any>;
   blogCategory: any;
   blogUser: any;
+  pageNum: number;
+  totalCount: any;
 }
 
 
@@ -29,6 +34,7 @@ export default function BlogList(props: Props){
               {props.blogList.map((blog:any) => (
                 <BlogListBox blog={blog} />
               ))}
+              <Pagination totalCount={props.totalCount} pathName='/blog/' pageNum={props.pageNum} />
             </div>
 
             

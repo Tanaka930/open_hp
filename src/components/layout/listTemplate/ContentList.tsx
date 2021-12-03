@@ -36,7 +36,7 @@ export default function ContentList({contents,contentTitle}: {contents:any ,cont
             ))}
           </div>
         </div>
-        <Pagination totalCount={contents.totalCount} pathName='/news/' pageNum={contents.pageNum} />
+        <Pagination totalCount={contents.totalCount} pathName='/blog/' pageNum={contents.pageNum} />
       </section>
     </>
   );

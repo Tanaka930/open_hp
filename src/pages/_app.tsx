@@ -6,7 +6,7 @@ import '@/styles/menu.css'
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import Layout from '@/components/layout/Layout';
 
-import {SearchContext} from '@/pages/context/searchContext'
+import {SearchContext} from '@/components/context/searchContext'
 
 import type { AppProps } from 'next/app';
 

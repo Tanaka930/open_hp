@@ -2,7 +2,7 @@ import React, { useCallback, useContext } from 'react';
 
 import { useRouter } from 'next/router';
 
-import {SearchContext} from '@/pages/context/searchContext';
+import {SearchContext} from '@/components/context/searchContext';
 
 export default function BlogSearch(){
   const { search, setSearch } = useContext(SearchContext);

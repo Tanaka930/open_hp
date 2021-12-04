@@ -36,7 +36,7 @@ export default function Blog(blogList: BlogList){
   return(
     <>
       <Seo templateTitle='blog' />
-      <BlogList blogList={blogList.blogList} blogCategory={blogList.blogCategory} blogUser={blogList.blogUser} pageNum={blogList.pageNum} totalCount={blogList.totalCount}/>
+      <BlogList blogList={blogList.blogList} blogCategory={blogList.blogCategory} blogUser={blogList.blogUser} pageNum={blogList.pageNum} totalCount={blogList.totalCount} searchSt={true} />
     </>
   )
 }

@@ -16,6 +16,7 @@ type Props = {
   blogUser: any;
   pageNum: number;
   totalCount: any;
+  searchSt: boolean;
 }
 
 
@@ -31,9 +32,7 @@ export default function BlogList(props: Props){
           <div className="block lg:flex lg:space-x-2 lg:p-0 my-10 mx-20">
 
             <div className="w-full lg:w-2/3">
-              {props.blogList.map((blog:any) => (
-                <BlogListBox blog={blog} />
-              ))}
+              <BlogListBox blogList={props.blogList} searchSt={props.searchSt}/>
               <Pagination totalCount={props.totalCount} pathName='/blog/' pageNum={props.pageNum} />
             </div>
 

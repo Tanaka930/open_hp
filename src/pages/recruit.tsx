@@ -123,7 +123,7 @@ export default function Recruit(categories: Categories) {
   return (
     <>
       <Seo templateTitle='Recruit' />
-      <TopContent bg="bg-top_service" title="Recruit" />
+      <TopContent bg="bg-top_recruit" title="Recruit" />
       <Culture />
       <Human />
       <Staff />

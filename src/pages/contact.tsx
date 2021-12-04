@@ -93,12 +93,12 @@ export default function Contact() {
   return (
     <>
       <Seo templateTitle='Contact' />
-      <TopContent bg="bg-top_service" title="Contact" />
+      <TopContent bg="bg-top_contact" title="Contact" />
 
       <div className="w-full">
-        <div className="bg-gradient-to-b from-blue-800 to-blue-600 h-96"></div>
-        <div className="max-w-5xl mx-auto px-6 sm:px-6 lg:px-8 mb-12">
-          <div className="bg-white w-full shadow rounded p-8 sm:p-12 -mt-72">
+        <div className="bg-green-50 pt-20 md:pt-36">
+        <div className="max-w-5xl mx-auto px-6 sm:px-6 lg:px-8 pb-12">
+          <div className="bg-white w-full shadow rounded p-8 sm:p-12">
             <p className="text-3xl font-bold leading-7 text-center">お問い合わせ</p>
             <form onSubmit={handleSubmit(onSubmit)}>
 
@@ -198,7 +198,7 @@ export default function Contact() {
               <div className="flex items-center justify-center w-full">
                 <input
                   type="submit"
-                  className="mt-9 font-semibold leading-none text-white py-4 px-10 bg-blue-700 rounded hover:bg-blue-600 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 focus:outline-none cursor-pointer"
+                  className="mt-9 font-semibold leading-none text-white py-4 px-10 bg-green-600 rounded hover:bg-green-500 focus:ring-2 focus:ring-offset-2 focus:ring-green-600 focus:outline-none cursor-pointer"
                 />
               </div>
             </form>
@@ -207,6 +207,7 @@ export default function Contact() {
               <p className="text-xs md:text-sm text-gray-900">This site is protected by reCAPTCHA and the Google<a href="https://policies.google.com/privacy" target="_blank" className="text-blue-600">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" className="text-blue-600">Terms of Service</a> apply.</p>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </>

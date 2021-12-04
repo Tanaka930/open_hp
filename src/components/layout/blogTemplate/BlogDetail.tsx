@@ -1,15 +1,8 @@
 import Moment from 'react-moment'
 
-import NewBlog from '@/components/layout/blogTemplate/NewBlog';
-
-import BlogListBox from '@/components/layout/blogTemplate/BlogListBox'
+import DetailTop from '@/components/layout/blogTemplate/DetailTop';
 
 import BlogSearch from '@/components/layout/blogTemplate/BlogSearch'
-
-// ページネーション用のコンポーネント
-import  Pagination from '@/components/layout/listTemplate/Pagination';
-
-import { useRouter } from 'next/router';
 
 import Link from "next/link";
 
@@ -21,14 +14,13 @@ type Props = {
 
 
 export default function BlogDetail(props: Props){
-  console.log(props)
 
   return(
     <>
       <div className="max-w-screen-xl mx-auto pt-10">
 
         <main className="mt-10">
-          <NewBlog BlogObject={props.blog} />
+          <DetailTop BlogObject={props.blog} />
 
           <div className="block lg:flex lg:space-x-2 lg:p-0 my-10 mx-20">
 

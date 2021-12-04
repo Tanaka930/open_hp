@@ -15,7 +15,12 @@ export const pagesPath = {
       })
     },
     search: {
-      $url: (url?: { hash?: string }) => ({ pathname: '/blog/search' as const, hash: url?.hash })
+      $url: (url?: { hash?: string }) => ({ pathname: '/blog/search' as const, hash: url?.hash }),
+      page: {
+        _id: (id: string | number) => ({
+          $url: (url?: { hash?: string }) => ({ pathname: '/blog/search/page/[id]' as const, query: { id }, hash: url?.hash })
+        })
+      }
     }
   },
   contact: {

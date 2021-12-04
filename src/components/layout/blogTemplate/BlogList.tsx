@@ -9,6 +9,7 @@ import BlogSearch from '@/components/layout/blogTemplate/BlogSearch'
 // ページネーション用のコンポーネント
 import  Pagination from '@/components/layout/listTemplate/Pagination';
 
+import { useRouter } from 'next/router';
 
 type Props = {
   blogList: Array<any>;
@@ -21,6 +22,18 @@ type Props = {
 
 
 export default function BlogList(props: Props){
+  const router = useRouter();
+
+  const param = router.pathname;
+
+  var linkText = ''
+
+  if(param.indexOf('search') === -1){
+    linkText = '/blog/'
+  }else{
+    linkText = '/blog/search/'
+  }
+
 
   return(
     <>
@@ -33,7 +46,7 @@ export default function BlogList(props: Props){
 
             <div className="w-full lg:w-2/3">
               <BlogListBox blogList={props.blogList} searchSt={props.searchSt}/>
-              <Pagination totalCount={props.totalCount} pathName='/blog/' pageNum={props.pageNum} />
+              <Pagination totalCount={props.totalCount} pathName={linkText} pageNum={props.pageNum} />
             </div>
 
             

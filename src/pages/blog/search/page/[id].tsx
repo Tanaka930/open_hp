@@ -23,16 +23,20 @@ export default function Search(){
     if (blogsQuery != null) {
 
       void (async (): Promise<void> => {
-        
+
+        const id = router.query.id
+
         const key = {
           headers: {'X-MICROCMS-API-KEY': String(process.env.NEXT_PUBLIC_MICRO_CMS_API_KEY)},
         };
+
+        const PER_PAGE = Number(process.env.onePageContent); 
 
         // ブログ情報を取得
         const blog_data = await fetch(
           `${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/blog?q=${encodeURI(
             blogsQuery.keyword,
-          )}&offset=0&limit=6`,
+          )}&offset=${(Number(id) - 1) * PER_PAGE}&limit=6`,
           key,
         ).then((res) => res.json()).catch(() => null);
       
@@ -51,14 +55,13 @@ export default function Search(){
           blogCategory: blog_cate.contents,
           blogUser: blog_user.contents,
           totalCount: blog_data.totalCount,
-          pageNum: 1
+          pageNum: Number(id)
         }
 
         setBlogs(blogs)
       })();
     }
   }, [blogsQuery]);
-
 
   if(typeof blogs !== 'undefined'){ 
     if(blogs.blogList.length != 0){

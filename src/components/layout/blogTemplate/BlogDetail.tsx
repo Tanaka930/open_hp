@@ -33,7 +33,10 @@ export default function BlogDetail(props: Props){
           <div className="block lg:flex lg:space-x-2 lg:p-0 my-10 mx-20">
 
             <div className="w-full lg:w-2/3">
-              <div dangerouslySetInnerHTML={{ __html: props.blog.body }}></div>
+              <h1 className="text-gray-800 text-4xl font-bold mt-2 mb-2 leading-tight">
+                {props.blog.title}
+              </h1>
+              <div className='my-4' dangerouslySetInnerHTML={{ __html: props.blog.body }}></div>
 
             </div>
 

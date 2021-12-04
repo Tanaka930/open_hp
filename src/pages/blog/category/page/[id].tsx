@@ -26,7 +26,7 @@ export default function Category(){
 
         const id = router.query.id
 
-        const trg = router.query.category
+        const trg = router.query.keyword
 
         const key = {
           headers: {'X-MICROCMS-API-KEY': String(process.env.NEXT_PUBLIC_MICRO_CMS_API_KEY)},

@@ -10,9 +10,9 @@ export const pagesPath = {
   blog: {
     $url: (url?: { hash?: string }) => ({ pathname: '/blog' as const, hash: url?.hash }),
     category: {
-      pages: {
+      page: {
         _id: (id: string | number) => ({
-          $url: (url?: { hash?: string }) => ({ pathname: '/blog/category/pages/[id]' as const, query: { id }, hash: url?.hash })
+          $url: (url?: { hash?: string }) => ({ pathname: '/blog/category/page/[id]' as const, query: { id }, hash: url?.hash })
         })
       }
     },
@@ -26,6 +26,13 @@ export const pagesPath = {
       page: {
         _id: (id: string | number) => ({
           $url: (url?: { hash?: string }) => ({ pathname: '/blog/search/page/[id]' as const, query: { id }, hash: url?.hash })
+        })
+      }
+    },
+    user: {
+      page: {
+        _id: (id: string | number) => ({
+          $url: (url?: { hash?: string }) => ({ pathname: '/blog/user/page/[id]' as const, query: { id }, hash: url?.hash })
         })
       }
     }

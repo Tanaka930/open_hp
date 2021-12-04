@@ -9,6 +9,13 @@ export const pagesPath = {
   },
   blog: {
     $url: (url?: { hash?: string }) => ({ pathname: '/blog' as const, hash: url?.hash }),
+    category: {
+      pages: {
+        _id: (id: string | number) => ({
+          $url: (url?: { hash?: string }) => ({ pathname: '/blog/category/pages/[id]' as const, query: { id }, hash: url?.hash })
+        })
+      }
+    },
     page: {
       _id: (id: string | number) => ({
         $url: (url?: { hash?: string }) => ({ pathname: '/blog/page/[id]' as const, query: { id }, hash: url?.hash })

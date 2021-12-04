@@ -5,7 +5,6 @@ import Seo from '@/components/Seo';
 import BlogDetail from '@/components/layout/blogTemplate/BlogDetail';
 
 export default function BlogId({datas}:{datas:any}) {
-  console.log(datas)
 
   if(typeof datas != "undefined"){
     return(

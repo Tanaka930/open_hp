@@ -1,16 +1,26 @@
 import {client} from '@/lib/client'
 
 export default function NewsId({news}:{news:any}) {
+
   if(typeof news != "undefined"){
+    var image:any = ''
+    try{
+      image = news.image.url
+    }catch{
+      image = "/images/news/noimage.png"
+    }
     return(
-      <section>
-        <h1>{news.title}</h1>
-        <p>{news.createdAt}</p>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: `${news.text}`,
-          }}
-        />
+      <section className="font-mono bg-white container mx-auto px-5">
+        <div className="flex flex-col items-center py-8">
+          <div className="flex flex-col w-full mb-12 text-left">
+            <div className="w-full mx-auto lg:w-1/2">
+              <h1 className="mx-auto mb-6 text-2xl font-semibold text-black lg:text-3xl">{news.title}</h1>
+              <img className="rounded-sm" src={image} />
+              <h2 className="mx-auto mt-4 mb-4 text-xl font-semibold text-black">オープンストアニュース</h2>
+              <p className="mx-auto text-base font-medium leading-relaxed text-gray-800">{news.text}</p>
+            </div>
+          </div>
+        </div>
       </section>
     );
   }else{

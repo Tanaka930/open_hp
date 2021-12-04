@@ -36,6 +36,7 @@ export default function BlogDetail(props: Props){
               <h1 className="text-gray-800 text-4xl font-bold mt-2 mb-2 leading-tight">
                 {props.blog.title}
               </h1>
+              <span className="text-green-700 text-sm hidden md:block mt-4"> カテゴリー： {props.blog.category.category} </span>
               <div className='my-4' dangerouslySetInnerHTML={{ __html: props.blog.body }}></div>
 
             </div>
@@ -45,6 +46,17 @@ export default function BlogDetail(props: Props){
             <div className="w-full lg:w-1/3">
               <div className="border border-dotted"></div>
               <BlogSearch />
+              <div className="border border-dotted"></div>
+
+              <div id="whoobe-swr0n" className="pt-4 bg-white w-full justify-center items-center px-6 py-4 flex flex-col">
+                <div className='text-xl my-2'>
+                  執筆者
+                </div>
+                <img src={props.blog.upUser.userImage.url} alt="img" title="img" className="rounded-full h-40 w-40 object-cover" id="whoobe-7jr8o" />
+                <h4 className="mt-8 border-b-2" id="whoobe-5f06f">{props.blog.upUser.user}</h4>
+                <div className="mb-10 text-center capitalize" id="whoobe-m2doo">{props.blog.upUser.position}</div>
+              </div>
+
               <div className="border border-dotted"></div>
 
 

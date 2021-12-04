@@ -11,7 +11,7 @@ export default function BlogListBox(props: Props){
       <>
       {props.blogList.map((blog:any) => (
         <a className="block rounded w-full lg:flex mb-10"
-          href="./blog-single-1.html"
+          href={`/blog/${blog.id}`}
         >
           <div 
             className="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-75 image3"

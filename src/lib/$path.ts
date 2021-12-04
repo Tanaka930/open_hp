@@ -7,6 +7,36 @@ export const pagesPath = {
   about: {
     $url: (url?: { hash?: string }) => ({ pathname: '/about' as const, hash: url?.hash })
   },
+  blog: {
+    $url: (url?: { hash?: string }) => ({ pathname: '/blog' as const, hash: url?.hash }),
+    category: {
+      page: {
+        _id: (id: string | number) => ({
+          $url: (url?: { hash?: string }) => ({ pathname: '/blog/category/page/[id]' as const, query: { id }, hash: url?.hash })
+        })
+      }
+    },
+    page: {
+      _id: (id: string | number) => ({
+        $url: (url?: { hash?: string }) => ({ pathname: '/blog/page/[id]' as const, query: { id }, hash: url?.hash })
+      })
+    },
+    search: {
+      $url: (url?: { hash?: string }) => ({ pathname: '/blog/search' as const, hash: url?.hash }),
+      page: {
+        _id: (id: string | number) => ({
+          $url: (url?: { hash?: string }) => ({ pathname: '/blog/search/page/[id]' as const, query: { id }, hash: url?.hash })
+        })
+      }
+    },
+    user: {
+      page: {
+        _id: (id: string | number) => ({
+          $url: (url?: { hash?: string }) => ({ pathname: '/blog/user/page/[id]' as const, query: { id }, hash: url?.hash })
+        })
+      }
+    }
+  },
   contact: {
     $url: (url?: { hash?: string }) => ({ pathname: '/contact' as const, hash: url?.hash })
   },

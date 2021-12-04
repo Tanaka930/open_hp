@@ -11,6 +11,8 @@ import  Pagination from '@/components/layout/listTemplate/Pagination';
 
 import { useRouter } from 'next/router';
 
+import Link from "next/link";
+
 type Props = {
   blogList: Array<any>;
   blogCategory: any;
@@ -70,12 +72,14 @@ export default function BlogList(props: Props){
                 <ul>
                   {props.blogCategory.map((category:any) => (
                     <li className="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
-                      <a href={`/blog/category/page/1?keyword=${category.id}`} className="flex items-center text-gray-600 cursor-pointer">
-                        <span className="inline-block h-4 w-4 bg-green-300 mr-3"></span>
-                          {category.category}
-                        <span className="text-gray-500 ml-auto">詳しく見る</span>
-                        <i className='text-gray-500 bx bx-right-arrow-alt ml-1'></i>
-                      </a>
+                      <Link href={`/blog/category/page/1?keyword=${category.id}`}>
+                        <a className="flex items-center text-gray-600 cursor-pointer">
+                          <span className="inline-block h-4 w-4 bg-green-300 mr-3"></span>
+                            {category.category}
+                          <span className="text-gray-500 ml-auto">詳しく見る</span>
+                          <i className='text-gray-500 bx bx-right-arrow-alt ml-1'></i>
+                        </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -88,12 +92,14 @@ export default function BlogList(props: Props){
                 <ul>
                   {props.blogUser.map((user:any) => (
                     <li className="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
-                      <a href={`/blog/user/page/1?keyword=${user.id}`} className="flex items-center text-gray-600 cursor-pointer">
-                        <span className="inline-block h-4 w-4 bg-green-300 mr-3"></span>
-                          {user.user}
-                        <span className="text-gray-500 ml-auto">詳しく見る</span>
-                        <i className='text-gray-500 bx bx-right-arrow-alt ml-1'></i>
-                      </a>
+                      <Link href={`/blog/user/page/1?keyword=${user.id}`} >
+                        <a className="flex items-center text-gray-600 cursor-pointer">
+                          <span className="inline-block h-4 w-4 bg-green-300 mr-3"></span>
+                            {user.user}
+                          <span className="text-gray-500 ml-auto">詳しく見る</span>
+                          <i className='text-gray-500 bx bx-right-arrow-alt ml-1'></i>
+                        </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>

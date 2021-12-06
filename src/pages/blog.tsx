@@ -28,6 +28,8 @@ interface BlogList{
   blogUser: any;
   pageNum:number;
   totalCount :any;
+  newBlogList :any;
+  popularBlog: any;
 }
 
 
@@ -37,7 +39,16 @@ export default function Blog(blogList: BlogList){
   return(
     <>
       <Seo templateTitle='blog' />
-      <BlogList blogList={blogList.blogList} blogCategory={blogList.blogCategory} blogUser={blogList.blogUser} pageNum={blogList.pageNum} totalCount={blogList.totalCount} searchSt={true} />
+      <BlogList 
+        blogList={blogList.blogList} 
+        blogCategory={blogList.blogCategory} 
+        blogUser={blogList.blogUser} 
+        pageNum={blogList.pageNum} 
+        totalCount={blogList.totalCount} 
+        searchSt={true} 
+        newBlogList={blogList.newBlogList}
+        popularBlog={blogList.popularBlog}
+        />
     </>
   );
 }
@@ -62,6 +73,16 @@ export const getStaticProps = async () => {
   .then(res => res.json())
   .catch(() => null);
 
+  // 最新のブログ情報を取得
+  const new_blog = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/blog?offset=0&limit=3`, key)
+  .then(res => res.json())
+  .catch(() => null);
+
+  // 人気のブログ情報を取得
+  const popular_blog = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/blog?filters=check[equals]true&offset=0&limit=3`, key)
+  .then(res => res.json())
+  .catch(() => null);
+
 
   return {
     props: {
@@ -69,6 +90,8 @@ export const getStaticProps = async () => {
       blogCategory: blog_cate.contents,
       blogUser: blog_user.contents,
       totalCount: blog_data.totalCount,
+      newBlogList: new_blog.contents,
+      popularBlog: popular_blog.contents,
       pageNum: 1
     },
   };

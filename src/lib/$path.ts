@@ -60,7 +60,10 @@ export const pagesPath = {
     }
   },
   recruit: {
-    $url: (url?: { hash?: string }) => ({ pathname: '/recruit' as const, hash: url?.hash })
+    $url: (url?: { hash?: string }) => ({ pathname: '/recruit' as const, hash: url?.hash }),
+    staff: {
+      $url: (url?: { hash?: string }) => ({ pathname: '/recruit/staff' as const, hash: url?.hash })
+    }
   },
   service: {
     $url: (url?: { hash?: string }) => ({ pathname: '/service' as const, hash: url?.hash })

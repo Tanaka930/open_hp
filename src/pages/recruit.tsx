@@ -26,6 +26,7 @@ interface Category{
 
 interface Categories{
   categories: Category[]
+  pageData: any;
 }
 
 type FormData = {
@@ -124,9 +125,9 @@ export default function Recruit(categories: Categories) {
     <>
       <Seo templateTitle='Recruit' />
       <TopContent bg="bg-top_recruit" title="Recruit" />
-      <Culture />
+      <Culture pageData={categories.pageData}/>
       <Human />
-      <Staff />
+      <Staff pageData={categories.pageData}/>
       <Job categories={categories}/>
 
       <section className="w-full">
@@ -298,6 +299,11 @@ export const getStaticProps = async () => {
   .then(res => res.json())
   .catch(() => null);
 
+  // ページ生成用
+  const page_data = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/recruitment`, key)
+  .then(res => res.json())
+  .catch(() => null);
+
   // 一覧表示用のリスト
   const jobsList: Array<object> = [];
 
@@ -330,6 +336,7 @@ export const getStaticProps = async () => {
   return {
     props: {
       category: jobsList,
+      pageData: page_data,
     },
   };
 };

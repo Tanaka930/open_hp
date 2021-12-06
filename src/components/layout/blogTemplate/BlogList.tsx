@@ -21,6 +21,7 @@ type Props = {
   totalCount: any;
   searchSt: boolean;
   newBlogList: any;
+  popularBlog: any;
 }
 
 
@@ -124,7 +125,7 @@ export default function BlogList(props: Props){
                         <div className="col-span-4 sm:col-span-4 xl:col-span-4">
                           <h3 className="font-semibold text-black">{blog.title}</h3>
                           <p>
-                            {blog.previewWord}
+                            {blog.previewWord.substr( 0, 30 )}
                           </p>
                         </div>
                       </a>
@@ -132,6 +133,34 @@ export default function BlogList(props: Props){
                   ))}
                 </div>
               </div>
+              <div className="border border-dotted"></div>
+
+
+              <div>
+                <h5 className="mt-4 font-bold text-lg uppercase text-gray-700 px-1 mb-2"> 人気の記事 </h5>
+                <div className="mt-4 justify-center">
+                  {props.popularBlog.map((blog:any) => (
+                    <Link href={`/blog/${blog.id}`} >
+                      <a className="my-2 grid grid-cols-6 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-6 gap-4">
+                        <div className="col-span-2 sm:col-span-2 xl:col-span-2">
+                          <img
+                            alt={blog.previewWord}
+                            src={blog.thumbnail.url}
+                            className="h-24 w-24 mx-auto rounded object-cover"
+                          />
+                        </div>
+                        <div className="col-span-4 sm:col-span-4 xl:col-span-4">
+                          <h3 className="font-semibold text-black">{blog.title}</h3>
+                          <p>
+                            {blog.previewWord.substr( 0, 30 )}
+                          </p>
+                        </div>
+                      </a>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div className="border border-dotted"></div>
 
 
 

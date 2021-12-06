@@ -28,7 +28,8 @@ interface BlogList{
   blogUser: any;
   pageNum:number;
   totalCount: any;
-  newBlogList:any
+  newBlogList:any;
+  popularBlog: any;
 }
 
 const PER_PAGE = Number(process.env.onePageContent); 
@@ -37,7 +38,16 @@ export default function Blog(blogList: BlogList){
   return(
     <>
       <Seo templateTitle='blog' />
-      <BlogList blogList={blogList.blogList} blogCategory={blogList.blogCategory} blogUser={blogList.blogUser} pageNum={blogList.pageNum} totalCount={blogList.totalCount} searchSt={true} newBlogList={blogList.newBlogList}  />
+      <BlogList 
+        blogList={blogList.blogList} 
+        blogCategory={blogList.blogCategory} 
+        blogUser={blogList.blogUser} 
+        pageNum={blogList.pageNum} 
+        totalCount={blogList.totalCount} 
+        searchSt={true} 
+        newBlogList={blogList.newBlogList} 
+        popularBlog={blogList.popularBlog}
+      />
     </>
   )
 }
@@ -90,6 +100,11 @@ export const getStaticProps = async (context:any) => {
   .then(res => res.json())
   .catch(() => null);
 
+  // 人気のブログ情報を取得
+  const popular_blog = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/blog?filters=check[equals]true&offset=0&limit=3`, key)
+  .then(res => res.json())
+  .catch(() => null);
+
   return {
     props: {
       blogList: blog_data.contents,
@@ -97,6 +112,7 @@ export const getStaticProps = async (context:any) => {
       blogUser: blog_user.contents,
       totalCount: blog_data.totalCount,
       newBlogList: new_blog.contents,
+      popularBlog: popular_blog.contents,
       pageNum: Number(id)
     }
   };

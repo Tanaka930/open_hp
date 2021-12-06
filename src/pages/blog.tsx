@@ -28,7 +28,8 @@ interface BlogList{
   blogUser: any;
   pageNum:number;
   totalCount :any;
-  newBlogList :any
+  newBlogList :any;
+  popularBlog: any;
 }
 
 
@@ -46,6 +47,7 @@ export default function Blog(blogList: BlogList){
         totalCount={blogList.totalCount} 
         searchSt={true} 
         newBlogList={blogList.newBlogList}
+        popularBlog={blogList.popularBlog}
         />
     </>
   );
@@ -76,6 +78,11 @@ export const getStaticProps = async () => {
   .then(res => res.json())
   .catch(() => null);
 
+  // 人気のブログ情報を取得
+  const popular_blog = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/blog?filters=check[equals]true&offset=0&limit=3`, key)
+  .then(res => res.json())
+  .catch(() => null);
+
 
   return {
     props: {
@@ -84,6 +91,7 @@ export const getStaticProps = async () => {
       blogUser: blog_user.contents,
       totalCount: blog_data.totalCount,
       newBlogList: new_blog.contents,
+      popularBlog: popular_blog.contents,
       pageNum: 1
     },
   };

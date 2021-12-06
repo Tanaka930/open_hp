@@ -49,12 +49,18 @@ export default function Category(){
         const blog_user = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/user`, key)
         .then(res => res.json())
         .catch(() => null); 
+
+        // 最新のブログ情報を取得
+        const new_blog = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/blog?offset=0&limit=3`, key)
+        .then(res => res.json())
+        .catch(() => null);
       
         var blogs = {
           blogList: blog_data.contents,
           blogCategory: blog_cate.contents,
           blogUser: blog_user.contents,
           totalCount: blog_data.totalCount,
+          newBlogList: new_blog.contents,
           pageNum: Number(id)
         }
 
@@ -68,13 +74,13 @@ export default function Category(){
       return(
         <>
           <Seo templateTitle='blog' />
-          <BlogList blogList={blogs.blogList} blogCategory={blogs.blogCategory} blogUser={blogs.blogUser} pageNum={blogs.pageNum} totalCount={blogs.totalCount} searchSt={true} />
+          <BlogList blogList={blogs.blogList} blogCategory={blogs.blogCategory} blogUser={blogs.blogUser} pageNum={blogs.pageNum} totalCount={blogs.totalCount} searchSt={true} newBlogList={blogs.newBlogList} />
         </>
       );
     }else{
       return(
         <>
-          <BlogList blogList={blogs.blogList} blogCategory={blogs.blogCategory} blogUser={blogs.blogUser} pageNum={blogs.pageNum} totalCount={blogs.totalCount} searchSt={false} />
+          <BlogList blogList={blogs.blogList} blogCategory={blogs.blogCategory} blogUser={blogs.blogUser} pageNum={blogs.pageNum} totalCount={blogs.totalCount} searchSt={false} newBlogList={blogs.newBlogList} />
         </>
       );
     }

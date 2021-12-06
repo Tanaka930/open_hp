@@ -59,10 +59,16 @@ export const getStaticProps = async (context:any) => {
   .then(res => res.json())
   .catch(() => null); 
 
+  // 最新のブログ情報を取得
+  const new_blog = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/blog?offset=0&limit=3`, key)
+  .then(res => res.json())
+  .catch(() => null);
+
   const datas:any = {
     blog: blog,
     blogCategory: blog_cate.contents,
     blogUser: blog_user.contents,
+    newBlogList: new_blog.contents,
   }
 
   return {

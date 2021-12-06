@@ -6,7 +6,8 @@ import TopContent from '@/components/layout/TopContent';
 import 'react-tabs/style/react-tabs.css';
 import clsx from 'clsx'
 import Image from 'next/image';
-import { isAbsolute } from 'path/posix';
+import { isAbsolute } from 'path/posix'
+import ReturnTopButton from '@/components/buttons/ReturnTopButton';
 
 interface ShortCode {
   code: string
@@ -38,11 +39,12 @@ export default function Home(data: Data){
     notSelected: 'text-green-600 bg-white',
   }
 
+
+
   return(
     <>
       <Seo templateTitle='About' />
       <TopContent bg="bg-top_about" title="About" />
-
       <div className="flex flex-wrap mx-4 my-12 md:justify-center">
         <div className="w-full md:w-3/4">
           <ul

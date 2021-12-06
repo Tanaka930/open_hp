@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import UnstyledLink from '../links/UnstyledLink';
 // import Menu from './Menu';
 import Link from 'next/link';
@@ -26,6 +26,10 @@ export default function Header() {
   const router = useRouter();
 
   const [isActive, setIsActive] = useState(false);
+  useEffect(() => {
+    document.body.classList.toggle('fixed', isActive);
+  },[isActive])
+
 
   const menuFunction = () => {
     setIsActive(!isActive);
@@ -35,7 +39,8 @@ export default function Header() {
 
   return (
     <>
-      <div className="fixed z-10 w-screen">
+    
+      <div className="absolute z-10 w-screen">
         <div className="max-w-screen-2xl mx-auto pl-2 pr-4 pt-4 sm:px-12 2xl:px-0">
           <div className="flex items-center justify-between h-8 md:h-16">
             <div className="flex items-center">

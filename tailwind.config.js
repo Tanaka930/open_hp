@@ -56,7 +56,7 @@ module.exports = {
         'rec': "url('/images/layout/rec.png')",
         'contact': "url('/images/layout/contact.png')",
         // TOP画像
-        'top_service': "url('/images/layout/service.png')",
+        'top_service': "url('/images/layout/top_service.png')",
         'top_about': "url('/images/layout/top_about.png')",
         'top_news': "url('/images/layout/top_news.png')",
         'top_recruit': "url('/images/layout/top_recruit.png')",

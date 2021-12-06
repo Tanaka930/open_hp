@@ -20,10 +20,11 @@ export default function LeftText(props: Props){
             alt={`${props.alt_text}`} 
             />
           </div>
-          <div className='md:w-3/12'>
-            <span className='text-xl'>
-              {props.text}        
-            </span>
+          <div className='md:w-3/12 text-xl'
+              dangerouslySetInnerHTML={{
+              __html: `${props.text}`,
+            }}
+          >
           </div>
           <div className='hidden md:block'>
             <Image 

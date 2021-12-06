@@ -21,10 +21,11 @@ export default function RightText(props: Props){
             alt={`${props.alt_text}`} 
             />
           </div>
-          <div className='mt-12 md:mt-0 md:w-3/12'>
-            <span className='text-xl'>
-              {props.text}        
-            </span>
+          <div className='mt-12 md:mt-0 md:w-3/12 text-xl'
+            dangerouslySetInnerHTML={{
+              __html: `${props.text}`,
+            }}
+          >
           </div>
         </section>
       </div>

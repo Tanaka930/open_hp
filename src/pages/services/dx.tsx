@@ -46,7 +46,7 @@ export default function Home(){
     text: '店舗DX化が求められる中で、コンサルティングを始めとした、キャッシュレス決済や、通信インフラの整備・見直しなどのお客様に合った運営ツールのご提供・サポートを行ってます。Webマーケティングにおいては、LPの制作、広告、SNSなどを活用し、幅広くお客様の集客をサポートいたします。',
     image: '/images/service/dx/dx1.png',
     width: '430',
-    height: '256',
+    height: '318',
     alt_text: 'オープンストアの店舗DX事業'
   }
 

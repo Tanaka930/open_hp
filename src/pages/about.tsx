@@ -110,7 +110,7 @@ export default function Home(data: Data){
                   <div className="px-5 py-12 md:text-center md:py-32">
                     <Image src={data.data.aboutMainImage.url} width={data.data.aboutMainImage.width} height={data.data.aboutMainImage.height} alt={data.data.aboutMain.width} />
                   </div>
-                  <div className="px-4 pb-12 md:w-2/3 md:mx-auto"  dangerouslySetInnerHTML={{ __html: data.data.aboutMain }} >
+                  <div className="px-4 pb-12 md:w-2/3 md:mx-auto md:text-xl"  dangerouslySetInnerHTML={{ __html: data.data.aboutMain }} >
 
                   </div>
                 </div>
@@ -122,7 +122,7 @@ export default function Home(data: Data){
                     </div>
                     <div className="">
                       <h3 className="text-center text-xl pt-8 pb-4 md:text-3xl md:pt-11 md:pb-7">代表挨拶</h3>
-                      <div className=" md:w-2/3 md:mx-auto" dangerouslySetInnerHTML={{ __html: data.data.aboutMessage }}>
+                      <div className=" md:w-2/3 md:mx-auto md:text-xl" dangerouslySetInnerHTML={{ __html: data.data.aboutMessage }}>
                       </div>
                     </div>
                   </div>

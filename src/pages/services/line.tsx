@@ -55,8 +55,8 @@ export default function Home(){
   const explanation3: Explanation = {
     text: '公式LINEを活用した顧客管理も簡単かつ効率的にできます。お客様一人ひとりの情報や、ターゲットを絞ったメッセージ配信も可能です。また、的確な顧客分析は、リピーターの増加につながります。',
     image: '/images/service/line/line3.png',
-    width: '430',
-    height: '256',
+    width: '481',
+    height: '273',
     alt_text: '公式LIEN管理'
   }
   const achievement: Achievement = {

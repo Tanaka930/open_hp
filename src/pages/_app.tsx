@@ -11,6 +11,7 @@ import {SearchContext} from '@/components/context/searchContext'
 import type { AppProps } from 'next/app';
 
 import React, { useState } from 'react';
+import ReturnTopButton from '@/components/buttons/ReturnTopButton';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [search, setSearch] = useState<string>('');
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <SearchContext.Provider value={{ search, setSearch }}>
       <Layout>
         <Component {...pageProps} />
+        <ReturnTopButton />
       </Layout>
       </SearchContext.Provider>
     </GoogleReCaptchaProvider>

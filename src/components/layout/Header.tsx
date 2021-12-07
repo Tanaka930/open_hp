@@ -24,6 +24,7 @@ function classNames(...classes: string[]) {
 export default function Header() {
 
   const router = useRouter();
+  const path = router.asPath
 
   const [isActive, setIsActive] = useState(false);
   useEffect(() => {
@@ -71,15 +72,15 @@ export default function Header() {
             <div className="bg-green-600 h-screen translate-x-0 transition-all duration-300 ease-linear px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <div className="h-12"></div>
               {navigation.map((item) => (
-                <div key ={item.name} className="pt-8 md:pt-11" onClick={()=>menuFunction()}>
+                <div key ={item.name} className="md:pt-11" onClick={()=>menuFunction()}>
                   <Link
                     href={item.href}
-                    aria-current={item.current ? 'page' : undefined}
+                    aria-current={item.href === path ? 'page' : undefined}
                     
                   >
                     <a className={classNames(
-                      item.current ? 'bg-gray-900 text-white hover:text-yellow-500' : 'text-white hover:text-yellow-500 ',
-                      'block px-3 py-2 rounded-md text-5xl font-medium active:text-yellow-600 md:text-6xl md:text-center'
+                      item.href === path ? 'text-yellow-500' : 'text-white hover:text-yellow-500 ',
+                      'block px-2 py-2 rounded-md text-4xl font-medium active:text-yellow-600 md:text-6xl md:text-center'
                     )}>
                       {item.name}
                     </a>
@@ -93,14 +94,14 @@ export default function Header() {
             <div className="bg-green-600 h-screen translate-x-full transition-all duration-300 ease-linear px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <div className="h-12"></div>
               {navigation.map((item) => (
-                <div key={item.name} className="pt-8">
+                <div key={item.name} className="">
                   <a
                     href={item.href}
                     className={classNames(
-                      item.current ? 'bg-gray-900 text-white hover:text-yellow-500 ' : 'text-gray-300 hover:text-yellow-500 ',
-                      'block px-3 py-2 rounded-md text-5xl font-medium active:text-yellow-600 md:text-6xl md:text-center'
+                      item.href === path ? 'text-yellow-500 ' : 'text-white hover:text-yellow-500 ',
+                      'block px-2 py-2 rounded-md text-4xl font-medium active:text-yellow-600 md:text-6xl md:text-center'
                     )}
-                    aria-current={item.current ? 'page' : undefined}
+                    aria-current={item.href === path ? 'page' : undefined}
                   >
                     {item.name}
                   </a>

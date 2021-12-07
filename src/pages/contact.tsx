@@ -204,7 +204,8 @@ export default function Contact() {
             </form>
 
             <div className="mt-8 md:mt-12">
-              <p className="text-xs md:text-sm text-gray-900">This site is protected by reCAPTCHA and the Google<a href="https://policies.google.com/privacy" target="_blank" className="text-blue-600">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" className="text-blue-600">Terms of Service</a> apply.</p>
+              <p className="text-xs md:text-sm text-gray-900">このサイトはreCAPTCHAによって保護されており、Google <a href="https://policies.google.com/privacy" target="_blank" className="text-blue-600">プライバシーポリシー</a> と <a href="https://policies.google.com/terms" target="_blank" className="text-blue-600">利用規約</a> が適用されます。</p>
+              
             </div>
           </div>
         </div>

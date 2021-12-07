@@ -27,7 +27,7 @@ export default function FooterMenu(links: Links) {
         {links.links.map((link) => (
           <div key={link.label}>
             <Link href={link.href}>
-              <a className="text-gray-800 text-xl font-bold hover:text-indigo-500 active:text-indigo-600 transition duration-100">
+              <a className="border-b-2 border-solid text-gray-800 text-xl font-bold hover:text-indigo-500 active:text-indigo-600 transition duration-100">
                 {link.label}
               </a>
             </Link>

@@ -59,6 +59,9 @@ export const pagesPath = {
       })
     }
   },
+  policy: {
+    $url: (url?: { hash?: string }) => ({ pathname: '/policy' as const, hash: url?.hash })
+  },
   recruit: {
     $url: (url?: { hash?: string }) => ({ pathname: '/recruit' as const, hash: url?.hash })
   },

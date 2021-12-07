@@ -51,6 +51,7 @@ export default function Header() {
                       className="h-7 md:h-10"
                       src="/images/layout/Logo.png"
                       alt="openstore"
+                      decoding="async"
                     />
                   </a>
                 </Link>

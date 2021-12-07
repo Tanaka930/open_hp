@@ -5,8 +5,8 @@ import { animateScroll as scroll } from 'react-scroll'
 
 const Button = styled.a<{isButtonActive:boolean}>`
   position: fixed;
-  right: 5px;
-  bottom: 20px;
+  right: 20px;
+  bottom: 40px;
   height: 50px;
   text-decoration: none;
   font-weight: bold;

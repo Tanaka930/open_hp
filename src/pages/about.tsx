@@ -34,7 +34,7 @@ export default function Home(data: Data){
   const [openTab, setOpenTab] = useState(1)
   const classes = {
     base:
-      'text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal md:text-xl md:tracking-wider md:py-5',
+      'font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal md:text-xl md:tracking-wider md:py-5',
     selected: 'text-white bg-green-600',
     notSelected: 'text-green-600 bg-white',
   }
@@ -112,7 +112,7 @@ export default function Home(data: Data){
                   <div className="px-5 py-12 md:text-center md:py-32">
                     <Image src={data.data.aboutMainImage.url} width={data.data.aboutMainImage.width} height={data.data.aboutMainImage.height} alt={data.data.aboutMain.width} />
                   </div>
-                  <div className="px-4 pb-12 md:w-2/3 md:mx-auto md:text-xl"  dangerouslySetInnerHTML={{ __html: data.data.aboutMain }} >
+                  <div className="px-4 pb-12 md:w-2/3 md:mx-auto md:text-xl" dangerouslySetInnerHTML={{ __html: data.data.aboutMain }} >
 
                   </div>
                 </div>

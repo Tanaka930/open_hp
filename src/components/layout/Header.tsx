@@ -8,12 +8,12 @@ import { useMedia } from 'use-media';
 
 
 const navigation = [
-  { name: 'Service', href: '/service', current: false },
-  { name: 'About', href: '/about', current: false  },
-  { name: 'News', href: '/news', current: false },
-  { name: 'Recruit', href: '/recruit', current: false },
-  { name: 'Contact', href: '/contact', current: false },
-  { name: 'Blog', href: '/blog', current: false },
+  { name: 'Service', href: '/service' },
+  { name: 'About', href: '/about'  },
+  { name: 'News', href: '/news' },
+  { name: 'Recruit', href: '/recruit' },
+  { name: 'Contact', href: '/contact' },
+  { name: 'Blog', href: '/blog' },
 ]
 
 

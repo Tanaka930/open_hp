@@ -1,6 +1,3 @@
-import ButtonLink from '@/components/links/ButtonLink';
-import Seo from '@/components/Seo';
-import TopContent from '@/components/layout/TopContent';
 import Image from 'next/image';
 import Link from 'next/link';
 

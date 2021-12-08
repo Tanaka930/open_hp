@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import ReadMoreButton from '@/components/buttons/ReadMore'
+import ReadMoreButton from '@/components/buttons/readMoreButton'
 
 
 export default function About(){
@@ -20,7 +20,7 @@ export default function About(){
           </p>
         </div>
       </div>
-      <div className='mt-12 md:mt-24'>
+      <div className='py-12 md:mt-24'>
         <ReadMoreButton href="/about" />
       </div>
     </section>

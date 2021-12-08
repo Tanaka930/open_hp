@@ -1,7 +1,4 @@
-import ButtonLink from '@/components/links/ButtonLink';
 import Seo from '@/components/Seo';
-import { client } from "@/lib/client";
-
 
 // トップアニメーション用のコンポーネント
 import TopAnimation from '@/components/top/TopAnimation'

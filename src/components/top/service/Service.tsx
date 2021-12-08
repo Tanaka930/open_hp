@@ -1,5 +1,6 @@
 import Image from 'next/image'
-import ReadMoreButton from '@/components/buttons/ReadMore'
+import ReadMoreButton from '@/components/buttons/readMoreButton'
+
 
 export default function Service(){
   return(
@@ -22,7 +23,7 @@ export default function Service(){
           <h4 className="mt-3 mb-10">店舗DX</h4>
         </div>
       </div>
-      <div className='mt-12 md:mt-24'>
+      <div className='py-12 md:mt-24'>
         <ReadMoreButton href="/service" />
       </div>
     </section>

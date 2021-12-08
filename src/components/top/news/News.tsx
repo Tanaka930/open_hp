@@ -1,4 +1,4 @@
-import ReadMoreButton from '@/components/buttons/ReadMore'
+import ReadMoreButton from '@/components/buttons/readMoreButton'
 import Link from "next/link";
 import Moment from 'react-moment'
 
@@ -25,7 +25,7 @@ export default function News({newses}: {newses:any}){
           ))}
         </ol>
       </div>
-      <div className='mt-12 md:mt-24'>
+      <div className='py-12 md:mt-24'>
           <ReadMoreButton href="/news" />
         </div>
     </section>

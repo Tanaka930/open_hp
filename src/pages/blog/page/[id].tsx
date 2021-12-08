@@ -1,4 +1,3 @@
-import ButtonLink from '@/components/links/ButtonLink';
 import Seo from '@/components/Seo';
 import BlogList from '@/components/layout/blogTemplate/BlogList';
 

@@ -1,13 +1,9 @@
 import { useState } from 'react'
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import ButtonLink from '@/components/links/ButtonLink';
 import Seo from '@/components/Seo';
 import TopContent from '@/components/layout/TopContent';
 import 'react-tabs/style/react-tabs.css';
 import clsx from 'clsx'
 import Image from 'next/image';
-import { isAbsolute } from 'path/posix'
-import ReturnTopButton from '@/components/buttons/ReturnTopButton';
 
 interface ShortCode {
   code: string

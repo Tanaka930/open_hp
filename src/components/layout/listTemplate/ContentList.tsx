@@ -1,4 +1,4 @@
-import ReadMoreButton from '@/components/buttons/ReadMore'
+import ReadMoreButton from '@/components/buttons/readMoreButton'
 import Link from "next/link";
 import Moment from 'react-moment'
 import Image from 'next/image'

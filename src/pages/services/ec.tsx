@@ -97,7 +97,9 @@ export default function Home(){
         />
       <div className='mb-24'>
         {/* LP作成後にリンク貼り替え */}
-        <ReadMoreButton href="https://jp.pornhub.com/" />
+        <ReadMoreButton href="https://jp.pornhub.com/">
+          Read More ...
+        </ReadMoreButton>
       </div>
       <Achievement datas={achievement.datas} />
     </>

@@ -110,7 +110,9 @@ export default function Home(){
         alt_text={explanation3.alt_text}
         />
         <div className='mb-24'>
-          <ReadMoreButton href="https://l-store-infomation.com/" />
+          <ReadMoreButton href="https://l-store-infomation.com/">
+            Read More ...
+          </ReadMoreButton>
         </div>
         {/* 以下実績は後で確認 */}
         <Achievement datas={achievement.datas} />

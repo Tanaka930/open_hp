@@ -26,8 +26,10 @@ export default function News({newses}: {newses:any}){
         </ol>
       </div>
       <div className='py-12 md:mt-24'>
-          <ReadMoreButton href="/news" />
-        </div>
+        <ReadMoreButton href="/news">
+          Read More ...
+        </ReadMoreButton>
+      </div>
     </section>
   );
 }

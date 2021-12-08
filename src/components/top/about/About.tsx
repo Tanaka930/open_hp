@@ -21,7 +21,9 @@ export default function About(){
         </div>
       </div>
       <div className='py-12 md:mt-24'>
-        <ReadMoreButton href="/about" />
+        <ReadMoreButton href="/about">
+          Read More ...
+        </ReadMoreButton>
       </div>
     </section>
     </>

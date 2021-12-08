@@ -24,7 +24,9 @@ export default function Service(){
         </div>
       </div>
       <div className='py-12 md:mt-24'>
-        <ReadMoreButton href="/service" />
+        <ReadMoreButton href="/service">
+          Read More ...
+        </ReadMoreButton>
       </div>
     </section>
     </>

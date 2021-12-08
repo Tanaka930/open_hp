@@ -15,7 +15,7 @@ type ButtonLinkProps = {
 } & UnstyledLinkProps;
 
 export default function ButtonLink({
-  children,
+  // children,
   className = '',
   variant = 'dark',
   ...rest
@@ -45,7 +45,7 @@ export default function ButtonLink({
           : undefined
       }
     >
-      {children}
+      Read more ...
     </UnstyledLink>
   );
 }

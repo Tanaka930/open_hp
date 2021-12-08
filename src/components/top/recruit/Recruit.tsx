@@ -23,7 +23,9 @@ export default function Recruit(){
         </div>
       </div>
       <div className='py-12 md:mt-24'>
-        <ReadMoreButton href="/recruit" />
+        <ReadMoreButton href="/recruit">
+          Read More ...
+        </ReadMoreButton>
       </div>
     </section>
     </>

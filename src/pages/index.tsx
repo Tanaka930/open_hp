@@ -4,19 +4,19 @@ import Seo from '@/components/Seo';
 import TopAnimation from '@/components/top/TopAnimation'
 
 // サービス用のコンポーネント
-import Service from '@/components/top/service/Service'
+import Service from '@/components/top/Service'
 
 // shopify expertのロゴ表示のコンポーネント
-import ExpertLogo from '@/components/top/shopifyExpert/ExpertLogo'
+import ExpertLogo from '@/components/top/ExpertLogo'
 
 // ニュース一覧表示用のコンポーネント
-import News from '@/components/top/news/News'
+import News from '@/components/top/News'
 
 // 会社情報用のコンポーネント
-import About from '@/components/top/about/About'
+import About from '@/components/top/About'
 
 // 採用情報用のコンポーネント
-import Recruit from '@/components/top/recruit/Recruit';
+import Recruit from '@/components/top/Recruit';
 
 
 

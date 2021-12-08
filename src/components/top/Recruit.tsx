@@ -22,7 +22,7 @@ export default function Recruit(){
           <Image src="/images/top/recruit/recruit.png" width={450} height={253} alt="オープンストア社内" />
         </div>
       </div>
-      <div className='py-12 md:mt-24'>
+      <div className='mt-12 md:mt-24'>
         <ReadMoreButton href="/recruit">
           Read More ...
         </ReadMoreButton>

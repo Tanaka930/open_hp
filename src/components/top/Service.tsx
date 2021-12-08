@@ -23,7 +23,7 @@ export default function Service(){
           <h4 className="mt-3 mb-10">店舗DX</h4>
         </div>
       </div>
-      <div className='py-12 md:mt-24'>
+      <div className='mt-12 md:mt-24'>
         <ReadMoreButton href="/service">
           Read More ...
         </ReadMoreButton>

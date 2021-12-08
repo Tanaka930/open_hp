@@ -26,11 +26,11 @@ export default function ReadMoreButton({
       <UnstyledLink
         {...rest}
         className={clsx(
-          'py-2 px-4 inline-block rounded font-bold hover:text-primary-400 animated-underline',
-          'border border-green-200 shadow-sm',
+          'md:text-2xl py-2 md:py-4 px-4 md:px-8 inline-block rounded font-bold hover:text-green-400 animated-underline',
+          'border border-gray-700 shadow-sm',
           'focus:outline-none focus-visible:text-primary-400',
           {
-            'bg-green-500 text-white': variant === 'dark',
+            'bg-dark text-white': variant === 'dark',
             'bg-white text-dark hover:bg-gray-200 hover:text-dark focus-visible:text-dark border-gray-400':
               variant === 'light',
             'bg-primary-400 text-black hover:bg-primary-400/90 hover:text-black border-primary-500 focus-visible:text-dark':
@@ -47,32 +47,8 @@ export default function ReadMoreButton({
             : undefined
         }
       >
-        {children = 'Read More ...'}
+        {children}
       </UnstyledLink>
     </div>
   );
 }
-
-
-
-// function ReadMore({ href }: {href: string}) {
-//   const router = useRouter()
-
-//   const handleClick = (e:any) => {
-//     e.preventDefault()
-//     router.push(href)
-//   }
-
-//   return (
-//     <div className='w-full flex justify-center'>
-//       <a href={href} onClick={handleClick}>
-//         {/* ボタンの色を変更しなければならない */}
-//         <button className='text-white text-center bg-green-500 hover:bg-green-700 p-4 text-2xl rounded-3xl'>
-//           Read more
-//         </button>
-//       </a>
-//     </div>
-//   )
-// }
-
-// export default ReadMore

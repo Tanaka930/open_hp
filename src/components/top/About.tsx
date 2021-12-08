@@ -20,7 +20,7 @@ export default function About(){
           </p>
         </div>
       </div>
-      <div className='py-12 md:mt-24'>
+      <div className='mt-12 md:mt-24'>
         <ReadMoreButton href="/about">
           Read More ...
         </ReadMoreButton>

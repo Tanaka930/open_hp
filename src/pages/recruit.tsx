@@ -132,7 +132,7 @@ export default function Recruit(categories: Categories) {
 
       <section className="w-full">
         <div className="bg-gradient-to-b from-green-400 to-green-200 h-96"></div>
-        <div className="max-w-5xl mx-auto px-6 sm:px-6 lg:px-8 mb-12">
+        <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 mb-12">
           <div className="bg-white w-full shadow rounded p-8 sm:p-12 -mt-72">
             <p className="text-3xl font-bold leading-7 text-center">応募する</p>
             <form onSubmit={handleSubmit(onSubmit)}>

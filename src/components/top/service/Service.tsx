@@ -1,5 +1,6 @@
 import Image from 'next/image'
-import ReadMoreButton from '@/components/buttons/ReadMore'
+import ReadMoreButton from '@/components/buttons/readMoreButton'
+
 
 export default function Service(){
   return(
@@ -10,7 +11,7 @@ export default function Service(){
       <h3 className='text-lg w-full text-center py-10'>オープンストアは関わるすべての人を笑顔にします!!</h3>
       <div className='w-full text-center md:space-x-8 md:flex md:justify-center py-18'>
         <div className=''>
-          <Image src="/images/top/service/EC.png" width={300} height={200} alt="オープンストアEC関連事業" />
+          <Image src="/images/top/service/EC.png" width={300} height={200} alt="オープンストアEC関連事業"  />
           <h4>EC</h4>
         </div>
         <div className=''>
@@ -22,7 +23,7 @@ export default function Service(){
           <h4>店舗DX</h4>
         </div>
       </div>
-      <div className='mt-12 md:mt-24'>
+      <div className='py-12 md:mt-24'>
         <ReadMoreButton href="/service" />
       </div>
     </section>

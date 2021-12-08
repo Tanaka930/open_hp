@@ -11,7 +11,7 @@ import RightText from '@/components/layout/RightText'
 import LeftText from '@/components/layout/LeftText'
 
 // もっと見るボタンのコンポーネント
-import ReadMoreButton from '@/components/buttons/ReadMore'
+import ReadMoreButton from '@/components/buttons/readMoreButton'
 
 // 実績用のコンポーネント追加
 import Achievement from '@/components/layout/Achievement'

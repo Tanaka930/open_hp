@@ -24,7 +24,7 @@ export default function BlogDetail(props: Props){
         <main className="mt-10">
           <DetailTop BlogObject={props.blog} />
 
-          <div className="block lg:flex lg:space-x-2 lg:p-0 my-10 mx-20">
+          <div className="block lg:flex lg:space-x-2 lg:p-0 my-10 mx-10 md:mx-20">
 
             <div className="w-full lg:w-2/3">
               <h1 className="text-gray-800 text-4xl font-bold mt-2 mb-2 leading-tight">

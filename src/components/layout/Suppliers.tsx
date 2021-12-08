@@ -16,9 +16,10 @@ export default function Suppliers(props: Props){
             <div>
               <Image 
                 src={`${data.image}`}
-                height='200'
-                width='250'
+                height={200}
+                width={250}
                 className="object-contain"
+                decoding="async"
               />
             </div>
           ))}
@@ -28,9 +29,10 @@ export default function Suppliers(props: Props){
             <div>
               <Image 
                 src={`${data.image}`}
-                height='200'
-                width='250'
+                height={200}
+                width={250}
                 className="object-contain"
+                decoding="async"
               />
             </div>
           ))}
@@ -40,9 +42,10 @@ export default function Suppliers(props: Props){
             <div>
               <Image 
                 src={`${data.image}`}
-                height='200'
-                width='250'
+                height={200}
+                width={250}
                 className="object-contain"
+                decoding="async"
               />
             </div>
           ))}

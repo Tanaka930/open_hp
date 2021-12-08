@@ -12,9 +12,10 @@ export default function InstallationResults(props: Props){
       <div className='flex items-center w-full justify-center'>
         <Image 
           src={`${props.image}`}
-          width='1000'
-          height='700'
+          width={1000}
+          height={700}
           className="object-contain"
+          decoding="async"
         />
       </div>
     </section>

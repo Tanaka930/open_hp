@@ -50,6 +50,7 @@ export default function NextImage({
         alt={alt}
         onLoadingComplete={() => setStatus('complete')}
         layout='responsive'
+        decoding="async"
         {...rest}
       />
     </figure>

@@ -16,7 +16,12 @@ export default function ServiceContent(content: Content){
     <>
       <div className={content.border}>
         <div className="text-center">
-          <Image src={content.img} width={110} height={110} alt="オープンストアEC関連事業" />
+          <Image src={content.img}
+                 width={110}
+                 height={110}
+                 alt="オープンストアEC関連事業"
+                 decoding="async"
+          />
         </div>
         <div className="px-8 pt-4 md:pt-16">
           <div className="border-l-2 border-green-300">

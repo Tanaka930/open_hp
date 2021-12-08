@@ -20,8 +20,9 @@ export default function Achievement(props: Props){
                     <div className='md:px-12 my-6 md:my-12' >
                       <Image 
                         src={`${data.image}`}
-                        width='400'
-                        height='400'
+                        width={400}
+                        height={400}
+                        decoding="async"
                       />
                       <div className='text-center'>
                         {data.text}

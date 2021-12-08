@@ -18,6 +18,7 @@ export default function LeftText(props: Props){
             width={`${props.width}`} 
             height={`${props.height}`} 
             alt={`${props.alt_text}`} 
+            decoding="async"
             />
           </div>
           <div className='md:w-3/12 text-xl'
@@ -28,10 +29,11 @@ export default function LeftText(props: Props){
           </div>
           <div className='hidden md:block'>
             <Image 
-              src={`${props.image}`} 
-              width={`${props.width}`} 
-              height={`${props.height}`} 
-              alt={`${props.alt_text}`} 
+              src={`${props.image}`}
+              width={`${props.width}`}
+              height={`${props.height}`}
+              alt={`${props.alt_text}`}
+              decoding="async"
               />
             </div>
         </section>

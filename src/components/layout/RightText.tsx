@@ -19,6 +19,7 @@ export default function RightText(props: Props){
             width={`${props.width}`} 
             height={`${props.height}`} 
             alt={`${props.alt_text}`} 
+            decoding="async"
             />
           </div>
           <div className='mt-12 md:mt-0 md:w-3/12 text-xl'

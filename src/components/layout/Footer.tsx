@@ -45,6 +45,7 @@ export default function Footer() {
                       width={200} height={24} 
                       src="/images/layout/Logo.png"
                       alt="openstore-logo"
+                      decoding="async"
                     />
                   </a>
                 </Link>
@@ -59,6 +60,7 @@ export default function Footer() {
                       width={40} height={40} 
                       src="/images/icons/LINE.png"
                       alt="openstore-line-logo"
+                      decoding="async"
                     />
                   </a>
                 </Link>
@@ -68,6 +70,7 @@ export default function Footer() {
                       width={40} height={40} 
                       src="/images/icons/facebook.png"
                       alt="openstore-facebook-logo"
+                      decoding="async"
                     />
                   </a>
                 </Link>

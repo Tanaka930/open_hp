@@ -9,7 +9,12 @@ export default function About(){
       <h2 className='text-4xl md:text-7xl w-full text-center pb-10'>About</h2>
       <div className='w-full md:flex md:justify-center md:space-x-14'>
         <div className='w-auto'>
-          <Image src="/images/top/about/about.png" width={450} height={253} alt="オープンストア社内" />
+          <Image src="/images/top/about/about.png"
+                 width={450}
+                 height={253}
+                 alt="オープンストア社内"
+                 decoding="async"
+          />
         </div>
         <div className='md:w-4/12 m-4 md:m-0'>
           <h3 className='text-2xl md:text-4xl'>会社概要</h3>

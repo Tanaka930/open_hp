@@ -11,15 +11,30 @@ export default function Service(){
       <h3 className='text-2xl w-full text-center py-10'>オープンストアは関わるすべての人を笑顔にします!!</h3>
       <div className='w-full text-center md:space-x-8 md:flex md:justify-center py-18'>
         <div className='text-2xl md:text-3xl'>
-          <Image src="/images/top/service/EC.png" width={300} height={200} alt="オープンストアEC関連事業" />
+          <Image src="/images/top/service/EC.png"
+                 width={300}
+                 height={200}
+                 alt="オープンストアEC関連事業"
+                 decoding="async"
+          />
           <h4 className="mt-3 mb-10">EC</h4>
         </div>
         <div className='text-2xl md:text-3xl'>
-          <Image src="/images/top/service/LINE.png" width={300} height={200} alt="オープンストアLINE関連事業" />
+          <Image src="/images/top/service/LINE.png"
+                 width={300}
+                 height={200}
+                 alt="オープンストアLINE関連事業"
+                 decoding="async"
+          />
           <h4 className="mt-3 mb-10">LINE</h4>
         </div>
         <div className='text-2xl md:text-3xl'>
-          <Image src="/images/top/service/DX.png" width={300} height={200} alt="オープンストア店舗DX関連事業" />
+          <Image src="/images/top/service/DX.png"
+                 width={300}
+                 height={200}
+                 alt="オープンストア店舗DX関連事業"
+                 decoding="async"
+          />
           <h4 className="mt-3 mb-10">店舗DX</h4>
         </div>
       </div>

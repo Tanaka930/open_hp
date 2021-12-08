@@ -12,7 +12,6 @@ export default function NewBlog(props: Props){
         <div className="block md:flex md:space-x-2 lg:p-0">
           <a 
             className="mb-4 md:mb-0 w-full relative rounded inline-block h-96" 
-            href="./blog.html"
           >
             <div className="absolute left-0 bottom-0 w-full h-full z-5 image1"></div>
             <style jsx>{`

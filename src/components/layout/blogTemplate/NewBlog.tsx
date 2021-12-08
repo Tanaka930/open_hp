@@ -1,5 +1,7 @@
 import Moment from 'react-moment'
 
+import Link from "next/link";
+
 type Props = {
   BlogObject: any;
 }
@@ -10,9 +12,9 @@ export default function NewBlog(props: Props){
     return(
       <>
         <div className="block md:flex md:space-x-2 lg:p-0">
+        <Link href={`/blog/${props.BlogObject.id}`} >
           <a 
-            className="mb-4 md:mb-0 w-full relative rounded inline-block h-96" 
-            href="./blog.html"
+            className="mb-4 md:mb-0 w-full relative rounded inline-block h-96"
           >
             <div className="absolute left-0 bottom-0 w-full h-full z-5 image1"></div>
             <style jsx>{`
@@ -40,6 +42,7 @@ export default function NewBlog(props: Props){
               </div>
             </div>
           </a>
+          </Link>
         </div>
       </>
     );

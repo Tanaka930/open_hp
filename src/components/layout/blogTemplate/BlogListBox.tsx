@@ -1,5 +1,7 @@
 import Moment from 'react-moment'
 
+import Link from "next/link";
+
 type Props = {
   blogList:any;
   searchSt:boolean;
@@ -10,8 +12,8 @@ export default function BlogListBox(props: Props){
     return(
       <>
       {props.blogList.map((blog:any) => (
+        <Link href={`/blog/${blog.id}`}>
         <a className="block rounded w-full lg:flex mb-10"
-          href={`/blog/${blog.id}`}
         >
           <div 
             className="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-75 image3"
@@ -50,6 +52,7 @@ export default function BlogListBox(props: Props){
             </div>
           </div>
         </a>
+        </Link>
         ))}
       </>
     );

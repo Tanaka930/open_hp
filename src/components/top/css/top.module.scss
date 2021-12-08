@@ -1,10 +1,11 @@
 // best in chrome
 $total: 300; // total particles
 $orb-size: 300px;
+$orb-size-mini: 200px;
 $particle-size: 12px;
 @media screen and (max-width: 767px) {
   // スマホの時
-  $orb-size: 10px;
+  $orb-size: 200px;
   $particle-size: 6px;
 }
 
@@ -73,6 +74,27 @@ $base-hue: 90; // change for diff colors (180 is nice)
     100% {
       transform: rotateZ(-$z) rotateY($y) translateX(($orb-size * 3))
         rotateZ($z); // translateX * 3
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    @keyframes orbit#{$i} {
+      20% {
+        opacity: 1; // fade in
+      }
+      30% {
+        transform: rotateZ(-$z) rotateY($y) translateX($orb-size-mini)
+          rotateZ($z); // form orb
+      }
+      80% {
+        transform: rotateZ(-$z) rotateY($y) translateX($orb-size-mini)
+          rotateZ($z); // hold orb state 30-80
+        opacity: 1; // hold opacity 20-80
+      }
+      100% {
+        transform: rotateZ(-$z) rotateY($y) translateX(($orb-size-mini * 3))
+          rotateZ($z); // translateX * 3
+      }
     }
   }
 }

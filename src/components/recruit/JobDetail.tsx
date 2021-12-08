@@ -16,7 +16,7 @@ export default function JobDetail(props: Props){
         <div className="transition hover:bg-green-50">
           <div className="transition flex space-x-5 px-5 items-center h-16 text-left">
               <h3 className='text-lg md:text-2xl w-full'>{props.jobData.categoryTitle}</h3>
-              <span className="fas fa-plus cursor-pointer"  onClick={() => setExpanded(!expanded)}>{!expanded && <span>＋</span>}{expanded && <span>ー</span>}</span>
+              <span className="fas fa-plus cursor-pointer"  onClick={() => setExpanded(!expanded)}>{!expanded && <span className="text-4xl">＋</span>}{expanded && <span className="text-3xl">ー</span>}</span>
           </div>
           {expanded && 
             <div className="px-5 pt-0">

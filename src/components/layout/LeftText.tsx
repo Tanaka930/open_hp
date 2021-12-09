@@ -21,7 +21,7 @@ export default function LeftText(props: Props){
             decoding="async"
             />
           </div>
-          <div className='mt-12 md:mt-0 md:w-4/12 md:text-xl'
+          <div className='text-base mt-12 md:mt-0 md:w-4/12 md:text-xl'
               dangerouslySetInnerHTML={{
               __html: `${props.text}`,
             }}

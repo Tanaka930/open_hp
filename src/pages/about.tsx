@@ -113,7 +113,7 @@ export default function Home(data: Data){
                            decoding="async"
                     />
                   </div>
-                  <div className="px-4 pb-12 md:w-2/3 md:mx-auto md:text-xl" dangerouslySetInnerHTML={{ __html: data.data.aboutMain }} >
+                  <div className="text-base px-4 pb-12 md:w-2/3 md:mx-auto md:text-xl" dangerouslySetInnerHTML={{ __html: data.data.aboutMain }} >
 
                   </div>
                 </div>
@@ -130,7 +130,7 @@ export default function Home(data: Data){
                     </div>
                     <div className="">
                       <h3 className="text-center text-xl pt-8 pb-4 md:text-3xl md:pt-11 md:pb-7">代表挨拶</h3>
-                      <div className=" md:w-2/3 md:mx-auto md:text-xl" dangerouslySetInnerHTML={{ __html: data.data.aboutMessage }}>
+                      <div className="text-base md:w-2/3 md:mx-auto md:text-xl" dangerouslySetInnerHTML={{ __html: data.data.aboutMessage }}>
                       </div>
                     </div>
                   </div>

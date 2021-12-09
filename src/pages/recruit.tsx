@@ -74,7 +74,7 @@ export default function Recruit(categories: Categories) {
         if (recaptchaRes.status === 200) {
 
           let message = "お名前: " + data.name +
-          "\nメールアドレス: " + data.mailf +
+          "\nメールアドレス: " + data.mail +
           "\n職種: " + data.category +
           "\nお電話番号: " + data.tell +
           "\n備考: " + data.remark +

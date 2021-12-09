@@ -8,6 +8,7 @@ const links1 = [
   { label: 'News', href: '/news' },
   { label: 'Recruit', href: '/recruit' },
   { label: 'Contact', href: '/contact' },
+  { label: ' Blog', href: '/blog' },
 ]
 
 const links2 = [

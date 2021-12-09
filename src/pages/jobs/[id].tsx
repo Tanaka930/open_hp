@@ -107,7 +107,7 @@ export default function JobId({jobs}:{jobs:any}) {
         <TopContent bg="bg-top_service" title={jobs.category.title} />
         <section>
           <div className="flex items-center justify-center">
-            <span className='text-2xl md:text-4xl'>
+            <span className='text-2xl font-bold md:text-4xl'>
               募集要項
             </span>
           </div>
@@ -266,133 +266,136 @@ export default function JobId({jobs}:{jobs:any}) {
         </section>
 
 
-        <section className="w-full">
-          <div className="bg-gradient-to-b from-green-400 to-green-200 h-96"></div>
-          <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 mb-12">
-            <div className="bg-white w-full shadow rounded p-8 sm:p-12 -mt-72">
-              <p className="text-3xl font-bold leading-7 text-center">応募する</p>
-              <form onSubmit={handleSubmit(onSubmit)}>
+        <section className="w-full bg-green-50">
+          <div className="pt-10">
+            <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 mb-12">
+              <div className="bg-white w-full shadow rounded p-8 sm:p-12">
+                <p className="text-3xl font-bold leading-7 text-center">応募する</p>
+                <form onSubmit={handleSubmit(onSubmit)}>
 
-                <div className="md:flex items-center mt-12">
-                  <div className="w-full flex flex-col">
-                    <label htmlFor="name" className="font-semibold leading-none">お名前</label>
-                    <input 
-                      autoComplete="name"
-                      {...register("name", {
-                        required: "入力必須項目です。",
-                        maxLength: {
-                          value: 24,
-                          message: "全角12文字以内で入力してください。"
-                        }
-                      })}
-                      className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
-                    />
+                  <div className="md:flex items-center mt-12">
+                    <div className="w-full flex flex-col">
+                      <label htmlFor="name" className="font-semibold leading-none">お名前</label>
+                      <input 
+                        autoComplete="name"
+                        {...register("name", {
+                          required: "入力必須項目です。",
+                          maxLength: {
+                            value: 24,
+                            message: "全角12文字以内で入力してください。"
+                          }
+                        })}
+                        className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                      />
 
-                    {errors.name && <span className="text-red-600 text-sm pt-2">{errors.name.message}</span>}
+                      {errors.name && <span className="text-red-600 text-sm pt-2">{errors.name.message}</span>}
+                    </div>
                   </div>
-                </div>
 
-                <div className="md:flex items-center mt-12">
-                  <div className="w-full flex flex-col">
-                    <label htmlFor="mailf" className="font-semibold leading-none">メールアドレス</label>
-                    <input 
-                      autoComplete="mailf"
-                      {...register("mailf", {
-                        required: "入力必須項目です。",
-                        pattern: {
-                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                          message: "正しいメールアドレスを入力してください。"
-                        }
-                      })}
-                      className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
-                    />
+                  <div className="md:flex items-center mt-12">
+                    <div className="w-full flex flex-col">
+                      <label htmlFor="mailf" className="font-semibold leading-none">メールアドレス</label>
+                      <input 
+                        autoComplete="mailf"
+                        {...register("mailf", {
+                          required: "入力必須項目です。",
+                          pattern: {
+                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                            message: "正しいメールアドレスを入力してください。"
+                          }
+                        })}
+                        className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                      />
 
-                    {errors.mailf && <span className="text-red-600 text-sm pt-2">{errors.mailf.message}</span>}
+                      {errors.mailf && <span className="text-red-600 text-sm pt-2">{errors.mailf.message}</span>}
+                    </div>
                   </div>
-                </div>
 
 
-                <div className="md:flex items-center mt-12">
-                  <div className="w-full flex flex-col">
-                    <label htmlFor="mails" className="font-semibold leading-none">メールアドレス確認</label>
-                    <input 
-                      autoComplete="mails"
-                      {...register("mails", {
-                        required: "入力必須項目です。",
-                        pattern: {
-                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                          message: "正しいメールアドレスを入力してください。"
-                        }
-                      })}
-                      className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
-                    />
+                  <div className="md:flex items-center mt-12">
+                    <div className="w-full flex flex-col">
+                      <label htmlFor="mails" className="font-semibold leading-none">メールアドレス確認</label>
+                      <input 
+                        autoComplete="mails"
+                        {...register("mails", {
+                          required: "入力必須項目です。",
+                          pattern: {
+                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                            message: "正しいメールアドレスを入力してください。"
+                          }
+                        })}
+                        className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                      />
 
-                    {errors.mails && <span className="text-red-600 text-sm pt-2">{errors.mails.message}</span>}
+                      {errors.mails && <span className="text-red-600 text-sm pt-2">{errors.mails.message}</span>}
+                    </div>
                   </div>
-                </div>
 
-                <div className="md:flex items-center mt-12">
-                  <div className="w-full flex flex-col">
-                    <label htmlFor="tell" className="font-semibold leading-none">お電話番号</label>
-                    <input 
-                      autoComplete="tell"
-                      {...register("tell", {
-                        pattern: {
-                          value: /^(0{1}\d{9,10})$/i,
-                          message: "正しい電話番号を入力してください。"
-                        }
-                      })}
-                      className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
-                    />
+                  <div className="md:flex items-center mt-12">
+                    <div className="w-full flex flex-col">
+                      <label htmlFor="tell" className="font-semibold leading-none">お電話番号</label>
+                      <input 
+                        autoComplete="tell"
+                        {...register("tell", {
+                          pattern: {
+                            value: /^(0{1}\d{9,10})$/i,
+                            message: "正しい電話番号を入力してください。"
+                          }
+                        })}
+                        className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                      />
 
-                    {errors.tell && <span className="text-red-600 text-sm pt-2">{errors.tell.message}</span>}
+                      {errors.tell && <span className="text-red-600 text-sm pt-2">{errors.tell.message}</span>}
+                    </div>
                   </div>
-                </div>
 
-                <div className="md:flex items-center mt-8">
-                  <div className="w-full flex flex-col">
-                    <label htmlFor="remark" className="font-semibold leading-none">備考</label>
+                  <div className="md:flex items-center mt-8">
+                    <div className="w-full flex flex-col">
+                      <label htmlFor="remark" className="font-semibold leading-none">備考</label>
+                      <input
+                        autoComplete="remark"
+                        {...register("remark", {
+                          maxLength: {
+                            value: 100,
+                            message: "全角50文字以内で入力してください。"
+                          }
+                        })}
+                        className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                      />
+                      {errors.remark && <span className="text-red-600 text-sm pt-2">{errors.remark.message}</span>}
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="w-full flex flex-col mt-8">
+                      <label htmlFor="message" className="font-semibold leading-none">お問い合わせ内容</label>
+                      <textarea
+                        autoComplete="message"
+                        {...register("message", {
+                          required: "入力必須項目です。",
+                          maxLength: {
+                            value: 10000,
+                            message: "全角500文字以内で入力してください。" 
+                          }
+                        })}
+                        className="h-40 text-base leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                      >
+                      </textarea>
+                      {errors.message && <span className="text-red-600 text-sm pt-2">{errors.message.message}</span>}
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-center w-full">
                     <input
-                      autoComplete="remark"
-                      {...register("remark", {
-                        maxLength: {
-                          value: 100,
-                          message: "全角50文字以内で入力してください。"
-                        }
-                      })}
-                      className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                      type="submit"
+                      className="mt-9 font-semibold leading-none text-white py-4 px-10 bg-green-700 rounded hover:bg-green-600 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 focus:outline-none cursor-pointer"
                     />
-                    {errors.remark && <span className="text-red-600 text-sm pt-2">{errors.remark.message}</span>}
                   </div>
+                </form>
+                <div className="mt-8 md:mt-12">
+                  <p className="text-xs md:text-sm text-gray-900">このサイトはreCAPTCHAによって保護されており、Google <a href="https://policies.google.com/privacy" target="_blank" className="text-blue-600">プライバシーポリシー</a> と <a href="https://policies.google.com/terms" target="_blank" className="text-blue-600">利用規約</a> が適用されます。</p>
                 </div>
-
-                <div>
-                  <div className="w-full flex flex-col mt-8">
-                    <label htmlFor="message" className="font-semibold leading-none">お問い合わせ内容</label>
-                    <textarea
-                      autoComplete="message"
-                      {...register("message", {
-                        required: "入力必須項目です。",
-                        maxLength: {
-                          value: 10000,
-                          message: "全角500文字以内で入力してください。" 
-                        }
-                      })}
-                      className="h-40 text-base leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
-                    >
-                    </textarea>
-                    {errors.message && <span className="text-red-600 text-sm pt-2">{errors.message.message}</span>}
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-center w-full">
-                  <input
-                    type="submit"
-                    className="mt-9 font-semibold leading-none text-white py-4 px-10 bg-green-700 rounded hover:bg-green-600 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 focus:outline-none cursor-pointer"
-                  />
-                </div>
-
-              </form>
+              </div>
             </div>
           </div>
         </section>

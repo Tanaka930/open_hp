@@ -1,39 +1,77 @@
-import React, {useState} from 'react';
-import UnstyledLink from '@/components/links/UnstyledLink';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
-const links = [
-  { href: '/service', label: 'Route 1' },
-  { href: '/', label: 'Route 2' },
-];
+const navigation = [
+  { name: 'Service', href: '/service' },
+  { name: 'About', href: '/about'  },
+  { name: 'News', href: '/news' },
+  { name: 'Recruit', href: '/recruit' },
+  { name: 'Contact', href: '/contact' },
+  { name: 'Blog', href: '/blog' },
+]
 
-// const onClickMenu = () => {
-//   const newCompleteTodos = ;
-//   // newCompleteTodos.splice(index, 1);
 
-//   // const newIncompleteTodos = [...incompleteTodos, completeTodos[index]];
-//   // setcompleteTodos(newCompleteTodos);
-//   // setIncompleteTodos(newIncompleteTodos);
-// };
+function classNames(...classes: string[]) {
+  return classes.filter(Boolean).join(' ')
+}
 
-export default function HeaderMenu() {
+type Props = {
+  isActive: boolean;
+  toggleButton: any;
+}
+
+export default function HeaderMenu(props: Props) {
+
+  const router = useRouter();
+  const path = router.asPath;
 
   return (
     <>
-      <div className="openbtn1" ><span></span><span></span><span></span></div>
-      <nav id="g-nav">
-        <div id="g-nav-list">
-          <ul className='flex items-center justify-between space-x-4'>
-            {links.map(({ href, label }) => (
-              <li key={`${href}${label}`}>
-                <UnstyledLink href={href} className='hover:text-gray-600'>
-                  {label}
-                </UnstyledLink>
-              </li>
+      {props.isActive ? (
+        <div className="fixed z-10 top-0 w-screen">
+          <div className="bg-gradient-to-r from-green-600 to-green-400 h-screen translate-x-0 transition-all duration-300 ease-linear px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <div className="h-12"></div>
+            {navigation.map((item) => (
+              <div key ={item.name} className="md:pt-11" onClick={()=>props.toggleButton()}>
+                <Link
+                  href={item.href}
+                  aria-current={item.href === path ? 'page' : undefined}
+                  
+                >
+                  <a className={classNames(
+                     item.href === path ? 'text-yellow-500' : 'text-white hover:text-yellow-200 ',
+                     'block px-2 py-2 rounded-md text-4xl font-medium md:text-6xl md:text-center'
+                  )}>
+                    {item.name}
+                  </a>
+                </Link>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
-      </nav>
-      <div className="circle-bg"></div>
+      ):(
+        <div className="fixed top-0 w-screen pointer-events-none">
+          <div className="bg-gradient-to-r from-green-600 to-green-400 h-screen translate-x-full transition-all duration-300 ease-linear px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <div className="h-12"></div>
+            {navigation.map((item) => (
+              <div key={item.name} className="">
+                <Link
+                  href={item.href}
+                >
+                  <a className={classNames(
+                       item.href === path ? 'text-yellow-500 ' : 'text-white hover:text-yellow-200 ',
+                       'block px-2 py-2 rounded-md text-4xl font-medium md:text-6xl md:text-center'
+                     )}
+                     aria-current={item.href === path ? 'page' : undefined}
+                  >
+                    {item.name}
+                  </a>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </>
   );
 }

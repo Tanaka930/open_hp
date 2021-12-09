@@ -36,6 +36,7 @@
     "use-media": "^1.4.0"
   },
   "devDependencies": {
+    "@types/gtag.js": "^0.0.8",
     "@types/node": "16.11.7",
     "@types/react": "17.0.34",
     "@types/react-tabs": "^2.3.3",

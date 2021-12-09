@@ -11,7 +11,7 @@ export default function ContentList({contents,contentTitle}: {contents:any ,cont
 
   return(
     <>
-      <section className="text-gray-600 body-font">
+      <section className="bg-gray-100 body-font">
         <div className="container px-5 pt-12 pb-24 mx-auto max-w-7x1">
           <div className="flex flex-wrap -m-4">
           {contents.news.map((content:any) => (

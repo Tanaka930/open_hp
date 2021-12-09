@@ -97,7 +97,7 @@ export default function Home(){
         />
       <div className='mb-24'>
         {/* LP作成後にリンク貼り替え */}
-        <ReadMoreButton href="https://jp.pornhub.com/">
+        <ReadMoreButton href="http://shopify.openstore-japan.com">
           Read More ...
         </ReadMoreButton>
       </div>

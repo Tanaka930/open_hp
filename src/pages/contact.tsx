@@ -97,7 +97,7 @@ export default function Contact() {
 
       <div className="w-full">
         <div className="bg-green-50 pt-20 md:pt-36">
-        <div className="max-w-5xl mx-auto px-6 sm:px-6 lg:px-8 pb-12">
+        <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 pb-12">
           <div className="bg-white w-full shadow rounded p-8 sm:p-12">
             <p className="text-3xl font-bold leading-7 text-center">お問い合わせ</p>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -205,8 +205,8 @@ export default function Contact() {
 
             <div className="mt-8 md:mt-12">
               <p className="text-xs md:text-sm text-gray-900">このサイトはreCAPTCHAによって保護されており、Google <a href="https://policies.google.com/privacy" target="_blank" className="text-blue-600">プライバシーポリシー</a> と <a href="https://policies.google.com/terms" target="_blank" className="text-blue-600">利用規約</a> が適用されます。</p>
-              
             </div>
+
           </div>
         </div>
         </div>

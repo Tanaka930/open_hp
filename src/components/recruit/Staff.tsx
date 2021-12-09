@@ -8,7 +8,7 @@ export default function Staff(props: Props){
   const text:string = props.pageData.staff
   return(
     <>
-      <section className='h-auto w-full'>
+      <section className='h-auto w-full bg-gray-50'>
         <h2 className='text-4xl'>スタッフの声</h2>
         <LeftText 
         image={props.pageData.staffImage.url}

@@ -114,7 +114,3 @@ h2 {
 section {
   padding: 50px 10px;
 }
-
-section:nth-child(2n) {
-  background: #f3f3f3;
-}

@@ -13,8 +13,26 @@ import type { AppProps } from 'next/app';
 import React, { useState } from 'react';
 import ReturnTopButton from '@/components/buttons/ReturnTopButton';
 
+import { GA_TRACKING_ID, pageview } from '@/lib/gtag';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+
 function MyApp({ Component, pageProps }: AppProps) {
   const [search, setSearch] = useState<string>('');
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!GA_TRACKING_ID) return;
+
+    const handleRouteChange = (url: string) => {
+      pageview(url);
+    };
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY} language="ja">
       <SearchContext.Provider value={{ search, setSearch }}>

@@ -12,20 +12,20 @@ export default function ContentList({contents,contentTitle}: {contents:any ,cont
   return(
     <>
       <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto max-w-7x1">
+        <div className="container px-5 pt-12 pb-24 mx-auto max-w-7x1">
           <div className="flex flex-wrap -m-4">
           {contents.news.map((content:any) => (
             <Link href={`/${contentTitle}/${content.id}`}>
             <div className="xl:w-1/3 md:w-1/2 p-4">
               <a>
-                <div className="bg-white p-2 rounded-lg cursor-pointer">
+                <div className="bg-white pt-2 pb-4 px-2 rounded-lg cursor-pointer">
                   <ContetImage image= {content.image} altText={content.text}/>
-                  <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">
+                  <h3 className="tracking-widest text-green-600 text-xs font-medium">
                     <Moment format="YYYY年MM月DD日">
                       {content.createdAt}
                     </Moment>
                   </h3>
-                  <h2 className="text-lg text-gray-900 font-medium title-font mb-4">{content.title}</h2>
+                  <h2 className="text-lg text-gray-900 font-bold mb-6">{content.title}</h2>
                   <p className="leading-relaxed text-base">
                     {content.text.substr( 0, 50 )}
                   </p> 

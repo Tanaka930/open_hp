@@ -112,9 +112,5 @@ h2 {
 
 /* セクション情報の記載 */
 section {
-  padding: 100px 10px;
-}
-
-section:nth-child(2n) {
-  background: #f3f3f3;
+  padding: 50px 10px;
 }

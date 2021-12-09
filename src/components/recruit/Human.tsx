@@ -18,7 +18,7 @@ export default function Human(){
 
   return(
     <>
-      <section className='h-auto w-full'>
+      <section className='h-auto w-full '>
         <h2 className='text-4xl'>求める人物像</h2>
         <div className='px-8 pb-10 pt-20 md:p-12 flex justify-center w-full'>
           <ul className='text-xl font-bold list-decimal space-y-14 md:text-2xl'>

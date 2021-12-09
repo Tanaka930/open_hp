@@ -9,8 +9,8 @@ export default function Culture(props: Props){
   const text:string = props.pageData.culture
   return(
     <>
-    <section className='h-auto w-full'>
-      <h2 className='text-4xl'>社風</h2>
+    <section className='h-auto w-full bg-gray-50'>
+      <h2 className='text-4xl font-bold'>社風</h2>
       <RightText 
         image={props.pageData.cultureImage.url}
         text={text}

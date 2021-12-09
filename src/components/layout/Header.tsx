@@ -79,8 +79,8 @@ export default function Header() {
                     
                   >
                     <a className={classNames(
-                      item.href === path ? 'text-yellow-500' : 'text-white hover:text-yellow-500 ',
-                      'block px-2 py-2 rounded-md text-4xl font-medium active:text-yellow-600 md:text-6xl md:text-center'
+                      item.href === path ? 'text-yellow-500' : 'text-white hover:text-yellow-200 ',
+                      'block px-2 py-2 rounded-md text-4xl font-medium md:text-6xl md:text-center'
                     )}>
                       {item.name}
                     </a>
@@ -98,8 +98,8 @@ export default function Header() {
                   <a
                     href={item.href}
                     className={classNames(
-                      item.href === path ? 'text-yellow-500 ' : 'text-white hover:text-yellow-500 ',
-                      'block px-2 py-2 rounded-md text-4xl font-medium active:text-yellow-600 md:text-6xl md:text-center'
+                      item.href === path ? 'text-yellow-500 ' : 'text-white hover:text-yellow-200 ',
+                      'block px-2 py-2 rounded-md text-4xl font-medium md:text-6xl md:text-center'
                     )}
                     aria-current={item.href === path ? 'page' : undefined}
                   >

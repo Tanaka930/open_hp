@@ -4,7 +4,7 @@ import ReadMoreButton from '@/components/buttons/readMoreButton'
 export default function Recruit(){
   return(
     <>
-    <section className='h-auto w-full'>
+    <section className='h-auto w-full bg-gray-50'>
       <h2 className='text-4xl md:text-7xl w-full text-center pb-10'>Recruit</h2>
       <div className='w-full md:flex md:justify-center md:space-x-14'>
         <div className='block md:hidden w-auto'>

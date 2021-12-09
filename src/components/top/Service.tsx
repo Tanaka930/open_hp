@@ -6,7 +6,7 @@ export default function Service(){
   return(
     <>
     {/* オリジナルのカラーパレットの設定まだしていないです */}
-    <section className='bg-gray-100 h-auto w-full'>
+    <section className='bg-gray-50 h-auto w-full'>
       <h2 className='text-4xl md:text-7xl w-full text-center'>Services</h2>
       <h3 className='text-xl w-full text-center py-10'>オープンストアは関わる<br className="md:hidden"/>すべての人を笑顔にします!!</h3>
       <div className='w-full text-center md:space-x-8 md:flex md:justify-center py-18'>

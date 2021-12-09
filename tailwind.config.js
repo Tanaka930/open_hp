@@ -68,7 +68,12 @@ module.exports = {
       },
       height: {
         xl: '768px',
-      }
+      },
+      fontSize: {
+        'base': ['1.0rem',{
+          letterSpacing: '0.1em',
+        }]
+      },
     },
   },
   variants: {

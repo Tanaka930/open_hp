@@ -5,6 +5,8 @@
   position: relative;
   top: 40%;
   left: 10%;
+  z-index: 1;
+
   @media screen and (max-width: 767px) {
     font-size: 3rem;
     top: 40%;
@@ -13,18 +15,21 @@
 }
 .topTextNo1 {
   font-size: 4.8rem;
+  // font-weight: 900;
   @media screen and (max-width: 767px) {
     font-size: 3rem;
   }
 }
 .topTextNo2 {
   font-size: 4.8rem;
+  // font-weight: 900;
   @media screen and (max-width: 767px) {
     font-size: 3rem;
   }
 }
 .topTextEn {
   font-size: 1.6rem;
+  // font-weight: 500;
   @media screen and (max-width: 767px) {
     font-size: 1.2rem;
   }

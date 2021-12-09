@@ -5,11 +5,6 @@ type Props = {
   pageData: any;
 }
 
-type Context = {
-    // モバイルか？
-    isMobileSite: boolean;
-}
-
 const mediaQueries = {
   mobile: '(max-width: 1023px)'
 };
@@ -19,35 +14,19 @@ export default function Culture(props: Props){
   const isMobileSite = useMedia(mediaQueries.mobile);
 
   const text:string = props.pageData.culture
-  if(isMobileSite){
-    return(
-      <>
+
+  return(
+    <>
       <section className='h-auto w-full'>
-        <h2 className='text-4xl'>社風</h2>
+        <h2 className='text-4xl font-bold'>社風</h2>
         <RightText 
-          image={props.pageData.cultureImage2.url}
+          image={isMobileSite ? props.pageData.cultureImage2.url : props.pageData.cultureImage.url }
           text={text}
-          width={props.pageData.cultureImage2.width}
-          height={props.pageData.cultureImage2.height}
+          width={isMobileSite ? props.pageData.cultureImage2.width : props.pageData.cultureImage.width }
+          height={isMobileSite ? props.pageData.cultureImage2.height : props.pageData.cultureImage.height }
           alt_text={text}
         />
       </section>
-      </>
-    );
-  }else{
-    return(
-      <>
-      <section className='h-auto w-full'>
-        <h2 className='text-4xl'>社風</h2>
-        <RightText 
-          image={props.pageData.cultureImage.url}
-          text={text}
-          width={props.pageData.cultureImage.width}
-          height={props.pageData.cultureImage.height}
-          alt_text={text}
-        />
-      </section>
-      </>
-    );
-  }
+    </>
+  );
 }

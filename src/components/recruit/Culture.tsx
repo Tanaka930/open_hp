@@ -11,7 +11,7 @@ type Context = {
 }
 
 const mediaQueries = {
-  mobile: '(max-width: 959px)'
+  mobile: '(max-width: 1023px)'
 };
 
 export default function Culture(props: Props){

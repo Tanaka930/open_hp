@@ -11,8 +11,8 @@ export default function LeftText(props: Props){
   return(
     <>
       <div>
-        <section className='md:flex md:justify-center md:space-x-10'>
-          <div className='block md:hidden w-auto'>
+        <section className='lg:flex lg:justify-center lg:space-x-10'>
+          <div className='text-center block lg:hidden w-auto'>
           <Image 
             src={`${props.image}`} 
             width={`${props.width}`} 
@@ -21,13 +21,13 @@ export default function LeftText(props: Props){
             decoding="async"
             />
           </div>
-          <div className='text-base mt-12 md:mt-0 md:w-4/12 md:text-xl'
+          <div className='text-base sm:mx-20 mt-12 md:mt-0 lg:w-4/12 lg:text-xl'
               dangerouslySetInnerHTML={{
               __html: `${props.text}`,
             }}
           >
           </div>
-          <div className='hidden md:block'>
+          <div className='hidden lg:block'>
             <Image 
               src={`${props.image}`} 
               width={`${props.width}`} 

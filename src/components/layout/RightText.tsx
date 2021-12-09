@@ -11,9 +11,9 @@ export default function RightText(props: Props){
   return(
     <>
       <div>
-        <section className='md:flex md:justify-center md:space-x-10'>
+        <section className='lg:flex lg:justify-center lg:space-x-10'>
           {/* <div className={`${props.bg} bg-cover bg-no-repeat w-5/12`}> */} 
-          <div>
+          <div className="text-center">
           <Image 
             src={`${props.image}`} 
             width={`${props.width}`} 
@@ -22,7 +22,7 @@ export default function RightText(props: Props){
             decoding="async"
             />
           </div>
-          <div className='text-base mt-12 md:mt-0 md:w-4/12 md:text-xl'
+          <div className='text-base sm:mx-20 mt-12 lg:mt-0 lg:w-4/12 lg:text-xl'
             dangerouslySetInnerHTML={{
               __html: `${props.text}`,
             }}

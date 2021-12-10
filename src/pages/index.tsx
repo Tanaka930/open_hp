@@ -25,11 +25,11 @@ export default function Home(props:any){
     <>
       <Seo templateTitle='Home' />
       <TopAnimation />
-      <Service />
+      <Service data={props.content} />
       <ExpertLogo />
       <News newses={props.news.contents}/>
-      <About />
-      <Recruit />
+      <About data={props.content} />
+      <Recruit data={props.content} />
     </>
   )
 }
@@ -43,9 +43,14 @@ export const getStaticProps = async () => {
     .then(res => res.json())
     .catch(() => null);
 
+  const content = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/content`, key)
+  .then(res => res.json())
+  .catch(() => null);
+
   return {
     props: {
       news: news,
+      content: content
     },
   };
 };

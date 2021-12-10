@@ -1,8 +1,11 @@
 import Image from 'next/image'
 import ReadMoreButton from '@/components/buttons/readMoreButton'
 
+type Props = {
+  data: any;
+}
 
-export default function Service(){
+export default function Service(props:Props){
   return(
     <>
     {/* オリジナルのカラーパレットの設定まだしていないです */}
@@ -11,7 +14,7 @@ export default function Service(){
       <h3 className='text-xl w-full text-center py-10'>オープンストアは関わる<br className="md:hidden"/>すべての人を笑顔にします!!</h3>
       <div className='w-full text-center md:space-x-8 md:flex md:justify-center py-18'>
         <div className='text-2xl md:text-3xl'>
-          <Image src="/images/top/service/EC.png"
+          <Image src={props.data.ecImage.url}
                  width={300}
                  height={200}
                  alt="オープンストアEC関連事業"
@@ -20,7 +23,7 @@ export default function Service(){
           <h4 className="mt-3 mb-10">EC</h4>
         </div>
         <div className='text-2xl md:text-3xl'>
-          <Image src="/images/top/service/LINE.png"
+          <Image src={props.data.lineImage.url}
                  width={300}
                  height={200}
                  alt="オープンストアLINE関連事業"
@@ -29,7 +32,7 @@ export default function Service(){
           <h4 className="mt-3 mb-10">LINE</h4>
         </div>
         <div className='text-2xl md:text-3xl'>
-          <Image src="/images/top/service/DX.png"
+          <Image src={props.data.dxImage.url}
                  width={300}
                  height={200}
                  alt="オープンストア店舗DX関連事業"

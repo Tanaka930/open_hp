@@ -2,27 +2,32 @@ import Image from 'next/image'
 import ReadMoreButton from '@/components/buttons/readMoreButton'
 
 
-export default function About(){
+type Props = {
+  data: any;
+}
+
+export default function About(props:Props){
   return(
     <>
     <section className='h-auto w-full'>
       <h2 className='text-4xl md:text-7xl w-full text-center pb-10'>About</h2>
       <div className='w-full md:flex md:justify-center md:space-x-14'>
         <div className='w-auto'>
-          <Image src="/images/top/about/about.png"
-                 width={450}
-                 height={253}
+          <Image src={props.data.aboutImage.url}
+                 width={props.data.aboutImage.width}
+                 height={props.data.aboutImage.height}
                  alt="オープンストア社内"
                  decoding="async"
           />
         </div>
         <div className='md:w-4/12 m-4 md:m-0'>
           <h3 className='text-2xl md:text-4xl'>会社概要</h3>
-          <p className='text-base md:text-xl my-4 md:my-8'>
-            オープンストアは、お客様との対話に重きを置き、本質的な課題を汲み取りお客様にとって最適な販路拡大や集客方法におけるノウハウなどを一貫してサポートします。
-            「やり方がわからない。時間がない。もう歳だから。ニーズがない。結果が補償できない。」などの多くの障壁がありますが、そういった障壁を一つひとつ共に乗り越え、夢の実現に向けてのお手伝いを、是非、私たちオープンストアにお任せください。
-            お客様にとって必要不可欠なパートナーとして末永く寄り添って参ります。
-          </p>
+          <div className='text-base md:text-xl my-4 md:my-8'
+                dangerouslySetInnerHTML={{
+                  __html: `${props.data.aboutText}`,
+                }}
+                >
+          </div>
         </div>
       </div>
       <div className='mt-12 md:mt-24'>

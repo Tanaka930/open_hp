@@ -16,8 +16,9 @@ export default function Job({categories}:{categories:any}){
         <h2 className='text-4xl w-auto'>求人情報</h2>
         <div className="md:w-4/12 from-pink-50 to-indigo-100 place-items-center">
           <div className="w-full rounded py-12 md:py-0">
-            {jobDatas.map((jobData:any) => (
-              <JobDetail 
+            {jobDatas.map((jobData:any, index: number) => (
+              <JobDetail
+                key={index}
                 jobData={jobData}
               />
             ))}

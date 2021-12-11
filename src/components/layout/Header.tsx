@@ -27,14 +27,12 @@ export default function Header() {
             <div className="flex items-center">
               <div className="flex-shrink-0">
                 <UnstyledLink href='/'>
-                  <a>
-                    <img
-                      className="h-7 md:h-10"
-                      src="/images/layout/Logo.png"
-                      alt="openstore"
-                      decoding="async"
-                    />
-                  </a>
+                  <img
+                    className="h-7 md:h-10"
+                    src="/images/layout/Logo.png"
+                    alt="openstore"
+                    decoding="async"
+                  />
                 </UnstyledLink>
               </div>
             </div>

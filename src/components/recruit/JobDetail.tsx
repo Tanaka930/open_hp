@@ -23,8 +23,8 @@ export default function JobDetail(props: Props){
                 {props.jobData.text}
               </p>
               <ul className='space-y-4 text-base md:text-xl p-8'>
-              {props.jobData.jobDatas.map((data:any) => (
-                <li>
+              {props.jobData.jobDatas.map((data:any ,index: number) => (
+                <li key={index}>
                   <UnstyledLink href={`/jobs/${data.jobId}`} className='cursor-pointer'>
                     {data.title}
                   </UnstyledLink>

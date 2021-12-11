@@ -1,15 +1,17 @@
 import {client} from '@/lib/client'
 
-import Seo from '@/components/Seo';
+import SeoBlog from '@/components/SeoBlog';
 
 import BlogDetail from '@/components/layout/blogTemplate/BlogDetail';
 
 export default function BlogId({datas}:{datas:any}) {
 
   if(typeof datas != "undefined"){
+
+
     return(
       <>
-        <Seo templateTitle='blog' />
+        <SeoBlog templateTitle='blog' datas={datas.blog}/>
         <BlogDetail blog={datas.blog} blogCategory={datas.blogCategory} blogUser={datas.blogUser} newBlogList={datas.newBlogList} popularBlog={datas.popularBlog} />
       </>
     );

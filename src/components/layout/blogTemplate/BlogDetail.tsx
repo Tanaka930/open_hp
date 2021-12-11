@@ -2,7 +2,9 @@ import Moment from 'react-moment'
 
 import DetailTop from '@/components/layout/blogTemplate/DetailTop';
 
-import BlogSearch from '@/components/layout/blogTemplate/BlogSearch'
+import BlogSearch from '@/components/layout/blogTemplate/BlogSearch';
+
+import SnsShareButton from '@/components/buttons/SnsShareButton';
 
 import UnstyledLink from '@/components/links/UnstyledLink';
 
@@ -26,6 +28,9 @@ export default function BlogDetail(props: Props){
           <div className="block lg:flex lg:space-x-2 lg:p-0 my-10 mx-10 md:mx-20">
 
             <div className="w-full lg:w-2/3">
+              <span>
+                <SnsShareButton title={props.blog.title} blogId={props.blog.id}/>
+              </span>
               <h1 className="text-gray-800 text-4xl font-bold mt-2 mb-2 leading-tight">
                 {props.blog.title}
               </h1>

@@ -79,7 +79,7 @@ export default function Footer() {
                   <a className="cursor-pointer">
                     <Image
                       width={40} height={40} 
-                      src="https://images.microcms-assets.io/assets/17edce1601e949eaaf07394154ac903d/737cb1eff3084d0cac7fb54f9e4c4cdf/Instagram.png"
+                      src="https://images.microcms-assets.io/assets/060099f6cc654b008570f004e7566231/4b1dc0f3941244bdba9100ba3fb1bc52/Instagram.png"
                       alt="openstore-instagram-logo"
                     />
                   </a>

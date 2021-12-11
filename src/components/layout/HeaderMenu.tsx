@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import Link from 'next/link';
+import UnstyledLink from '../links/UnstyledLink';
 
 const navigation = [
   { name: 'Service', href: '/service' },
@@ -33,18 +33,17 @@ export default function HeaderMenu(props: Props) {
             <div className="h-12"></div>
             {navigation.map((item) => (
               <div key ={item.name} className="md:pt-11" onClick={()=>props.toggleButton()}>
-                <Link
+                <UnstyledLink
                   href={item.href}
                   aria-current={item.href === path ? 'page' : undefined}
-                  
                 >
                   <a className={classNames(
-                     item.href === path ? 'text-yellow-500' : 'text-white hover:text-yellow-200 ',
+                     item.href === path ? 'text-gray-800' : 'text-white hover:text-yellow-500 ',
                      'block px-2 py-2 rounded-md text-4xl font-medium md:text-6xl md:text-center'
                   )}>
                     {item.name}
                   </a>
-                </Link>
+                </UnstyledLink>
               </div>
             ))}
           </div>
@@ -55,18 +54,18 @@ export default function HeaderMenu(props: Props) {
             <div className="h-12"></div>
             {navigation.map((item) => (
               <div key={item.name} className="">
-                <Link
+                <UnstyledLink
                   href={item.href}
                 >
                   <a className={classNames(
-                       item.href === path ? 'text-yellow-500 ' : 'text-white hover:text-yellow-200 ',
+                       item.href === path ? 'text-gray-800 ' : 'text-white hover:text-yellow-500 ',
                        'block px-2 py-2 rounded-md text-4xl font-medium md:text-6xl md:text-center'
                      )}
                      aria-current={item.href === path ? 'page' : undefined}
                   >
                     {item.name}
                   </a>
-                </Link>
+                </UnstyledLink>
               </div>
             ))}
           </div>

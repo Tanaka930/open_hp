@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import UnstyledLink from '@/components/links/UnstyledLink'
 
 
 interface Content {
@@ -32,9 +32,11 @@ export default function ServiceContent(content: Content){
               {content.text}
             </p>
           </div>
-          <Link href={content.href}>
-            <a className="text-green-600 hover:text-green-300 border-b-2 border-green-600 hover:border-green-300">view more →</a>
-          </Link>
+          <UnstyledLink href={content.href}
+                        className="text-green-600 hover:text-green-300 border-b-2 border-green-600 hover:border-green-300"
+          >
+            view more →
+          </UnstyledLink>
         </div>
       </div>
     </>

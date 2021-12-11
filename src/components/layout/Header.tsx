@@ -1,14 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import UnstyledLink from '../links/UnstyledLink';
 import HeaderMenu from './HeaderMenu';
-import Link from 'next/link';
-
 import { HamburgerStand } from 'react-animated-burgers'
 import { useMedia } from 'use-media';
 
 export default function Header() {
-
-
 
   const [isActive, setIsActive] = useState(false);
   useEffect(() => {
@@ -30,7 +26,7 @@ export default function Header() {
           <div className="flex items-center justify-between h-8 md:h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <Link href='/'>
+                <UnstyledLink href='/'>
                   <a>
                     <img
                       className="h-7 md:h-10"
@@ -39,7 +35,7 @@ export default function Header() {
                       decoding="async"
                     />
                   </a>
-                </Link>
+                </UnstyledLink>
               </div>
             </div>
 

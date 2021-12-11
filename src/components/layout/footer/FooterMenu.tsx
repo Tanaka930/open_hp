@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import UnstyledLink from '@/components/links/UnstyledLink'
 
 interface Link {
   label: string;
@@ -9,14 +9,6 @@ interface Links {
   links: Link[];
 }
 
-// const links = [
-//   { label: 'Service', href: '/service' },
-//   { label: 'About', href: '/about'  },
-//   { label: 'News', href: '/news' },
-//   { label: 'Recruit', href: '/recruit' },
-//   { label: 'Contact', href: '/contact' },
-// ]
-
 export default function FooterMenu(links: Links) {
 
   return (
@@ -26,11 +18,9 @@ export default function FooterMenu(links: Links) {
         <nav className="flex flex-col gap-4">
         {links.links.map((link) => (
           <div key={link.label}>
-            <Link href={link.href}>
-              <a className="border-b-2 border-solid text-gray-800 text-xl font-bold hover:text-indigo-500 active:text-indigo-600 transition duration-100">
-                {link.label}
-              </a>
-            </Link>
+            <UnstyledLink href={link.href} className="border-b-2 border-solid text-gray-800 text-xl font-bold hover:text-indigo-500 active:text-indigo-600 transition duration-100">
+              {link.label}
+            </UnstyledLink>
           </div>
         ))}
         </nav>

@@ -1,5 +1,5 @@
 import ReadMoreButton from '@/components/buttons/readMoreButton'
-import Link from "next/link";
+import UnstyledLink from '@/components/links/UnstyledLink'
 import Moment from 'react-moment'
 
 
@@ -11,16 +11,14 @@ export default function News({newses}: {newses:any}){
         <ol className=' space-y-8 w-4/5 md:w-4/12 text-left'>
           {newses.map((news:any) => (
             <li key={news.id}>
-              <Link href={`/news/${news.id}`}>
-                <a>
-                  <Moment format="YYYY年MM月DD日" className="font-bold text-green-700">
-                    {news.createdAt}
-                  </Moment>
-                  <div className="text-center">
-                    {news.title}
-                  </div>
-                </a>
-              </Link>
+              <UnstyledLink href={`/news/${news.id}`}>
+                <Moment format="YYYY年MM月DD日" className="font-bold text-green-700">
+                  {news.createdAt}
+                </Moment>
+                <div className="text-center">
+                  {news.title}
+                </div>
+              </UnstyledLink>
             </li>
           ))}
         </ol>

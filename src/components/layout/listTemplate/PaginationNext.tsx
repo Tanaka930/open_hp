@@ -1,4 +1,4 @@
-import Link from "next/link";
+import UnstyledLink from '@/components/links/UnstyledLink'
 
 import { useRouter } from 'next/router';
 type Props = {
@@ -19,13 +19,13 @@ export default function PaginationNext(props: Props){
     const link = Number(props.pageNum) + 1
     if(chack >= props.pageNum){
       return(
-        <Link href={`${props.pathName}page/${link}`}>
+        <UnstyledLink href={`${props.pathName}page/${link}`}>
           <li className="mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg cursor-pointer">
-            <a className="flex items-center font-bold">
-              <span className="mx-1">Next</span>
-            </a>
+            <span className="flex items-center font-bold mx-1">
+              Next
+            </span>
           </li>
-        </Link>
+        </UnstyledLink>
       );
     }else{
       return(
@@ -38,13 +38,13 @@ export default function PaginationNext(props: Props){
     const link = Number(props.pageNum) + 1
     if(chack >= props.pageNum){
       return(
-        <Link href={`${props.pathName}page/${link}?keyword=${urlQuery.keyword}`}>
+        <UnstyledLink href={`${props.pathName}page/${link}?keyword=${urlQuery.keyword}`}>
           <li className="mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg cursor-pointer">
-            <a className="flex items-center font-bold">
-              <span className="mx-1">Next</span>
-            </a>
+            <span className="flex items-center font-bold mx-1">
+              Next
+            </span>
           </li>
-        </Link>
+        </UnstyledLink>
       );
     }else{
       return(

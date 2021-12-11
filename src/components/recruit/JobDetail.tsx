@@ -1,6 +1,5 @@
 import { useState } from "react";
-
-import Link from 'next/link';
+import UnstyledLink from '@/components/links/UnstyledLink'
 
 type Props = {
   // title: string,
@@ -26,13 +25,9 @@ export default function JobDetail(props: Props){
               <ul className='space-y-4 text-base md:text-xl p-8'>
               {props.jobData.jobDatas.map((data:any) => (
                 <li>
-                  <Link href={`/jobs/${data.jobId}`}>
-                    <div>
-                      <a className='cursor-pointer'>
-                        {data.title}
-                      </a>
-                    </div>
-                  </Link>
+                  <UnstyledLink href={`/jobs/${data.jobId}`} className='cursor-pointer'>
+                    {data.title}
+                  </UnstyledLink>
                 </li>
               ))}
               </ul>

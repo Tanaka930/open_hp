@@ -1,6 +1,5 @@
 import Moment from 'react-moment'
-
-import Link from "next/link";
+import UnstyledLink from "@/components/links/UnstyledLink";
 
 type Props = {
   blogList:any;
@@ -12,20 +11,22 @@ export default function BlogListBox(props: Props){
     return(
       <>
       {props.blogList.map((blog:any) => (
-        <Link href={`/blog/${blog.id}`}>
-        <a className="block rounded w-full lg:flex mb-10"
+        <UnstyledLink href={`/blog/${blog.id}`}
+                      className="block rounded w-full lg:flex mb-10"
         >
           <div 
             className="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-75 image3"
             title="deit is very important"
           >
-            <style jsx>{`
+            <style jsx>
+            {`
               .image3 {
                 background-image: url('${blog.thumbnail.url}');
               }
             `}
             </style>
           </div>
+          
           <div className="bg-white rounded px-4 flex flex-col justify-between leading-normal">
             <div>
               <div className="mt-3 md:mt-0 text-gray-700 font-bold text-2xl mb-2">
@@ -51,17 +52,16 @@ export default function BlogListBox(props: Props){
               カテゴリー:<span className="p-4">{blog.category.category}</span>
             </div>
           </div>
-        </a>
-        </Link>
+        </UnstyledLink>
         ))}
       </>
     );
   }else{
     return(
       <>
-      <a>
+      <div>
         お探しの記事は見つかりませんでした。
-      </a>
+      </div>
       </>
     );
   }

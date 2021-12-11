@@ -1,6 +1,6 @@
 import Moment from 'react-moment'
 
-import Link from "next/link";
+import UnstyledLink from "@/components/links/UnstyledLink";
 
 type Props = {
   BlogObject: any;
@@ -12,9 +12,8 @@ export default function NewBlog(props: Props){
     return(
       <>
         <div className="block md:flex md:space-x-2 lg:p-0">
-        <Link href={`/blog/${props.BlogObject.id}`} >
-          <a 
-            className="mb-4 md:mb-0 w-full relative rounded inline-block h-96"
+          <UnstyledLink href={`/blog/${props.BlogObject.id}`}
+                        className="mb-4 md:mb-0 w-full relative rounded inline-block h-96"
           >
             <div className="absolute left-0 bottom-0 w-full h-full z-5 image1"></div>
             <style jsx>{`
@@ -37,12 +36,11 @@ export default function NewBlog(props: Props){
                     <Moment format="YYYY年MM月DD日">
                       {props.BlogObject.createDay} 
                     </Moment>
-                    </p>
+                  </p>
                 </div>
               </div>
             </div>
-          </a>
-          </Link>
+          </UnstyledLink>
         </div>
       </>
     );

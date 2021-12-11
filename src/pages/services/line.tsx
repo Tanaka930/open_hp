@@ -15,6 +15,7 @@ import ReadMoreButton from '@/components/buttons/readMoreButton'
 
 // 実績用のコンポーネント追加
 import Achievement from '@/components/layout/Achievement'
+import BackServiceButton from '@/components/organisms/backServiceButton'
 
 interface TopTextWord{
   text: string
@@ -116,7 +117,7 @@ export default function Home(){
         </div>
         {/* 以下実績は後で確認 */}
         <Achievement datas={achievement.datas} />
-
+        <BackServiceButton />
     </>
   )
 }

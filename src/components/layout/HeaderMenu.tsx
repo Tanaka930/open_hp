@@ -38,7 +38,7 @@ export default function HeaderMenu(props: Props) {
                   aria-current={item.href === path ? 'page' : undefined}
                 >
                   <a className={classNames(
-                     item.href === path ? 'text-gray-800' : 'text-white hover:text-yellow-500 ',
+                     item.href === path ? 'text-gray-800 cursor-default' : 'text-white hover:text-yellow-500 ',
                      'block px-2 py-2 rounded-md text-4xl font-medium md:text-6xl md:text-center'
                   )}>
                     {item.name}
@@ -58,7 +58,7 @@ export default function HeaderMenu(props: Props) {
                   href={item.href}
                 >
                   <a className={classNames(
-                       item.href === path ? 'text-gray-800 ' : 'text-white hover:text-yellow-500 ',
+                       item.href === path ? 'text-gray-800 cursor-default' : 'text-white hover:text-yellow-500 ',
                        'block px-2 py-2 rounded-md text-4xl font-medium md:text-6xl md:text-center'
                      )}
                      aria-current={item.href === path ? 'page' : undefined}

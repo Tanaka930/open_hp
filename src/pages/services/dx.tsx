@@ -12,6 +12,7 @@ import Suppliers from '@/components/layout/Suppliers'
 
 // 実績用のコンポーネント
 import InstallationResults from '@/components/layout/InstallationResults'
+import BackServiceButton from '@/components/organisms/backServiceButton'
 
 interface TopTextWord{
   text: string
@@ -114,6 +115,7 @@ export default function Home(){
         title={achievement.title}
         image={achievement.image}
       />
+      <BackServiceButton />
     </>
   )
 }

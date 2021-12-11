@@ -22,16 +22,12 @@ export default function Footer() {
   return (
     <>
       <div className="text-white text-shadow font-bold md:flex flex-wrap text-4xl">
-        <Link href='/recruit'>
-          <a className="flex items-center justify-center bg-rec bg-cover bg-no-repeat h-32 md:w-1/2 md:h-80  cursor-pointer">
-            採用情報
-          </a>
-        </Link>
-        <Link href='/contact'>
-          <a className="flex items-center justify-center bg-contact bg-cover bg-no-repeat h-32 md:w-1/2 md:h-80 cursor-pointer">
-            お問い合わせ
-          </a>
-        </Link>
+        <UnstyledLink href='/recruit' className="flex items-center justify-center bg-rec bg-cover bg-no-repeat h-32 md:w-1/2 md:h-80  cursor-pointer">
+          採用情報
+        </UnstyledLink>
+        <UnstyledLink href='/contact' className="flex items-center justify-center bg-contact bg-cover bg-no-repeat h-32 md:w-1/2 md:h-80 cursor-pointer">
+          お問い合わせ
+        </UnstyledLink>
       </div>
       <footer className="bg-white py-4  sm:py-10 lg:py-12">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,51 +35,43 @@ export default function Footer() {
 
             <div className="md:w-1/2">
               <div className="lg:-mt-2 md:mb-8">
-                <Link href="/">
-                  <a>
-                    <Image
-                      // className="h-7"
-                      width={200} height={24} 
-                      src="/images/layout/Logo.png"
-                      alt="openstore-logo"
-                      decoding="async"
-                    />
-                  </a>
-                </Link>
+                <UnstyledLink href="/">
+                  <Image
+                    // className="h-7"
+                    width={200} height={24} 
+                    src="/images/layout/Logo.png"
+                    alt="openstore-logo"
+                    decoding="async"
+                  />
+                </UnstyledLink>
               </div>
             </div>
 
             <div className="order-2 w-full pt-4 md:w-1/2 md:pt-0">
               <div className="flex pl-2 md:justify-end lg:pr-44">
-                <Link href="https://page.line.me/246xdhfu">
-                  <a className="pr-5 cursor-pointer">
-                    <Image
-                      width={40} height={40} 
-                      src="/images/icons/LINE.png"
-                      alt="openstore-line-logo"
-                      decoding="async"
-                    />
-                  </a>
-                </Link>
-                <Link href="https://www.facebook.com/openstorejapan">
-                  <a className="pr-5 cursor-pointer">
-                    <Image
-                      width={40} height={40} 
-                      src="/images/icons/facebook.png"
-                      alt="openstore-facebook-logo"
-                      decoding="async"
-                    />
-                  </a>
-                </Link>
-                <Link href="https://www.instagram.com/open_store_inc/">
-                  <a className="cursor-pointer">
-                    <Image
-                      width={40} height={40} 
-                      src="https://images.microcms-assets.io/assets/17edce1601e949eaaf07394154ac903d/737cb1eff3084d0cac7fb54f9e4c4cdf/Instagram.png"
-                      alt="openstore-instagram-logo"
-                    />
-                  </a>
-                </Link>
+                <UnstyledLink href="https://page.line.me/246xdhfu" className="pr-5 cursor-pointer">
+                  <Image
+                    width={40} height={40} 
+                    src="/images/icons/LINE.png"
+                    alt="openstore-line-logo"
+                    decoding="async"
+                  />
+                </UnstyledLink>
+                <UnstyledLink href="https://www.facebook.com/openstorejapan" className="pr-5 cursor-pointer">
+                  <Image
+                    width={40} height={40} 
+                    src="/images/icons/facebook.png"
+                    alt="openstore-facebook-logo"
+                    decoding="async"
+                  />
+                </UnstyledLink>
+                <UnstyledLink href="https://www.instagram.com/open_store_inc/" className="cursor-pointer">
+                  <Image
+                    width={40} height={40} 
+                    src="https://images.microcms-assets.io/assets/17edce1601e949eaaf07394154ac903d/737cb1eff3084d0cac7fb54f9e4c4cdf/Instagram.png"
+                    alt="openstore-instagram-logo"
+                  />
+                </UnstyledLink>
               </div>
             </div>
 
@@ -112,11 +100,9 @@ export default function Footer() {
             <FooterMenu links={links2}/>
           </div>
           <div className="text-xs text-center text-gray-700 mt-20">
-            <Link href='/policy'>
-              <a className="hover:text-blue-700">
-                プライバシーポリシー
-              </a>
-            </Link>
+            <UnstyledLink href='/policy' className="hover:text-blue-700">
+              プライバシーポリシー
+            </UnstyledLink>
           </div>
           <p className="text-xs text-center tracking-widest pt-1">
             ©︎2021 Open Store. All rights reserved.

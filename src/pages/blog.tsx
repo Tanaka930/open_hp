@@ -1,5 +1,3 @@
-import Image from 'next/image'
-import Link from "next/link";
 import Seo from '@/components/Seo';
 import BlogList from '@/components/layout/blogTemplate/BlogList';
 

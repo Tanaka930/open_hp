@@ -36,13 +36,12 @@ export default function HeaderMenu(props: Props) {
                 <UnstyledLink
                   href={item.href}
                   aria-current={item.href === path ? 'page' : undefined}
+                  className={classNames(
+                    item.href === path ? 'text-gray-800 cursor-default' : 'text-white hover:text-yellow-500 ',
+                    'block px-2 py-2 rounded-md text-4xl font-medium md:text-6xl md:text-center'
+                  )}
                 >
-                  <a className={classNames(
-                     item.href === path ? 'text-gray-800 cursor-default' : 'text-white hover:text-yellow-500 ',
-                     'block px-2 py-2 rounded-md text-4xl font-medium md:text-6xl md:text-center'
-                  )}>
-                    {item.name}
-                  </a>
+                  {item.name}
                 </UnstyledLink>
               </div>
             ))}
@@ -56,15 +55,13 @@ export default function HeaderMenu(props: Props) {
               <div key={item.name} className="">
                 <UnstyledLink
                   href={item.href}
+                  aria-current={item.href === path ? 'page' : undefined}
+                  className={classNames(
+                    item.href === path ? 'text-gray-800 cursor-default' : 'text-white hover:text-yellow-500 ',
+                    'block px-2 py-2 rounded-md text-4xl font-medium md:text-6xl md:text-center'
+                  )}
                 >
-                  <a className={classNames(
-                       item.href === path ? 'text-gray-800 cursor-default' : 'text-white hover:text-yellow-500 ',
-                       'block px-2 py-2 rounded-md text-4xl font-medium md:text-6xl md:text-center'
-                     )}
-                     aria-current={item.href === path ? 'page' : undefined}
-                  >
-                    {item.name}
-                  </a>
+                  {item.name}
                 </UnstyledLink>
               </div>
             ))}

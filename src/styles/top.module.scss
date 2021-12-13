@@ -22,6 +22,7 @@ $base-hue: 90; // change for diff colors (180 is nice)
   position: relative;
   top: 20%;
   left: 65%;
+  // z-index: -10;
   @media screen and (max-width: 767px) {
     // スマホの時
     top: 22%;

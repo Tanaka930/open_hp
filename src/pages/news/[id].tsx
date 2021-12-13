@@ -1,4 +1,6 @@
 import {client} from '@/lib/client'
+import { FaReply } from 'react-icons/fa'
+import ReadMoreButton from '@/components/buttons/readMoreButton'
 
 export default function NewsId({news}:{news:any}) {
 
@@ -20,6 +22,10 @@ export default function NewsId({news}:{news:any}) {
               <p className="mx-auto text-base font-medium leading-relaxed text-gray-800">{news.text}</p>
             </div>
           </div>
+        <ReadMoreButton href='/news' className="flex">
+          <span className="pt-0.5 pr-2"><FaReply/></span>
+          一覧画面へ戻る
+        </ReadMoreButton>
         </div>
       </section>
     );

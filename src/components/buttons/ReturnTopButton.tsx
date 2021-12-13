@@ -48,7 +48,7 @@ export default function ReturnTopButton() {
   }, [])
 
   const scrollWindow = () => {
-    const top = 1630  //ボタンを表示させたい位置
+    const top = 200  //ボタンを表示させたい位置
     let scroll = 0
     scroll = window.scrollY
     if (top <= scroll) {

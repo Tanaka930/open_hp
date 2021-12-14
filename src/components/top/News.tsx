@@ -2,7 +2,6 @@ import ReadMoreButton from '@/components/buttons/readMoreButton'
 import UnstyledLink from '@/components/links/UnstyledLink'
 import Moment from 'react-moment'
 
-
 export default function News({newses}: {newses:any}){
   return(
     <section className='bg-gray-50 h-auto w-full'>

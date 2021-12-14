@@ -1,5 +1,6 @@
 import Seo from '@/components/Seo';
 import TopContent from "@/components/layout/TopContent"
+// import { useLocation } from 'react-router-dom';
 
 // 一覧表示用のコンポーネント
 import ContentList from '@/components/layout/listTemplate/ContentList'
@@ -15,7 +16,8 @@ interface Contents {
 
 const PER_PAGE = Number(process.env.onePageContent); 
 
-export default function Home(contents: Contents){
+export default function Home(contents: Contents){ 
+
   return(
     <>
       <Seo templateTitle='News' />

@@ -18,6 +18,9 @@ import About from '@/components/top/About'
 // 採用情報用のコンポーネント
 import Recruit from '@/components/top/Recruit';
 
+// ブログ表示用のコンポーネント
+import Blog from '@/components/top/Blog'
+
 
 
 export default function Home(props:any){
@@ -25,6 +28,7 @@ export default function Home(props:any){
     <>
       <Seo templateTitle='Home' />
       <TopAnimation />
+      <Blog blogs={props.blogs.contents} />
       <Service data={props.content} />
       <ExpertLogo />
       <News newses={props.news.contents}/>
@@ -47,10 +51,15 @@ export const getStaticProps = async () => {
   .then(res => res.json())
   .catch(() => null);
 
+  const blogs = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/blog?offset=0&limit=6`, key)
+  .then(res => res.json())
+  .catch(() => null);
+
   return {
     props: {
       news: news,
-      content: content
+      content: content,
+      blogs: blogs
     },
   };
 };

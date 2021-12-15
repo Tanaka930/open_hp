@@ -1,50 +1,33 @@
 import Image from 'next/image'
 import ReadMoreButton from '@/components/buttons/readMoreButton'
 
+import ServiceContent from '@/components/top/service/serviceContent'
+
 type Props = {
   data: any;
 }
 
 export default function Service(props:Props){
+  const text1 = "大切にしているのは「向き合うこと。一人ひとりの悩みや不安に寄り添う診療をします。"
+  const text2 = "大切にしているのは「向き合うこと。一人ひとりの悩みや不安に寄り添う診療をします。"
+  const text3 = "大切にしているのは「向き合うこと。一人ひとりの悩みや不安に寄り添う診療をします。"
+
   return(
     <>
-    {/* オリジナルのカラーパレットの設定まだしていないです */}
-    <section className='bg-gray-50 h-auto w-full'>
-      <h2 className='text-4xl md:text-7xl w-full text-center'>Services</h2>
-      <h3 className='text-xl w-full text-center py-10'>オープンストアは関わる<br className="md:hidden"/>すべての人を笑顔にします!!</h3>
-      <div className='w-full text-center md:space-x-8 md:flex md:justify-center py-18'>
-        <div className='text-2xl md:text-3xl'>
-          <Image src={props.data.ecImage.url}
-                 width={300}
-                 height={200}
-                 alt="オープンストアEC関連事業"
-                 decoding="async"
-          />
-          <h4 className="mt-3 mb-10">EC</h4>
+    <section className='bg-gray-50 h-auto mx-6'>
+      <div className="md:mx-36">
+        <h2 className='text-4xl md:text-7xl w-full xl:pb-4 text-center'>SERVICE</h2>
+        <h3 className='text-xl md:text-3xl w-full pb-8 xl:pb-16 text-center font-bold text-green-700'>- 事業内容 -</h3>
+        <div className='w-full text-center space-y-8 xl:space-y-0 xl:space-x-8 md:flex md:justify-center py-18'>
+          <ServiceContent image= {props.data.ecImage.url} title="Shopify構築" text = {text1}/>
+          <ServiceContent image= {props.data.lineImage.url} title="LINEサービス" text = {text2}/>
+          <ServiceContent image= {props.data.lineImage.url} title="DX事業" text = {text3}/>
         </div>
-        <div className='text-2xl md:text-3xl'>
-          <Image src={props.data.lineImage.url}
-                 width={300}
-                 height={200}
-                 alt="オープンストアLINE関連事業"
-                 decoding="async"
-          />
-          <h4 className="mt-3 mb-10">LINE</h4>
+        <div className='mt-12 md:mt-24'>
+          <ReadMoreButton href="/service">
+            Read More ...
+          </ReadMoreButton>
         </div>
-        <div className='text-2xl md:text-3xl'>
-          <Image src={props.data.dxImage.url}
-                 width={300}
-                 height={200}
-                 alt="オープンストア店舗DX関連事業"
-                 decoding="async"
-          />
-          <h4 className="mt-3 mb-10">店舗DX</h4>
-        </div>
-      </div>
-      <div className='mt-12 md:mt-24'>
-        <ReadMoreButton href="/service">
-          Read More ...
-        </ReadMoreButton>
       </div>
     </section>
     </>

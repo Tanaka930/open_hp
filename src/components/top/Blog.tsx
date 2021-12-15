@@ -10,7 +10,7 @@ export default function blog(props:Props){
   return(
     <>
       <section className="bg-white body-font mx-6 md:mx-36">
-        <h2 className='text-4xl md:text-7xl w-full pb-10 text-left'>Tpics</h2>
+        <h2 className='text-4xl md:text-7xl w-full pb-10 text-left'>TOPIC</h2>
         <h3 className='text-xl md:text-3xl w-full pb-10 text-left font-bold text-green-700'>-トピックス-</h3>
 
         <div className="container px-5 pt-6 md:pt-12 pb-12 md:pb-24 max-w-7x1">

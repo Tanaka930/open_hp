@@ -30,7 +30,7 @@ export default function Home(props:any){
       <TopAnimation />
       <Blog blogs={props.blogs.contents} />
       <Service data={props.content} />
-      <ExpertLogo />
+      {/* <ExpertLogo /> */}
       <News newses={props.news.contents}/>
       <About data={props.content} />
       <Recruit data={props.content} />

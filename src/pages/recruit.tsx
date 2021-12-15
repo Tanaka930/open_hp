@@ -130,16 +130,20 @@ export default function Recruit(categories: Categories) {
       <Staff pageData={categories.pageData}/>
       <Job categories={categories}/>
 
-      <section className="w-full bg-green-50">
+      <section className="w-full">
         <div className="">
+        <h2 className='text-2xl font-bold lg:text-4xl w-full  xl:pb-4 text-center'>CONTACT</h2>
+        <h3 className='text-xl lg:text-2xl w-full pb-2 xl:pb-8 text-center font-bold text-green-700'>- 応募する -</h3> 
         <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 mb-12">
-          <div className="bg-white w-full shadow rounded p-8 sm:p-12">
-            <p className="text-3xl font-bold leading-7 text-center">応募する</p>
+          <div className="bg-white w-full rounded-3xl border-4 p-8 sm:p-12">
             <form onSubmit={handleSubmit(onSubmit)}>
-
               <div className="md:flex items-center mt-12">
                 <div className="w-full flex flex-col">
-                  <label htmlFor="name" className="font-semibold leading-none">お名前</label>
+                  <label htmlFor="name" className="font-semibold leading-none">
+                    お名前
+                    <span className="mx-2 px-2 bg-yellow-500 text-white">必須</span>
+                  </label>
+                  
                   <input 
                     autoComplete="name"
                     {...register("name", {
@@ -158,7 +162,10 @@ export default function Recruit(categories: Categories) {
 
               <div className="md:flex items-center mt-12">
                 <div className="w-full flex flex-col">
-                  <label htmlFor="mailf" className="font-semibold leading-none">メールアドレス</label>
+                  <label htmlFor="mailf" className="font-semibold leading-none">
+                    メールアドレス
+                    <span className="mx-2 px-2 bg-yellow-500 text-white">必須</span>
+                  </label>
                   <input 
                     autoComplete="mailf"
                     {...register("mailf", {
@@ -178,7 +185,10 @@ export default function Recruit(categories: Categories) {
 
               <div className="md:flex items-center mt-12">
                 <div className="w-full flex flex-col">
-                  <label htmlFor="mails" className="font-semibold leading-none">メールアドレス確認</label>
+                  <label htmlFor="mails" className="font-semibold leading-none">
+                    メールアドレス確認
+                    <span className="mx-2 px-2 bg-yellow-500 text-white">必須</span>
+                  </label>
                   <input 
                     autoComplete="mails"
                     {...register("mails", {
@@ -215,7 +225,10 @@ export default function Recruit(categories: Categories) {
 
               <div className="md:flex items-center mt-8">
                 <div className="w-full flex flex-col">
-                  <label htmlFor="category" className="font-semibold leading-none">職種</label>
+                  <label htmlFor="category" className="font-semibold leading-none">
+                    職種
+                    <span className="mx-2 px-2 bg-yellow-500 text-white">必須</span>  
+                  </label>
                   <select
                     autoComplete="category"
                     {...register("category", {

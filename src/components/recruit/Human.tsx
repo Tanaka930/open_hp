@@ -18,10 +18,11 @@ export default function Human(){
 
   return(
     <>
-      <section className='h-auto w-full '>
-        <h2 className='text-4xl font-bold'>求める人物像</h2>
-        <div className='px-8 pb-10 pt-20 md:p-12 flex justify-center w-full'>
-          <ul className='text-xl font-bold list-decimal space-y-14 md:text-2xl'>
+      <section className='h-auto w-full bg-gray-50'>
+        <h2 className='text-2xl font-bold lg:text-4xl w-full  xl:pb-4 text-center'>Ideal candidate profile</h2>
+        <h3 className='text-xl lg:text-2xl w-full pb-2 xl:pb-8 text-center font-bold text-green-700'>- 求める人物像 -</h3>
+        <div className='px-8 pb-10 pt-10 md:p-12 flex justify-center w-full'>
+          <ul className='text-xl font-bold list-decimal space-y-6 md:text-2xl'>
             {textList.map((text:string, index: number) => (
               <li key={index}>{text}</li>
             ))}

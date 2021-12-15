@@ -1,4 +1,4 @@
-import RightText from '@/components/layout/RightText'
+import LeftText from '@/components/layout/LeftText'
 import useMedia from 'use-media';
 
 type Props = {
@@ -19,7 +19,7 @@ export default function Culture(props: Props){
     <>
       <section className='h-auto w-full'>
         <h2 className='text-4xl font-bold'>社風</h2>
-        <RightText 
+        <LeftText 
           image={isMobileSite ? props.pageData.cultureImage2.url : props.pageData.cultureImage.url }
           text={text}
           width={isMobileSite ? props.pageData.cultureImage2.width : props.pageData.cultureImage.width }

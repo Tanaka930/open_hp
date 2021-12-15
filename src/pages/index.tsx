@@ -32,8 +32,8 @@ export default function Home(props:any){
       <Service data={props.content} />
       {/* <ExpertLogo /> */}
       <News newses={props.news.contents}/>
-      <About data={props.content} />
-      <Recruit data={props.content} />
+      {/* <About data={props.content} />
+      <Recruit data={props.content} /> */}
     </>
   )
 }

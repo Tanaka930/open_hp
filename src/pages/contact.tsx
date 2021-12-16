@@ -189,7 +189,10 @@ export default function Contact() {
 
               <div>
                 <div className="w-full flex flex-col mt-8">
-                  <label htmlFor="message" className="font-semibold leading-none">お問い合わせ内容</label>
+                  <label htmlFor="message" className="font-semibold leading-none">
+                    お問い合わせ内容
+                    <span className="mx-2 px-2 bg-yellow-500 text-white">必須</span>
+                  </label>
                   <textarea
                     autoComplete="message"
                     {...register("message", {

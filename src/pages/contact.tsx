@@ -96,15 +96,17 @@ export default function Contact() {
       <TopContent bg="bg-top_contact" title="Contact" />
 
       <div className="w-full">
-        <div className="bg-green-50 pt-20 md:pt-36">
+        <h2 className='pt-14 text-2xl font-bold lg:text-4xl w-full  xl:pb-4 text-center'>CONTACT</h2>
+        <h3 className='text-xl lg:text-2xl w-full pb-2 xl:pb-8 text-center font-bold text-green-700'>- お問い合せ -</h3> 
         <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 pb-12">
-          <div className="bg-white w-full shadow rounded p-8 sm:p-12">
-            <p className="text-3xl font-bold leading-7 text-center">お問い合わせ</p>
+          <div className="bg-white w-full rounded-3xl border-4 p-8 sm:p-12">
             <form onSubmit={handleSubmit(onSubmit)}>
-
               <div className="md:flex items-center mt-12">
                 <div className="w-full flex flex-col">
-                  <label htmlFor="title" className="font-semibold leading-none">タイトル</label>
+                  <label htmlFor="title" className="font-semibold leading-none">
+                    タイトル
+                    <span className="mx-2 px-2 bg-yellow-500 text-white">必須</span>
+                  </label>
                   <input 
                     autoComplete="title"
                     {...register("title", {
@@ -123,7 +125,10 @@ export default function Contact() {
 
               <div className="md:flex items-center mt-8">
                 <div className="w-full flex flex-col">
-                  <label htmlFor="category" className="font-semibold leading-none">カテゴリ</label>
+                  <label htmlFor="category" className="font-semibold leading-none">
+                    カテゴリ
+                    <span className="mx-2 px-2 bg-yellow-500 text-white">必須</span>
+                  </label>
                   <select
                     autoComplete="category"
                     {...register("category", {
@@ -144,7 +149,10 @@ export default function Contact() {
 
               <div className="md:flex items-center mt-8">
                 <div className="w-full md:w-1/2 flex flex-col">
-                  <label htmlFor="name" className="font-semibold leading-none">お名前</label>
+                  <label htmlFor="name" className="font-semibold leading-none">
+                    お名前
+                    <span className="mx-2 px-2 bg-yellow-500 text-white">必須</span>
+                  </label>
                   <input
                     autoComplete="name"
                     {...register("name", {
@@ -160,7 +168,10 @@ export default function Contact() {
                 </div>
                 
                 <div className="w-full md:w-1/2 flex flex-col md:ml-6 md:mt-0 mt-4">
-                  <label htmlFor="email" className="font-semibold leading-none">メールアドレス</label>
+                  <label htmlFor="email" className="font-semibold leading-none">
+                    メールアドレス
+                    <span className="mx-2 px-2 bg-yellow-500 text-white">必須</span>
+                  </label>
                   <input
                     autoComplete="email"
                     {...register("email", { 
@@ -208,7 +219,6 @@ export default function Contact() {
             </div>
 
           </div>
-        </div>
         </div>
       </div>
     </>

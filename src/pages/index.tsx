@@ -51,7 +51,7 @@ export const getStaticProps = async () => {
   .then(res => res.json())
   .catch(() => null);
 
-  const blogs = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/blog?offset=0&limit=6`, key)
+  const blogs = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/blog?offset=0&limit=${process.env.onePageContent}`, key)
   .then(res => res.json())
   .catch(() => null);
 

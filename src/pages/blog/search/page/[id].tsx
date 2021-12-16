@@ -38,7 +38,7 @@ export default function Search(){
         const blog_data = await fetch(
           `${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/blog?q=${encodeURI(
             blogsQuery.keyword,
-          )}&offset=${(Number(id) - 1) * PER_PAGE}&limit=6`,
+          )}&offset=${(Number(id) - 1) * PER_PAGE}&limit=${process.env.onePageContent}`,
           key,
         ).then((res) => res.json()).catch(() => null);
       

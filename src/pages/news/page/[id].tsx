@@ -55,7 +55,7 @@ export const getStaticProps = async (context:any) => {
   };
 
   const data = await fetch(
-    `${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/news?offset=${(id - 1) * PER_PAGE}&limit=6`,
+    `${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/news?offset=${(id - 1) * PER_PAGE}&limit=${process.env.onePageContent}`,
     key
   ).then(res => res.json()).catch(() => null)
 

@@ -33,7 +33,7 @@ interface Achievement{
   datas: any[]
 }
 
-export default function Home(){
+export default function Home(props:any){
 
   const topTextWord: TopTextWord = {
     text: '事業内容'
@@ -58,30 +58,6 @@ export default function Home(){
     width: '481',
     height: '273',
     alt_text: '公式LIEN管理'
-  }
-  const achievement: Achievement = {
-    datas: [
-      {
-        link: 'https://example.com',
-        image: '/images/service/ec/shimizuko.png',
-        text: '清水っ粉様'
-      },
-      {
-        link: 'https://example.com',
-        image: '/images/service/ec/hareken.png',
-        text: 'HAREKEN様'
-      },
-      {
-        link: 'https://example.com',
-        image: '/images/service/ec/cosmos.png',
-        text: 'COSMOS様'
-      },
-      {
-        link: 'https://example.com',
-        image: '/images/service/ec/horushop.png',
-        text: 'HORUSHOP様'
-      }
-    ]
   }
 
   return(
@@ -116,8 +92,25 @@ export default function Home(){
           </ReadMoreButton>
         </div>
         {/* 以下実績は後で確認 */}
-        <Achievement datas={achievement.datas} />
+        <Achievement datas={props.achievement} />
         <BackServiceButton />
     </>
   )
 }
+
+
+export const getStaticProps = async () => {
+  const key = {
+    headers: {'X-MICROCMS-API-KEY': String(process.env.NEXT_PUBLIC_MICRO_CMS_API_KEY)},
+  };
+
+  const achievement = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/achievement?filters=category[contains]Line`, key)
+  .then(res => res.json())
+  .catch(() => null);
+
+  return {
+    props:{
+      achievement: achievement.contents,
+    }
+  };
+};

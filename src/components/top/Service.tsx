@@ -20,7 +20,7 @@ export default function Service(props:Props){
         <div className='w-full text-center space-y-8 xl:space-y-0 xl:space-x-8 md:flex md:justify-center py-18'>
           <ServiceContent image= {props.data.ecImage.url} title="Shopify構築" text = {text1}/>
           <ServiceContent image= {props.data.lineImage.url} title="LINEサービス" text = {text2}/>
-          <ServiceContent image= {props.data.lineImage.url} title="DX事業" text = {text3}/>
+          <ServiceContent image= {props.data.dxImage.url} title="DX事業" text = {text3}/>
         </div>
         <div className='mt-12 md:mt-24'>
           <ReadMoreButton href="/service">

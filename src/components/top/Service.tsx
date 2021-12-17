@@ -13,7 +13,7 @@ export default function Service(props:Props){
 
   return(
     <>
-    <section className='bg-gray-50 h-auto mx-6'>
+    <section className='bg-gray-50 h-auto'>
       <div className="md:mx-36">
         <h2 className='text-4xl md:text-7xl w-full xl:pb-4 text-center'>SERVICE</h2>
         <h3 className='text-xl md:text-3xl w-full pb-8 xl:pb-16 text-center font-bold text-green-700'>- 事業内容 -</h3>

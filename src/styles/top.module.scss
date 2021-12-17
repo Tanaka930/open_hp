@@ -52,7 +52,7 @@ $base-hue: 90; // change for diff colors (180 is nice)
 @for $i from 1 through $total {
   $z: (random(360) * 1deg); // random angle to rotateZ
   $y: (random(360) * 1deg); // random to rotateX
-  $hue: ((80 / $total * $i) + $base-hue); // set hue
+  // $hue: ((80 / $total * $i) + $base-hue); // set hue
 
   .c:nth-child(#{$i}) {
     // grab the nth particle

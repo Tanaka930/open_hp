@@ -22,7 +22,6 @@ export default function Button({
   ...rest
 }: ButtonProps) {
   const disabled = isLoading || buttonDisabled;
-  
 
   return (
     <button

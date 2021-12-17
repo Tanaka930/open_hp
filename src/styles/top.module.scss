@@ -58,7 +58,8 @@ $base-hue: 90; // change for diff colors (180 is nice)
     // grab the nth particle
     animation: orbit#{$i} $time infinite;
     animation-delay: ($i * 0.01s);
-    background-color: hsla($hue, 100%, 50%, 1);
+    // background-color: hsla($hue, 100%, 50%, 1);
+    background-color: #0c8e86;
   }
 
   @keyframes orbit#{$i} {

@@ -18,8 +18,8 @@ export default function Culture(props: Props){
   return(
     <>
       <section className='h-auto w-full'>
-        <h2 className='text-2xl font-bold lg:text-4xl w-full sm:mx-20 lg:w-1/2 xl:pb-4 text-left'>Philosophy</h2>
-        <h3 className='text-xl lg:text-2xl w-full sm:mx-20 lg:w-1/2 pb-4 xl:pb-8 text-left font-bold text-green-700'>- 社風 -</h3>
+        <h2 className='text-2xl font-bold lg:text-4xl w-full lg:w-1/2 xl:pb-4 text-left'>Philosophy</h2>
+        <h3 className='text-xl lg:text-2xl w-full lg:w-1/2 pb-4 xl:pb-8 text-left font-bold text-green-700'>- 社風 -</h3>
         <div className='lg:flex lg:justify-center '>
           <div className='text-center block lg:hidden w-auto'>
             <Image 
@@ -30,7 +30,7 @@ export default function Culture(props: Props){
               decoding="async"
               />
           </div>
-          <div className='text-base sm:mx-20 mt-12 md:mt-0 lg:w-1/2 lg:text-xl'
+          <div className='text-base mt-12 md:mt-0 lg:w-1/2 lg:text-xl'
               dangerouslySetInnerHTML={{
               __html: `${text}`,
             }}

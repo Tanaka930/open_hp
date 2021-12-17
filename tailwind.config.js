@@ -19,6 +19,8 @@ module.exports = {
     extend: {
       fontFamily: {
         primary: ["YakuHanJP","Roboto","Kinto Sans","Helvetica Neue","Segoe UI","Helvetica","游ゴシック体","YuGothic","Yu Gothic M","游ゴシック Medium","Yu Gothic Medium","メイリオ", ...fontFamily.sans],
+        themeText: ["Avenir LT Pro"],
+        dayText: ["YuGothic"],
       },
       colors: {
         primary: {

@@ -34,7 +34,18 @@ module.exports = {
           800: withOpacity('--tw-clr-primary-800'),
           900: withOpacity('--tw-clr-primary-900'),
         },
+        grat: {
+          50: '#F6F7F7',
+        },
+        green: {
+          500: '#0c8e86',
+          600: '#0c8e86',
+          700: '#0c8e86',
+        },
         dark: '#222222',
+      },
+      textColor: {
+        dayColor: '#636363',
       },
       keyframes: {
         flicker: {

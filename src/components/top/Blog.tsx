@@ -67,8 +67,8 @@ export default function blog(props:Props){
                         alt={content.previewWord}
                         decoding="async" 
                       />
-                      <h3 className="tracking-widest text-green-600 text-xs font-medium mt-8 mb-2">
-                        <Moment format="YYYY年MM月DD日">
+                      <h3 className="tracking-widest text-dayColor text-sm font-medium mt-8 mb-2">
+                        <Moment format="YYYY.MM.DD" className="font-bold">
                           {content.createDay}
                         </Moment>
                         <span className="mx-4 px-2 bg-yellow-500 text-white">

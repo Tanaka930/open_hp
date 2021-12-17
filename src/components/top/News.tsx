@@ -22,7 +22,7 @@ export default function News({newses}: {newses:any}){
             <li key={news.id}>
               <div className="w-full py-2 border-b-2">
                 <UnstyledLink href={`/news/${news.id}`}>
-                  <Moment format="YYYY.MM.DD" className="font-bold text-green-700">
+                  <Moment format="YYYY.MM.DD" className="font-bold text-dayColor">
                     {news.createdAt}
                   </Moment>
                   {isMobileSite ? 

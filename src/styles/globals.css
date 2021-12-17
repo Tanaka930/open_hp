@@ -47,23 +47,23 @@
 
   /* #region  /**=========== Typography =========== */
   h1 {
-    @apply text-2xl font-bold md:text-4xl font-primary;
+    @apply text-2xl font-bold md:text-4xl font-themeText;
   }
 
   h2 {
-    @apply text-xl font-bold md:text-3xl font-primary;
+    @apply text-xl font-bold md:text-3xl font-themeText;
   }
 
   h3 {
-    @apply text-lg font-bold md:text-2xl font-primary;
+    @apply text-lg font-bold md:text-2xl font-themeText;
   }
 
   h4 {
-    @apply text-base font-bold md:text-lg font-primary;
+    @apply text-base font-bold md:text-lg font-themeText;
   }
 
   body {
-    @apply text-sm font-primary md:text-base;
+    @apply text-sm font-themeText md:text-base;
   }
   /* #endregion  /**======== Typography =========== */
 

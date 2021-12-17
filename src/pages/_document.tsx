@@ -44,7 +44,7 @@ class MyDocument extends Document {
           )}
 
         </Head>
-        <body className="font-primary">
+        <body className="font-themeText">
           <Main />
           <NextScript />
         </body>

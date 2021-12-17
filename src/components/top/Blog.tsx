@@ -61,21 +61,21 @@ export default function blog(props:Props){
                     <div className="pt-2 pb-4 px-2 rounded-lg cursor-pointer">
                       <img 
                         src={content.thumbnail.url}
-                        width={600}
-                        height={200}
+                        width={225}
+                        height={161}
                         className="shadow-2xl rounded-3xl  w-full object-cover object-center"
                         alt={content.previewWord}
                         decoding="async" 
                       />
-                      <h3 className="tracking-widest text-dayColor text-sm font-medium mt-8 mb-2">
-                        <Moment format="YYYY.MM.DD" className="font-bold">
+                      <h3 className="tracking-widest text-dayColor text-xs font-medium mt-8 mb-2">
+                        <Moment format="YYYY.MM.DD" className="font-bold font-dayText">
                           {content.createDay}
                         </Moment>
-                        <span className="mx-4 px-2 bg-yellow-500 text-white">
+                        <span className="mx-4 px-2 bg-yellow-500 text-white py-0.5">
                           {content.category.category}
                         </span>
                       </h3>
-                      <h2 className="text-lg text-gray-900 font-bold ">{content.title}</h2>
+                      <h2 className="text-sm text-gray-900 text-left">{content.title}</h2>
                     </div>
                   </UnstyledLink>
                 </div>

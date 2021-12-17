@@ -17,7 +17,7 @@ export default function News({newses}: {newses:any}){
       <h2 className='text-4xl md:text-7xl w-full xl:pb-4 text-center'>NEWS</h2>
       <h3 className='text-xl md:text-3xl w-full xl:pb-16 text-center font-bold text-green-700'>- ニュース -</h3>
       <div className='flex justify-center'>
-        <ol className='text-xs xl:text-base  space-y-8 w-4/5 md:w-4/12 text-left'>
+        <ol className='text-xs xl:text-base  space-y-8 w-4/5 md:w-6/12 text-left'>
           {newses.map((news:any) => (
             <li key={news.id}>
               <div className="w-full py-2 border-b-2">

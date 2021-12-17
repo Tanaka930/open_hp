@@ -22,14 +22,13 @@ export default function Header() {
     <>
     
       <div className="absolute z-10 w-screen">
-        <div className="max-w-screen-2xl mx-auto px-8 pt-8 sm:px-12 2xl:px-0">
+        <div className="max-w-screen-2xl mx-auto px-8 pt-8 md:px-32 2xl:px-0">
           <div className="flex items-center justify-between h-8 md:h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
                 <UnstyledLink href='/'>
                   <img
-                    className="h-4 md:h-10"
-
+                    className="h-4 md:h-7"
                     src="/images/layout/Logo.png"
                     alt="openstore"
                     decoding="async"
@@ -45,7 +44,7 @@ export default function Header() {
             </div>
           </div>
         </div>
-        <HeaderMenu isActive={isActive} toggleButton={menuFunction} />
+        <HeaderMenu isActive={isActive} toggleButton={menuFunction} logoWidth={isWide ? 234.78 : 400} logoHeight={isWide ? 29 : 39} />
       </div>
     </>
   )

@@ -19,26 +19,25 @@ export default function blog(props:Props){
 
   if(isMobileSite){
     // スマホ処理
-    blogHeight = Number(blogCount) * 300 + 200;
+    blogHeight = Number(blogCount) * 300 + 250;
   }else{
     // pc処理
-    blogHeight = Number(blogCount)* 300 + 200;
+    blogHeight = Number(blogCount)* 300 + 250;
     if(Number(blogCount) <= 3){
-      blogHeight = 200 + 300;
+      blogHeight = 200 + 350;
     }else{
-      blogHeight = 200 + 600;
+      blogHeight = 200 + 650;
     }
   }
 
   if(Number(blogCount) == 0){
-    blogHeight = 400 + 200;
+    blogHeight = 450 + 200;
   }
 
   return(
     <>
 
-      <section className="">
-        <div className="absolute w-9/12 back bg-gray-50"></div>
+      <div className="absolute w-9/12 back bg-gray-50"></div>
         <style jsx>
               {`
                 .back {
@@ -48,8 +47,8 @@ export default function blog(props:Props){
                   border-top-right-radius: 80px;
                 }
               `}
-        </style>
-          
+      </style>
+      <section className="">
         <div className="body-font mx-6 xl:mx-36">
           <h2 className='text-4xl md:text-7xl w-full pb-10 text-left'>TOPIC</h2>
           <h3 className='text-xl md:text-3xl w-full pb-6 text-left font-bold text-green-700'>- トピックス -</h3>
@@ -68,8 +67,8 @@ export default function blog(props:Props){
                         alt={content.previewWord}
                         decoding="async" 
                       />
-                      <h3 className="tracking-widest text-green-600 text-xs font-medium mt-8 mb-2">
-                        <Moment format="YYYY年MM月DD日">
+                      <h3 className="tracking-widest text-dayColor text-sm font-medium mt-8 mb-2">
+                        <Moment format="YYYY.MM.DD" className="font-bold">
                           {content.createDay}
                         </Moment>
                         <span className="mx-4 px-2 bg-yellow-500 text-white">

@@ -29,7 +29,7 @@ export default function Footer() {
       <FooterTop />
 
       <footer className="">
-        <div className="px-9 md:px-32 md:flex md:flex-row-reverse md:justify-between">
+        <div className="px-per10 md:flex md:flex-row-reverse md:justify-between">
 
           <div className="mt-14 md:mt-0">
             <div className="md:mb-7">
@@ -80,7 +80,7 @@ export default function Footer() {
                       alt="openstore-instagram-logo"
                       decoding="async"
                     />
-                    <span className="align-top pl-1">instagram</span>
+                    <span className="align-top pl-1 text-sm">instagram</span>
                   </UnstyledLink>
                   <UnstyledLink href="https://page.line.me/246xdhfu" className="block cursor-pointer">
                     <Image
@@ -89,7 +89,7 @@ export default function Footer() {
                       alt="openstore-line-logo"
                       decoding="async"
                     />
-                    <span className="align-top pl-1">LINE</span>
+                    <span className="align-top pl-1 text-sm">LINE</span>
                   </UnstyledLink>
                 </div>
               </div>

@@ -22,7 +22,7 @@ export default function Header() {
     <>
     
       <div className="absolute z-10 w-screen">
-        <div className="max-w-screen-2xl mx-auto px-9 pt-8 md:px-32 2xl:px-0">
+        <div className="px-per10 max-w-screen-2xl mx-auto pt-8 2xl:px-0">
           <div className="flex items-center justify-between h-8 md:h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">

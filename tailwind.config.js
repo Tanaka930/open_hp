@@ -93,6 +93,9 @@ module.exports = {
           letterSpacing: '0.1em',
         }]
       },
+      padding: {
+        per10: '10%'
+      },
     },
   },
   variants: {

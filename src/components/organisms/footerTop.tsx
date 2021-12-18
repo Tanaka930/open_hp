@@ -1,6 +1,5 @@
 import UnstyledLink from "../links/UnstyledLink";
 import { useMedia } from "use-media";
-import Image from "next/image";
 
 export default function FooterTop() {
   const isWide = useMedia({ maxWidth: "767px" });
@@ -8,7 +7,7 @@ export default function FooterTop() {
   return (
     <>
       {isWide ? (
-        <div className="bg-footer-sp bg-left-top bg-cover bg-no-repeat py-10 px-9">
+        <div className="bg-footer-sp bg-left-top bg-cover bg-no-repeat py-10 px-per10">
           <div className="mb-5">
             <h3 className="text-xl pb-7">お問い合わせ</h3>
             <p className="pb-8">「介護サービスについて」「介護スクールについて」「ケアプラスの求人について」など、当社の事業に関することでご質問などがあれば、お気軽にお問い合わせください。</p>
@@ -32,7 +31,7 @@ export default function FooterTop() {
           <div className="bg-footer-pc bg-left bg-cover bg-no-repeat h-96 mb-20">
           </div>
 
-          <div className="flex justify-around px-32 mb-44">
+          <div className="px-per10 flex justify-around mb-44">
             <div className="w-1/3">
               <h3 className="text-xl pb-7">お問い合わせ</h3>
               <p className="pb-8">「介護サービスについて」「介護スクールについて」「ケアプラスの求人について」など、当社の事業に関することでご質問などがあれば、お気軽にお問い合わせください。</p>

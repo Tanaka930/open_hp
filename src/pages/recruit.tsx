@@ -124,7 +124,7 @@ export default function Recruit(categories: Categories) {
   return (
     <>
       <Seo templateTitle='Recruit' />
-      <TopContent bg="bg-top_recruit" title="Recruit" />
+      <TopContent title="Recruit" text="採用情報" />
       <Culture pageData={categories.pageData}/>
       <Human />
       <Staff pageData={categories.pageData}/>

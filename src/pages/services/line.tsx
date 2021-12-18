@@ -63,7 +63,7 @@ export default function Home(props:any){
   return(
     <>
       <Seo templateTitle='オープンストアLINE事業' />
-      <TopContent bg="bg-lien_top" title="LINE" />
+      <TopContent title="LINE" />
       <TopText text={topTextWord.text} />
       <RightText 
         text={explanation1.text} 

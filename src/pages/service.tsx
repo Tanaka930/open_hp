@@ -8,7 +8,7 @@ export default function Service(){
   return(
     <>
       <Seo templateTitle='Service' />
-      <TopContent bg="bg-top_service" title="Service" />
+      <TopContent title="Service" text="事業内容" />
       <div className="md:flex md:justify-between md:mx-40 py-20 md:py-24">
         <ServiceContent
           img="/images/service/shopify.png"

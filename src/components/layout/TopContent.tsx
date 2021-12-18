@@ -1,7 +1,7 @@
 type Props = {
   // bg: string;
   title: string;
-  text: string;
+  text?: string;
 }
 
 export default function TopContent(props: Props) {

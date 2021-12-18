@@ -36,13 +36,16 @@ module.exports = {
           800: withOpacity('--tw-clr-primary-800'),
           900: withOpacity('--tw-clr-primary-900'),
         },
-        grat: {
+        gray: {
           50: '#F6F7F7',
         },
         green: {
           500: '#0c8e86',
           600: '#0c8e86',
           700: '#0c8e86',
+        },
+        yellow: {
+          'main': '#F3C11D',
         },
         dark: '#222222',
       },
@@ -77,7 +80,10 @@ module.exports = {
 
         'ec_top':"url('/images/service/ec/EC-TOP.png')",
         'lien_top':"url('/images/service/line/linetop.png')",
-        'dx_top':"url('/images/service/dx/dxtop.png')"
+        'dx_top':"url('/images/service/dx/dxtop.png')",
+        // Footer
+        'footer-pc':"url('/images/layout/footer-pc.png')",
+        'footer-sp':"url('/images/layout/footer-sp.png')",
       },
       height: {
         xl: '768px',

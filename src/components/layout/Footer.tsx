@@ -21,14 +21,26 @@ const links2 = [
 export default function Footer() {
   return (
     <>
-      <div className="text-white text-shadow font-bold md:flex flex-wrap text-4xl">
-        <UnstyledLink href='/recruit' className="flex items-center justify-center bg-rec bg-cover bg-no-repeat h-32 md:w-1/2 md:h-80  cursor-pointer">
-          採用情報
-        </UnstyledLink>
-        <UnstyledLink href='/contact' className="flex items-center justify-center bg-contact bg-cover bg-no-repeat h-32 md:w-1/2 md:h-80 cursor-pointer">
-          お問い合わせ
-        </UnstyledLink>
+      <div className="bg-footer-sp bg-left-top bg-cover bg-no-repeat py-10 px-9">
+        <div className="mb-5">
+          <h3 className="text-xl pb-7">お問い合わせ</h3>
+          <p className="pb-8">「介護サービスについて」「介護スクールについて」「ケアプラスの求人について」など、当社の事業に関することでご質問などがあれば、お気軽にお問い合わせください。</p>
+          <UnstyledLink href='/contact' className="text-green-600 border border-green-600 rounded-3xl pt-2.5 pb-2 pl-3 text-sm">
+            CONTACT
+            <span className="inline-block h-2 w-2 rounded-full ml-7 mr-2  mb-px bg-green-500"></span>
+          </UnstyledLink>
+        </div>
+
+        <div className="mt-10">
+          <h3 className="text-xl pb-7">採用情報</h3>
+          <p className="pb-8">「介護サービスについて」「介護スクールについて」「ケアプラスの求人について」など、当社の事業に関することでご質問などがあれば、お気軽にお問い合わせください。</p>
+          <UnstyledLink href='/recruit' className="text-green-600 border border-green-600 rounded-3xl pt-2.5 pb-2 pl-3 text-sm">
+            CONTACT
+            <span className="inline-block h-2 w-2 rounded-full ml-7 mr-2  mb-px bg-green-500"></span>
+          </UnstyledLink>
+        </div>
       </div>
+
       <footer className="bg-white py-4  sm:py-10 lg:py-12">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap pt-5 md:flex-wrap md:pt-10 lg:pt-12">
@@ -70,6 +82,7 @@ export default function Footer() {
                     width={40} height={40} 
                     src="https://images.microcms-assets.io/assets/17edce1601e949eaaf07394154ac903d/737cb1eff3084d0cac7fb54f9e4c4cdf/Instagram.png"
                     alt="openstore-instagram-logo"
+                    decoding="async"
                   />
                 </UnstyledLink>
               </div>

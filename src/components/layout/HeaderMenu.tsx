@@ -53,8 +53,28 @@ export default function HeaderMenu(props: Props) {
                 </div>
               ))}
             </div>
-            <div className="">
-              <span>aikon</span>
+            <div className="text-yellow-main">
+              <span>
+                <Image 
+                  width={18} height={18} 
+                  src="/images/icons/facebook.png"
+                />
+                facebook
+              </span>
+              <span>
+                <Image
+                  width={18} height={18}  
+                  src="/images/icons/Instagram.png"
+                />
+                instagram
+              </span>
+              <span>
+                <Image 
+                  width={18} height={18} 
+                  src="/images/icons/LINE.png"
+                />
+                LINE
+              </span>
             </div>
             <div className="absolute bottom-16 right-9 md:right-32 md:bottom-28">
               <Image
@@ -86,8 +106,28 @@ export default function HeaderMenu(props: Props) {
                 </div>
               ))}
             </div>
-            <div className="">
-              <span>aikon</span>
+            <div className="text-yellow-main">
+              <span>
+                <Image 
+                  width={18} height={18} 
+                  src="/images/icons/facebook.png"
+                />
+                facebook
+              </span>
+              <span>
+                <Image
+                  width={18} height={18}  
+                  src="/images/icons/Instagram.png"
+                />
+                instagram
+              </span>
+              <span>
+                <Image 
+                  width={18} height={18} 
+                  src="/images/icons/LINE.png"
+                />
+                LINE
+              </span>
             </div>
             <div className="absolute bottom-16 right-9">
               <Image

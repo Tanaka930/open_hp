@@ -36,7 +36,7 @@ export default function HeaderMenu(props: Props) {
       {props.isActive ? (
         <div className="fixed z-10 top-0 w-screen">
           <div className="relative bg-white h-screen translate-x-0 transition-all duration-300 ease-linear px-9 py-16 space-y-1 md:px-32">
-            <div className="h-16"></div>
+            <div className="h-4 md:h-16"></div>
             <div className="flex flex-wrap">
               {navigation.map((item) => (
                 <div key ={item.name} className="w-1/2 py-11 md:w-1/3 md:mr-4" onClick={()=>props.toggleButton()}>
@@ -53,29 +53,43 @@ export default function HeaderMenu(props: Props) {
                 </div>
               ))}
             </div>
-            <div className="text-yellow-main">
-              <span>
-                <Image 
-                  width={18} height={18} 
-                  src="/images/icons/facebook.png"
-                />
-                facebook
-              </span>
-              <span>
-                <Image
-                  width={18} height={18}  
-                  src="/images/icons/Instagram.png"
-                />
-                instagram
-              </span>
-              <span>
+            <div className="">
+              <div className="flex pb-7">
+                <UnstyledLink href="https://www.facebook.com/openstorejapan">
+                  <Image 
+                    width={18} height={18} 
+                    src="/images/icons/facebook.png"
+                    className="align-bottom"
+                  />
+                  <span className="text-sm align-top pl-1 pr-5 md:text-base">
+                    facebook
+                  </span>
+                </UnstyledLink>
+
+                <UnstyledLink href="https://www.instagram.com/open_store_inc/">
+                  <Image
+                    width={18} height={18}  
+                    src="/images/icons/Instagram.png"
+                    className="align-bottom"
+                  />
+                  <span className="text-sm align-top pl-1 pr-5 md:text-base">
+                    instagram
+                  </span>
+                </UnstyledLink>
+              </div>
+              
+              <UnstyledLink href="https://page.line.me/246xdhfu">
                 <Image 
                   width={18} height={18} 
                   src="/images/icons/LINE.png"
+                  className="align-bottom"
                 />
-                LINE
-              </span>
+                <span className="text-sm align-top pl-1 md:text-base">
+                  LINE
+                </span>
+              </UnstyledLink>
             </div>
+
             <div className="absolute bottom-16 right-9 md:right-32 md:bottom-28">
               <Image
                 width={props.logoWidth} height={props.logoHeight} 
@@ -106,28 +120,41 @@ export default function HeaderMenu(props: Props) {
                 </div>
               ))}
             </div>
-            <div className="text-yellow-main">
-              <span>
-                <Image 
-                  width={18} height={18} 
-                  src="/images/icons/facebook.png"
-                />
-                facebook
-              </span>
-              <span>
-                <Image
-                  width={18} height={18}  
-                  src="/images/icons/Instagram.png"
-                />
-                instagram
-              </span>
-              <span>
+            <div className="">
+              <div className="flex pb-7">
+                <UnstyledLink href="https://www.facebook.com/openstorejapan">
+                  <Image 
+                    width={18} height={18} 
+                    src="/images/icons/facebook.png"
+                    className="align-bottom"
+                  />
+                  <span className="text-sm align-top pl-1 pr-5 md:text-base">
+                    facebook
+                  </span>
+                </UnstyledLink>
+
+                <UnstyledLink href="https://www.instagram.com/open_store_inc/">
+                  <Image
+                    width={18} height={18}  
+                    src="/images/icons/Instagram.png"
+                    className="align-bottom"
+                  />
+                  <span className="text-sm align-top pl-1 pr-5 md:text-base">
+                    instagram
+                  </span>
+                </UnstyledLink>
+              </div>
+              
+              <UnstyledLink href="https://page.line.me/246xdhfu">
                 <Image 
                   width={18} height={18} 
                   src="/images/icons/LINE.png"
+                  className="align-bottom"
                 />
-                LINE
-              </span>
+                <span className="text-sm align-top pl-1 md:text-base">
+                  LINE
+                </span>
+              </UnstyledLink>
             </div>
             <div className="absolute bottom-16 right-9">
               <Image

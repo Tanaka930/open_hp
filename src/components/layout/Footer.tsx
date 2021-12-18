@@ -3,98 +3,125 @@ import UnstyledLink from '@/components/links/UnstyledLink';
 import FooterMenu from './footer/FooterMenu';
 import FooterTop from '@/components/organisms/footerTop';
 
+import { useMedia } from 'use-media';
+
 const links1 = [
-  { label: 'About', href: '/about'  },
-  { label: 'News', href: '/news' },
-  { label: 'Recruit', href: '/recruit' },
-  { label: 'Contact', href: '/contact' },
-  { label: ' Blog', href: '/blog' },
+  { label: 'HOME', href: '/'  },
+  { label: 'ABOUT', href: '/about'  },
+  // { label: 'News', href: '/news' },
+  { label: 'RECRUIT', href: '/recruit' },
 ]
 
 const links2 = [
-  { label: 'Service', href: '/service' },
-  { label: 'EC', href: '/services/ec'  },
-  { label: 'DX', href: '/services/dx' },
-  { label: 'LINE', href: '/services/line' },
+  { label: ' BLOG', href: '/blog' },
+  { label: 'CONTACT', href: '/contact' },
+  { label: 'SERVICE', href: '/service' },
+  // { label: 'EC', href: '/services/ec'  },
+  // { label: 'DX', href: '/services/dx' },
+  // { label: 'LINE', href: '/services/line' },
 ]
 
 export default function Footer() {
+  const isWide = useMedia({ maxWidth: "767px" });
+
   return (
     <>
       <FooterTop />
 
-      <footer className="bg-white py-4  sm:py-10 lg:py-12">
-        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap pt-5 md:flex-wrap md:pt-10 lg:pt-12">
+      <footer className="">
+        <div className="px-9 md:px-32 md:flex md:flex-row-reverse md:justify-between">
 
-            <div className="md:w-1/2">
-              <div className="lg:-mt-2 md:mb-8">
+          <div className="mt-14 md:mt-0">
+            <div className="md:mb-7">
+              <div className="">
                 <UnstyledLink href="/">
-                  <Image
-                    // className="h-7"
-                    width={200} height={24} 
-                    src="/images/layout/Logo.png"
-                    alt="openstore-logo"
-                    decoding="async"
-                  />
+                  {isWide ? (
+                    <Image
+                      // className="h-7"
+                      width={210} height={21}
+                      src="/images/layout/Logo.png"
+                      alt="openstore-logo"
+                      decoding="async"
+                    />
+                  ):(
+                    <Image
+                      // className="h-7"
+                      width={298} height={29}
+                      src="/images/layout/Logo.png"
+                      alt="openstore-logo"
+                      decoding="async"
+                    />
+                  )}
                 </UnstyledLink>
               </div>
             </div>
 
-            <div className="order-2 w-full pt-4 md:w-1/2 md:pt-0">
-              <div className="flex pl-2 md:justify-end lg:pr-44">
-                <UnstyledLink href="https://page.line.me/246xdhfu" className="pr-5 cursor-pointer">
-                  <Image
-                    width={40} height={40} 
-                    src="/images/icons/LINE.png"
-                    alt="openstore-line-logo"
-                    decoding="async"
-                  />
-                </UnstyledLink>
-                <UnstyledLink href="https://www.facebook.com/openstorejapan" className="pr-5 cursor-pointer">
-                  <Image
-                    width={40} height={40} 
-                    src="/images/icons/facebook.png"
-                    alt="openstore-facebook-logo"
-                    decoding="async"
-                  />
-                </UnstyledLink>
-                <UnstyledLink href="https://www.instagram.com/open_store_inc/" className="cursor-pointer">
-                  <Image
-                    width={40} height={40} 
-                    src="https://images.microcms-assets.io/assets/17edce1601e949eaaf07394154ac903d/737cb1eff3084d0cac7fb54f9e4c4cdf/Instagram.png"
-                    alt="openstore-instagram-logo"
-                    decoding="async"
-                  />
-                </UnstyledLink>
-              </div>
+            <div className="flex flex-wrap">
+              <FooterMenu links={links1}/>
+              <FooterMenu links={links2}/>
             </div>
 
+            <div className="w-full pt-4 md:pt-6">
+              <div className="flex">
+                <div className="">
+                  <UnstyledLink href="https://www.facebook.com/openstorejapan" className="block cursor-pointer pb-2">
+                    <Image
+                      width={17} height={17} 
+                      src="/images/icons/facebook.png"
+                      alt="openstore-facebook-logo"
+                      decoding="async"
+                    />
+                    <span className="align-top pl-1 text-sm">facebook</span>
+                  </UnstyledLink>
+                  <UnstyledLink href="https://www.instagram.com/open_store_inc/" className="block cursor-pointer pb-2">
+                    <Image
+                      width={17} height={17} 
+                      src="/images/icons/Instagram.png"
+                      alt="openstore-instagram-logo"
+                      decoding="async"
+                    />
+                    <span className="align-top pl-1">instagram</span>
+                  </UnstyledLink>
+                  <UnstyledLink href="https://page.line.me/246xdhfu" className="block cursor-pointer">
+                    <Image
+                      width={17} height={17} 
+                      src="/images/icons/LINE.png"
+                      alt="openstore-line-logo"
+                      decoding="async"
+                    />
+                    <span className="align-top pl-1">LINE</span>
+                  </UnstyledLink>
+                </div>
+              </div>
+              <div></div>
+            </div>
+          </div>
             {/* <!-- 企業情報 - start --> */}
-            <div className="w-full pt-16 order-last md:place-self-center md:order-3 md:w-1/3">
+          <div className="">
+            <div className="pt-16 md:pt-0">
               <ul className="md:pl-5">
                 <li>
-                  <p className="font-bold text-lg">オープンストア株式会社</p>
+                  <p className="text-2xl">オープンストア株式会社</p>
                 </li>
-                <li className="mt-2">
-                  <p className="font-bold text-lg">〒532-0012</p>
+                <li className="mt-5 md:mt-32">
+                  <p>大阪府大阪市淀川区木川東４丁目５−３ <br className=""/>オパル新大阪ビル</p>
                 </li>
                 <li>
-                  <p className="font-bold text-lg mt-2">大阪府大阪市淀川区木川東４丁目５−３ <br className=""/>オパル新大阪ビル</p>
+                  <p  className="mt-3.5">〒532-0012</p>
                 </li>
-                <li className="mt-2">
-                  <a href="tel:0667709626" className="font-bold text-lg">(06)6770-9626</a>
+                <li className="mt-3.5">
+                  <a href="mailto:contact@openstore-japan.com<" className="">contact@openstore-japan.com</a>
                 </li>
-                <li className="mt-2">
-                  <a href="mailto:contact@openstore-japan.com<" className="font-bold text-lg">contact@openstore-japan.com</a>
+                <li className="mt-3.5">
+                  <a href="tel:0667709626" className="">(06)6770-9626</a>
                 </li>
               </ul>
             </div>
-
-            <FooterMenu links={links1}/>
-            <FooterMenu links={links2}/>
           </div>
-          <div className="text-xs text-center text-gray-700 mt-20">
+        </div>
+
+        <div className="bg-green-600 text-white py-2 mt-9 md:mt-14">
+          <div className="text-xs text-center">
             <UnstyledLink href='/policy' className="hover:text-blue-700">
               プライバシーポリシー
             </UnstyledLink>

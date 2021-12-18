@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import UnstyledLink from '../links/UnstyledLink';
-import HeaderMenu from './HeaderMenu';
+import HeaderMenu from '../organisms/layout/HeaderMenu';
 import { HamburgerStand } from 'react-animated-burgers'
 import { useMedia } from 'use-media';
 

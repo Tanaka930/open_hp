@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import UnstyledLink from '@/components/links/UnstyledLink';
-import FooterMenu from './footer/FooterMenu';
-import FooterTop from '@/components/organisms/footerTop';
+import FooterMenu from '../organisms/layout/FooterMenu';
+import FooterTop from '@/components/organisms/layout/footerTop';
 
 import { useMedia } from 'use-media';
 

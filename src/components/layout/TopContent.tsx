@@ -1,6 +1,7 @@
 type Props = {
-  bg: string;
+  // bg: string;
   title: string;
+  text: string;
 }
 
 export default function TopContent(props: Props) {
@@ -9,11 +10,11 @@ export default function TopContent(props: Props) {
     <>
       <div>
         <div className="h-16"></div>
-        <div className="flex flex-col items-center justify-center mt-12 md:mt-16">
+        <div className="flex flex-col items-center justify-center my-12 md:mt-16">
           <h2 className="text-yellow-main text-2xl md:text-5xl">
             {props.title}
           </h2>
-          <h4 className="text-green-500 font-bold pt-4 ">- オープンストアについて -</h4>
+          <h4 className="text-green-500 font-bold pt-4 ">ー {props.text} ー</h4>
         </div>
       </div>
     </>

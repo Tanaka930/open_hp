@@ -31,6 +31,34 @@ const Button = styled.a<{isButtonActive:boolean}>`
     transform-origin: left top;
   }
 `
+// const PcButton = styled.a<{isButtonActive:boolean}>`
+//   position: fixed;
+//   right: 80px;
+//   bottom: 40px;
+//   height: 50px;
+//   text-decoration: none;
+//   font-weight: bold;
+//   transform: ${({ isButtonActive }) => (isButtonActive ? 'translateY(0) rotate(90deg)' : 'translateY(100) rotate(90deg)')};
+//   visibility: ${({ isButtonActive }) => (isButtonActive ? 'visible' : 'hidden')};
+//   opacity: ${({ isButtonActive }) => (isButtonActive ? '1' : '0')};
+//   transition: 1s;
+//   font-size: 90%;
+//   line-height: 1.5rem;
+//   color: rgb(245, 158, 11);
+//   padding: 0 0 0 35px;
+//   border-top: solid 2px;
+//   &::before {
+//     content: "";
+//     display: block;
+//     position: absolute;
+//     top: -1px;
+//     left: 0px;
+//     width: 15px;
+//     border-top: solid 2px;
+//     transform: rotate(35deg);
+//     transform-origin: left top;
+//   }
+// `
 
 export default function ReturnTopButton() {
 
@@ -62,13 +90,19 @@ export default function ReturnTopButton() {
 
   return (
     <>
-      {isWide &&
+      {/* {isWide ? ( */}
         <Button
           isButtonActive={isButtonActive}
           onClick={scrollToTop}>
           TOP
         </Button>
-      }
+      {/* ):(
+        <PcButton
+          isButtonActive={isButtonActive}
+          onClick={scrollToTop}>
+          TOP
+        </PcButton>
+      )} */}
     </>
   )
 }

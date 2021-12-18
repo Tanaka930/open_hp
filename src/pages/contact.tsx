@@ -93,19 +93,19 @@ export default function Contact() {
   return (
     <>
       <Seo templateTitle='Contact' />
-      <TopContent bg="bg-top_contact" title="Contact" />
+      <TopContent title="CONTACT" text="お問い合わせ" />
 
-      <div className="w-full">
-        <h2 className='pt-14 text-2xl font-bold lg:text-4xl w-full  xl:pb-4 text-center'>CONTACT</h2>
-        <h3 className='text-xl lg:text-2xl w-full pb-2 xl:pb-8 text-center font-bold text-green-700'>- お問い合せ -</h3> 
-        <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 pb-12">
-          <div className="bg-white w-full rounded-3xl border-4 p-8 sm:p-12">
+      <div className="px-per10">
+        {/* <h2 className='pt-14 text-2xl font-bold lg:text-4xl w-full  xl:pb-4 text-center'>CONTACT</h2>
+        <h3 className='text-xl lg:text-2xl w-full pb-2 xl:pb-8 text-center font-bold text-green-700'>- お問い合せ -</h3>  */}
+        <div className="max-w-5xl mx-auto mb-20 md:mb-40">
+          <div className="bg-white w-full rounded-3xl border border-gray-300 p-8 sm:p-12">
             <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="md:flex items-center mt-12">
+              <div className="md:flex items-center mt-8">
                 <div className="w-full flex flex-col">
-                  <label htmlFor="title" className="font-semibold leading-none">
+                  <label htmlFor="title" className="relative text-xl">
                     タイトル
-                    <span className="mx-2 px-2 bg-yellow-500 text-white">必須</span>
+                    <span className="absolute bg-yellow-main text-white text-sm mx-2 my-1 px-3 rounded">必須</span>
                   </label>
                   <input 
                     autoComplete="title"
@@ -116,25 +116,25 @@ export default function Contact() {
                         message: "全角30文字以内で入力してください。"
                       }
                     })}
-                    className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                    className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-3 bg-gray-100 border rounded border-gray-200"
                   />
 
                   {errors.title && <span className="text-red-600 text-sm pt-2">{errors.title.message}</span>}
                 </div>
               </div>
 
-              <div className="md:flex items-center mt-8">
+              <div className="md:flex items-center mt-10">
                 <div className="w-full flex flex-col">
-                  <label htmlFor="category" className="font-semibold leading-none">
+                  <label htmlFor="category" className="relative text-xl">
                     カテゴリ
-                    <span className="mx-2 px-2 bg-yellow-500 text-white">必須</span>
+                    <span className="absolute bg-yellow-main text-white text-sm mx-2 my-1 px-3 rounded">必須</span>
                   </label>
                   <select
                     autoComplete="category"
                     {...register("category", {
                       required: "選択必須項目です。"
                     })}
-                    className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                    className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-3 bg-gray-100 border rounded border-gray-200"
                   >
                     <option value="">--選択してください--</option>
                     <option value="EC事業">EC事業</option>
@@ -147,11 +147,11 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="md:flex items-center mt-8">
+              <div className="md:flex items-center mt-10">
                 <div className="w-full md:w-1/2 flex flex-col">
-                  <label htmlFor="name" className="font-semibold leading-none">
+                  <label htmlFor="name" className="relative text-xl">
                     お名前
-                    <span className="mx-2 px-2 bg-yellow-500 text-white">必須</span>
+                    <span className="absolute bg-yellow-main text-white text-sm mx-2 my-1 px-3 rounded">必須</span>
                   </label>
                   <input
                     autoComplete="name"
@@ -162,15 +162,15 @@ export default function Contact() {
                         message: "全角12文字以内で入力してください。"
                       }
                     })}
-                    className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                    className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-3 bg-gray-100 border rounded border-gray-200"
                   />
                   {errors.name && <span className="text-red-600 text-sm pt-2">{errors.name.message}</span>}
                 </div>
                 
-                <div className="w-full md:w-1/2 flex flex-col md:ml-6 md:mt-0 mt-4">
-                  <label htmlFor="email" className="font-semibold leading-none">
+                <div className="w-full mt-10 md:w-1/2 flex flex-col md:ml-6 md:mt-0">
+                  <label htmlFor="email" className="relative text-xl">
                     メールアドレス
-                    <span className="mx-2 px-2 bg-yellow-500 text-white">必須</span>
+                    <span className="absolute bg-yellow-main text-white text-sm mx-2 my-1 px-3 rounded">必須</span>
                   </label>
                   <input
                     autoComplete="email"
@@ -181,17 +181,17 @@ export default function Contact() {
                         message: "正しいメールアドレスを入力してください。"
                       }
                     })}
-                    className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                    className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-3 bg-gray-100 border rounded border-gray-200"
                   />
                   {errors.email && <span className="text-red-600 text-sm pt-2">{errors.email.message}</span>}
                 </div>
               </div>
 
               <div>
-                <div className="w-full flex flex-col mt-8">
-                  <label htmlFor="message" className="font-semibold leading-none">
+                <div className="w-full flex flex-col mt-10">
+                  <label htmlFor="message" className="relative text-xl">
                     お問い合わせ内容
-                    <span className="mx-2 px-2 bg-yellow-500 text-white">必須</span>
+                    <span className="absolute bg-yellow-main text-white text-sm mx-2 my-1 px-3 rounded">必須</span>
                   </label>
                   <textarea
                     autoComplete="message"
@@ -202,7 +202,7 @@ export default function Contact() {
                         message: "全角500文字以内で入力してください。" 
                       }
                     })}
-                    className="h-40 text-base leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                    className="h-40 text-base leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-3 bg-gray-100 border rounded border-gray-200"
                   >
                   </textarea>
                   {errors.message && <span className="text-red-600 text-sm pt-2">{errors.message.message}</span>}
@@ -212,7 +212,7 @@ export default function Contact() {
               <div className="flex items-center justify-center w-full">
                 <input
                   type="submit"
-                  className="mt-9 font-semibold leading-none text-white py-4 px-10 bg-green-600 rounded hover:bg-green-500 focus:ring-2 focus:ring-offset-2 focus:ring-green-600 focus:outline-none cursor-pointer"
+                  className="text-lg mt-9 leading-none text-white py-4 px-16 bg-green-500 rounded-3xl hover:bg-green-500 focus:ring-2 focus:ring-offset-2 focus:ring-green-600 focus:outline-none cursor-pointer"
                 />
               </div>
             </form>

@@ -104,7 +104,7 @@ export default function JobId({jobs}:{jobs:any}) {
     return(
       <>
         <Seo templateTitle={`オープンストア ${jobs.title}`} />
-        <TopContent bg="bg-top_service" title={jobs.category.title} />
+        <TopContent title={jobs.category.title} />
         <section>
           <div className="flex items-center justify-center">
             <span className='text-2xl font-bold md:text-4xl'>

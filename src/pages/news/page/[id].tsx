@@ -21,7 +21,7 @@ export default function Home(contents: Contents){
   return(
     <>
       <Seo templateTitle='News' />
-      <TopContent bg="bg-top_service" title="News" />
+      <TopContent title="News" />
       <ContentList contents={contents} contentTitle='news' />
     </>
   )

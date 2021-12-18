@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import UnstyledLink from '../links/UnstyledLink';
+import UnstyledLink from '../../links/UnstyledLink';
 import Image from 'next/image';
 import { useMedia } from 'use-media';
 

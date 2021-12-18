@@ -1,4 +1,4 @@
-import UnstyledLink from "../links/UnstyledLink";
+import UnstyledLink from "../../links/UnstyledLink";
 import { useMedia } from "use-media";
 
 export default function FooterTop() {

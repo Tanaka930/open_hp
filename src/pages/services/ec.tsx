@@ -56,7 +56,7 @@ export default function Home(props:any){
   return(
     <>
       <Seo templateTitle='オープンストアEC事業' />
-      <TopContent bg="bg-ec_top" title="EC" />
+      <TopContent title="EC" />
       <TopText text={topTextWord.text} />
       <RightText 
         text={explanation1.text} 

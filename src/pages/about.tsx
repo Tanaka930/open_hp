@@ -40,7 +40,7 @@ export default function Home(data: Data){
   return(
     <>
       <Seo templateTitle='About' />
-      <TopContent bg="bg-top_about" title="ABOUT" />
+      <TopContent title="ABOUT" text="オープンストアについて" />
       <div className="flex flex-wrap my-12 px-per10 md:justify-center">
         <div className="w-full md:w-3/4">
           <ul

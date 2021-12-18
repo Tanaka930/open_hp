@@ -96,7 +96,7 @@ export default function Home(){
   return(
     <>
       <Seo templateTitle='オープンストアDX事業' />
-      <TopContent bg="bg-dx_top" title="DX" />
+      <TopContent title="DX" />
       <TopText text={topTextWord.text} />
       <RightText 
         text={explanation1.text} 

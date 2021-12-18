@@ -1,7 +1,7 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import UnstyledLink from '@/components/links/UnstyledLink';
 import FooterMenu from './footer/FooterMenu';
+import FooterTop from '@/components/organisms/footerTop';
 
 const links1 = [
   { label: 'About', href: '/about'  },
@@ -21,25 +21,7 @@ const links2 = [
 export default function Footer() {
   return (
     <>
-      <div className="bg-footer-sp bg-left-top bg-cover bg-no-repeat py-10 px-9">
-        <div className="mb-5">
-          <h3 className="text-xl pb-7">お問い合わせ</h3>
-          <p className="pb-8">「介護サービスについて」「介護スクールについて」「ケアプラスの求人について」など、当社の事業に関することでご質問などがあれば、お気軽にお問い合わせください。</p>
-          <UnstyledLink href='/contact' className="text-green-600 border border-green-600 rounded-3xl pt-2.5 pb-2 pl-3 text-sm">
-            CONTACT
-            <span className="inline-block h-2 w-2 rounded-full ml-7 mr-2  mb-px bg-green-500"></span>
-          </UnstyledLink>
-        </div>
-
-        <div className="mt-10">
-          <h3 className="text-xl pb-7">採用情報</h3>
-          <p className="pb-8">「介護サービスについて」「介護スクールについて」「ケアプラスの求人について」など、当社の事業に関することでご質問などがあれば、お気軽にお問い合わせください。</p>
-          <UnstyledLink href='/recruit' className="text-green-600 border border-green-600 rounded-3xl pt-2.5 pb-2 pl-3 text-sm">
-            CONTACT
-            <span className="inline-block h-2 w-2 rounded-full ml-7 mr-2  mb-px bg-green-500"></span>
-          </UnstyledLink>
-        </div>
-      </div>
+      <FooterTop />
 
       <footer className="bg-white py-4  sm:py-10 lg:py-12">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">

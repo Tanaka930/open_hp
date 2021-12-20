@@ -37,7 +37,7 @@ export default function blog(props:Props){
   return(
     <>
 
-      <div className="absolute w-9/12 back bg-gray-50"></div>
+      <div className="absolute w-9/12 back bg-gray-50 z-10"></div>
         <style jsx>
               {`
                 .back {
@@ -48,7 +48,7 @@ export default function blog(props:Props){
                 }
               `}
       </style>
-      <section className="">
+      <section className="z-50">
         <div className="body-font">
           <h2 className='text-2xl md:text-5xl w-full pb-2 md:pb-8 text-left leading-custom1'>TOPIC</h2>
           <h3 className='text-sm md:text-2xl w-full pb-6 text-left font-bold font-YuGothic text-green-700'>ー トピックス ー</h3>

@@ -14,22 +14,25 @@
   }
 }
 .topTextNo1 {
-  font-size: 4.8rem;
-  font-weight: 900;
+  font-size: 48px;
+  line-height: 96px;
+  // font-weight: 900;
   @media screen and (max-width: 767px) {
     font-size: 3rem;
   }
 }
 .topTextNo2 {
-  font-size: 4.8rem;
-  font-weight: 900;
+  font-size: 48px;
+  line-height: 96px;
+  // font-weight: 900;
   @media screen and (max-width: 767px) {
     font-size: 3rem;
   }
 }
 .topTextEn {
-  font-size: 1.6rem;
-  font-weight: 500;
+  font-size: 21px;
+  // font-weight: 500;
+  line-height: 42px;
   @media screen and (max-width: 767px) {
     font-size: 1.2rem;
   }

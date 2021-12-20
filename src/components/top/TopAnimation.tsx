@@ -46,15 +46,15 @@ export default function TopAnimation(){
         </div>
         <section className="mt-20">
           <div className="">
-            <div className="xl:w-1/2">
-              <h2 className="text-3xl xl:text-5xl text-left">責任(ある)と自由</h2>
+            <div className="xl:w-5/12">
+              <h2 className="text-3xl xl:text-5xl text-left">責任（ある）と自由</h2>
 
-              <div className="text-xl w-fll pr-6 pt-6 xl:pt-12 pb-24">
+              <div className="text-base w-fll pr-6 pt-6 xl:pt-12 pb-24">
                 <span className="leading-10">
-                  オープンストアは、お客様との対話に重きを置き、本質的なかだを汲み取りお客様にとって最適な販路拡大や集客方法におけるノウハウなどを一貫してサポートします。
+                  オープンストアは、お客様との対話に重きを置き、本質的な課題を汲み取りお客様にとって最適な販路拡大や集客方法におけるノウハウなどを一貫してサポートします。
                   <br/>
                   <br/>
-                  「やり方がわからない。時間がない。もう歳だから。ニーズがない。結果が補償できない。」など多くの障壁がありますが、そういった障壁を一つひとつ共に乗り越え、夢の実現に向けてのお手伝いを、是非、私たちオープンストアにお任せください。
+                  「やり方がわからない。時間がない。もう歳だから。ニーズがない。結果が補償できない。」などの多くの障壁がありますが、そういった障壁を一つひとつ共に乗り越え、夢の実現に向けてのお手伝いを、是非、私たちオープンストアにお任せください。
                 </span>
               </div>
             </div>

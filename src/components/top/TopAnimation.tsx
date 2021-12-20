@@ -47,7 +47,7 @@ export default function TopAnimation(){
         <section className="mt-20">
           <div className="">
             <div className="xl:w-5/12">
-              <h2 className="text-3xl xl:text-5xl text-left">責任（ある）と自由</h2>
+              <h2 className="text-2xl xl:text-5xl text-left">責任（ある）と自由</h2>
 
               <div className="text-base w-fll pt-6 xl:pt-12 pb-24">
                 <span className="leading-10">

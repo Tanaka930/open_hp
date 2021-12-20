@@ -14,19 +14,19 @@ export default function News({newses}: {newses:any}){
 
   return(
     <section className='h-auto w-full'>
-      <h2 className='text-4xl md:text-5xl w-full pb-4 text-center'>NEWS</h2>
-      <h3 className='text-xl md:text-2xl w-full xl:pb-16 text-center font-bold text-green-700 font-YuGothic'>- ニュース -</h3>
-      <div className='flex justify-center'>
-        <ol className='pt-4 text-xs xl:text-base  space-y-8 w-4/5 md:w-6/12 text-left'>
+      <h2 className='text-2xl md:text-5xl w-full pb-4 text-center'>NEWS</h2>
+      <h3 className='text-sm md:text-2xl w-full pb-11 xl:pb-16 text-center font-bold text-green-700 font-YuGothic'>- ニュース -</h3>
+      <div className='flex justify-center w-full'>
+        <ol className='text-xs xl:text-base  space-y-7 w-full md:w-6/12 text-left'>
           {newses.map((news:any) => (
             <li key={news.id}>
-              <div className="w-full py-2 border-b-2">
+              <div className="w-full border-b-2">
                 <UnstyledLink href={`/news/${news.id}`}>
                   <Moment format="YYYY.MM.DD" className="font-bold text-dayColor">
                     {news.createdAt}
                   </Moment>
                   {isMobileSite ? 
-                    <div className="ml-6 text-left">
+                    <div className="mt-4 text-left">
                       {news.title}
                     </div>  
                     :

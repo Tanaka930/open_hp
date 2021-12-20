@@ -61,39 +61,56 @@ export default function Footer() {
               <FooterMenu links={links2}/>
             </div>
 
-            <div className="w-full pt-4 md:pt-6">
+            <div className="w-full">
               <div className="flex">
-                <div className="">
-                  <UnstyledLink href="https://www.facebook.com/openstorejapan" className="block cursor-pointer pb-2">
+                <div className="w-1/2 pt-5 md:pt-6">
+                  <UnstyledLink href="https://www.instagram.com/open_store_inc/" className="flex items-center cursor-pointer pb-5">
+                      <Image
+                        width={17} height={17} 
+                        src="/images/icons/Instagram.png"
+                        alt="openstore-instagram-logo"
+                        decoding="async"
+                      />
+                    <span className="pl-1 text-base tracking-tight">instagram</span>
+                  </UnstyledLink>
+
+                  <UnstyledLink href="https://www.facebook.com/openstorejapan" className="flex items-center cursor-pointer pb-5">
                     <Image
                       width={17} height={17} 
                       src="/images/icons/facebook.png"
                       alt="openstore-facebook-logo"
                       decoding="async"
                     />
-                    <span className="align-top pl-1 text-sm">facebook</span>
+                    <span className="pl-1 text-base tracking-tight">facebook</span>
                   </UnstyledLink>
-                  <UnstyledLink href="https://www.instagram.com/open_store_inc/" className="block cursor-pointer pb-2">
-                    <Image
-                      width={17} height={17} 
-                      src="/images/icons/Instagram.png"
-                      alt="openstore-instagram-logo"
-                      decoding="async"
-                    />
-                    <span className="align-top pl-1 text-sm">instagram</span>
-                  </UnstyledLink>
-                  <UnstyledLink href="https://page.line.me/246xdhfu" className="block cursor-pointer">
+
+                  <UnstyledLink href="https://page.line.me/246xdhfu" className="flex items-center cursor-pointer">
                     <Image
                       width={17} height={17} 
                       src="/images/icons/LINE.png"
                       alt="openstore-line-logo"
                       decoding="async"
                     />
-                    <span className="align-top pl-1 text-sm">LINE</span>
+                    <span className="pl-1 text-base tracking-tight">LINE</span>
                   </UnstyledLink>
                 </div>
+
+                <div className="w-1/2 pt-2 ml-5">
+                  <UnstyledLink href="/services/ec" className="block cursor-pointer pb-4">
+
+                    <span className="text-xs">ー Shopify事業</span>
+                  </UnstyledLink>
+                  <UnstyledLink href="/services/line" className="block cursor-pointer pb-4">
+
+                    <span className="text-xs">ー LINEサービス</span>
+                  </UnstyledLink>
+                  <UnstyledLink href="/services/dx" className="block cursor-pointer">
+
+                    <span className="text-xs">ー DX事業</span>
+                  </UnstyledLink>
+                </div>
+
               </div>
-              <div></div>
             </div>
           </div>
             {/* <!-- 企業情報 - start --> */}
@@ -104,7 +121,7 @@ export default function Footer() {
                   <p className="text-2xl">オープンストア株式会社</p>
                 </li>
                 <li className="mt-5 md:mt-32">
-                  <p>大阪府大阪市淀川区木川東４丁目５−３ <br className="md:hidden"/>オパル新大阪ビル</p>
+                  <p>大阪府大阪市淀川区木川東４丁目５-３ <br className="md:hidden"/>オパル新大阪ビル</p>
                 </li>
                 <li>
                   <p  className="mt-3.5">〒532-0012</p>
@@ -127,7 +144,7 @@ export default function Footer() {
             </UnstyledLink>
           </div>
           <p className="text-xs text-center tracking-widest pt-1">
-            ©︎2021 Open Store. All rights reserved.
+            ©2021 Open Store. All rights reserved.
           </p>
         </div>
       </footer>

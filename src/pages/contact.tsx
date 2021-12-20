@@ -2,6 +2,9 @@ import Seo from "@/components/Seo"
 import TopContent from "@/components/layout/TopContent"
 import { useForm } from "react-hook-form";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
+import Annotation from "@/molecules/form/annotation";
+import SubmitButton from "@/molecules/form/submitButton";
+import RecaptchaText from "@/molecules/recaptchaText";
 
 
 type FormData = {
@@ -105,7 +108,7 @@ export default function Contact() {
                 <div className="w-full flex flex-col">
                   <label htmlFor="title" className="relative text-xl">
                     タイトル
-                    <span className="absolute bg-yellow-main text-white text-sm mx-2 my-1 px-3 rounded">必須</span>
+                    <Annotation />
                   </label>
                   <input 
                     autoComplete="title"
@@ -127,7 +130,7 @@ export default function Contact() {
                 <div className="w-full flex flex-col">
                   <label htmlFor="category" className="relative text-xl">
                     カテゴリ
-                    <span className="absolute bg-yellow-main text-white text-sm mx-2 my-1 px-3 rounded">必須</span>
+                    <Annotation />
                   </label>
                   <select
                     autoComplete="category"
@@ -151,7 +154,7 @@ export default function Contact() {
                 <div className="w-full md:w-1/2 flex flex-col">
                   <label htmlFor="name" className="relative text-xl">
                     お名前
-                    <span className="absolute bg-yellow-main text-white text-sm mx-2 my-1 px-3 rounded">必須</span>
+                    <Annotation />
                   </label>
                   <input
                     autoComplete="name"
@@ -170,7 +173,7 @@ export default function Contact() {
                 <div className="w-full mt-10 md:w-1/2 flex flex-col md:ml-6 md:mt-0">
                   <label htmlFor="email" className="relative text-xl">
                     メールアドレス
-                    <span className="absolute bg-yellow-main text-white text-sm mx-2 my-1 px-3 rounded">必須</span>
+                    <Annotation />
                   </label>
                   <input
                     autoComplete="email"
@@ -191,7 +194,7 @@ export default function Contact() {
                 <div className="w-full flex flex-col mt-10">
                   <label htmlFor="message" className="relative text-xl">
                     お問い合わせ内容
-                    <span className="absolute bg-yellow-main text-white text-sm mx-2 my-1 px-3 rounded">必須</span>
+                    <Annotation />
                   </label>
                   <textarea
                     autoComplete="message"
@@ -209,16 +212,13 @@ export default function Contact() {
                 </div>
               </div>
               
-              <div className="flex items-center justify-center w-full">
-                <input
-                  type="submit"
-                  className="text-lg mt-9 leading-none text-white py-4 px-16 bg-green-500 rounded-3xl hover:bg-green-500 focus:ring-2 focus:ring-offset-2 focus:ring-green-600 focus:outline-none cursor-pointer"
-                />
+              <div className="flex items-center justify-center w-full mt-9">
+                <SubmitButton />
               </div>
             </form>
 
             <div className="mt-8 md:mt-12">
-              <p className="text-xs md:text-sm text-gray-900">このサイトはreCAPTCHAによって保護されており、Google <a href="https://policies.google.com/privacy" target="_blank" className="text-blue-600">プライバシーポリシー</a> と <a href="https://policies.google.com/terms" target="_blank" className="text-blue-600">利用規約</a> が適用されます。</p>
+              <RecaptchaText />
             </div>
 
           </div>

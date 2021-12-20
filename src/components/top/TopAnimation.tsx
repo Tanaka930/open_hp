@@ -49,7 +49,7 @@ export default function TopAnimation(){
             <div className="xl:w-5/12">
               <h2 className="text-3xl xl:text-5xl text-left">責任（ある）と自由</h2>
 
-              <div className="text-base w-fll pr-6 pt-6 xl:pt-12 pb-24">
+              <div className="text-base w-fll pt-6 xl:pt-12 pb-24">
                 <span className="leading-10">
                   オープンストアは、お客様との対話に重きを置き、本質的な課題を汲み取りお客様にとって最適な販路拡大や集客方法におけるノウハウなどを一貫してサポートします。
                   <br/>

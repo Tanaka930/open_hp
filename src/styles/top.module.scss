@@ -1,7 +1,7 @@
 // best in chrome
 $total: 300; // total particles
 $orb-size: 300px;
-$orb-size-mini: 200px;
+$orb-size-mini: 150px;
 $particle-size: 12px;
 @media screen and (max-width: 767px) {
   // スマホの時
@@ -25,7 +25,7 @@ $base-hue: 90; // change for diff colors (180 is nice)
   // z-index: -10;
   @media screen and (max-width: 767px) {
     // スマホの時
-    top: 22%;
+    top: 15%;
     left: 50%;
   }
   width: 0;

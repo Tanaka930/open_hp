@@ -9,7 +9,7 @@
 
   @media screen and (max-width: 767px) {
     font-size: 3rem;
-    top: 40%;
+    top: 60%;
     left: 5%;
   }
 }
@@ -18,7 +18,8 @@
   line-height: 96px;
   // font-weight: 900;
   @media screen and (max-width: 767px) {
-    font-size: 3rem;
+    line-height: 48px;
+    font-size: 32px;
   }
 }
 .topTextNo2 {
@@ -26,7 +27,8 @@
   line-height: 96px;
   // font-weight: 900;
   @media screen and (max-width: 767px) {
-    font-size: 3rem;
+    line-height: 48px;
+    font-size: 32px;
   }
 }
 .topTextEn {
@@ -34,7 +36,7 @@
   // font-weight: 500;
   line-height: 42px;
   @media screen and (max-width: 767px) {
-    font-size: 1.2rem;
+    font-size: 16px;
   }
 }
 /* .companyLogo {

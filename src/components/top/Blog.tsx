@@ -19,14 +19,13 @@ export default function blog(props:Props){
 
   if(isMobileSite){
     // スマホ処理
-    blogHeight = Number(blogCount) * 280 + 250;
+    blogHeight = Number(blogCount) * 280 + 290;
   }else{
     // pc処理
-    blogHeight = Number(blogCount)* 300 + 250;
     if(Number(blogCount) <= 3){
-      blogHeight = 222 + 350;
+      blogHeight = 175 + 350;
     }else{
-      blogHeight = 222 + 650;
+      blogHeight = 175 + 650;
     }
   }
 
@@ -51,9 +50,9 @@ export default function blog(props:Props){
       <section className="">
         <div className="body-font">
           <h2 className='text-2xl md:text-5xl w-full pb-2 md:pb-8 text-left leading-custom1'>TOPIC</h2>
-          <h3 className='text-sm md:text-2xl w-full pb-6 text-left font-bold font-YuGothic text-green-700'>ー トピックス ー</h3>
+          <h3 className='text-sm md:text-2xl w-full pb-10 text-left font-bold font-YuGothic text-green-700'>ー トピックス ー</h3>
 
-          <div className="container px-5 pt-3 md:pt-0 pb-12 md:pb-24 max-w-7x1">
+          <div className="container px-5  max-w-7x1">
             <div className="flex flex-wrap -m-4 md:mx-20">
               {props.blogs.map((content:any) => (
                 <div className="xl:w-1/3 md:w-1/2 p-4">

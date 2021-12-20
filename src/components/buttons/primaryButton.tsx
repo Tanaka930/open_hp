@@ -18,14 +18,15 @@ type ButtonLinkProps = {
 export default function PrimaryButton({
   children,
   href,
-  color
+  color,
+  bgColor
 }: ButtonLinkProps) {
   return (
     <>
       <UnstyledLink 
         href={href} 
         className={clsx(
-                `text-${color} border border-${color} rounded-3xl pt-2.5 pb-2 pl-3 text-sm`,
+                `text-${color} border border-${color} rounded-3xl pt-2.5 pb-2 pl-3 text-sm bg-${bgColor}`,
               )}
       >
         {children}

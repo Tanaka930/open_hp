@@ -7,6 +7,8 @@ export type UnstyledLinkProps = {
   openNewTab?: boolean;
   className?: string;
   color?: string;
+  bgColor?: string;
+  textColor?: string;
 } & React.ComponentPropsWithoutRef<'a'> &
   LinkProps;
 

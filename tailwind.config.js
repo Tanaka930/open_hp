@@ -18,9 +18,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        primary: ["YakuHanJP","Roboto","Kinto Sans","Helvetica Neue","Segoe UI","Helvetica","游ゴシック体","YuGothic","Yu Gothic M","游ゴシック Medium","Yu Gothic Medium","メイリオ", ...fontFamily.sans],
-        themeText: ["Avenir LT Pro"],
-        dayText: ["YuGothic"],
+        primary: ["YakuHanJP","Roboto","Kinto Sans","Helvetica Neue","Segoe UI","Helvetica","YuGothic","Yu Gothic M","游ゴシック体","游ゴシック Medium","Yu Gothic Medium","メイリオ", ...fontFamily.sans],
+        themeText: ["Avenir LT Pro","Avenir Next", ...fontFamily.sans],
+        YuGothic: ["YuGothic","Yu Gothic M","Yu Gothic Medium","游ゴシック Medium","游ゴシック体", ...fontFamily.sans],
       },
       colors: {
         primary: {
@@ -51,6 +51,9 @@ module.exports = {
       },
       textColor: {
         dayColor: '#636363',
+      },
+      leading:{
+        custom1: '6rem'
       },
       keyframes: {
         flicker: {
@@ -88,13 +91,17 @@ module.exports = {
       height: {
         xl: '768px',
       },
+      width: {
+        service: '300px',
+      },
       fontSize: {
         'base': ['1.0rem',{
           letterSpacing: '0.1em',
         }]
       },
       padding: {
-        per10: '10%'
+        per10: '10%',
+        per13: '13%',
       },
     },
   },

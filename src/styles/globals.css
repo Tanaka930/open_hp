@@ -128,13 +128,13 @@ h2 {
 
 /* セクション情報の記載 */
 section {
-  padding: 50px 10%;
-  margin-bottom: 50px;
+  padding: 75px 10%;
+  /* margin-bottom: 50px; */
 }
 
 @media (max-width: 767px) {
   section {
     padding: 50px 36px;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
   }
 }

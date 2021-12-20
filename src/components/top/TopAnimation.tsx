@@ -1,33 +1,49 @@
 import { useEffect, useState } from 'react'
+import styled from 'styled-components'
 import { useMedia } from 'use-media'
 import styles from '@/styles/top.module.scss'
 import TopText from '@/components/top/TopText'
 import PrimaryButton from '@/components/buttons/primaryButton'
 
-
+const Wrap = styled.div<{isActive:boolean}>`
+  position: fixed;
+  top: 40%;
+  left: 70%;
+  transform: ${({ isActive }) => (isActive ? 'translateY(50px)' : 'translateY(0)')};
+  visibility: ${({ isActive }) => (isActive ? 'visible' : 'hidden')};
+  opacity: ${({ isActive }) => (isActive ? '1' : '0')};
+  /* transition: ${({ isActive }) => (isActive ? 'all 300ms' : 'all 300ms')}; */
+  transition: all 300ms;
+  @media screen and (max-width: 767px) {
+    // スマホの時
+    position: relative;
+    top: 0;
+    left: 50%;
+  }
+`
 
 
 export default function TopAnimation(){
 
-  // const [isActive, setIsActive] = useState<boolean>(true);
+  const [isActive, setIsActive] = useState<boolean>(true);
 
-  // useEffect(() => {
-  //   window.addEventListener('scroll', scrollWindow)
-  //   return () => {
-  //     window.removeEventListener('scroll', scrollWindow)
-  //   }
-  // }, [])
+  useEffect(() => {
+    window.addEventListener('scroll', scrollWindow)
+    return () => {
+      window.removeEventListener('scroll', scrollWindow)
+    }
+  }, [])
 
-  // const scrollWindow = () => {
-  //   const bottom = 1200  //ボタンを表示させたい位置
-  //   let scroll = 0
-  //   scroll = window.scrollY
-  //   if (bottom <= scroll) {
-  //     setIsActive(false)
-  //   } else {
-  //     setIsActive(true)
-  //   }
-  // }
+  const scrollWindow = () => {
+    const bottom = 900
+    let scroll = 0
+    scroll = window.scrollY
+    if (bottom <= scroll) {
+      setIsActive(false)
+    } else {
+      setIsActive(true)
+    }
+  }
 
   // const isWide = useMedia({ maxWidth: "767px" });
 
@@ -35,15 +51,16 @@ export default function TopAnimation(){
     <>
       <div className={styles.top}>
         <TopText />
-          {/* {isActive && */}
+          <Wrap isActive={isActive}>
             <div className={styles.wrap}>
               {/* 300回ループを回す */}
               {[...Array(300)].map((_,index)=>(
                 // 粒用の要素
+                // <div key={index} className={isActive ? styles.c : styles.d}></div>
                 <div key={index} className={styles.c}></div>
               ))}
             </div>
-          {/* } */}
+          </Wrap>
         </div>
         <section className="mt-20">
           <div className="">

@@ -20,7 +20,7 @@ export default function News({newses}: {newses:any}){
         <ol className='text-xs xl:text-base  space-y-7 w-full md:w-6/12 text-left'>
           {newses.map((news:any) => (
             <li key={news.id}>
-              <div className="w-full border-b-2">
+              <div className="w-full border-b-2 pb-3.5">
                 <UnstyledLink href={`/news/${news.id}`}>
                   <Moment format="YYYY.MM.DD" className="font-bold text-dayColor">
                     {news.createdAt}

@@ -91,13 +91,17 @@ module.exports = {
       height: {
         xl: '768px',
       },
+      width: {
+        service: '300px',
+      },
       fontSize: {
         'base': ['1.0rem',{
           letterSpacing: '0.1em',
         }]
       },
       padding: {
-        per10: '10%'
+        per10: '10%',
+        per13: '13%',
       },
     },
   },

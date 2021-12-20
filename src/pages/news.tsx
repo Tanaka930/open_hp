@@ -17,8 +17,8 @@ interface Contents {
 export default function Home(contents: Contents){
   return(
     <>
-      <Seo templateTitle='News' />
-      <TopContent title="News" text="ニュース" />
+      <Seo templateTitle='NEWS' />
+      <TopContent title="NEWS" text="ニュース" />
       <ContentList contents={contents} contentTitle='news' />
     </>
   )

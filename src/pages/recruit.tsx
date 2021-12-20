@@ -123,8 +123,8 @@ export default function Recruit(categories: Categories) {
   // 以下のテンプレートはマークアップ時に整形する
   return (
     <>
-      <Seo templateTitle='Recruit' />
-      <TopContent title="Recruit" text="採用情報" />
+      <Seo templateTitle='RECRUIT' />
+      <TopContent title="RECRUIT" text="採用情報" />
       <Culture pageData={categories.pageData}/>
       <Human />
       <Staff pageData={categories.pageData}/>
@@ -186,7 +186,7 @@ export default function Recruit(categories: Categories) {
               <div className="md:flex items-center mt-12">
                 <div className="w-full flex flex-col">
                   <label htmlFor="mails" className="relative text-xl">
-                    メールアドレス確認
+                    アドレス(確認)
                     <span className="absolute bg-yellow-main text-white text-sm mx-2 my-1 px-3 rounded">必須</span>
                   </label>
                   <input 

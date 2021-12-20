@@ -127,7 +127,7 @@ export default function Footer() {
                   <p  className="mt-3.5">〒532-0012</p>
                 </li>
                 <li className="mt-3.5">
-                  <a href="mailto:contact@openstore-japan.com<" className="">contact@openstore-japan.com</a>
+                  <a href="mailto:contact@openstore-japan.com<" target="blank" className="">contact@openstore-japan.com</a>
                 </li>
                 <li className="mt-3.5">
                   <a href="tel:0667709626" className="">(06)6770-9626</a>

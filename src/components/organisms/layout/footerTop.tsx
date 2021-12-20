@@ -19,7 +19,7 @@ export default function FooterTop() {
             <PrimaryButton 
               href='/contact'
               color='green-600'
-              bgColor='white'
+              bgColor=''
             >
               CONTACT
             </PrimaryButton>
@@ -35,7 +35,7 @@ export default function FooterTop() {
             <PrimaryButton 
               href='/recruit'
               color='green-600'
-              bgColor='white'
+              bgColor=''
             >
               RECRUIT
             </PrimaryButton>

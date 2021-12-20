@@ -24,9 +24,9 @@ export default function blog(props:Props){
     // pc処理
     blogHeight = Number(blogCount)* 300 + 250;
     if(Number(blogCount) <= 3){
-      blogHeight = 200 + 350;
+      blogHeight = 222 + 350;
     }else{
-      blogHeight = 200 + 650;
+      blogHeight = 222 + 650;
     }
   }
 

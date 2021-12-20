@@ -18,9 +18,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        primary: ["YakuHanJP","Roboto","Kinto Sans","Helvetica Neue","Segoe UI","Helvetica","游ゴシック体","YuGothic","Yu Gothic M","游ゴシック Medium","Yu Gothic Medium","メイリオ", ...fontFamily.sans],
+        primary: ["YakuHanJP","Roboto","Kinto Sans","Helvetica Neue","Segoe UI","Helvetica","YuGothic","Yu Gothic M","游ゴシック体","游ゴシック Medium","Yu Gothic Medium","メイリオ", ...fontFamily.sans],
         themeText: ["Avenir LT Pro","Avenir Next", ...fontFamily.sans],
-        YuGothic: ["Yu Gothic"],
+        YuGothic: ["YuGothic","Yu Gothic M","Yu Gothic Medium","游ゴシック Medium","游ゴシック体", ...fontFamily.sans],
       },
       colors: {
         primary: {

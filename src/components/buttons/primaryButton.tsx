@@ -1,3 +1,4 @@
+// import { useRouter } from 'next/router'
 import clsx from 'clsx';
 
 import UnstyledLink, {
@@ -14,11 +15,10 @@ type ButtonLinkProps = {
   variant?: keyof typeof ButtonVariant;
 } & UnstyledLinkProps;
 
-export default function ReadMoreButton({
+export default function PrimaryButton({
   children,
-  className = '',
-  variant = 'dark',
-  ...rest
+  href,
+  color
 }: ButtonLinkProps) {
   return (
     // <div className='w-full flex justify-center'>
@@ -50,9 +50,14 @@ export default function ReadMoreButton({
     //   </UnstyledLink>
     // </div>
     <>
-      <UnstyledLink href='/recruit' className="text-green-600 border border-green-600 rounded-3xl pt-2.5 pb-2 pl-3 text-sm">
+      <UnstyledLink 
+        href={href} 
+        className={clsx(
+                `text-${color} border border-${color} rounded-3xl pt-2.5 pb-2 pl-3 text-sm`,
+              )}
+      >
         {children}
-        <span className="inline-block h-2 w-2 rounded-full ml-7 mr-2  mb-px bg-green-500"></span>
+        <span className={`inline-block h-2 w-2 rounded-full ml-7 mr-2  mb-px bg-${color}`}></span>
       </UnstyledLink>
     </>
   );

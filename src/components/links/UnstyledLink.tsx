@@ -6,6 +6,7 @@ export type UnstyledLinkProps = {
   children: React.ReactNode;
   openNewTab?: boolean;
   className?: string;
+  color?: string;
 } & React.ComponentPropsWithoutRef<'a'> &
   LinkProps;
 

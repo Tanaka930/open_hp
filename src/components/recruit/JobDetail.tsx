@@ -19,7 +19,7 @@ export default function JobDetail(props: Props){
           </div>
           {expanded && 
             <div className="px-5 pt-0">
-              <p className="leading-6 w-full font-light">
+              <p className="leading-6 w-full font-light text-base">
                 {props.jobData.text}
               </p>
               <ul className='space-y-4 text-base md:text-xl p-8'>

@@ -9,10 +9,10 @@ export default function Staff(props: Props){
   return(
     <>
       <section className='h-auto w-full'>
-      <h2 className='text-2xl font-bold lg:text-4xl w-full  xl:pb-4 text-center'>Voice of the employees</h2>
-        <h3 className='text-xl lg:text-2xl w-full pb-2 xl:pb-8 text-center font-bold text-green-700'>- スタッフの声 -</h3>
+      <h2 className='text-2xl lg:text-5xl w-full pb-2 lg:pb-4 text-center'>Voice of the employees</h2>
+        <h3 className='text-sm lg:text-2xl w-full pb-2 xl:pb-8 text-center text-green-700 font-YuGothic'>ー スタッフの声 ー</h3>
         <div className='justify-center lg:mx-20'>
-          <div className='text-center w-full'>
+          <div className='text-center w-full mb-16 lg:mb-28'>
             <Image 
               src={props.pageData.staffImage.url} 
               width={props.pageData.staffImage.width}
@@ -22,7 +22,7 @@ export default function Staff(props: Props){
               decoding="async"
               />
           </div>
-          <div className='w-full text-base lg:px-12 mt-12 lg:text-xl'
+          <div className='w-full text-base lg:px-12'
               dangerouslySetInnerHTML={{
               __html: `${text}`,
             }}

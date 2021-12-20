@@ -132,16 +132,16 @@ export default function Recruit(categories: Categories) {
 
       <section className="w-full">
         <div className="">
-        <h2 className='text-2xl font-bold lg:text-4xl w-full  xl:pb-4 text-center'>CONTACT</h2>
-        <h3 className='text-xl lg:text-2xl w-full pb-2 xl:pb-8 text-center font-bold text-green-700'>- 応募する -</h3> 
+        <h2 className='text-2xl lg:text-5xl w-full pb-2 lg:pb-6 text-center'>CONTACT</h2>
+        <h3 className='text-sm lg:text-2xl w-full pb-4 xl:pb-8 text-center text-green-700 font-YuGothic'>- 応募する -</h3> 
         <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 mb-12">
           <div className="bg-white w-full rounded-3xl border-4 p-8 sm:p-12">
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="md:flex items-center mt-12">
                 <div className="w-full flex flex-col">
-                  <label htmlFor="name" className="font-semibold leading-none">
+                  <label htmlFor="name" className="relative text-xl">
                     お名前
-                    <span className="mx-2 px-2 bg-yellow-500 text-white">必須</span>
+                    <span className="absolute bg-yellow-main text-white text-sm mx-2 my-1 px-3 rounded">必須</span>
                   </label>
                   
                   <input 
@@ -162,9 +162,9 @@ export default function Recruit(categories: Categories) {
 
               <div className="md:flex items-center mt-12">
                 <div className="w-full flex flex-col">
-                  <label htmlFor="mailf" className="font-semibold leading-none">
+                  <label htmlFor="mailf" className="relative text-xl">
                     メールアドレス
-                    <span className="mx-2 px-2 bg-yellow-500 text-white">必須</span>
+                    <span className="absolute bg-yellow-main text-white text-sm mx-2 my-1 px-3 rounded">必須</span>
                   </label>
                   <input 
                     autoComplete="mailf"
@@ -185,9 +185,9 @@ export default function Recruit(categories: Categories) {
 
               <div className="md:flex items-center mt-12">
                 <div className="w-full flex flex-col">
-                  <label htmlFor="mails" className="font-semibold leading-none">
+                  <label htmlFor="mails" className="relative text-xl">
                     メールアドレス確認
-                    <span className="mx-2 px-2 bg-yellow-500 text-white">必須</span>
+                    <span className="absolute bg-yellow-main text-white text-sm mx-2 my-1 px-3 rounded">必須</span>
                   </label>
                   <input 
                     autoComplete="mails"
@@ -207,7 +207,7 @@ export default function Recruit(categories: Categories) {
 
               <div className="md:flex items-center mt-12">
                 <div className="w-full flex flex-col">
-                  <label htmlFor="tell" className="font-semibold leading-none">お電話番号</label>
+                  <label htmlFor="tell" className="relative text-xl">お電話番号</label>
                   <input 
                     autoComplete="tell"
                     {...register("tell", {
@@ -225,9 +225,9 @@ export default function Recruit(categories: Categories) {
 
               <div className="md:flex items-center mt-8">
                 <div className="w-full flex flex-col">
-                  <label htmlFor="category" className="font-semibold leading-none">
+                  <label htmlFor="category" className="relative text-xl">
                     職種
-                    <span className="mx-2 px-2 bg-yellow-500 text-white">必須</span>  
+                    <span className="absolute bg-yellow-main text-white text-sm mx-2 my-1 px-3 rounded">必須</span>  
                   </label>
                   <select
                     autoComplete="category"
@@ -249,7 +249,7 @@ export default function Recruit(categories: Categories) {
 
               <div className="md:flex items-center mt-8">
                 <div className="w-full flex flex-col">
-                  <label htmlFor="remark" className="font-semibold leading-none">備考</label>
+                  <label htmlFor="remark" className="relative text-xl">備考</label>
                   <input
                     autoComplete="remark"
                     {...register("remark", {
@@ -266,7 +266,7 @@ export default function Recruit(categories: Categories) {
 
               <div>
                 <div className="w-full flex flex-col mt-8">
-                  <label htmlFor="message" className="font-semibold leading-none">お問い合わせ内容</label>
+                  <label htmlFor="message" className="relative text-xl">お問い合わせ内容</label>
                   <textarea
                     autoComplete="message"
                     {...register("message", {

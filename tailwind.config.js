@@ -97,6 +97,7 @@ module.exports = {
       fontSize: {
         'base': ['1.0rem',{
           letterSpacing: '0.1em',
+          lineHeight: '32px',
         }]
       },
       padding: {

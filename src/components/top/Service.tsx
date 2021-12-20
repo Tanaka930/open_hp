@@ -1,6 +1,6 @@
-import ReadMoreButton from '@/components/buttons/readMoreButton'
-
 import ServiceContent from '@/components/top/service/serviceContent'
+
+import PrimaryButton from '@/components/buttons/primaryButton'
 
 type Props = {
   data: any;
@@ -22,10 +22,14 @@ export default function Service(props:Props){
           <ServiceContent image= {props.data.lineImage.url} title="LINEサービス" text = {text2}/>
           <ServiceContent image= {props.data.dxImage.url} title="DX事業" text = {text3}/>
         </div>
-        <div className='mt-12 md:mt-24'>
-          <ReadMoreButton href="/service">
-            Read More ...
-          </ReadMoreButton>
+        <div className='mt-12 md:mt-16 md:mb-10 text-center'>
+          <PrimaryButton
+            href='/services'
+            color='white'
+            bgColor='yellow-main'
+          >
+            VIEW MORE
+          </PrimaryButton>
         </div>
       </div>
     </section>

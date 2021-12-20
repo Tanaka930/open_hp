@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { useMedia } from 'use-media'
 import styles from '@/styles/top.module.scss'
 import TopText from '@/components/top/TopText'
+import PrimaryButton from '@/components/buttons/primaryButton'
 
 const Wrap = styled.div<{isActive:boolean}>`
   position: fixed;
@@ -66,7 +67,7 @@ export default function TopAnimation(){
             <div className="xl:w-5/12">
               <h2 className="text-2xl xl:text-5xl text-left">責任（ある）と自由</h2>
 
-              <div className="text-base w-fll pt-6 xl:pt-12 pb-24">
+              <div className="text-base w-fll pt-10 xl:pt-12 pb-7">
                 <span className="leading-10">
                   オープンストアは、お客様との対話に重きを置き、本質的な課題を汲み取りお客様にとって最適な販路拡大や集客方法におけるノウハウなどを一貫してサポートします。
                   <br/>
@@ -74,6 +75,14 @@ export default function TopAnimation(){
                   「やり方がわからない。時間がない。もう歳だから。ニーズがない。結果が補償できない。」などの多くの障壁がありますが、そういった障壁を一つひとつ共に乗り越え、夢の実現に向けてのお手伝いを、是非、私たちオープンストアにお任せください。
                 </span>
               </div>
+              <PrimaryButton
+                href='/about'
+                color='green-600'
+                bgColor='white'
+              >
+                ABOUT US
+              </PrimaryButton>
+
             </div>
           </div>
         </section>

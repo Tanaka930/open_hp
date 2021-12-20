@@ -19,8 +19,8 @@ module.exports = {
     extend: {
       fontFamily: {
         primary: ["YakuHanJP","Roboto","Kinto Sans","Helvetica Neue","Segoe UI","Helvetica","游ゴシック体","YuGothic","Yu Gothic M","游ゴシック Medium","Yu Gothic Medium","メイリオ", ...fontFamily.sans],
-        themeText: ["Avenir LT Pro"],
-        dayText: ["YuGothic"],
+        themeText: ["Avenir LT Pro","Avenir Next", ...fontFamily.sans],
+        YuGothic: ["Yu Gothic"],
       },
       colors: {
         primary: {
@@ -51,6 +51,9 @@ module.exports = {
       },
       textColor: {
         dayColor: '#636363',
+      },
+      leading:{
+        custom1: '6rem'
       },
       keyframes: {
         flicker: {

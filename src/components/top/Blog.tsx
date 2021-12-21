@@ -2,6 +2,8 @@ import UnstyledLink from '@/components/links/UnstyledLink'
 import Moment from 'react-moment'
 import useMedia from 'use-media'
 
+import SectionTitle from '@/components/layout/sectionText'
+
 type Props = {
   blogs: any;
 }
@@ -19,7 +21,7 @@ export default function blog(props:Props){
 
   if(isMobileSite){
     // スマホ処理
-    blogHeight = Number(blogCount) * 280 + 290;
+    blogHeight = Number(blogCount) * 280 + 260;
   }else{
     // pc処理
     if(Number(blogCount) <= 3){
@@ -49,8 +51,9 @@ export default function blog(props:Props){
       </style>
       <section className="z-50　mb-10">
         <div className="body-font">
-          <h2 className='text-2xl md:text-5xl w-full pb-2 md:pb-8 text-left leading-custom1'>TOPIC</h2>
-          <h3 className='text-sm md:text-2xl w-full pb-10 text-left font-bold font-YuGothic text-green-700'>ー トピックス ー</h3>
+          {/* <h2 className='text-2xl md:text-5xl w-full pb-2 md:pb-8 text-left leading-custom1'>TOPIC</h2>
+          <h3 className='text-sm md:text-2xl w-full pb-10 text-left font-bold font-YuGothic text-green-700'>ー トピックス ー</h3> */}
+          <SectionTitle title="TOPIC" subTitle="トピックス" position="left" />
 
           <div className="container px-5  max-w-7x1">
             <div className="flex flex-wrap -m-4 md:mx-20">

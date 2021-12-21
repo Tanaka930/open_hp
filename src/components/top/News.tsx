@@ -3,6 +3,8 @@ import UnstyledLink from '@/components/links/UnstyledLink'
 import Moment from 'react-moment'
 import useMedia from 'use-media';
 
+import SectionTitle from '@/components/layout/sectionText'
+
 import PrimaryButton from '@/components/buttons/primaryButton'
 
 const mediaQueries = {
@@ -16,8 +18,9 @@ export default function News({newses}: {newses:any}){
 
   return(
     <section className='h-auto w-full'>
-      <h2 className='text-2xl md:text-5xl w-full pb-4 text-center'>NEWS</h2>
-      <h3 className='text-sm md:text-2xl w-full pb-11 xl:pb-16 text-center font-bold text-green-700 font-YuGothic'>- お知らせ -</h3>
+      {/* <h2 className='text-2xl md:text-5xl w-full pb-4 text-center'>NEWS</h2>
+      <h3 className='text-sm md:text-2xl w-full pb-11 xl:pb-16 text-center font-bold text-green-700 font-YuGothic'>- お知らせ -</h3> */}
+      <SectionTitle title="NEWS" subTitle="お知らせ" position="center" />
       <div className='flex justify-center w-full'>
         <ol className='text-xs xl:text-base  space-y-7 w-full md:w-6/12 text-left'>
           {newses.map((news:any) => (

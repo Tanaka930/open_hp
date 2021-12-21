@@ -16,6 +16,8 @@ import Staff from '@/components/recruit/Staff'
 // 求人用のコンポーネント
 import Job from '@/components/recruit/Job'
 
+import SectionTitle from '@/components/layout/sectionText'
+
 import { useForm } from "react-hook-form";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 
@@ -132,8 +134,9 @@ export default function Recruit(categories: Categories) {
 
       <section className="w-full">
         <div className="">
-        <h2 className='text-2xl lg:text-5xl w-full pb-2 lg:pb-6 text-center'>CONTACT</h2>
-        <h3 className='text-sm lg:text-2xl w-full pb-4 xl:pb-8 text-center text-green-700 font-YuGothic'>- 応募する -</h3> 
+        {/* <h2 className='text-2xl lg:text-5xl w-full pb-2 lg:pb-6 text-center'>CONTACT</h2>
+        <h3 className='text-sm lg:text-2xl w-full pb-4 xl:pb-8 text-center text-green-700 font-YuGothic'>- 応募する -</h3>  */}
+        <SectionTitle title="CONTACT" subTitle="応募する" position="center" />
         <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 mb-12">
           <div className="bg-white w-full rounded-3xl border-4 p-8 sm:p-12">
             <form onSubmit={handleSubmit(onSubmit)}>

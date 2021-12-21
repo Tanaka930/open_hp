@@ -92,7 +92,7 @@ export default function Home(props:any){
           </ReadMoreButton>
         </div>
         {/* 以下実績は後で確認 */}
-        <Achievement datas={props.achievement} />
+        <Achievement datas={props.achievement} bgColor='' children={<BackServiceButton />}/>
         <BackServiceButton />
     </>
   )

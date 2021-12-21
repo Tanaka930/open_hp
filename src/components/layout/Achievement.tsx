@@ -24,14 +24,14 @@ export default function Achievement(props: Props){
                 {props.datas.map((data:any) => (
                   <div className='float-left md:w-1/2'>
                   <UnstyledLink href={`${data.link}`}>
-                    <div className='mx-32 mb-32' >
+                    <div className='lg:mx-32 mb-14 lg:mb-32' >
                       <Image 
                         src={`${data.image.url}`}
                         width={400}
                         height={400}
                         decoding="async"
                       />
-                      <div className='text-left text-lg pt-8 pb-5'>
+                      <div className='text-left text-lg pt-6 lg:pt-8 pb-4'>
                         {data.text}
                       </div>
                       <div className='text-left text-base leading-6'>

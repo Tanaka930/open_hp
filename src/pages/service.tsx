@@ -20,7 +20,7 @@ export default function Service(props:any){
       <TopContent title="SERVICE" text="事業内容" />
       <section className='bg-gray-50 h-auto'>
         <div className="">
-          <div className='w-full text-center space-y-8 xl:space-y-0 xl:space-x-32 md:flex md:justify-center py-18'>
+          <div className='w-full text-center space-y-16 xl:space-y-0 xl:space-x-32 md:flex md:justify-center py-18'>
             <ServiceContent image= {props.content.ecImage.url} title="Shopify構築" text = {props.content.ecText} linkCheck = {true} link="/services/ec"/>
             <ServiceContent image= {props.content.lineImage.url} title="LINEサービス" text = {props.content.lineText} linkCheck = {true} link="/services/line"/>
             <ServiceContent image= {props.content.dxImage.url} title="DX事業" text = {props.content.dxText} linkCheck = {true} link="/services/dx"/>

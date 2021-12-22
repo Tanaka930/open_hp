@@ -21,7 +21,7 @@ export default function BlogDetail(props: Props){
 
   return(
     <>
-      <div className="max-w-screen-xl mx-auto pt-10">
+      <div className="max-w-screen-xl mx-auto pt-10 md:pt-20">
         <div className="mt-10">
           <DetailTop BlogObject={props.blog} />
 

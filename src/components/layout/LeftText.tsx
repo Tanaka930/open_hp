@@ -12,7 +12,7 @@ type Props = {
 export default function LeftText(props: Props){
   return(
     <>
-      <div className='lg:flex lg:justify-center h-96'>
+      <div className='lg:flex lg:justify-center lg:h-96 lg:mb-5'>
         <div className='text-center block lg:hidden w-auto'>
           <img 
             src={`${props.image}`} 
@@ -23,7 +23,7 @@ export default function LeftText(props: Props){
             className="shadow-custom rounded-serviceImage"
             />
         </div>
-        <div className="lg:w-4/12 mr-10 py-20">
+        <div className="lg:w-4/12 lg:mr-10 pt-16 pb-20 lg:py-20">
           <span className="text-minimam text-yellow-main">{props.subTitle}</span>
           <h2 className="text-xl text-left w-auto text-green-700">{props.title}</h2>
           <div className='text-base mt-6'

@@ -7,7 +7,7 @@ type Props = {
 export default function InstallationResults(props: Props){
   return(
     <>
-    <section>
+    <div className="mt-28 md:mt-44">
       <h2 className='text-2xl md:text-4xl'>{props.title}</h2>
       <div className='flex items-center w-full justify-center'>
         <Image 
@@ -18,7 +18,7 @@ export default function InstallationResults(props: Props){
           decoding="async"
         />
       </div>
-    </section>
+    </div>
     </>
   );
 }

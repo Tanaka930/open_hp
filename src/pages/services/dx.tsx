@@ -1,15 +1,11 @@
 import Seo from '@/components/Seo';
-import TopContent from '@/components/layout/TopContent';
+import Image from 'next/image';
+import TopContentType2 from '@/components/layout/topContentType2';
 
 // トップテキスト用のコンポーネント
 import TopText from '@/components/layout/LowerTopText'
-
-// 説明文1用のコンポーネント
-import RightText from '@/components/layout/RightText'
-
 // 説明文1用のコンポーネント
 import Suppliers from '@/components/layout/Suppliers'
-
 // 実績用のコンポーネント
 import InstallationResults from '@/components/layout/InstallationResults'
 import BackServiceButton from '@/components/organisms/backServiceButton'
@@ -25,12 +21,14 @@ interface Explanation{
   height: string,
   alt_text: string
 }
-interface Suppliers{
-  datas: any[]
-  // いつか２次元配列にする
-  datas2: any[]
-  datas3: any[]
-}
+// interface Suppliers{
+//   // datas: any[]
+//   // // いつか２次元配列にする
+//   // datas2: any[]
+//   // datas3: any[]
+//   topText: string;
+//   image: string;
+// }
 
 interface Achievement{
   title: string,
@@ -38,9 +36,6 @@ interface Achievement{
 }
 
 export default function Home(){
-  const topTextWord: TopTextWord = {
-    text: '事業内容'
-  }
 
   const explanation1: Explanation = {
     text: '店舗DX化が求められる中で、コンサルティングを始めとした、キャッシュレス決済や、通信インフラの整備・見直しなどのお客様に合った運営ツールのご提供・サポートを行ってます。Webマーケティングにおいては、LPの制作、広告、SNSなどを活用し、幅広くお客様の集客をサポートいたします。',
@@ -50,72 +45,81 @@ export default function Home(){
     alt_text: 'オープンストアの店舗DX事業'
   }
 
-  const suppliers: Suppliers = {
-    datas: [
-      {
-        image: '/images/service/dx/softbank.png'
-      },
-      {
-        image: '/images/service/dx/rakuten.png'
-      },
-      {
-        image: '/images/service/dx/nuro.png'
-      }
-    ],
-    datas2: [
-      {
-        image: '/images/service/dx/merpay-d.png'
-      },
-      {
-        image: '/images/service/dx/logo_l_aupay.png'
-      },
-      {
-        image: '/images/service/dx/paypay.png'
-      },
-      {
-        image: '/images/service/dx/r-pay.png'
-      }
-    ],
-    datas3: [
-      {
-        image: '/images/service/dx/linepay.png'
-      },
-      {
-        image: '/images/service/dx/airpay.png'
-      },
-      {
-        image: '/images/service/dx/stores.png'
-      }
-    ]
-  }
+  // const suppliers: Suppliers = {
+  //   image: '/images/service/dx/torihiki.png'
+  //   // datas: [
+  //   //   {
+  //   //     image: '/images/service/dx/softbank.png'
+  //   //   },
+  //   //   {
+  //   //     image: '/images/service/dx/rakuten.png'
+  //   //   },
+  //   //   {
+  //   //     image: '/images/service/dx/nuro.png'
+  //   //   }
+  //   // ],
+  //   // datas2: [
+  //   //   {
+  //   //     image: '/images/service/dx/merpay-d.png'
+  //   //   },
+  //   //   {
+  //   //     image: '/images/service/dx/logo_l_aupay.png'
+  //   //   },
+  //   //   {
+  //   //     image: '/images/service/dx/paypay.png'
+  //   //   },
+  //   //   {
+  //   //     image: '/images/service/dx/r-pay.png'
+  //   //   }
+  //   // ],
+  //   // datas3: [
+  //   //   {
+  //   //     image: '/images/service/dx/linepay.png'
+  //   //   },
+  //   //   {
+  //   //     image: '/images/service/dx/airpay.png'
+  //   //   },
+  //   //   {
+  //   //     image: '/images/service/dx/stores.png'
+  //   //   }
+  //   // ]
+  // }
+
   const achievement: Achievement = {
     title: '納入実績',
-    image: '/images/service/dx/glaph.png'
+    image: '/images/service/dx/nounyu.png'
   }
 
   return(
     <>
       <Seo templateTitle='オープンストアDX事業' />
-      <TopContent title="DX" />
-      <TopText text={topTextWord.text} />
-      <RightText 
-        text={explanation1.text} 
-        image={explanation1.image}
-        width={explanation1.width}
-        height={explanation1.height}
-        alt_text={explanation1.alt_text}
+      <TopContentType2 title="DX事業" />
+      <div className="px-per10 text-center mx-auto">
+        <Image
+          src="/images/layout/dx_image.png"
+          width={485}
+          height={303}
         />
-      <Suppliers 
-        topText='お取引先'
-        datas={suppliers.datas}
-        datas2={suppliers.datas2}
-        datas3={suppliers.datas3}
+
+        <div className="mt-12 mb-20 mx-auto md:w-85 md:mb-36">
+          <p>
+            公式LINEでは新規顧客をリピーター化させ、顧客生涯価値の向上及び売上の安定を目的としています。オープンストアには構築のプロが多数在籍しております。
+          </p>
+        </div>
+
+        <Suppliers 
+          topText='お取引先'
+          // datas={suppliers.datas}
+          // datas2={suppliers.datas2}
+          // datas3={suppliers.datas3}
+          image='/images/service/dx/torihiki.png'
+          />
+        <InstallationResults 
+          title={achievement.title}
+          image={achievement.image}
         />
-      <InstallationResults 
-        title={achievement.title}
-        image={achievement.image}
-      />
-      <BackServiceButton />
+        {/* <BackServiceButton /> */}
+      </div>
     </>
   )
 }

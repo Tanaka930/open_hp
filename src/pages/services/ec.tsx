@@ -1,5 +1,5 @@
 import Seo from '@/components/Seo';
-import TopContentType2 from '@/components/layout/topContetType2';
+import TopContentType2 from '@/components/layout/topContentType2';
 
 // 実績用のコンポーネント追加
 import Achievement from '@/components/layout/Achievement'

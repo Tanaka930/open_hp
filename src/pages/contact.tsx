@@ -48,18 +48,18 @@ export default function Contact() {
 
       if (recaptchaRes.status === 200) {
 
-        let message = "タイトル: " + data.title +
-        "\nカテゴリ: " + data.category +
-        "\n氏名: " + data.name +
-        "\nメールアドレス: " + data.email +
-        "\nお問い合わせ内容: " + data.message
+        let message = "<br/>タイトル: " + data.title +
+        "<br/>カテゴリ: " + data.category +
+        "<br/>氏名: " + data.name +
+        "<br/>メールアドレス: " + data.email +
+        "<br/>お問い合わせ内容: <br/><br/>" + data.message
 
         const sendGridRes = await fetch('https://api.staticforms.xyz/submit', {
         body: JSON.stringify({
         // メッセージ内容をいかに格納
         // message: message
-          name: '',
-          email: 'kaito.hasegawa@openstore-japan.com',
+          name: data.name,
+          email: data.email,
           subject: '自社HP お問い合わせ',
           honeypot: '',
           message: message,

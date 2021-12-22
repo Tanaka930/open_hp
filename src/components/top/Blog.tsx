@@ -21,7 +21,11 @@ export default function blog(props:Props){
 
   if(isMobileSite){
     // スマホ処理
-    blogHeight = Number(blogCount) * 280 + 260;
+    blogHeight = Number(blogCount) * 300 + 140;
+    
+    if(Number(blogCount) == 0){
+      blogHeight = 140;
+    }
   }else{
     // pc処理
     if(Number(blogCount) <= 3){
@@ -29,11 +33,13 @@ export default function blog(props:Props){
     }else{
       blogHeight = 175 + 650;
     }
+
+    if(Number(blogCount) == 0){
+      blogHeight = 200;
+    }
   }
 
-  if(Number(blogCount) == 0){
-    blogHeight = 450 + 200;
-  }
+
 
   return(
     <>

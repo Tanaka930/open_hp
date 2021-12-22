@@ -50,7 +50,13 @@ export default function BlogList(props: Props){
   return(
     <>
       <div className="max-w-screen-xl mx-auto pt-10 md:pt-20">
+
         <div className="mt-10">
+          {props.newBlogList.length === 0 ?
+          <h2>記事が存在しません</h2>
+          :
+          <></>
+          }
           <NewBlog BlogObject={props.newBlogList[0]} />
           <div className="block lg:flex lg:space-x-2 lg:p-0 my-10 mx-10 md:mx-20">
             <div className="w-full lg:w-2/3 pb-3">

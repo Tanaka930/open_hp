@@ -14,12 +14,13 @@ export default function LeftText(props: Props){
     <>
       <div className='lg:flex lg:justify-center h-96'>
         <div className='text-center block lg:hidden w-auto'>
-          <Image 
+          <img 
             src={`${props.image}`} 
             width={`${props.width}`} 
             height={`${props.height}`} 
             alt={`${props.alt_text}`} 
             decoding="async"
+            className="shadow-custom rounded-serviceImage"
             />
         </div>
         <div className="lg:w-4/12 mr-10 py-20">
@@ -33,13 +34,14 @@ export default function LeftText(props: Props){
           >
           </div>
         </div>
-        <div className='hidden lg:w-6/12 lg:block ml-10 py-10'>
-          <Image 
+        <div className='hidden lg:w-auto lg:block ml-10 py-10'>
+          <img 
             src={`${props.image}`} 
             width={`${props.width}`} 
             height={`${props.height}`} 
             alt={`${props.alt_text}`} 
             decoding="async"
+            className="shadow-custom rounded-serviceImage"
             />
         </div>
       </div>

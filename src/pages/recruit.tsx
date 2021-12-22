@@ -75,19 +75,19 @@ export default function Recruit(categories: Categories) {
 
         if (recaptchaRes.status === 200) {
 
-          let message = "お名前: " + data.name +
-          "\nメールアドレス: " + data.mail +
-          "\n職種: " + data.category +
-          "\nお電話番号: " + data.tell +
-          "\n備考: " + data.remark +
-          "\nメッセージ: " + data.message
+          let message = "<br/>お名前: " + data.name +
+          "<br/>メールアドレス: " + data.mailf +
+          "<br/>職種: " + data.category +
+          "<br/>お電話番号: " + data.tell +
+          "<br/>備考: " + data.remark +
+          "<br/>メッセージ: <br/><br/>" + data.message
 
           const sendGridRes = await fetch('https://api.staticforms.xyz/submit', {
           body: JSON.stringify({
           // メッセージ内容をいかに格納
           // message: message
-            name: '',
-            email: 'kaito.hasegawa@openstore-japan.com',
+            name: data.name,
+            email: data.mailf,
             subject: '自社HP 求人のお問い合わせ',
             honeypot: '',
             message: message,

@@ -52,21 +52,20 @@ export default function JobId({jobs}:{jobs:any}) {
 
           if (recaptchaRes.status === 200) {
 
-            let message = "お名前: " + data.name +
-            "\n求人名: " + data.mailf + jobs.title +
-            "\nメールアドレス: " + data.mailf +
-            "\n職種: " + jobs.category.title +
-            "\nお電話番号: " + data.tell +
-            "\n備考: " + data.remark +
-            "\nメッセージ: " + data.message
+            let message = "<br/>お名前: " + data.name +
+            "<br/>求人名: " + jobs.title +
+            "<br/>メールアドレス: " + data.mailf +
+            "<br/>職種: " + jobs.category.title +
+            "<br/>お電話番号: " + data.tell +
+            "<br/>備考: " + data.remark +
+            "<br/>メッセージ: <br/><br/>" + data.message
 
             const sendGridRes = await fetch('https://api.staticforms.xyz/submit', {
             body: JSON.stringify({
             // メッセージ内容をいかに格納
             // message: message
-              name: '',
-              email: 'kaito.hasegawa@openstore-japan.com',
-              subject: '自社HP 求人のお問い合わせ',
+              name: data.name,
+              email: data.mailf,
               honeypot: '',
               message: message,
               replyTo: '@',

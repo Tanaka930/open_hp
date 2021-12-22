@@ -9,7 +9,7 @@ export default function InstallationResults(props: Props){
     <>
     <div className="mt-28 md:mt-44">
       <h2 className='text-2xl md:text-4xl'>{props.title}</h2>
-      <div className='flex items-center w-full justify-center'>
+      <div className='text-center'>
         <Image 
           src={`${props.image}`}
           width={1000}

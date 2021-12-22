@@ -5,7 +5,7 @@ import TopContentType2 from '@/components/layout/topContentType2';
 // トップテキスト用のコンポーネント
 import TopText from '@/components/layout/LowerTopText'
 // 説明文1用のコンポーネント
-import Suppliers from '@/components/layout/Suppliers'
+import Suppliers from '@/components/layout/suppliers'
 // 実績用のコンポーネント
 import InstallationResults from '@/components/layout/InstallationResults'
 import BackServiceButton from '@/components/organisms/backServiceButton'
@@ -94,14 +94,16 @@ export default function Home(){
     <>
       <Seo templateTitle='オープンストアDX事業' />
       <TopContentType2 title="DX事業" />
-      <div className="px-per10 text-center mx-auto">
-        <Image
-          src="/images/layout/dx_image.png"
-          width={485}
-          height={303}
-        />
+      <div className="px-per10">
+        <div className="">
+          <img
+            src="/images/layout/dx_image.png"
+            decoding="async"
+            className="mx-auto shadow-custom rounded-serviceImage"
+          />
+        </div>
 
-        <div className="mt-12 mb-20 mx-auto md:w-85 md:mb-36">
+        <div className="mt-12 mb-20 mx-auto md:w-85 md:mt-9 md:mb-36">
           <p>
             公式LINEでは新規顧客をリピーター化させ、顧客生涯価値の向上及び売上の安定を目的としています。オープンストアには構築のプロが多数在籍しております。
           </p>

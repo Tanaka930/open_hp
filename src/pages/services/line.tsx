@@ -17,7 +17,7 @@ import ReadMoreButton from '@/components/buttons/readMoreButton'
 import Achievement from '@/components/layout/Achievement'
 import BackServiceButton from '@/components/organisms/backServiceButton'
 
-import TopContentType2 from '@/components/layout/topContetType2';
+import TopContentType2 from '@/components/layout/topContentType2';
 
 interface TopTextWord{
   text: string

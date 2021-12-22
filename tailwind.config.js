@@ -133,6 +133,9 @@ module.exports = {
         },
         ".text-shadow-none": {
           textShadow: "none"
+        },
+        ".shadow-custom": {
+          boxShadow: "30px 20px 8px rgba(0,0,0, 0.16)"
         }
       };
 

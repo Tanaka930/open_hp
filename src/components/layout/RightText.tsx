@@ -13,21 +13,22 @@ export default function RightText(props: Props){
   return(
     <>
       <div>
-        <div className='lg:flex lg:justify-center h-96'>
+        <div className='md:flex md:justify-center md:h-96 md:mb-5'>
           {/* <div className={`${props.bg} bg-cover bg-no-repeat w-5/12`}> */} 
-          <div className="text-center block lg:hidden w-auto">
-          <Image 
-            src={`${props.image}`} 
-            width={`${props.width}`} 
-            height={`${props.height}`} 
-            alt={`${props.alt_text}`} 
-            decoding="async"
-            />
+          <div className="md:w-auto md:mr-10 md:py-10">
+            <img 
+              src={`${props.image}`} 
+              width={`${props.width}`} 
+              height={`${props.height}`} 
+              alt={`${props.alt_text}`} 
+              decoding="async"
+              className="shadow-custom rounded-serviceImage"
+              />
           </div>
-          <div className='lg:w-4/12 mr-10 py-20'>
+          <div className='md:w-4/12 pt-16 pb-20 md:py-20 md:ml-10'>
             <span className="text-minimam text-yellow-main">{props.subTitle}</span>
             <h2 className="text-xl text-left w-auto text-green-700">{props.title}</h2>
-            <div className='text-base sm:mx-20 mt-12 lg:mt-0 lg:w-4/12 lg:text-xl'
+            <div className='text-base mt-6'
               dangerouslySetInnerHTML={{
                 __html: `${props.text}`,
               }}

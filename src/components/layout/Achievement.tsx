@@ -43,7 +43,7 @@ export default function Achievement(props: Props){
                 ))}
               </div>
             </div>
-            {props.children}
+            {/* {props.children} */}
           </section>
         :
         <>

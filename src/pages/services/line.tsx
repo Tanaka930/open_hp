@@ -17,6 +17,8 @@ import ReadMoreButton from '@/components/buttons/readMoreButton'
 import Achievement from '@/components/layout/Achievement'
 import BackServiceButton from '@/components/organisms/backServiceButton'
 
+import TopContentType2 from '@/components/layout/topContetType2';
+
 interface TopTextWord{
   text: string
 }
@@ -72,8 +74,8 @@ export default function Home(props:any){
   return(
     <>
       <Seo templateTitle='オープンストアLINE事業' />
-      <TopContent title="LINE" />
-      <section>
+      <TopContentType2 title="LINEサービス" />
+      <section className="bg-gray-50">
         <LeftText 
           text={explanation1.text} 
           image={explanation1.image}
@@ -93,20 +95,16 @@ export default function Home(props:any){
           subTitle = {explanation2.subTitle}
           />
         <LeftText 
-        text={explanation3.text} 
-        image={explanation3.image}
-        width={explanation3.width}
-        height={explanation3.height}
-        alt_text={explanation3.alt_text}
-        title={explanation3.title}
-        subTitle={explanation3.subTitle}
+          text={explanation3.text} 
+          image={explanation3.image}
+          width={explanation3.width}
+          height={explanation3.height}
+          alt_text={explanation3.alt_text}
+          title={explanation3.title}
+          subTitle={explanation3.subTitle}
         />
       </section>
-      <div className='mb-24'>
-        <ReadMoreButton href="https://l-store-infomation.com/">
-          Read More ...
-        </ReadMoreButton>
-      </div>
+
       {/* 以下実績は後で確認 */}
       <Achievement datas={props.achievement} bgColor='' children={<BackServiceButton />}/>
     </>

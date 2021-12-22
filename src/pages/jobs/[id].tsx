@@ -8,6 +8,7 @@ import LowerTopText from '@/components/layout/LowerTopText';
 
 import TopContentType2 from '@/components/layout/topContentType2';
 
+
 import { useForm } from "react-hook-form";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 type FormData = {

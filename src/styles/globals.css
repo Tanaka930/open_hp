@@ -44,21 +44,18 @@
   } */
   @font-face {
     font-family: "Avenir LT Pro";
-    src: url("//db.onlinewebfonts.com/t/e5f78b4fb90a80a32be156470cbfead1.eot");
-    src: url("//db.onlinewebfonts.com/t/e5f78b4fb90a80a32be156470cbfead1.eot?#iefix")
-        format("embedded-opentype"),
-      url("//db.onlinewebfonts.com/t/e5f78b4fb90a80a32be156470cbfead1.woff2")
-        format("woff2"),
-      url("//db.onlinewebfonts.com/t/e5f78b4fb90a80a32be156470cbfead1.woff")
-        format("woff"),
-      url("//db.onlinewebfonts.com/t/e5f78b4fb90a80a32be156470cbfead1.ttf")
-        format("truetype"),
-      url("//db.onlinewebfonts.com/t/e5f78b4fb90a80a32be156470cbfead1.svg#Avenir LT Pro")
-        format("svg");
+    /* src: url("//db.onlinewebfonts.com/t/e5f78b4fb90a80a32be156470cbfead1.eot"); */
+    /* src: url("//db.onlinewebfonts.com/t/e5f78b4fb90a80a32be156470cbfead1.eot?#iefix")
+        format("embedded-opentype"), */
+    src: url("/font/e5f78b4fb90a80a32be156470cbfead1.woff2") format("woff2"),
+      url("/font/e5f78b4fb90a80a32be156470cbfead1.woff") format("woff"),
+      url("/font/e5f78b4fb90a80a32be156470cbfead1.ttf") format("truetype");
+    /* url("//db.onlinewebfonts.com/t/e5f78b4fb90a80a32be156470cbfead1.svg#Avenir LT Pro")
+        format("svg"); */
   }
 
   .cursor-newtab {
-    cursor: url("/images/new-tab.png") 10 10, pointer;
+    /* cursor: url("/images/new-tab.png") 10 10, pointer; */
   }
 
   /* #region  /**=========== Typography =========== */

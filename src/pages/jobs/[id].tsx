@@ -6,6 +6,8 @@ import Seo from '@/components/Seo';
 
 import LowerTopText from '@/components/layout/LowerTopText';
 
+import TopContentType2 from '@/components/layout/topContentType2';
+
 import { useForm } from "react-hook-form";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 type FormData = {
@@ -103,7 +105,7 @@ export default function JobId({jobs}:{jobs:any}) {
     return(
       <>
         <Seo templateTitle={`オープンストア ${jobs.title}`} />
-        <TopContent title={jobs.category.title} />
+        <TopContentType2 title={jobs.category.title} />
         <section>
           <div className="flex items-center justify-center">
             <span className='text-2xl font-bold md:text-4xl'>

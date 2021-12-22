@@ -26,7 +26,9 @@ interface Explanation{
   image: string,
   width: string,
   height: string,
-  alt_text: string
+  alt_text: string,
+  title: string,
+  subTitle: string
 }
 
 interface Achievement{
@@ -41,59 +43,72 @@ export default function Home(props:any){
   const explanation1: Explanation = {
     text: '公式LINEでは新規顧客をリピーター化させ、顧客生涯価値の向上及び売上の安定を目的としています。オープンストアには構築のプロが多数在籍しております。',
     image: '/images/service/line/line1.png',
-    width: '275',
-    height: '267',
-    alt_text: '公式LIEN構築'
+    width: '485',
+    height: '303',
+    alt_text: '公式LIEN構築',
+    title: '顧客のファン化',
+    subTitle: 'service1'
+
   }
   const explanation2: Explanation = {
     text: '高機能なリッチメニューの作成、簡易HPの制作、自動応答Botの設定など運用する上で必要な制作をすべて行なっております。新規顧客獲得から既存顧客の満足度アップやリピーター化に向けてトータルでサポートいたします。',
     image: '/images/service/line/line2.png',
-    width: '481',
-    height: '219',
-    alt_text: '公式LIEN構築'
+    width: '485',
+    height: '303',
+    alt_text: '公式LIEN構築',
+    title: 'LINE&webサービス構築',
+    subTitle: 'service2'
   }
   const explanation3: Explanation = {
     text: '公式LINEを活用した顧客管理も簡単かつ効率的にできます。お客様一人ひとりの情報や、ターゲットを絞ったメッセージ配信も可能です。また、的確な顧客分析は、リピーターの増加につながります。',
     image: '/images/service/line/line3.png',
-    width: '481',
-    height: '273',
-    alt_text: '公式LIEN管理'
+    width: '485',
+    height: '303',
+    alt_text: '公式LIEN管理',
+    title: 'LINEマーケティング',
+    subTitle: 'service3'
   }
 
   return(
     <>
       <Seo templateTitle='オープンストアLINE事業' />
       <TopContent title="LINE" />
-      <TopText text={topTextWord.text} />
-      <RightText 
-        text={explanation1.text} 
-        image={explanation1.image}
-        width={explanation1.width}
-        height={explanation1.height}
-        alt_text={explanation1.alt_text}
-        />
-      <LeftText 
-        text={explanation2.text} 
-        image={explanation2.image}
-        width={explanation2.width}
-        height={explanation2.height}
-        alt_text={explanation2.alt_text}
-        />
+      <section>
+        <LeftText 
+          text={explanation1.text} 
+          image={explanation1.image}
+          width={explanation1.width}
+          height={explanation1.height}
+          alt_text={explanation1.alt_text}
+          title={explanation1.title}
+          subTitle={explanation1.subTitle}
+          />
         <RightText 
+          text={explanation2.text} 
+          image={explanation2.image}
+          width={explanation2.width}
+          height={explanation2.height}
+          alt_text={explanation2.alt_text}
+          title = {explanation2.title}
+          subTitle = {explanation2.subTitle}
+          />
+        <LeftText 
         text={explanation3.text} 
         image={explanation3.image}
         width={explanation3.width}
         height={explanation3.height}
         alt_text={explanation3.alt_text}
+        title={explanation3.title}
+        subTitle={explanation3.subTitle}
         />
-        <div className='mb-24'>
-          <ReadMoreButton href="https://l-store-infomation.com/">
-            Read More ...
-          </ReadMoreButton>
-        </div>
-        {/* 以下実績は後で確認 */}
-        <Achievement datas={props.achievement} bgColor='' children={<BackServiceButton />}/>
-        <BackServiceButton />
+      </section>
+      <div className='mb-24'>
+        <ReadMoreButton href="https://l-store-infomation.com/">
+          Read More ...
+        </ReadMoreButton>
+      </div>
+      {/* 以下実績は後で確認 */}
+      <Achievement datas={props.achievement} bgColor='' children={<BackServiceButton />}/>
     </>
   )
 }

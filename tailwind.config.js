@@ -98,12 +98,16 @@ module.exports = {
         'base': ['1.0rem',{
           letterSpacing: '0.1em',
           lineHeight: '32px',
-        }]
+        }],
+        'minimam': '11px'
       },
       padding: {
         per10: '10%',
         per13: '13%',
       },
+      borderRadius: {
+        serviceImage: '30px', 
+      }
     },
   },
   variants: {

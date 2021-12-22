@@ -103,9 +103,6 @@ export default function Home(props:any){
           title={explanation3.title}
           subTitle={explanation3.subTitle}
         />
-        <div className='lg:mt-24'>
-          <BackServiceButton />
-        </div>
       </section>
 
       {/* 以下実績は後で確認 */}

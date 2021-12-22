@@ -93,6 +93,7 @@ module.exports = {
       },
       width: {
         service: '300px',
+        85: '340px',
       },
       fontSize: {
         'base': ['1.0rem',{

@@ -106,7 +106,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="md:flex items-center mt-8">
                 <div className="w-full flex flex-col">
-                  <label htmlFor="title" className="relative text-xl">
+                  <label htmlFor="title" className="flex items-center text-xl">
                     タイトル
                     <Annotation />
                   </label>
@@ -128,7 +128,7 @@ export default function Contact() {
 
               <div className="md:flex items-center mt-10">
                 <div className="w-full flex flex-col">
-                  <label htmlFor="category" className="relative text-xl">
+                  <label htmlFor="category" className="flex items-center text-xl">
                     カテゴリ
                     <Annotation />
                   </label>
@@ -152,7 +152,7 @@ export default function Contact() {
 
               <div className="md:flex items-center mt-10">
                 <div className="w-full md:w-1/2 flex flex-col">
-                  <label htmlFor="name" className="relative text-xl">
+                  <label htmlFor="name" className="flex items-center text-xl">
                     お名前
                     <Annotation />
                   </label>
@@ -171,7 +171,7 @@ export default function Contact() {
                 </div>
                 
                 <div className="w-full mt-10 md:w-1/2 flex flex-col md:ml-6 md:mt-0">
-                  <label htmlFor="email" className="relative text-xl">
+                  <label htmlFor="email" className="flex items-center text-xl">
                     メールアドレス
                     <Annotation />
                   </label>
@@ -192,7 +192,7 @@ export default function Contact() {
 
               <div>
                 <div className="w-full flex flex-col mt-10">
-                  <label htmlFor="message" className="relative text-xl">
+                  <label htmlFor="message" className="flex items-center text-xl">
                     お問い合わせ内容
                     <Annotation />
                   </label>

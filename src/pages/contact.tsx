@@ -98,7 +98,7 @@ export default function Contact() {
       <Seo templateTitle='Contact' />
       <TopContent title="CONTACT" text="お問い合わせ" />
 
-      <div className="px-per10">
+      <div className="px-per10 font-pro65Medium font-black">
         {/* <h2 className='pt-14 text-2xl font-bold lg:text-4xl w-full  xl:pb-4 text-center'>CONTACT</h2>
         <h3 className='text-xl lg:text-2xl w-full pb-2 xl:pb-8 text-center font-bold text-green-700'>- お問い合せ -</h3>  */}
         <div className="max-w-5xl mx-auto mb-20 md:mb-40">

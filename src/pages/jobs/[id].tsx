@@ -107,7 +107,7 @@ export default function JobId({jobs}:{jobs:any}) {
       <>
         <Seo templateTitle={`オープンストア ${jobs.title}`} />
         <TopContentType2 title={jobs.category.title} />
-        <section>
+        <section className="font-pro65Medium font-black">
           <div className="flex items-center justify-center">
             <span className='text-2xl font-bold md:text-4xl'>
               募集要項
@@ -168,7 +168,7 @@ export default function JobId({jobs}:{jobs:any}) {
                 </table>
               </div>
 
-              <div className="block md:hidden">
+              <div className="block md:hidden font-pro65Medium font-black">
                 <table className="w-full flex-row flex-no-wrap bg-white rounded-lg overflow-hidden shadow-lg my-5">
                   <thead className="text-white">
                     <tr className="bg-green-200 wrap table-row rounded-l-lg rounded-none mb-0">
@@ -268,7 +268,7 @@ export default function JobId({jobs}:{jobs:any}) {
         </section>
 
 
-        <section className="w-full bg-green-50">
+        <section className="w-full bg-green-50 font-pro65Medium font-black">
           <div className="pt-10">
             <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 mb-12">
               <div className="bg-white w-full shadow rounded p-8 sm:p-12">

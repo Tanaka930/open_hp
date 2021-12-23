@@ -11,7 +11,7 @@ import {SearchContext} from '@/components/context/searchContext'
 import type { AppProps } from 'next/app';
 
 import React, { useState } from 'react';
-import ReturnTopButton from '@/components/buttons/returnTopButton';
+// import ReturnTopButton from '@/components/buttons/returnTopButton';
 
 import { GA_TRACKING_ID, pageview } from '@/lib/gtag';
 import { useRouter } from 'next/router';
@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <SearchContext.Provider value={{ search, setSearch }}>
       <Layout>
         <Component {...pageProps} />
-        <ReturnTopButton />
+        {/* <ReturnTopButton /> */}
       </Layout>
       </SearchContext.Provider>
     </GoogleReCaptchaProvider>

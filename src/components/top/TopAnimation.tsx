@@ -16,9 +16,13 @@ const Wrap = styled.div<{isActive:boolean}>`
   transition: all 300ms;
   @media screen and (max-width: 767px) {
     // スマホの時
-    position: relative;
-    top: 0;
+    position: fixed;
+    top: 30%;
     left: 50%;
+    transform: ${({ isActive }) => (isActive ? 'translateY(30px)' : 'translateY(0)')};
+    visibility: ${({ isActive }) => (isActive ? 'visible' : 'hidden')};
+    opacity: ${({ isActive }) => (isActive ? '1' : '0')};
+    transition: all 300ms;
   }
 `
 
@@ -26,6 +30,7 @@ const Wrap = styled.div<{isActive:boolean}>`
 export default function TopAnimation(){
 
   const [isActive, setIsActive] = useState<boolean>(true);
+  const isWide = useMedia({ maxWidth: "767px" });
 
   useEffect(() => {
     window.addEventListener('scroll', scrollWindow)
@@ -35,7 +40,8 @@ export default function TopAnimation(){
   }, [])
 
   const scrollWindow = () => {
-    const bottom = 900
+    let bottom = 0
+    isWide ? bottom = 900 : bottom = 380
     let scroll = 0
     scroll = window.scrollY
     if (bottom <= scroll) {
@@ -45,6 +51,7 @@ export default function TopAnimation(){
     }
   }
 
+  console.log(isWide)
   // const isWide = useMedia({ maxWidth: "767px" });
 
   return(
@@ -75,10 +82,12 @@ export default function TopAnimation(){
                   「やり方がわからない。時間がない。もう歳だから。ニーズがない。結果が補償できない。」などの多くの障壁がありますが、そういった障壁を一つひとつ共に乗り越え、夢の実現に向けてのお手伝いを、是非、私たちオープンストアにお任せください。
                 </span>
               </div>
+
               <PrimaryButton
                 href='/about'
+                className='group text-green-600 border-green-600 hover:text-yellow-main hover:border-yellow-main'
                 color='green-600'
-                bgColor='white'
+                hover='yellow-main'
               >
                 ABOUT US
               </PrimaryButton>

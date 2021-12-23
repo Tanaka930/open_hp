@@ -16,21 +16,24 @@ type ButtonLinkProps = {
 } & UnstyledLinkProps;
 
 export default function PrimaryButton({
+  className,
   children,
   href,
   color,
-  bgColor
+  hover,
 }: ButtonLinkProps) {
   return (
     <>
       <UnstyledLink 
         href={href} 
         className={clsx(
-                `text-${color} border border-${color} rounded-3xl pt-2.5 pb-2 pl-3 text-sm bg-${bgColor}`,
-              )}
+          'border rounded-3xl pt-3 pb-2.5 pl-3.5 text-sm',
+          className
+        )
+      }
       >
         {children}
-        <span className={`inline-block h-2 w-2 rounded-full ml-7 mr-2  mb-px bg-${color}`}></span>
+        <span className={`inline-block h-2 w-2 rounded-full ml-7 mr-2.5  mb-px bg-${color} group-hover:bg-${hover}`}></span>
       </UnstyledLink>
     </>
   );

@@ -79,7 +79,7 @@ export default function blog(props:Props){
                         <Moment format="YYYY.MM.DD" className="font-bold font-YuGothic">
                           {content.createDay}
                         </Moment>
-                        <span className="mx-4 px-1 md:px-2 bg-yellow-main text-white py-0.5">
+                        <span className="mx-4 px-1 md:px-2 bg-yellow-main text-white py-0.5 rounded">
                           {content.category.category}
                         </span>
                       </h3>

@@ -5,7 +5,7 @@ import TopContentType2 from '@/components/layout/topContentType2';
 // トップテキスト用のコンポーネント
 import TopText from '@/components/layout/LowerTopText'
 // 説明文1用のコンポーネント
-import Suppliers from '@/components/layout/Suppliers'
+import Suppliers from '@/components/layout/suppliers'
 // 実績用のコンポーネント
 import InstallationResults from '@/components/layout/InstallationResults'
 import BackServiceButton from '@/components/organisms/backServiceButton'

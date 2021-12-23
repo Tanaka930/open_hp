@@ -28,8 +28,8 @@ export default function Service(props:Props){
         <div className='mt-12 md:mt-16 md:mb-10 text-center'>
           <PrimaryButton
             href='/service'
+            className='text-white border-yellow-main bg-yellow-main hover:bg-green-600 hover:border-green-600'
             color='white'
-            bgColor='yellow-main'
           >
             VIEW MORE
           </PrimaryButton>

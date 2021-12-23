@@ -55,22 +55,26 @@ export default function HeaderMenu(props: Props) {
             </div>
             <div className="">
               <div className="flex pb-7">
-                <UnstyledLink href="https://www.facebook.com/openstorejapan">
+                <UnstyledLink
+                  href="https://www.facebook.com/openstorejapan"
+                  className="flex items-center"
+                >
                   <Image 
                     width={18} height={18} 
                     src="/images/icons/facebook.png"
-                    className="align-bottom"
                   />
                   <span className="text-sm align-top pl-1 pr-5 md:text-base">
                     facebook
                   </span>
                 </UnstyledLink>
 
-                <UnstyledLink href="https://www.instagram.com/open_store_inc/">
+                <UnstyledLink
+                  href="https://www.instagram.com/open_store_inc/"
+                  className="flex items-center"
+                >
                   <Image
                     width={18} height={18}  
                     src="/images/icons/Instagram.png"
-                    className="align-bottom"
                   />
                   <span className="text-sm align-top pl-1 pr-5 md:text-base">
                     instagram
@@ -78,11 +82,13 @@ export default function HeaderMenu(props: Props) {
                 </UnstyledLink>
               </div>
               
-              <UnstyledLink href="https://page.line.me/246xdhfu">
+              <UnstyledLink
+                href="https://page.line.me/246xdhfu"
+                className="flex items-center"
+                >
                 <Image 
                   width={18} height={18} 
-                  src="/images/icons/LINE.png"
-                  className="align-bottom"
+                  src="/images/icons/LINE.png"    
                 />
                 <span className="text-sm align-top pl-1 md:text-base">
                   LINE

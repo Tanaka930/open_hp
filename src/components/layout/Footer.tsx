@@ -71,7 +71,7 @@ export default function Footer() {
                         alt="openstore-instagram-logo"
                         decoding="async"
                       />
-                    <span className="pl-1 text-base tracking-tight">instagram</span>
+                    <span className="pl-1 text-base tracking-tight font-themeText">instagram</span>
                   </UnstyledLink>
 
                   <UnstyledLink href="https://www.facebook.com/openstorejapan" className="flex items-center cursor-pointer pb-5">
@@ -81,7 +81,7 @@ export default function Footer() {
                       alt="openstore-facebook-logo"
                       decoding="async"
                     />
-                    <span className="pl-1 text-base tracking-tight">facebook</span>
+                    <span className="pl-1 text-base tracking-tight font-themeText">facebook</span>
                   </UnstyledLink>
 
                   <UnstyledLink href="https://page.line.me/246xdhfu" className="flex items-center cursor-pointer">
@@ -91,22 +91,22 @@ export default function Footer() {
                       alt="openstore-line-logo"
                       decoding="async"
                     />
-                    <span className="pl-1 text-base tracking-tight">LINE</span>
+                    <span className="pl-1 text-base tracking-tight font-themeText">LINE</span>
                   </UnstyledLink>
                 </div>
 
                 <div className="w-1/2 pt-2 ml-5">
                   <UnstyledLink href="/services/ec" className="block cursor-pointer pb-4">
 
-                    <span className="text-xs">ー Shopify事業</span>
+                    <span className="text-xs font-themeText">ー Shopify事業</span>
                   </UnstyledLink>
                   <UnstyledLink href="/services/line" className="block cursor-pointer pb-4">
 
-                    <span className="text-xs">ー LINEサービス</span>
+                    <span className="text-xs font-themeText">ー LINEサービス</span>
                   </UnstyledLink>
                   <UnstyledLink href="/services/dx" className="block cursor-pointer">
 
-                    <span className="text-xs">ー DX事業</span>
+                    <span className="text-xs font-themeText">ー DX事業</span>
                   </UnstyledLink>
                 </div>
 
@@ -118,7 +118,7 @@ export default function Footer() {
             <div className="pt-16 md:pt-0">
               <ul className="md:pl-5">
                 <li>
-                  <p className="text-2xl">オープンストア株式会社</p>
+                  <p className="font-pro65Medium font-black text-2xl">オープンストア株式会社</p>
                 </li>
                 <li className="mt-5 md:mt-32">
                   <p>大阪府大阪市淀川区木川東４丁目５-３ <br className="md:hidden"/>オパル新大阪ビル</p>

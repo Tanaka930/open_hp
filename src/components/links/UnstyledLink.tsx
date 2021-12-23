@@ -9,6 +9,7 @@ export type UnstyledLinkProps = {
   color?: string;
   textColor?: string;
   hover?: string;
+  span?: string;
 } & React.ComponentPropsWithoutRef<'a'> &
   LinkProps;
 

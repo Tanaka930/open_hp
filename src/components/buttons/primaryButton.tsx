@@ -19,8 +19,7 @@ export default function PrimaryButton({
   className,
   children,
   href,
-  color,
-  hover,
+  span
 }: ButtonLinkProps) {
   return (
     <>
@@ -33,7 +32,7 @@ export default function PrimaryButton({
       }
       >
         {children}
-        <span className={`inline-block h-2 w-2 rounded-full ml-7 mr-2.5  mb-px bg-${color} group-hover:bg-${hover}`}></span>
+        <span className={`inline-block h-2 w-2 rounded-full ml-7 mr-2.5  mb-px ${span}`}></span>
       </UnstyledLink>
     </>
   );

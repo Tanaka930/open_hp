@@ -31,7 +31,7 @@ export default function Achievement(props: Props){
                         height={400}
                         decoding="async"
                       />
-                      <div className='text-left text-lg pt-6 lg:pt-8 pb-4'>
+                      <div className='font-pro65Medium font-black text-left text-lg pt-6 lg:pt-8 pb-4'>
                         {data.text}
                       </div>
                       <div className='text-left text-base leading-6'>

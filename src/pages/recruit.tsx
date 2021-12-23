@@ -138,7 +138,7 @@ export default function Recruit(categories: Categories) {
         <h3 className='text-sm lg:text-2xl w-full pb-4 xl:pb-8 text-center text-green-700 font-YuGothic'>- 応募する -</h3>  */}
         <SectionTitle title="CONTACT" subTitle="応募する" position="center" />
         <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 mb-12">
-          <div className="bg-white w-full rounded-3xl border-4 p-8 sm:p-12">
+          <div className="bg-white w-full rounded-3xl border-4 p-8 sm:p-12 font-pro65Medium font-black">
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="md:flex items-center mt-12">
                 <div className="w-full flex flex-col">

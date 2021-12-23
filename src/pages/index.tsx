@@ -12,12 +12,6 @@ import ExpertLogo from '@/components/top/ExpertLogo'
 // ニュース一覧表示用のコンポーネント
 import News from '@/components/top/News'
 
-// 会社情報用のコンポーネント
-import About from '@/components/top/About'
-
-// 採用情報用のコンポーネント
-import Recruit from '@/components/top/Recruit';
-
 // ブログ表示用のコンポーネント
 import Blog from '@/components/top/Blog'
 

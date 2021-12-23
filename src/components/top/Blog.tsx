@@ -55,7 +55,7 @@ export default function blog(props:Props){
                 }
               `}
       </style>
-      <section className="z-50　mb-10">
+      <section className="z-50 mb-10">
         <div className="body-font">
           {/* <h2 className='text-2xl md:text-5xl w-full pb-2 md:pb-8 text-left leading-custom1'>TOPIC</h2>
           <h3 className='text-sm md:text-2xl w-full pb-10 text-left font-bold font-YuGothic text-green-700'>ー トピックス ー</h3> */}

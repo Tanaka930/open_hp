@@ -60,10 +60,10 @@
     /* src: url("//db.onlinewebfonts.com/t/79e4dc6a81171b1523795cb6b2bc7b2f.eot");
     src: url("//db.onlinewebfonts.com/t/79e4dc6a81171b1523795cb6b2bc7b2f.eot?#iefix")
         format("embedded-opentype"), */
-    src: url("/font/55Roman/79e4dc6a81171b1523795cb6b2bc7b2f.woff2")
+    src: url("/font/55Roman/2148ed90570c0dd002f4e905de92dc46.woff2")
         format("woff2"),
-      url("/font/55Roman/79e4dc6a81171b1523795cb6b2bc7b2f.woff") format("woff"),
-      url("/font/55Roman/79e4dc6a81171b1523795cb6b2bc7b2f.ttf")
+      url("/font/55Roman/2148ed90570c0dd002f4e905de92dc46.woff") format("woff"),
+      url("/font/55Roman/2148ed90570c0dd002f4e905de92dc46.woff2")
         format("truetype");
     /* url("//db.onlinewebfonts.com/t/79e4dc6a81171b1523795cb6b2bc7b2f.svg#Avenir LT Pro 55 Roman")
         format("svg"); */
@@ -89,19 +89,19 @@
 
   /* #region  /**=========== Typography =========== */
   h1 {
-    @apply text-2xl font-bold md:text-4xl;
+    @apply text-2xl  md:text-4xl;
   }
 
   h2 {
-    @apply text-xl font-bold md:text-3xl;
+    @apply text-xl md:text-3xl;
   }
 
   h3 {
-    @apply text-lg font-bold md:text-2xl;
+    @apply text-lg md:text-2xl;
   }
 
   h4 {
-    @apply text-base font-bold md:text-lg;
+    @apply text-base md:text-lg;
   }
 
   body {

@@ -11,10 +11,10 @@ export default function TopContent(props: Props) {
       <div>
         <div className="h-16"></div>
         <div className="flex flex-col items-center justify-center my-12 md:mt-16">
-          <h2 className="text-yellow-main text-2xl md:text-5xl">
+          <h2 className="text-yellow-main text-2xl md:text-5xl font-pro65Medium font-black">
             {props.title}
           </h2>
-          <h4 className="text-green-500 font-bold pt-4 ">ー {props.text} ー</h4>
+          <h4 className="text-green-500 font-bold pt-4 font-YuGothic text-2xl">ー {props.text} ー</h4>
         </div>
       </div>
     </>

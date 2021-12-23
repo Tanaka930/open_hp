@@ -2,7 +2,7 @@ import UnstyledLink from '@/components/links/UnstyledLink'
 import Moment from 'react-moment'
 import useMedia from 'use-media'
 
-import SectionTitle from '@/components/layout/sectionText'
+import SectionTitle from '@/components/layout/sectionTextType2'
 
 type Props = {
   blogs: any;
@@ -21,7 +21,7 @@ export default function blog(props:Props){
 
   if(isMobileSite){
     // スマホ処理
-    blogHeight = Number(blogCount) * 300 + 140;
+    blogHeight = Number(blogCount) * 300 + 190;
     
     if(Number(blogCount) == 0){
       blogHeight = 140;
@@ -29,9 +29,9 @@ export default function blog(props:Props){
   }else{
     // pc処理
     if(Number(blogCount) <= 3){
-      blogHeight = 175 + 350;
+      blogHeight = 175 + 425;
     }else{
-      blogHeight = 175 + 650;
+      blogHeight = 175 + 725;
     }
 
     if(Number(blogCount) == 0){
@@ -44,7 +44,7 @@ export default function blog(props:Props){
   return(
     <>
 
-      <div className="absolute w-9/12 back bg-gray-50 z-10"></div>
+      <div className="absolute w-11/12 back bg-green-700 z-10"></div>
         <style jsx>
               {`
                 .back {
@@ -55,11 +55,11 @@ export default function blog(props:Props){
                 }
               `}
       </style>
-      <section className="z-50 mb-10">
+      <section className="z-50 mb-10 pb-32">
         <div className="body-font">
           {/* <h2 className='text-2xl md:text-5xl w-full pb-2 md:pb-8 text-left leading-custom1'>TOPIC</h2>
           <h3 className='text-sm md:text-2xl w-full pb-10 text-left font-bold font-YuGothic text-green-700'>ー トピックス ー</h3> */}
-          <SectionTitle title="TOPIC" subTitle="トピックス" position="left" />
+          <SectionTitle title="TOPIC" subTitle="トピック" position="left" />
 
           <div className="container px-5  max-w-7x1">
             <div className="flex flex-wrap -m-4 md:mx-20">
@@ -76,14 +76,14 @@ export default function blog(props:Props){
                         decoding="async" 
                       />
                       <h3 className="tracking-widest text-dayColor text-sm md:text-xs font-medium mt-8 mb-2">
-                        <Moment format="YYYY.MM.DD" className="font-bold font-YuGothic">
+                        <Moment format="YYYY.MM.DD" className="font-bold text-white font-YuGothic pt-1">
                           {content.createDay}
                         </Moment>
-                        <span className="mx-4 px-1 md:px-2 bg-yellow-main text-white py-0.5">
+                        <span className="mx-4 px-1 md:px-2 bg-yellow-main font-themeText rounded-sm text-white pb-0.5 pt-1">
                           {content.category.category}
                         </span>
                       </h3>
-                      <h2 className="text-sm text-gray-900 text-left">{content.title}</h2>
+                      <h2 className="text-sm text-gray-900 text-white font-pro65Medium font-black text-left">{content.title}</h2>
                     </div>
                   </UnstyledLink>
                 </div>

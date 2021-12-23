@@ -26,7 +26,7 @@ export default function PrimaryButton({
       <UnstyledLink 
         href={href} 
         className={clsx(
-          'border rounded-3xl pt-3 pb-2.5 pl-3.5 text-sm',
+          'font-pro65Medium font-black border rounded-3xl pt-3 pb-2.5 pl-3.5 text-sm',
           className
         )
       }

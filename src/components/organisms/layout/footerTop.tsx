@@ -18,9 +18,8 @@ export default function FooterTop() {
             </UnstyledLink> */}
             <PrimaryButton 
               href='/contact'
-              className='group text-green-600 border-green-600 hover:text-yellow-main hover:border-yellow-main'
-              color='green-600'
-              hover='yellow-main'
+              className='text-green-600 border-green-600 hover:text-yellow-main hover:border-yellow-main'
+              span='bg-green-600 group-hover:bg-yellow-main'
             >
               CONTACT
             </PrimaryButton>
@@ -36,8 +35,7 @@ export default function FooterTop() {
             <PrimaryButton 
               href='/recruit'
               className='group text-green-600 border-green-600 hover:text-yellow-main hover:border-yellow-main'
-              color='green-600'
-              hover='yellow-main'
+              span='bg-green-600 group-hover:bg-yellow-main'
             >
               RECRUIT
             </PrimaryButton>
@@ -55,8 +53,7 @@ export default function FooterTop() {
               <PrimaryButton 
               href='/contact'
               className='group text-green-600 border-green-600 hover:text-yellow-main hover:border-yellow-main'
-              color='green-600'
-              hover='yellow-main'
+              span='bg-green-600 group-hover:bg-yellow-main'
             >
               CONTACT
             </PrimaryButton>
@@ -70,8 +67,7 @@ export default function FooterTop() {
               <PrimaryButton 
               href='/recruit'
               className='group text-green-600 border-green-600 hover:text-yellow-main hover:border-yellow-main'
-              color='green-600'
-              hover='yellow-main'
+              span='bg-green-600 group-hover:bg-yellow-main'
             >
               RECRUIT
             </PrimaryButton>

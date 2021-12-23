@@ -86,8 +86,7 @@ export default function TopAnimation(){
               <PrimaryButton
                 href='/about'
                 className='group text-green-600 border-green-600 hover:text-yellow-main hover:border-yellow-main'
-                color='green-600'
-                hover='yellow-main'
+                span='bg-green-600 group-hover:bg-yellow-main'
               >
                 ABOUT US
               </PrimaryButton>

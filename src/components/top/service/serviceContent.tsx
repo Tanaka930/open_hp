@@ -23,8 +23,8 @@ export default function ServiceContent(props: Props){
           <div className="mt-9 md:mt-14">
             <PrimaryButton
               href={props.link}
+              className='text-white border-yellow-main bg-yellow-main hover:bg-green-600 hover:border-green-600'
               color='white'
-              bgColor='yellow-main'
             >
               VIEW MORE
             </PrimaryButton>

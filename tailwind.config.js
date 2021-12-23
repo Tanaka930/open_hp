@@ -20,6 +20,8 @@ module.exports = {
       fontFamily: {
         primary: ["YakuHanJP","Roboto","Kinto Sans","Helvetica Neue","Segoe UI","Helvetica","YuGothic","Yu Gothic M","游ゴシック体","游ゴシック Medium","Yu Gothic Medium","メイリオ", ...fontFamily.sans],
         themeText: ["Avenir LT Pro","Avenir Next", ...fontFamily.sans],
+        pro55Roman: ["AvenirLTPro55Roman",...fontFamily.sans],
+        pro65Medium: ["AvenirLTPro65Medium",...fontFamily.sans],
         YuGothic: ["YuGothic","Yu Gothic M","Yu Gothic Medium","游ゴシック Medium","游ゴシック体", ...fontFamily.sans],
       },
       colors: {

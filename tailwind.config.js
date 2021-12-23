@@ -108,6 +108,9 @@ module.exports = {
         per10: '10%',
         per13: '13%',
       },
+      margin: {
+        per10: '10%',
+      },
       borderRadius: {
         serviceImage: '30px', 
       }

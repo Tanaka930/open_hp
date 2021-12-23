@@ -31,11 +31,11 @@ export default function News({newses}: {newses:any}){
                     {news.createdAt}
                   </Moment>
                   {isMobileSite ? 
-                    <div className="mt-4 text-left">
+                    <div className="mt-4 text-left font-pro65Medium">
                       {news.title}
                     </div>  
                     :
-                    <span className="ml-6 text-left">
+                    <span className="ml-6 text-left font-pro65Medium">
                       {news.title}
                     </span>  
                   }

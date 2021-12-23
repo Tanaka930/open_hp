@@ -17,8 +17,8 @@ export default function ContentBox(props: Props){
                 alt="オープンストアEC関連事業"
                 decoding="async"
         />
-        <h4 className="mt-3 mb-5 text-green-700">{props.title}</h4>
-        <div className="text-base px-per13 py-2 text-left"
+        <h4 className="mt-3 mb-5 text-green-700 font-pro65Medium font-black">{props.title}</h4>
+        <div className="text-base px-per13 py-2 text-left font-pro65Medium font-black"
           dangerouslySetInnerHTML=
             {
               {

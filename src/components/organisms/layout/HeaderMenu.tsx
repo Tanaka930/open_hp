@@ -34,10 +34,10 @@ export default function HeaderMenu(props: Props) {
   return (
     <>
       {props.isActive ? (
-        <div className="fixed z-10 top-0 w-screen">
+        <div className="fixed z-10 top-0 w-screen font-themeText">
           <div className="relative bg-white h-screen translate-x-0 transition-all duration-300 ease-linear px-9 py-16 space-y-1 md:px-32">
             <div className="h-4 md:h-16"></div>
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap font-pro65Medium font-black">
               {navigation.map((item) => (
                 <div key ={item.name} className="w-1/2 py-11 md:w-1/3 md:mr-4" onClick={()=>props.toggleButton()}>
                   <UnstyledLink

@@ -15,7 +15,7 @@ export default function FooterMenu(links: Links) {
     <>
       <div className="w-1/2 pt-7">
         {/* <div className="text-gray-800 font-bold tracking-widest uppercase mb-4">Products</div> */}
-        <nav className="flex flex-col gap-4 text-base">
+        <nav className="flex flex-col gap-4 text-base font-themeText">
         {links.links.map((link) => (
           <div key={link.label}>
             <UnstyledLink href={link.href} className="">

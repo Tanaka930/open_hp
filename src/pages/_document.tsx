@@ -52,7 +52,7 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#ffffff" />
 
         </Head>
-        <body className="font-themeText">
+        <body className="font-pro55Roman">
           <Main />
           <NextScript />
         </body>

@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url(//db.onlinewebfonts.com/c/e5f78b4fb90a80a32be156470cbfead1?family=Avenir+LT+Pro);
+@import url(//db.onlinewebfonts.com/c/79e4dc6a81171b1523795cb6b2bc7b2f?family=Avenir+LT+Pro+55+Roman);
 
 :root {
   /* #region  /**=========== Primary Color =========== */
@@ -54,29 +55,57 @@
         format("svg"); */
   }
 
+  @font-face {
+    font-family: "AvenirLTPro55Roman";
+    /* src: url("//db.onlinewebfonts.com/t/79e4dc6a81171b1523795cb6b2bc7b2f.eot");
+    src: url("//db.onlinewebfonts.com/t/79e4dc6a81171b1523795cb6b2bc7b2f.eot?#iefix")
+        format("embedded-opentype"), */
+    src: url("/font/55Roman/2148ed90570c0dd002f4e905de92dc46.woff2")
+        format("woff2"),
+      url("/font/55Roman/2148ed90570c0dd002f4e905de92dc46.woff") format("woff"),
+      url("/font/55Roman/2148ed90570c0dd002f4e905de92dc46.woff2")
+        format("truetype");
+    /* url("//db.onlinewebfonts.com/t/79e4dc6a81171b1523795cb6b2bc7b2f.svg#Avenir LT Pro 55 Roman")
+        format("svg"); */
+  }
+
+  @font-face {
+    font-family: "AvenirLTPro65Medium";
+    /* src: url("//db.onlinewebfonts.com/t/ad7151f90039f421ef9eda4996cb65db.eot");
+    src: url("//db.onlinewebfonts.com/t/ad7151f90039f421ef9eda4996cb65db.eot?#iefix")
+        format("embedded-opentype"), */
+    src: url("/font/65Medium/ad7151f90039f421ef9eda4996cb65db.woff2")
+        format("woff2"),
+      url("/font/65Medium/ad7151f90039f421ef9eda4996cb65db.woff") format("woff"),
+      url("/font/65Medium/ad7151f90039f421ef9eda4996cb65db.ttf")
+        format("truetype");
+    /* url("//db.onlinewebfonts.com/t/ad7151f90039f421ef9eda4996cb65db.svg#Avenir LT Pro 65 Medium")
+        format("svg"); */
+  }
+
   .cursor-newtab {
     /* cursor: url("/images/new-tab.png") 10 10, pointer; */
   }
 
   /* #region  /**=========== Typography =========== */
   h1 {
-    @apply text-2xl font-bold md:text-4xl font-themeText;
+    @apply text-2xl  md:text-4xl;
   }
 
   h2 {
-    @apply text-xl font-bold md:text-3xl font-themeText;
+    @apply text-xl md:text-3xl;
   }
 
   h3 {
-    @apply text-lg font-bold md:text-2xl font-themeText;
+    @apply text-lg md:text-2xl;
   }
 
   h4 {
-    @apply text-base font-bold md:text-lg font-themeText;
+    @apply text-base md:text-lg;
   }
 
   body {
-    @apply text-sm font-themeText md:text-base;
+    @apply text-sm md:text-base;
   }
   /* #endregion  /**======== Typography =========== */
 

@@ -14,7 +14,7 @@ const mediaQueries = {
 
 export default function blog(props:Props){
   const isMobileSite = useMedia(mediaQueries.mobile);
-  const isWide = useMedia({ maxWidth: "1300px" });
+  const isWide = useMedia({ maxWidth: "767px" });
 
   const blogCount=props.blogs.length
 
@@ -40,11 +40,9 @@ export default function blog(props:Props){
     }
   }
 
-console.log(isMobileSite)
-
   return(
     <>
-      {isMobileSite ? (
+      {isWide ? (
         <>
           <div className="absolute w-9/12 back bg-green-700 z-10"></div>
             <style jsx>

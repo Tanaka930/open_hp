@@ -121,12 +121,13 @@ export default function Footer() {
                   <p className="font-pro65Medium font-black text-2xl">オープンストア株式会社</p>
                 </li>
                 <li className="mt-5 md:mt-32">
-                  <p>大阪府大阪市淀川区木川東４丁目５-３ <br className="md:hidden"/>オパル新大阪ビル</p>
+                  <p>大阪府大阪市淀川区木川東４丁目５-３ <br className="lg:hidden"/>オパル新大阪ビル</p>
                 </li>
                 <li>
                   <p  className="mt-3.5">〒532-0012</p>
                 </li>
                 <li className="mt-3.5">
+                  
                   <a href="mailto:contact@openstore-japan.com<" target="blank" className="">contact@openstore-japan.com</a>
                 </li>
                 <li className="mt-3.5">

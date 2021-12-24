@@ -13,7 +13,7 @@ export default function UnderText(props:Props){
     <>
       <section>
         <div className="text-left lg:text-center">
-          <div className="mb-20">
+          <div className="flex lg:flex-none justify-center mb-20">
             <Image 
               src={`${props.image}`} 
               width={props.width} 

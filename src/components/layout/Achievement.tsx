@@ -24,7 +24,7 @@ export default function Achievement(props: Props){
                 {props.datas.map((data:any) => (
                   <div className='float-left md:w-1/2'>
                   <UnstyledLink href={`${data.link}`}>
-                    <div className='lg:mx-32 mb-14 lg:mb-32' >
+                    <div className='xl:mx-32 mb-14 xl:mb-32' >
                       <Image 
                         src={`${data.image.url}`}
                         width={400}

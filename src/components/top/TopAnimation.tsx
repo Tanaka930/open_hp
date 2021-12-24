@@ -51,7 +51,7 @@ export default function TopAnimation(){
     }
   }
 
-  console.log(isWide)
+  // console.log(isWide)
   // const isWide = useMedia({ maxWidth: "767px" });
 
   return(

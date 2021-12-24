@@ -39,7 +39,7 @@ export default function HeaderMenu(props: Props) {
             <div className="h-4 lg:h-16"></div>
             <div className="flex flex-wrap font-pro65Medium font-black">
               {navigation.map((item) => (
-                <div key ={item.name} className="w-1/2 py-6 lg:w-1/3 lg:mr-4" onClick={()=>props.toggleButton()}>
+                <div key ={item.name} className="w-1/2 py-6 lg:py-11 lg:w-1/3 lg:mr-4" onClick={()=>props.toggleButton()}>
                   <UnstyledLink
                     href={item.href}
                     aria-current={item.href === path ? 'page' : undefined}
@@ -96,7 +96,7 @@ export default function HeaderMenu(props: Props) {
               </UnstyledLink>
             </div>
 
-            <div className="absolute bottom-20 right-9 lg:right-32 lg:bottom-28">
+            <div className="absolute bottom-20 lg:bottom-16 right-9 lg:right-32 lg:bottom-28">
               <Image
                 width={props.logoWidth} height={props.logoHeight} 
                 src="/images/layout/Logo.png"
@@ -112,7 +112,7 @@ export default function HeaderMenu(props: Props) {
           <div className="h-4 lg:h-16"></div>
             <div className="flex flex-wrap font-pro65Medium font-black">
               {navigation.map((item) => (
-                <div key ={item.name} className="w-1/2 py-6 lg:w-1/3 lg:mr-1" onClick={()=>props.toggleButton()}>
+                <div key ={item.name} className="w-1/2 py-6 lg:py-11 lg:w-1/3 lg:mr-1" onClick={()=>props.toggleButton()}>
                   <UnstyledLink
                     href={item.href}
                     aria-current={item.href === path ? 'page' : undefined}
@@ -162,7 +162,7 @@ export default function HeaderMenu(props: Props) {
                 </span>
               </UnstyledLink>
             </div>
-            <div className="absolute bottom-20 right-9">
+            <div className="absolute bottom-20 lg:bottom-16 right-9">
               <Image
                 width={props.logoWidth} height={props.logoHeight}
                 src="/images/layout/Logo.png"

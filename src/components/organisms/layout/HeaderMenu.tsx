@@ -96,7 +96,7 @@ export default function HeaderMenu(props: Props) {
               </UnstyledLink>
             </div>
 
-            <div className="absolute bottom-16 right-9 lg:right-32 lg:bottom-28">
+            <div className="absolute bottom-20 right-9 lg:right-32 lg:bottom-28">
               <Image
                 width={props.logoWidth} height={props.logoHeight} 
                 src="/images/layout/Logo.png"
@@ -162,7 +162,7 @@ export default function HeaderMenu(props: Props) {
                 </span>
               </UnstyledLink>
             </div>
-            <div className="absolute bottom-16 right-9">
+            <div className="absolute bottom-20 right-9">
               <Image
                 width={props.logoWidth} height={props.logoHeight}
                 src="/images/layout/Logo.png"

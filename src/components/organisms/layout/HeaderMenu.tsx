@@ -39,7 +39,7 @@ export default function HeaderMenu(props: Props) {
             <div className="h-4 lg:h-16"></div>
             <div className="flex flex-wrap font-pro65Medium font-black">
               {navigation.map((item) => (
-                <div key ={item.name} className="w-1/2 py-11 lg:w-1/3 lg:mr-4" onClick={()=>props.toggleButton()}>
+                <div key ={item.name} className="w-1/2 py-6 lg:w-1/3 lg:mr-4" onClick={()=>props.toggleButton()}>
                   <UnstyledLink
                     href={item.href}
                     aria-current={item.href === path ? 'page' : undefined}
@@ -109,10 +109,10 @@ export default function HeaderMenu(props: Props) {
       ):(
         <div className="fixed top-0 w-screen pointer-events-none">
           <div className="relative bg-white h-screen translate-x-full transition-all duration-300 ease-linear px-9 py-16 space-y-1 sm:px-3">
-          <div className="h-16"></div>
-            <div className="flex flex-wrap">
+          <div className="h-4 lg:h-16"></div>
+            <div className="flex flex-wrap font-pro65Medium font-black">
               {navigation.map((item) => (
-                <div key ={item.name} className="w-1/2 py-11 lg:w-1/3 lg:mr-1" onClick={()=>props.toggleButton()}>
+                <div key ={item.name} className="w-1/2 py-6 lg:w-1/3 lg:mr-1" onClick={()=>props.toggleButton()}>
                   <UnstyledLink
                     href={item.href}
                     aria-current={item.href === path ? 'page' : undefined}

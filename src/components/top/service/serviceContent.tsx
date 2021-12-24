@@ -16,7 +16,7 @@ type Props = {
 export default function ServiceContent(props: Props){
   return(
     <>
-      <div className="md:w-service ">
+      <div className="lg:w-service">
       {props.linkCheck ? (
         <>
           <ContentBox image={props.image} title={props.title} text = {props.text} height="auto"/>

@@ -81,7 +81,7 @@ export default function blog(props:Props){
                             src={content.thumbnail.url}
                             width={225}
                             height={161}
-                            className="shadow-2xl rounded-3xl  w-full object-cover object-center"
+                            className="shadow-2xl rounded-3xl  w-full object-cover object-center h-40 overflow-hidden"
                             alt={content.previewWord}
                             decoding="async" 
                           />
@@ -119,7 +119,7 @@ export default function blog(props:Props){
                             src={content.thumbnail.url}
                             width={225}
                             height={161}
-                            className="shadow-2xl rounded-3xl  w-full object-cover object-center"
+                            className="shadow-2xl rounded-3xl  w-full object-cover object-center h-40 overflow-hidden"
                             alt={content.previewWord}
                             decoding="async" 
                           />

@@ -30,8 +30,6 @@ interface BlogList{
   popularBlog: any;
 }
 
-
-
 export default function Blog(blogList: BlogList){
 
   return(
@@ -80,7 +78,6 @@ export const getStaticProps = async () => {
   const popular_blog = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/blog?filters=check[equals]true&offset=0&limit=3`, key)
   .then(res => res.json())
   .catch(() => null);
-
 
   return {
     props: {

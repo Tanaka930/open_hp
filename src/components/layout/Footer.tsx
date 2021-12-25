@@ -2,7 +2,6 @@ import Image from 'next/image';
 import UnstyledLink from '@/components/links/UnstyledLink';
 import FooterMenu from '../organisms/layout/FooterMenu';
 import FooterTop from '@/components/organisms/layout/footerTop';
-
 import { useMedia } from 'use-media';
 
 const links1 = [

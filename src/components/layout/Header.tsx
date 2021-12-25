@@ -4,6 +4,7 @@ import HeaderMenu from '../organisms/layout/HeaderMenu';
 import { HamburgerStand } from 'react-animated-burgers'
 import { useMedia } from 'use-media';
 
+
 export default function Header() {
 
   const [isActive, setIsActive] = useState(false);
@@ -20,7 +21,6 @@ export default function Header() {
 
   return (
     <>
-    
       <div className="fixed z-10 w-full">
         <div className="px-per10 mx-auto pt-8">
           <div className="flex items-center justify-between h-8 md:h-16">

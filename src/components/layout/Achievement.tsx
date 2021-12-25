@@ -1,9 +1,6 @@
 import Image from 'next/image'
 import UnstyledLink from '@/components/links/UnstyledLink';
-
 import SectionTitle from '@/components/layout/sectionText'
-import BackServiceButton from '@/components/organisms/backServiceButton'
-
 
 type Props = {
   datas: any[];

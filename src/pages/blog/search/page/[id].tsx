@@ -1,12 +1,8 @@
 import { useState, useEffect} from "react";
-
 import { useRouter } from 'next/router';
-
 import Seo from '@/components/Seo';
 import BlogList from '@/components/layout/blogTemplate/BlogList';
-
 import Load from '@/components/layout/load/Load'
-
 
 export default function Search(){
   const [blogsQuery, setBlogsQuery] = useState<{ keyword:string } | null>(null);
@@ -99,5 +95,4 @@ export default function Search(){
       </>
     );
   }
-
 }

@@ -1,5 +1,4 @@
 import UnstyledLink from '@/components/links/UnstyledLink'
-
 import { useRouter } from 'next/router';
 
 type Props ={
@@ -8,10 +7,10 @@ type Props ={
   pathName: string;
   totalCount: number;
   pre_page: number;
+  index: number;
 }
 
 export default function TextColor(props: Props){
-
   const router = useRouter();
 
   const urlQuery:any = router.query;
@@ -20,7 +19,7 @@ export default function TextColor(props: Props){
 
     if(props.pageNum == props.num){
       return(
-        <UnstyledLink href={ `${props.pathName}page/${props.num}`}>
+        <UnstyledLink href={ `${props.pathName}page/${props.num}`} >
           <li className="mx-1 px-3 py-2 bg-green-300 text-gray-700 rounded-lg cursor-pointer font-bold">
             {props.num}
           </li>

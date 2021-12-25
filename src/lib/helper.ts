@@ -1,4 +1,3 @@
-
 // サイトの設定用
 type OpenGraphType = {
   siteName: string;

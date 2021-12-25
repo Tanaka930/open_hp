@@ -1,11 +1,6 @@
-import Moment from 'react-moment'
-
 import DetailTop from '@/components/layout/blogTemplate/DetailTop';
-
 import BlogSearch from '@/components/layout/blogTemplate/BlogSearch';
-
 import SnsShareButton from '@/components/buttons/SnsShareButton';
-
 import UnstyledLink from '@/components/links/UnstyledLink';
 
 type Props = {
@@ -62,7 +57,7 @@ export default function BlogDetail(props: Props){
                 <h5 className="font-bold text-lg uppercase text-gray-700 px-1 mb-2"> カテゴリー一覧 </h5>
                 <ul>
                   {props.blogCategory.map((category:any) => (
-                    <li className="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
+                    <li key={category.id} className="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
                       <UnstyledLink href={`/blog/category/page/1?keyword=${category.id}`}
                                     className="flex items-center text-gray-600 cursor-pointer"
                       >
@@ -82,7 +77,7 @@ export default function BlogDetail(props: Props){
                 <h5 className="font-bold text-lg uppercase text-gray-700 px-1 mb-2"> 執筆者 </h5>
                 <ul>
                   {props.blogUser.map((user:any) => (
-                    <li className="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
+                    <li key={user.id} className="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
                       <UnstyledLink href={`/blog/user/page/1?keyword=${user.id}`}
                                     className="flex items-center text-gray-600 cursor-pointer"
                       >
@@ -101,23 +96,25 @@ export default function BlogDetail(props: Props){
                 <h5 className="mt-4 font-bold text-lg uppercase text-gray-700 px-1 mb-2"> 最新記事 </h5>
                 <div className="mt-4 justify-center">
                   {props.newBlogList.map((blog:any) => (
-                    <UnstyledLink href={`/blog/${blog.id}`}
-                                  className="my-2 grid grid-cols-6 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-6 gap-4"
-                    >
-                      <div className="col-span-2 sm:col-span-2 xl:col-span-2">
-                        <img
-                          alt={blog.previewWord}
-                          src={blog.thumbnail.url}
-                          className="h-24 w-24 mx-auto rounded object-cover"
-                        />
-                      </div>
-                      <div className="col-span-4 sm:col-span-4 xl:col-span-4">
-                        <h3 className="font-semibold text-black">{blog.title}</h3>
-                        <p>
-                          {blog.previewWord.substr( 0, 30 )}
-                        </p>
-                      </div>
-                    </UnstyledLink>
+                    <span key={`new_${blog.id}`}>
+                      <UnstyledLink href={`/blog/${blog.id}`}
+                                    className="my-2 grid grid-cols-6 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-6 gap-4"
+                      >
+                        <div className="col-span-2 sm:col-span-2 xl:col-span-2">
+                          <img
+                            alt={blog.previewWord}
+                            src={blog.thumbnail.url}
+                            className="h-24 w-24 mx-auto rounded object-cover"
+                          />
+                        </div>
+                        <div className="col-span-4 sm:col-span-4 xl:col-span-4">
+                          <h3 className="font-semibold text-black">{blog.title}</h3>
+                          <p>
+                            {blog.previewWord.substr( 0, 30 )}
+                          </p>
+                        </div>
+                      </UnstyledLink>
+                    </span>
                   ))}
                 </div>
               </div>
@@ -128,23 +125,25 @@ export default function BlogDetail(props: Props){
                 <h5 className="mt-4 font-bold text-lg uppercase text-gray-700 px-1 mb-2"> 人気の記事 </h5>
                 <div className="mt-4 justify-center">
                   {props.popularBlog.map((blog:any) => (
-                    <UnstyledLink href={`/blog/${blog.id}`}
-                                  className="my-2 grid grid-cols-6 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-6 gap-4"
-                    >
-                      <div className="col-span-2 sm:col-span-2 xl:col-span-2">
-                        <img
-                          alt={blog.previewWord}
-                          src={blog.thumbnail.url}
-                          className="h-24 w-24 mx-auto rounded object-cover"
-                        />
-                      </div>
-                      <div className="col-span-4 sm:col-span-4 xl:col-span-4">
-                        <h3 className="font-semibold text-black">{blog.title}</h3>
-                        <p>
-                          {blog.previewWord.substr( 0, 30 )}
-                        </p>
-                      </div>
-                    </UnstyledLink>
+                    <span key={`popular_${blog.id}`}>
+                      <UnstyledLink href={`/blog/${blog.id}`}
+                                    className="my-2 grid grid-cols-6 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-6 gap-4"
+                      >
+                        <div className="col-span-2 sm:col-span-2 xl:col-span-2">
+                          <img
+                            alt={blog.previewWord}
+                            src={blog.thumbnail.url}
+                            className="h-24 w-24 mx-auto rounded object-cover"
+                          />
+                        </div>
+                        <div className="col-span-4 sm:col-span-4 xl:col-span-4">
+                          <h3 className="font-semibold text-black">{blog.title}</h3>
+                          <p>
+                            {blog.previewWord.substr( 0, 30 )}
+                          </p>
+                        </div>
+                      </UnstyledLink>
+                    </span>
                   ))}
                 </div>
               </div>

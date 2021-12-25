@@ -6,7 +6,6 @@ import Annotation from "@/molecules/form/annotation";
 import SubmitButton from "@/molecules/form/submitButton";
 import RecaptchaText from "@/molecules/recaptchaText";
 
-
 type FormData = {
   title: string;
   category: string;
@@ -26,10 +25,10 @@ export default function Contact() {
   const { executeRecaptcha } = useGoogleReCaptcha();
 
   const onSubmit  = async (data: FormData) => {
-    console.log("executeRecaptcha", executeRecaptcha);
+    // console.log("executeRecaptcha", executeRecaptcha);
     if (executeRecaptcha) {
       const reCaptchaToken = await executeRecaptcha('contactPage');
-      console.log("reCaptchaToken",reCaptchaToken);
+      // console.log("reCaptchaToken",reCaptchaToken);
 
       const apiEndPoint = './api/recaptcha';
       
@@ -43,11 +42,9 @@ export default function Contact() {
         },
         method: 'POST',
       }); 
-
-      console.log("recaptchaRes", recaptchaRes)
+      // console.log("recaptchaRes", recaptchaRes)
 
       if (recaptchaRes.status === 200) {
-
         let message = "<br/>タイトル: " + data.title +
         "<br/>カテゴリ: " + data.category +
         "<br/>氏名: " + data.name +
@@ -72,24 +69,23 @@ export default function Contact() {
         method: 'POST'
         })
 
-        console.log("sendGridRes",sendGridRes);
+        // console.log("sendGridRes",sendGridRes);
         if (sendGridRes.status === 200) {
           reset()
           alert("正しく送信されました。\nお問い合わせありがとうございます。")
         } else {
           alert("正しく送信されませんでした。もう一度やり直してください。")
-          console.error("sendGridRes.status",sendGridRes.status);
+          // console.error("sendGridRes.status",sendGridRes.status);
         }
 
       } else {
         alert("認証エラーが発生しました。もう一度やり直してください。")
-        console.error("recaptchaRes.status", recaptchaRes.status)
+        // console.error("recaptchaRes.status", recaptchaRes.status)
       }
     } else {
         alert("エラーが発生しました。もう一度やり直してください。")
-        console.error("recaptcha認証エラー")
+        // console.error("recaptcha認証エラー")
     }
-    
   };
 
   // 以下のテンプレートはマークアップ時に整形する
@@ -99,8 +95,6 @@ export default function Contact() {
       <TopContent title="CONTACT" text="お問い合わせ" />
 
       <div className="px-per10 font-pro65Medium font-black">
-        {/* <h2 className='pt-14 text-2xl font-bold lg:text-4xl w-full  xl:pb-4 text-center'>CONTACT</h2>
-        <h3 className='text-xl lg:text-2xl w-full pb-2 xl:pb-8 text-center font-bold text-green-700'>- お問い合せ -</h3>  */}
         <div className="max-w-5xl mx-auto mb-20 md:mb-40">
           <div className="bg-white w-full rounded-3xl border border-gray-300 p-8 sm:p-12">
             <form onSubmit={handleSubmit(onSubmit)}>

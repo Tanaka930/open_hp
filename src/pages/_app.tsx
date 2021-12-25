@@ -1,18 +1,13 @@
-import '@/styles/globals.css'
+import '@/styles/globals.css';
 import 'tailwindcss/tailwind.css';
 // !STARTERCONF This is for demo purposes, remove @/styles/colors.css import immediately
 import '@/styles/colors.css';
-// import '@/styles/menu.css'
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import Layout from '@/components/layout/Layout';
-
 import {SearchContext} from '@/components/context/searchContext'
-
 import type { AppProps } from 'next/app';
-
 import React, { useState } from 'react';
 // import ReturnTopButton from '@/components/buttons/returnTopButton';
-
 import { GA_TRACKING_ID, pageview } from '@/lib/gtag';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';

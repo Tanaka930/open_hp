@@ -1,7 +1,5 @@
 import React, { useCallback, useContext } from 'react';
-
 import { useRouter } from 'next/router';
-
 import {SearchContext} from '@/components/context/searchContext';
 
 export default function BlogSearch(){

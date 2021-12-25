@@ -1,6 +1,6 @@
 import UnstyledLink from '@/components/links/UnstyledLink'
-
 import { useRouter } from 'next/router';
+
 type Props = {
   pathName: string;
   pageNum: number;

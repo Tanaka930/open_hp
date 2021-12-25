@@ -2,9 +2,6 @@ import Seo from "@/components/Seo"
 import Temp from "@/components/policy/temp"
 
 export default function Policy() {
-
-
-
   return (
     <>
       <Seo templateTitle='About' />

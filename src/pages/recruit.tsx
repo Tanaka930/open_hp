@@ -1,23 +1,16 @@
 import Seo from "@/components/Seo"
 import TopContent from "@/components/layout/TopContent"
-
 // トップテキスト用のコンポーネント
 import TopText from '@/components/layout/LowerTopText'
-
 // 文化用のコンポーネント
 import Culture from '@/components/recruit/Culture'
-
 // 求める人物像のコンポーネント
 import Human from '@/components/recruit/Human'
-
 // スタッフの声用のコンポーネント
 import Staff from '@/components/recruit/Staff'
-
 // 求人用のコンポーネント
 import Job from '@/components/recruit/Job'
-
 import SectionTitle from '@/components/layout/sectionText'
-
 import { useForm } from "react-hook-form";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 
@@ -53,10 +46,10 @@ export default function Recruit(categories: Categories) {
 
   const onSubmit = async (data: any) => {
     if(data.mailf == data.mails){
-      console.log("executeRecaptcha", executeRecaptcha);
+      // console.log("executeRecaptcha", executeRecaptcha);
       if (executeRecaptcha) {
         const reCaptchaToken = await executeRecaptcha('contactPage');
-        console.log("reCaptchaToken",reCaptchaToken);
+        // console.log("reCaptchaToken",reCaptchaToken);
 
         const apiEndPoint = './api/recaptcha';
         
@@ -71,7 +64,7 @@ export default function Recruit(categories: Categories) {
           method: 'POST',
         }); 
 
-        console.log("recaptchaRes", recaptchaRes)
+        // console.log("recaptchaRes", recaptchaRes)
 
         if (recaptchaRes.status === 200) {
 
@@ -100,7 +93,7 @@ export default function Recruit(categories: Categories) {
           method: 'POST'
           })
 
-          console.log("sendGridRes",sendGridRes);
+          // console.log("sendGridRes",sendGridRes);
           if (sendGridRes.status === 200) {
             reset()
             alert("正しく送信されました。\nお問い合わせありがとうございます。")
@@ -134,170 +127,166 @@ export default function Recruit(categories: Categories) {
 
       <section className="w-full">
         <div className="">
-        {/* <h2 className='text-2xl lg:text-5xl w-full pb-2 lg:pb-6 text-center'>CONTACT</h2>
-        <h3 className='text-sm lg:text-2xl w-full pb-4 xl:pb-8 text-center text-green-700 font-YuGothic'>- 応募する -</h3>  */}
-        <SectionTitle title="CONTACT" subTitle="応募する" position="center" />
-        <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 mb-12">
-          <div className="bg-white w-full rounded-3xl border-4 p-8 sm:p-12 font-pro65Medium font-black">
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="md:flex items-center mt-12">
-                <div className="w-full flex flex-col">
-                  <label htmlFor="name" className="relative text-xl">
-                    お名前
-                    <span className="absolute bg-yellow-main text-white text-sm mx-2 my-1 px-3 rounded">必須</span>
-                  </label>
-                  
-                  <input 
-                    autoComplete="name"
-                    {...register("name", {
-                      required: "入力必須項目です。",
-                      maxLength: {
-                        value: 24,
-                        message: "全角12文字以内で入力してください。"
-                      }
-                    })}
-                    className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
-                  />
-
-                  {errors.name && <span className="text-red-600 text-sm pt-2">{errors.name.message}</span>}
+          <SectionTitle title="CONTACT" subTitle="応募する" position="center" />
+          <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 mb-12">
+            <div className="bg-white w-full rounded-3xl border-4 p-8 sm:p-12 font-pro65Medium font-black">
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <div className="md:flex items-center mt-12">
+                  <div className="w-full flex flex-col">
+                    <label htmlFor="name" className="relative text-xl">
+                      お名前
+                      <span className="absolute bg-yellow-main text-white text-sm mx-2 my-1 px-3 rounded">必須</span>
+                    </label>
+                    
+                    <input 
+                      autoComplete="name"
+                      {...register("name", {
+                        required: "入力必須項目です。",
+                        maxLength: {
+                          value: 24,
+                          message: "全角12文字以内で入力してください。"
+                        }
+                      })}
+                      className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                    />
+                    {errors.name && <span className="text-red-600 text-sm pt-2">{errors.name.message}</span>}
+                  </div>
                 </div>
-              </div>
 
-              <div className="md:flex items-center mt-12">
-                <div className="w-full flex flex-col">
-                  <label htmlFor="mailf" className="relative text-xl">
-                    メールアドレス
-                    <span className="absolute bg-yellow-main text-white text-sm mx-2 my-1 px-3 rounded">必須</span>
-                  </label>
-                  <input 
-                    autoComplete="mailf"
-                    {...register("mailf", {
-                      required: "入力必須項目です。",
-                      pattern: {
-                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                        message: "正しいメールアドレスを入力してください。"
-                      }
-                    })}
-                    className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
-                  />
-
-                  {errors.mailf && <span className="text-red-600 text-sm pt-2">{errors.mailf.message}</span>}
+                <div className="md:flex items-center mt-12">
+                  <div className="w-full flex flex-col">
+                    <label htmlFor="mailf" className="relative text-xl">
+                      メールアドレス
+                      <span className="absolute bg-yellow-main text-white text-sm mx-2 my-1 px-3 rounded">必須</span>
+                    </label>
+                    <input 
+                      autoComplete="mailf"
+                      {...register("mailf", {
+                        required: "入力必須項目です。",
+                        pattern: {
+                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                          message: "正しいメールアドレスを入力してください。"
+                        }
+                      })}
+                      className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                    />
+                    {errors.mailf && <span className="text-red-600 text-sm pt-2">{errors.mailf.message}</span>}
+                  </div>
                 </div>
-              </div>
 
 
-              <div className="md:flex items-center mt-12">
-                <div className="w-full flex flex-col">
-                  <label htmlFor="mails" className="relative text-xl">
-                    アドレス(確認)
-                    <span className="absolute bg-yellow-main text-white text-sm mx-2 my-1 px-3 rounded">必須</span>
-                  </label>
-                  <input 
-                    autoComplete="mails"
-                    {...register("mails", {
-                      required: "入力必須項目です。",
-                      pattern: {
-                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                        message: "正しいメールアドレスを入力してください。"
-                      }
-                    })}
-                    className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
-                  />
+                <div className="md:flex items-center mt-12">
+                  <div className="w-full flex flex-col">
+                    <label htmlFor="mails" className="relative text-xl">
+                      アドレス(確認)
+                      <span className="absolute bg-yellow-main text-white text-sm mx-2 my-1 px-3 rounded">必須</span>
+                    </label>
+                    <input 
+                      autoComplete="mails"
+                      {...register("mails", {
+                        required: "入力必須項目です。",
+                        pattern: {
+                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                          message: "正しいメールアドレスを入力してください。"
+                        }
+                      })}
+                      className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                    />
 
-                  {errors.mails && <span className="text-red-600 text-sm pt-2">{errors.mails.message}</span>}
+                    {errors.mails && <span className="text-red-600 text-sm pt-2">{errors.mails.message}</span>}
+                  </div>
                 </div>
-              </div>
 
-              <div className="md:flex items-center mt-12">
-                <div className="w-full flex flex-col">
-                  <label htmlFor="tell" className="relative text-xl">お電話番号</label>
-                  <input 
-                    autoComplete="tell"
-                    {...register("tell", {
-                      pattern: {
-                        value: /^(0{1}\d{9,10})$/i,
-                        message: "正しい電話番号を入力してください。"
-                      }
-                    })}
-                    className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
-                  />
+                <div className="md:flex items-center mt-12">
+                  <div className="w-full flex flex-col">
+                    <label htmlFor="tell" className="relative text-xl">お電話番号</label>
+                    <input 
+                      autoComplete="tell"
+                      {...register("tell", {
+                        pattern: {
+                          value: /^(0{1}\d{9,10})$/i,
+                          message: "正しい電話番号を入力してください。"
+                        }
+                      })}
+                      className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                    />
 
-                  {errors.tell && <span className="text-red-600 text-sm pt-2">{errors.tell.message}</span>}
+                    {errors.tell && <span className="text-red-600 text-sm pt-2">{errors.tell.message}</span>}
+                  </div>
                 </div>
-              </div>
 
-              <div className="md:flex items-center mt-8">
-                <div className="w-full flex flex-col">
-                  <label htmlFor="category" className="relative text-xl">
-                    職種
-                    <span className="absolute bg-yellow-main text-white text-sm mx-2 my-1 px-3 rounded">必須</span>  
-                  </label>
-                  <select
-                    autoComplete="category"
-                    {...register("category", {
-                      required: "選択必須項目です。"
-                    })}
-                    className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
-                  >
-                    <option value="">--選択してください--</option>
-                    <option value="営業">営業</option>
-                    <option value="事務">事務</option>
-                    <option value="アポインター">アポインター</option>
-                    <option value="エンジニア・デザイナー">エンジニア・デザイナー</option>
-                    <option value="業務委託">業務委託</option>
-                  </select>
-                  {errors.category && <span className="text-red-600 text-sm pt-2 md: w-full">{errors.category.message}</span>}
+                <div className="md:flex items-center mt-8">
+                  <div className="w-full flex flex-col">
+                    <label htmlFor="category" className="relative text-xl">
+                      職種
+                      <span className="absolute bg-yellow-main text-white text-sm mx-2 my-1 px-3 rounded">必須</span>  
+                    </label>
+                    <select
+                      autoComplete="category"
+                      {...register("category", {
+                        required: "選択必須項目です。"
+                      })}
+                      className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                    >
+                      <option value="">--選択してください--</option>
+                      <option value="営業">営業</option>
+                      <option value="事務">事務</option>
+                      <option value="アポインター">アポインター</option>
+                      <option value="エンジニア・デザイナー">エンジニア・デザイナー</option>
+                      <option value="業務委託">業務委託</option>
+                    </select>
+                    {errors.category && <span className="text-red-600 text-sm pt-2 md: w-full">{errors.category.message}</span>}
+                  </div>
                 </div>
-              </div>
 
-              <div className="md:flex items-center mt-8">
-                <div className="w-full flex flex-col">
-                  <label htmlFor="remark" className="relative text-xl">備考</label>
+                <div className="md:flex items-center mt-8">
+                  <div className="w-full flex flex-col">
+                    <label htmlFor="remark" className="relative text-xl">備考</label>
+                    <input
+                      autoComplete="remark"
+                      {...register("remark", {
+                        maxLength: {
+                          value: 100,
+                          message: "全角50文字以内で入力してください。"
+                        }
+                      })}
+                      className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                    />
+                    {errors.remark && <span className="text-red-600 text-sm pt-2">{errors.remark.message}</span>}
+                  </div>
+                </div>
+
+                <div>
+                  <div className="w-full flex flex-col mt-8">
+                    <label htmlFor="message" className="relative text-xl">お問い合わせ内容</label>
+                    <textarea
+                      autoComplete="message"
+                      {...register("message", {
+                        required: "入力必須項目です。",
+                        maxLength: {
+                          value: 10000,
+                          message: "全角500文字以内で入力してください。" 
+                        }
+                      })}
+                      className="h-40 text-base leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                    >
+                    </textarea>
+                    {errors.message && <span className="text-red-600 text-sm pt-2">{errors.message.message}</span>}
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-center w-full">
                   <input
-                    autoComplete="remark"
-                    {...register("remark", {
-                      maxLength: {
-                        value: 100,
-                        message: "全角50文字以内で入力してください。"
-                      }
-                    })}
-                    className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
+                    type="submit"
+                    className="mt-9 font-semibold leading-none text-white py-4 px-10 bg-green-700 rounded hover:bg-green-600 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 focus:outline-none cursor-pointer"
                   />
-                  {errors.remark && <span className="text-red-600 text-sm pt-2">{errors.remark.message}</span>}
                 </div>
+              </form>
+              <div className="mt-8 md:mt-12">
+                <p className="text-xs md:text-sm text-gray-900">このサイトはreCAPTCHAによって保護されており、Google <a href="https://policies.google.com/privacy" target="_blank" className="text-blue-600">プライバシーポリシー</a> と <a href="https://policies.google.com/terms" target="_blank" className="text-blue-600">利用規約</a> が適用されます。</p>
               </div>
-
-              <div>
-                <div className="w-full flex flex-col mt-8">
-                  <label htmlFor="message" className="relative text-xl">お問い合わせ内容</label>
-                  <textarea
-                    autoComplete="message"
-                    {...register("message", {
-                      required: "入力必須項目です。",
-                      maxLength: {
-                        value: 10000,
-                        message: "全角500文字以内で入力してください。" 
-                      }
-                    })}
-                    className="h-40 text-base leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"
-                  >
-                  </textarea>
-                  {errors.message && <span className="text-red-600 text-sm pt-2">{errors.message.message}</span>}
-                </div>
-              </div>
-
-              <div className="flex items-center justify-center w-full">
-                <input
-                  type="submit"
-                  className="mt-9 font-semibold leading-none text-white py-4 px-10 bg-green-700 rounded hover:bg-green-600 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 focus:outline-none cursor-pointer"
-                />
-              </div>
-            </form>
-            <div className="mt-8 md:mt-12">
-              <p className="text-xs md:text-sm text-gray-900">このサイトはreCAPTCHAによって保護されており、Google <a href="https://policies.google.com/privacy" target="_blank" className="text-blue-600">プライバシーポリシー</a> と <a href="https://policies.google.com/terms" target="_blank" className="text-blue-600">利用規約</a> が適用されます。</p>
             </div>
           </div>
-        </div>
         </div>
       </section>
     </>

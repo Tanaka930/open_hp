@@ -1,5 +1,4 @@
 import Moment from 'react-moment'
-
 import UnstyledLink from "@/components/links/UnstyledLink";
 
 type Props = {

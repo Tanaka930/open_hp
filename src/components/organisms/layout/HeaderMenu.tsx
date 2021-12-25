@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router';
 import UnstyledLink from '../../links/UnstyledLink';
 import Image from 'next/image';
-import { useMedia } from 'use-media';
 
 const navigation = [
   { name: 'HOME', href: '/' },
@@ -12,11 +11,6 @@ const navigation = [
   { name: 'CONTACT', href: '/contact' },
   { name: 'SERVICE', href: '/service' },
 ]
-
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
-}
 
 type Props = {
   isActive: boolean;
@@ -29,12 +23,11 @@ export default function HeaderMenu(props: Props) {
 
   const router = useRouter();
   const path = router.asPath;
-  const isWide = useMedia({ maxWidth: "767px" });
 
   return (
     <>
       {props.isActive ? (
-        <div className="fixed z-10 top-0 w-screen font-themeText">
+        <div className="fixed z-10 top-0 font-themeText">
           <div className="relative bg-white h-screen translate-x-0 transition-all duration-300 ease-linear px-9 py-16 space-y-1 lg:px-32">
             <div className="h-4 lg:h-16"></div>
             <div className="flex flex-wrap font-pro65Medium font-black">
@@ -96,7 +89,7 @@ export default function HeaderMenu(props: Props) {
               </UnstyledLink>
             </div>
 
-            <div className="absolute bottom-20 lg:bottom-16 right-9 lg:right-32 lg:bottom-28">
+            <div className="absolute bottom-20 right-9 lg:right-32 lg:bottom-28">
               <Image
                 width={props.logoWidth} height={props.logoHeight} 
                 src="/images/layout/Logo.png"
@@ -107,7 +100,7 @@ export default function HeaderMenu(props: Props) {
           </div>
         </div>
       ):(
-        <div className="fixed top-0 w-screen pointer-events-none">
+        <div className="fixed top-0 pointer-events-none">
           <div className="relative bg-white h-screen translate-x-full transition-all duration-300 ease-linear px-9 py-16 space-y-1 sm:px-3">
           <div className="h-4 lg:h-16"></div>
             <div className="flex flex-wrap font-pro65Medium font-black">
@@ -162,7 +155,7 @@ export default function HeaderMenu(props: Props) {
                 </span>
               </UnstyledLink>
             </div>
-            <div className="absolute bottom-20 lg:bottom-16 right-9">
+            <div className="absolute bottom-20 lg:bottom-28 right-9">
               <Image
                 width={props.logoWidth} height={props.logoHeight}
                 src="/images/layout/Logo.png"

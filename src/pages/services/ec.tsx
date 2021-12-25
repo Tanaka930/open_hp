@@ -1,16 +1,14 @@
 import Seo from '@/components/Seo';
 import TopContentType2 from '@/components/layout/topContentType2';
-
 // 実績用のコンポーネント追加
 import Achievement from '@/components/layout/Achievement'
 import BackServiceButton from '@/components/organisms/backServiceButton'
-
 import UnderText from '@/components/layout/underText'
-
 
 interface TopTextWord{
   text: string
 }
+
 interface Explanation{
   text: string,
   image: string,
@@ -24,9 +22,6 @@ interface Achievement{
 }
 
 export default function Home(props:any){
-  const topTextWord: TopTextWord = {
-    text: '事業内容'
-  }
   const explanation1: Explanation = {
     text: 'オープンストアは国内では未だ少ないshopify experts の公認パートナーです。Shopifyの魅力は、多様なカスタマイズ性、充実した外部サービスとの連携、 海外展開(越境)への対応、強固なセキュリティーなど多岐に渡ります。これまで開発に多大な時間と費用を要したECサイトもShopifyを活用すれば、低予算かつ高機能なオリジナルショップを短期間で開設することができます。',
     image: '/images/service/ec/op_shopify.png',
@@ -34,7 +29,6 @@ export default function Home(props:any){
     height: '202',
     alt_text: 'オープンストアとshopify'
   }
-
 
   return(
     <>

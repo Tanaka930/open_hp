@@ -1,10 +1,10 @@
 import Seo from '@/components/Seo';
 import BlogList from '@/components/layout/blogTemplate/BlogList';
 
-
 interface Category{
   category: string;
 }
+
 interface UpUser{
   user: string;
   userImage: any;

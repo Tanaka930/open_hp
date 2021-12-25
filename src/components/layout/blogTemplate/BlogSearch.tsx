@@ -26,11 +26,11 @@ export default function BlogSearch(){
           検索したいワードを入力してください
         </p>
         <input placeholder="検索したいワードを入力"
-          className="text-gray-700 bg-gray-100 rounded-t hover:outline-none p-2 w-full mt-4 border" 
+          className="text-gray-700 bg-gray-100 text-base  rounded-t hover:outline-none p-2 w-full mt-4 border" 
           onChange={handleChangeKeyword}
           value={search}
           />
-        <button className="px-4 py-2 bg-indigo-600 text-gray-200 rounded-b w-full capitalize tracking-wide" onClick={handleClickSearchButton}>
+        <button className="px-4 py-2 bg-indigo-600 text-base text-gray-200 rounded-b w-full capitalize tracking-wide" onClick={handleClickSearchButton}>
           検索
         </button>
       </div>

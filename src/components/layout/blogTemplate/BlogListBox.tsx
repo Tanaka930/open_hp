@@ -60,7 +60,7 @@ export default function BlogListBox(props: Props){
       </>
     ):(
       <>
-        <div>
+        <div className="w-full">
           お探しの記事は見つかりませんでした。
         </div>
       </>

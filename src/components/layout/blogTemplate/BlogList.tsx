@@ -113,7 +113,6 @@ export default function BlogList(props: Props){
                 <div className="mt-4 justify-center">
                   {props.newBlogList.map((blog:any) => (
                     <span key={`new_${blog.id}`}>
-                      {blog.id}
                       <UnstyledLink href={`/blog/${blog.id}`}
                                     className="my-2 grid grid-cols-6 gap-4"
                       >
@@ -147,7 +146,6 @@ export default function BlogList(props: Props){
                       <UnstyledLink href={`/blog/${blog.id}`}
                                     className="my-2 grid grid-cols-6 gap-4"
                       >
-                        {blog.id}
                         <div className="col-span-2 sm:col-span-2 xl:col-span-2">
                           <img
                             alt={blog.previewWord}

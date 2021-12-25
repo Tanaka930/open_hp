@@ -100,7 +100,7 @@ export default function HeaderMenu(props: Props) {
           </div>
         </div>
       ):(
-        <div className="fixed top-0 pointer-events-none">
+        <div className="fixed top-0 pointer-events-none w-full">
           <div className="relative bg-white h-screen translate-x-full transition-all duration-300 ease-linear px-9 py-16 space-y-1 sm:px-3">
           <div className="h-4 lg:h-16"></div>
             <div className="flex flex-wrap font-pro65Medium font-black">

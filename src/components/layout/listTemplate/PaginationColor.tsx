@@ -7,7 +7,6 @@ type Props ={
   pathName: string;
   totalCount: number;
   pre_page: number;
-  index: number;
 }
 
 export default function TextColor(props: Props){

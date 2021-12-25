@@ -26,9 +26,7 @@ const Wrap = styled.div<{isActive:boolean}>`
   }
 `
 
-
 export default function TopAnimation(){
-
   const [isActive, setIsActive] = useState<boolean>(true);
   const isWide = useMedia({ maxWidth: "767px" });
 

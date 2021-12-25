@@ -1,8 +1,7 @@
-import UnstyledLink from '@/components/links/UnstyledLink'
-import Moment from 'react-moment'
-import useMedia from 'use-media'
-
-import SectionTitle from '@/components/layout/sectionTextType2'
+import UnstyledLink from '@/components/links/UnstyledLink';
+import Moment from 'react-moment';
+import useMedia from 'use-media';
+import SectionTitle from '@/components/layout/sectionTextType2';
 
 type Props = {
   blogs: any;
@@ -24,7 +23,7 @@ export default function blog(props:Props){
   if(isMobileSite){
     // スマホ処理
     blogHeight = Number(blogCount) * 300 + 190;
-    console.log(isWide2)
+    // console.log(isWide2)
     if(isWide2){
       // 各行の時
       if(Number(blogCount) <= 2){
@@ -70,14 +69,12 @@ export default function blog(props:Props){
           </style>
           <section className="z-50 mb-10 pb-32">
             <div className="body-font">
-              {/* <h2 className='text-2xl md:text-5xl w-full pb-2 md:pb-8 text-left leading-custom1'>TOPIC</h2>
-              <h3 className='text-sm md:text-2xl w-full pb-10 text-left font-bold font-YuGothic text-green-700'>ー トピックス ー</h3> */}
               <SectionTitle title="TOPIC" subTitle="トピック" position="left" />
 
               <div className="container px-5  max-w-7x1">
                 <div className="flex flex-wrap -m-4 sm:mx-20">
                   {props.blogs.map((content:any) => (
-                    <div className="xl:w-1/3 sm:w-1/2 p-4">
+                    <div className="xl:w-1/3 sm:w-1/2 p-4" key={content.id}>
                       <UnstyledLink href={`/blog/${content.id}`} >
                         <div className="pt-2 pb-4 px-2 rounded-lg cursor-pointer">
                           <img 
@@ -108,27 +105,14 @@ export default function blog(props:Props){
         </>
       ):(
         <>
-          {/* <div className="absolute w-11/12 back bg-green-700 z-10"></div>
-            <style jsx>
-                  {`
-                    .back {
-                      height: ${String(blogHeight)}px;
-                      z-index: -1;
-                      border-bottom-right-radius: 80px;
-                      border-top-right-radius: 80px;
-                    }
-                  `}
-          </style> */}
           <section className="z-50 mb-40 pb-32 bg-green-700 mr-per10 rounded-r-serviceImage">
             <div className="body-font">
-              {/* <h2 className='text-2xl md:text-5xl w-full pb-2 md:pb-8 text-left leading-custom1'>TOPIC</h2>
-              <h3 className='text-sm md:text-2xl w-full pb-10 text-left font-bold font-YuGothic text-green-700'>ー トピックス ー</h3> */}
               <SectionTitle title="TOPIC" subTitle="トピック" position="left" />
 
               <div className="container px-5  max-w-7x1">
                 <div className="flex flex-wrap -m-4">
                   {props.blogs.map((content:any) => (
-                    <div className="xl:w-1/3 sm:w-1/2 p-4">
+                    <div className="xl:w-1/3 sm:w-1/2 p-4" key={content.id}>
                       <UnstyledLink href={`/blog/${content.id}`} >
                         <div className="pt-2 pb-4 px-2 rounded-lg cursor-pointer">
                           <img 

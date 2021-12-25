@@ -1,22 +1,11 @@
 import Seo from '@/components/Seo';
-import TopContent from '@/components/layout/TopContent';
-
-// トップテキスト用のコンポーネント
-import TopText from '@/components/layout/LowerTopText'
-
 // 説明文1用のコンポーネント
 import RightText from '@/components/layout/RightText'
-
 // 説明文2用のコンポーネント
 import LeftText from '@/components/layout/LeftText'
-
-// もっと見るボタンのコンポーネント
-import ReadMoreButton from '@/components/buttons/readMoreButton'
-
 // 実績用のコンポーネント追加
 import Achievement from '@/components/layout/Achievement'
 import BackServiceButton from '@/components/organisms/backServiceButton'
-
 import TopContentType2 from '@/components/layout/topContentType2';
 
 interface TopTextWord{
@@ -38,10 +27,6 @@ interface Achievement{
 }
 
 export default function Home(props:any){
-
-  const topTextWord: TopTextWord = {
-    text: '事業内容'
-  }
   const explanation1: Explanation = {
     text: '公式LINEでは新規顧客をリピーター化させ、顧客生涯価値の向上及び売上の安定を目的としています。オープンストアには構築のプロが多数在籍しております。',
     image: '/images/service/line/line1.png',

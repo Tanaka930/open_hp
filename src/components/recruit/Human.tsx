@@ -1,8 +1,4 @@
-import RightText from '@/components/layout/RightText'
-
-import SectionTitle from '@/components/layout/sectionText'
-
-
+import SectionTitle from '@/components/layout/sectionText';
 
 export default function Human(){
   const text1:string = "自分の欠点を素直に認めることができ、他者の価値観を自ら理解しようとする人";
@@ -16,7 +12,8 @@ export default function Human(){
     text2,
     text3,
     text4,
-    text5]
+    text5
+  ]
 
   return(
     <>

@@ -1,10 +1,12 @@
+// typescriptの設定ファイル
+
 {
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": true, //厳しいルールの適応
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,

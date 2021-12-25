@@ -9,7 +9,6 @@ type SeoProps = {
   datas: any;
 };
 
-
 // 実行する処理
 export default function Seo(props: SeoProps){
   const router = useRouter();
@@ -23,6 +22,7 @@ export default function Seo(props: SeoProps){
     type: 'website',
     robots: 'follow, index',
   };
+
   const meta = {
     ...dataMeta,
     ...props,
@@ -40,7 +40,6 @@ export default function Seo(props: SeoProps){
     siteName: props.templateTitle ? meta.siteName : meta.title,
     templateTitle: props.templateTitle,
   });
-
 
   // HTML返却
   return(

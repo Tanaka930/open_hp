@@ -1,16 +1,9 @@
-import {client} from '@/lib/client'
-
-import TopContent from "@/components/layout/TopContent"
-
+import {client} from '@/lib/client';
 import Seo from '@/components/Seo';
-
-import LowerTopText from '@/components/layout/LowerTopText';
-
 import TopContentType2 from '@/components/layout/topContentType2';
-
-
 import { useForm } from "react-hook-form";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+
 type FormData = {
   name: string;
   mailf: string;
@@ -33,10 +26,10 @@ export default function JobId({jobs}:{jobs:any}) {
 
     const onSubmit = async (data: any) => {
       if(data.mailf == data.mails){
-        console.log("executeRecaptcha", executeRecaptcha);
+        // console.log("executeRecaptcha", executeRecaptcha);
         if (executeRecaptcha) {
           const reCaptchaToken = await executeRecaptcha('contactPage');
-          console.log("reCaptchaToken",reCaptchaToken);
+          // console.log("reCaptchaToken",reCaptchaToken);
 
           const apiEndPoint = '../api/recaptcha';
           
@@ -51,7 +44,7 @@ export default function JobId({jobs}:{jobs:any}) {
             method: 'POST',
           }); 
 
-          console.log("recaptchaRes", recaptchaRes)
+          // console.log("recaptchaRes", recaptchaRes)
 
           if (recaptchaRes.status === 200) {
 
@@ -80,7 +73,7 @@ export default function JobId({jobs}:{jobs:any}) {
             method: 'POST'
             })
 
-            console.log("sendGridRes",sendGridRes);
+            // console.log("sendGridRes",sendGridRes);
             if (sendGridRes.status === 200) {
               reset()
               alert("正しく送信されました。\nお問い合わせありがとうございます。")

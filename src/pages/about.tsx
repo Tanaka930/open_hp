@@ -10,7 +10,6 @@ interface ShortCode {
   body: string
 }
 
-
 interface Data {
   data:any
   aboutMain?:Array<ShortCode>;
@@ -25,7 +24,6 @@ interface Data {
   location?:Array<ShortCode>;
 }
 
-
 export default function Home(data: Data){
   const [openTab, setOpenTab] = useState(1)
   const classes = {
@@ -34,8 +32,6 @@ export default function Home(data: Data){
     selected: 'text-white bg-green-600',
     notSelected: 'text-green-600 bg-white',
   }
-
-
 
   return(
     <>
@@ -103,29 +99,32 @@ export default function Home(data: Data){
           <div className="relative flex flex-col min-w-0 break-words w-full mb-4 rounded">
             <div className="uppercase shadow-lg rounded-lg">
               <div className="tab-content tab-space">
-
                 <div className={openTab === 1 ? 'block' : 'hidden'} id="link1">
                   <div className="px-5 py-12 md:text-center md:py-32">
-                    <Image src={data.data.aboutMainImage.url}
-                           width={data.data.aboutMainImage.width}
-                           height={data.data.aboutMainImage.height}
-                           alt={data.data.aboutMain.width}
-                           decoding="async"
+                    <Image
+                      src={data.data.aboutMainImage.url}
+                      width={data.data.aboutMainImage.width}
+                      height={data.data.aboutMainImage.height}
+                      alt={data.data.aboutMain.width}
+                      decoding="async"
                     />
                   </div>
-                  <div className="text-base px-4 pb-12 md:w-auto md:mx-20 md:text-xl" dangerouslySetInnerHTML={{ __html: data.data.aboutMain }} >
-
+                  <div 
+                    className="text-base px-4 pb-12 md:w-auto md:mx-20 md:text-xl"
+                    dangerouslySetInnerHTML={{ __html: data.data.aboutMain }}
+                  >
                   </div>
                 </div>
 
                 <div className={openTab === 2 ? 'block' : 'hidden'} id="link2">
                   <div className=" px-5 py-12 md:py-32">
                     <div className="w-full text-center">
-                      <Image src={data.data.aboutMessageImage.url}
-                             width={data.data.aboutMessageImage.width}
-                             height={data.data.aboutMessageImage.height}
-                             alt="代表写真"
-                             decoding="async"
+                      <Image
+                        src={data.data.aboutMessageImage.url}
+                        width={data.data.aboutMessageImage.width}
+                        height={data.data.aboutMessageImage.height}
+                        alt="代表写真"
+                        decoding="async"
                       />
                     </div>
                     <div className="">
@@ -168,7 +167,7 @@ export default function Home(data: Data){
                             <address className="mt-2">
                               大阪本社 <br />
                               〒532-0012 <br />
-                              大阪府大阪市淀川区木川東４丁目５−３ オパル新大阪ビル
+                              大阪府大阪市淀川区木川東４丁目５-３ オパル新大阪ビル
                             </address>
                             <div className="w-full h-56 md:h-80 mt-2">
                               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.0501090567564!2d135.4915318155948!3d34.72913128920196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e43130b5e829%3A0x4f00da5f97f8ed!2z44CSNTMyLTAwMTIg5aSn6Ziq5bqc5aSn6Ziq5biC5reA5bed5Yy65pyo5bed5p2x77yU5LiB55uu77yV4oiS77yT!5e0!3m2!1sja!2sjp!4v1637734052932!5m2!1sja!2sjp" width="100%" height="100%" loading="lazy"></iframe>
@@ -203,7 +202,6 @@ export const getStaticProps = async () => {
   const data:any = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/content`, key)
     .then(res => res.json())
     .catch(() => null);
-  // console.log(data)
   return {
     props: {
       data: data,

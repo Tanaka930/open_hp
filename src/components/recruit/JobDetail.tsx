@@ -2,10 +2,9 @@ import { useState } from "react";
 import UnstyledLink from '@/components/links/UnstyledLink'
 
 type Props = {
-  // title: string,
-  // text: string
   jobData: any
 }
+
 export default function JobDetail(props: Props){
   const [expanded, setExpanded] = useState(false)
   return(
@@ -31,7 +30,6 @@ export default function JobDetail(props: Props){
                 </li>
               ))}
               </ul>
-              {/* <button className="rounded-full bg-green-600 text-white font-medium font-lg px-6 py-2 my-5 ml-9">詳しく見る</button> */}
             </div>
           }
         </div>

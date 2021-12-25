@@ -1,11 +1,8 @@
 import {client} from '@/lib/client'
 import { FaReply } from 'react-icons/fa'
 import ReadMoreButton from '@/components/buttons/readMoreButton'
-// import { useHistory } from 'react-router-dom';
 
 export default function NewsId({news}:{news:any}) {
-
-  // const history = useHistory();
 
   if(typeof news != "undefined"){
     var image:any = ''
@@ -41,7 +38,6 @@ export default function NewsId({news}:{news:any}) {
 }
 
 export const getStaticPaths = async() => {
-
   // 少しづつ呼び出して処理する方法を考えるべき
   const offset:number = 0;
   const limit:number = 80;
@@ -53,14 +49,12 @@ export const getStaticPaths = async() => {
       limit
     }
   });
-
   const paths = news.contents.map((content:any) => `/news/${content.id}`);
   
   return { paths, fallback: true };
 }
 
 export const getStaticProps = async (context:any) => {
-
   const id = context.params.id;
   const news = await client.get({ endpoint: "news", contentId: id });
 

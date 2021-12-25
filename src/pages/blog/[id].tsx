@@ -1,14 +1,9 @@
 import {client} from '@/lib/client'
-
 import SeoBlog from '@/components/SeoBlog';
-
 import BlogDetail from '@/components/layout/blogTemplate/BlogDetail';
 
 export default function BlogId({datas}:{datas:any}) {
-
   if(typeof datas != "undefined"){
-
-
     return(
       <>
         <SeoBlog templateTitle='blog' datas={datas.blog}/>
@@ -23,8 +18,8 @@ export default function BlogId({datas}:{datas:any}) {
   }
 }
 
-export const getStaticPaths = async() => {
 
+export const getStaticPaths = async() => {
   // 少しづつ呼び出して処理する方法を考えるべき
   const offset:number = 0;
   const limit:number = 80;

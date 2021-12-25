@@ -20,7 +20,6 @@ type SeoProps = {
   templateTitle?: string;
 } & Partial<typeof defaultMeta>;
 
-
 // 実行する処理
 export default function Seo(props: SeoProps){
   const router = useRouter();

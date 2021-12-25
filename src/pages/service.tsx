@@ -2,17 +2,7 @@ import Seo from '@/components/Seo';
 import TopContent from '@/components/layout/TopContent';
 import ServiceContent from '@/components/top/service/serviceContent'
 
-import PrimaryButton from '@/components/buttons/primaryButton'
-
-
-
 export default function Service(props:any){
-
-  const text1 = "オリジナルブランドの作成からECサイトの構築、集客、運用まで一括でサポートいたします。オープンストアにはEC構築、運用のエキスパートが多数在籍しておりますので、安心してお任せください。";
-
-  const text2 = "LINEを通じた顧客管理、リピーターの獲得をサポートいたします。公式LINEに関することは気軽にご相談ください。オープンストアならではのノウハウをお客様にあった形でご提案いたします。";
-
-  const text3 = "キャッシュレス決済の導入から、通信環境の提供まで幅広くご提案いたします。お取引数、4000店舗超と確かな実績があります。経験豊富な専属の担当者がサポートさせていただきます。";
 
   return(
     <>
@@ -40,7 +30,6 @@ export const getStaticProps = async () => {
   const content = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/content`, key)
   .then(res => res.json())
   .catch(() => null);
-
 
   return {
     props: {

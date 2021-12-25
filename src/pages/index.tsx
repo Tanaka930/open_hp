@@ -1,21 +1,12 @@
 import Seo from '@/components/Seo';
-
 // トップアニメーション用のコンポーネント
 import TopAnimation from '@/components/top/TopAnimation'
-
 // サービス用のコンポーネント
 import Service from '@/components/top/Service'
-
-// shopify expertのロゴ表示のコンポーネント
-import ExpertLogo from '@/components/top/ExpertLogo'
-
 // ニュース一覧表示用のコンポーネント
 import News from '@/components/top/News'
-
 // ブログ表示用のコンポーネント
 import Blog from '@/components/top/Blog'
-
-
 
 export default function Home(props:any){
   return(
@@ -24,10 +15,7 @@ export default function Home(props:any){
       <TopAnimation />
       <Blog blogs={props.blogs.contents} />
       <Service data={props.content} />
-      {/* <ExpertLogo /> */}
       <News newses={props.news.contents}/>
-      {/* <About data={props.content} />
-      <Recruit data={props.content} /> */}
     </>
   )
 }

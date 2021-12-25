@@ -1,6 +1,5 @@
 import useMedia from 'use-media';
 import Image from 'next/image'
-
 import SectionTitle from '@/components/layout/sectionText'
 
 type Props = {

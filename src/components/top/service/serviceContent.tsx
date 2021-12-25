@@ -1,8 +1,4 @@
-
-import Image from 'next/image'
-
 import PrimaryButton from '@/components/buttons/primaryButton'
-
 import ContentBox from '@/components/top/service/contentBox'
 
 type Props = {

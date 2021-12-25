@@ -51,9 +51,6 @@ export default function TopAnimation(){
     }
   }
 
-  // console.log(isWide)
-  // const isWide = useMedia({ maxWidth: "767px" });
-
   return(
     <>
       <div className={styles.top}>
@@ -63,7 +60,6 @@ export default function TopAnimation(){
               {/* 300回ループを回す */}
               {[...Array(300)].map((_,index)=>(
                 // 粒用の要素
-                // <div key={index} className={isActive ? styles.c : styles.d}></div>
                 <div key={index} className={styles.c}></div>
               ))}
             </div>
@@ -82,7 +78,6 @@ export default function TopAnimation(){
                   「やり方がわからない。時間がない。もう歳だから。ニーズがない。結果が補償できない。」などの多くの障壁がありますが、そういった障壁を一つひとつ共に乗り越え、夢の実現に向けてのお手伝いを、是非、私たちオープンストアにお任せください。
                 </span>
               </div>
-
               <PrimaryButton
                 href='/about'
                 className='group text-green-600 border-green-600 hover:text-yellow-main hover:border-yellow-main'

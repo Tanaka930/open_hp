@@ -89,13 +89,18 @@ export default function HeaderMenu(props: Props) {
               </UnstyledLink>
             </div>
 
-            <div className="absolute bottom-20 right-9 lg:right-32 lg:bottom-28">
-              <Image
-                width={props.logoWidth} height={props.logoHeight} 
-                src="/images/layout/Logo.png"
-                alt="openstore-logo"
-                decoding="async"
-              />
+            <div
+              className="absolute bottom-20 right-9 lg:right-32 lg:bottom-28"
+              onClick={()=>props.toggleButton()}
+            >
+              <UnstyledLink href="/">
+                <Image
+                  width={props.logoWidth} height={props.logoHeight} 
+                  src="/images/layout/Logo.png"
+                  alt="openstore-logo"
+                  decoding="async"
+                />
+              </UnstyledLink>
             </div>
           </div>
         </div>
@@ -156,12 +161,17 @@ export default function HeaderMenu(props: Props) {
               </UnstyledLink>
             </div>
             <div className="absolute bottom-20 lg:bottom-28 right-9">
-              <Image
-                width={props.logoWidth} height={props.logoHeight}
-                src="/images/layout/Logo.png"
-                alt="openstore-logo"
-                decoding="async"
-              />
+              <UnstyledLink
+                href="https://page.line.me/246xdhfu"
+                className="flex items-center"
+              >
+                <Image
+                  width={props.logoWidth} height={props.logoHeight}
+                  src="/images/layout/Logo.png"
+                  alt="openstore-logo"
+                  decoding="async"
+                />
+              </UnstyledLink>
             </div>
           </div>
         </div>

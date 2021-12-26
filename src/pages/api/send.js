@@ -20,7 +20,9 @@ export default async function handler(req, res) {
  
     try {
       // // メール送信実行
+      console.log("ここから")
       const result = await sgMail.send(msg);
+      console.log(result)
       return res.status(200).json(result)
     } catch (error) {
       // 以下エラー処理

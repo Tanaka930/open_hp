@@ -54,16 +54,16 @@ export default function JobId({jobs}:{jobs:any}) {
             "\n備考: " + data.remark +
             "\nメッセージ: \n\n" + data.message
 
-            const sendGridRes = await fetch('./api/send', {
+            const sendGridRes = await fetch('https://api.staticforms.xyz/submit', {
             body: JSON.stringify({
             // メッセージ内容をいかに格納
-            message: message
-              // name: data.name,
-              // email: data.mailf,
-              // honeypot: '',
-              // message: message,
-              // replyTo: '@',
-              // accessKey: process.env.NEXT_PUBLIC_MAIL_KEY
+            // message: message
+              name: data.name,
+              email: data.mailf,
+              honeypot: '',
+              message: message,
+              replyTo: '@',
+              accessKey: process.env.NEXT_PUBLIC_MAIL_KEY
             }),
             headers: {
             'Content-Type': 'application/json'

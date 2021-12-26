@@ -43,23 +43,23 @@ export default function Contact() {
       }); 
       // console.log("recaptchaRes", recaptchaRes)
       if (recaptchaRes.status === 200) {
-        let message = "タイトル: " + data.title + 
-        "\nカテゴリ: " + data.category +
-        "\n氏名: " + data.name +
-        "\nメールアドレス: " + data.email +
-        "\nお問い合わせ内容:\n\n" + data.message
+        let message = "<br/>タイトル: " + data.title + 
+        "<br/>カテゴリ: " + data.category +
+        "<br/>氏名: " + data.name +
+        "<br/>メールアドレス: " + data.email +
+        "<br/>お問い合わせ内容:<br/><br/>" + data.message
 
-        const sendGridRes = await fetch('./api/send', {
+        const sendGridRes = await fetch('https://api.staticforms.xyz/submit', {
         body: JSON.stringify({
         // メッセージ内容をいかに格納
-          message: message
-          // name: data.name,
-          // email: data.email,
-          // subject: '自社HP お問い合わせ',
-          // honeypot: '',
-          // message: message,
-          // replyTo: '@',
-          // accessKey: process.env.NEXT_PUBLIC_MAIL_KEY
+          // message: message
+          name: data.name,
+          email: data.email,
+          subject: '自社HP お問い合わせ',
+          honeypot: '',
+          message: message,
+          replyTo: '@',
+          accessKey: process.env.NEXT_PUBLIC_MAIL_KEY
         }),
         headers: {
         'Content-Type': 'application/json'

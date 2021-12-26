@@ -1,7 +1,5 @@
 import Seo from "@/components/Seo"
 import TopContent from "@/components/layout/TopContent"
-// トップテキスト用のコンポーネント
-import TopText from '@/components/layout/LowerTopText'
 // 文化用のコンポーネント
 import Culture from '@/components/recruit/Culture'
 // 求める人物像のコンポーネント

@@ -14,12 +14,12 @@ import SectionTitle from '@/components/layout/sectionText'
 import { useForm } from "react-hook-form";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 
-interface Category{
+interface Category {
   title: string
   text:string
 }
 
-interface Categories{
+interface Categories {
   categories: Category[]
   pageData: any;
 }
@@ -35,24 +35,22 @@ type FormData = {
 };
 
 export default function Recruit(categories: Categories) {
-  const { register,
-          handleSubmit,
-          reset,
-          formState: { errors }
-        }
-        = useForm<FormData>();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors }
+  }
+  = useForm<FormData>();
 
   const { executeRecaptcha } = useGoogleReCaptcha();
-
   const onSubmit = async (data: any) => {
     if(data.mailf == data.mails){
       // console.log("executeRecaptcha", executeRecaptcha);
       if (executeRecaptcha) {
         const reCaptchaToken = await executeRecaptcha('contactPage');
         // console.log("reCaptchaToken",reCaptchaToken);
-
         const apiEndPoint = './api/recaptcha';
-        
         const recaptchaRes = await fetch(apiEndPoint, {
           body: JSON.stringify({
             // トークン認証
@@ -63,29 +61,27 @@ export default function Recruit(categories: Categories) {
           },
           method: 'POST',
         }); 
-
         // console.log("recaptchaRes", recaptchaRes)
 
         if (recaptchaRes.status === 200) {
+          let message = "お名前: " + data.name +
+          "\nメールアドレス: " + data.mailf +
+          "\n職種: " + data.category +
+          "\nお電話番号: " + data.tell +
+          "\n備考: " + data.remark +
+          "\nメッセージ: \n\n" + data.message
 
-          let message = "<br/>お名前: " + data.name +
-          "<br/>メールアドレス: " + data.mailf +
-          "<br/>職種: " + data.category +
-          "<br/>お電話番号: " + data.tell +
-          "<br/>備考: " + data.remark +
-          "<br/>メッセージ: <br/><br/>" + data.message
-
-          const sendGridRes = await fetch('https://api.staticforms.xyz/submit', {
+          const sendGridRes = await fetch('./api/send', {
           body: JSON.stringify({
           // メッセージ内容をいかに格納
-          // message: message
-            name: data.name,
-            email: data.mailf,
-            subject: '自社HP 求人のお問い合わせ',
-            honeypot: '',
-            message: message,
-            replyTo: '@',
-            accessKey: process.env.NEXT_PUBLIC_MAIL_KEY
+            message: message
+            // name: data.name,
+            // email: data.mailf,
+            // subject: '自社HP 求人のお問い合わせ',
+            // honeypot: '',
+            // message: message,
+            // replyTo: '@',
+            // accessKey: process.env.NEXT_PUBLIC_MAIL_KEY
           }),
           headers: {
           'Content-Type': 'application/json'
@@ -101,7 +97,6 @@ export default function Recruit(categories: Categories) {
             alert("正しく送信されませんでした。もう一度やり直してください。")
             console.error("sendGridRes.status",sendGridRes.status);
           }
-
         } else {
           alert("認証エラーが発生しました。もう一度やり直してください。")
           console.error("recaptchaRes.status", recaptchaRes.status)
@@ -297,28 +292,22 @@ export const getStaticProps = async () => {
   const key = {
     headers: {'X-MICROCMS-API-KEY': String(process.env.NEXT_PUBLIC_MICRO_CMS_API_KEY)},
   };
-
   // カテゴリー情報を取得
   const category_data = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/job_category`, key)
     .then(res => res.json())
     .catch(() => null);
-
   const job_data = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/jobs?offset=0&limit=20`, key)
   .then(res => res.json())
   .catch(() => null);
-
   // ページ生成用
   const page_data = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/recruitment`, key)
   .then(res => res.json())
   .catch(() => null);
-
   // 一覧表示用のリスト
   const jobsList: Array<object> = [];
-
   category_data.contents.map((data:any) => {
 
     const jobsInnerList: Array<object> = [];
-
     job_data.contents.map((innerData:any) => {
       if(data.id == innerData.category.id){
         jobsInnerList.push(
@@ -338,7 +327,6 @@ export const getStaticProps = async () => {
         jobDatas: jobsInnerList
       }
     )
-
   })
 
   return {

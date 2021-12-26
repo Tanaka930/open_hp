@@ -30,9 +30,7 @@ export default function JobId({jobs}:{jobs:any}) {
         if (executeRecaptcha) {
           const reCaptchaToken = await executeRecaptcha('contactPage');
           // console.log("reCaptchaToken",reCaptchaToken);
-
           const apiEndPoint = '../api/recaptcha';
-          
           const recaptchaRes = await fetch(apiEndPoint, {
             body: JSON.stringify({
               // トークン認証
@@ -48,24 +46,24 @@ export default function JobId({jobs}:{jobs:any}) {
 
           if (recaptchaRes.status === 200) {
 
-            let message = "<br/>お名前: " + data.name +
-            "<br/>求人名: " + jobs.title +
-            "<br/>メールアドレス: " + data.mailf +
-            "<br/>職種: " + jobs.category.title +
-            "<br/>お電話番号: " + data.tell +
-            "<br/>備考: " + data.remark +
-            "<br/>メッセージ: <br/><br/>" + data.message
+            let message = "お名前: " + data.name +
+            "\n求人名: " + jobs.title +
+            "\nメールアドレス: " + data.mailf +
+            "\n職種: " + jobs.category.title +
+            "\nお電話番号: " + data.tell +
+            "\n備考: " + data.remark +
+            "\nメッセージ: \n\n" + data.message
 
-            const sendGridRes = await fetch('https://api.staticforms.xyz/submit', {
+            const sendGridRes = await fetch('./api/send', {
             body: JSON.stringify({
             // メッセージ内容をいかに格納
-            // message: message
-              name: data.name,
-              email: data.mailf,
-              honeypot: '',
-              message: message,
-              replyTo: '@',
-              accessKey: process.env.NEXT_PUBLIC_MAIL_KEY
+            message: message
+              // name: data.name,
+              // email: data.mailf,
+              // honeypot: '',
+              // message: message,
+              // replyTo: '@',
+              // accessKey: process.env.NEXT_PUBLIC_MAIL_KEY
             }),
             headers: {
             'Content-Type': 'application/json'
@@ -87,8 +85,8 @@ export default function JobId({jobs}:{jobs:any}) {
             console.error("recaptchaRes.status", recaptchaRes.status)
           }
         } else {
-            alert("エラーが発生しました。もう一度やり直してください。")
-            console.error("recaptcha認証エラー")
+          alert("エラーが発生しました。もう一度やり直してください。")
+          console.error("recaptcha認証エラー")
         }
       }else{
         alert("メールアドレスが一致しません。もう一度ご確認ください。")
@@ -409,9 +407,6 @@ export const getStaticPaths = async (context:any) => {
   // 少しづつ呼び出して処理する方法を考えるべき
   const offset:number = 0;
   const limit:number = 80;
-  
-
-
   const jobs = await client.get({ 
     endpoint: "jobs",
     queries: {
@@ -419,14 +414,12 @@ export const getStaticPaths = async (context:any) => {
       limit
     }
   });
-
   const paths = jobs.contents.map((content:any) => `/jobs/${content.id}`);
   
   return { paths, fallback: true };
 };
 
 export const getStaticProps = async (context:any) => {
-
   const id = context.params.id;
   const jobs = await client.get({ endpoint: "jobs", contentId: id });
 

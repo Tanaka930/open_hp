@@ -52,7 +52,7 @@ export default function Contact() {
         const sendGridRes = await fetch('./api/send', {
         body: JSON.stringify({
         // メッセージ内容をいかに格納
-          message: message
+          message: message,
           // name: data.name,
           // email: data.email,
           // subject: '自社HP お問い合わせ',

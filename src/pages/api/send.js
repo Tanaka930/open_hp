@@ -1,6 +1,6 @@
 export default async function handler(req, res) { 
   // リクエストがpostの時のみ実施 
-  console.log(res)
+  // console.log(res)
   if(req.method === 'POST') {
     // sendgridのライブラリを読み込み
     const sgMail = require('@sendgrid/mail');

@@ -15,12 +15,13 @@ type FormData = {
 };
 
 export default function Contact() {
-  const { register,
-          handleSubmit,
-          reset,
-          formState: { errors }
-        }
-        = useForm<FormData>();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors }
+  }
+  = useForm<FormData>();
 
   const { executeRecaptcha } = useGoogleReCaptcha();
 
@@ -29,9 +30,7 @@ export default function Contact() {
     if (executeRecaptcha) {
       const reCaptchaToken = await executeRecaptcha('contactPage');
       // console.log("reCaptchaToken",reCaptchaToken);
-
-      const apiEndPoint = './api/recaptcha';
-      
+      const apiEndPoint = './api/recaptcha'; 
       const recaptchaRes = await fetch(apiEndPoint, {
         body: JSON.stringify({
           // トークン認証
@@ -43,25 +42,24 @@ export default function Contact() {
         method: 'POST',
       }); 
       // console.log("recaptchaRes", recaptchaRes)
-
       if (recaptchaRes.status === 200) {
-        let message = "<br/>タイトル: " + data.title +
-        "<br/>カテゴリ: " + data.category +
-        "<br/>氏名: " + data.name +
-        "<br/>メールアドレス: " + data.email +
-        "<br/>お問い合わせ内容: <br/><br/>" + data.message
+        let message = "タイトル: " + data.title + 
+        "\nカテゴリ: " + data.category +
+        "\n氏名: " + data.name +
+        "\nメールアドレス: " + data.email +
+        "\nお問い合わせ内容:\n\n" + data.message
 
-        const sendGridRes = await fetch('https://api.staticforms.xyz/submit', {
+        const sendGridRes = await fetch('./api/send', {
         body: JSON.stringify({
         // メッセージ内容をいかに格納
-        // message: message
-          name: data.name,
-          email: data.email,
-          subject: '自社HP お問い合わせ',
-          honeypot: '',
-          message: message,
-          replyTo: '@',
-          accessKey: process.env.NEXT_PUBLIC_MAIL_KEY
+          message: message
+          // name: data.name,
+          // email: data.email,
+          // subject: '自社HP お問い合わせ',
+          // honeypot: '',
+          // message: message,
+          // replyTo: '@',
+          // accessKey: process.env.NEXT_PUBLIC_MAIL_KEY
         }),
         headers: {
         'Content-Type': 'application/json'
@@ -77,14 +75,13 @@ export default function Contact() {
           alert("正しく送信されませんでした。もう一度やり直してください。")
           // console.error("sendGridRes.status",sendGridRes.status);
         }
-
       } else {
         alert("認証エラーが発生しました。もう一度やり直してください。")
         // console.error("recaptchaRes.status", recaptchaRes.status)
       }
     } else {
-        alert("エラーが発生しました。もう一度やり直してください。")
-        // console.error("recaptcha認証エラー")
+      alert("エラーが発生しました。もう一度やり直してください。")
+      // console.error("recaptcha認証エラー")
     }
   };
 
@@ -93,7 +90,6 @@ export default function Contact() {
     <>
       <Seo templateTitle='Contact' />
       <TopContent title="CONTACT" text="お問い合わせ" />
-
       <div className="px-per10 font-pro65Medium font-black">
         <div className="max-w-5xl mx-auto mb-20 md:mb-40">
           <div className="bg-white w-full rounded-3xl border border-gray-300 p-8 sm:p-12">
@@ -115,11 +111,9 @@ export default function Contact() {
                     })}
                     className="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-3 bg-gray-100 border rounded border-gray-200"
                   />
-
                   {errors.title && <span className="text-red-600 text-sm pt-2">{errors.title.message}</span>}
                 </div>
               </div>
-
               <div className="md:flex items-center mt-10">
                 <div className="w-full flex flex-col">
                   <label htmlFor="category" className="flex items-center text-xl">
@@ -205,16 +199,13 @@ export default function Contact() {
                   {errors.message && <span className="text-red-600 text-sm pt-2">{errors.message.message}</span>}
                 </div>
               </div>
-              
               <div className="flex items-center justify-center w-full mt-9">
                 <SubmitButton />
               </div>
             </form>
-
             <div className="mt-8 md:mt-12">
               <RecaptchaText />
             </div>
-
           </div>
         </div>
       </div>

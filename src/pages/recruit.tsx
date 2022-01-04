@@ -11,6 +11,8 @@ import Job from '@/components/recruit/Job'
 import SectionTitle from '@/components/layout/sectionText'
 import { useForm } from "react-hook-form";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
+import { init,send } from 'emailjs-com';
+
 
 interface Category {
   title: string
@@ -62,39 +64,67 @@ export default function Recruit(categories: Categories) {
         // console.log("recaptchaRes", recaptchaRes)
 
         if (recaptchaRes.status === 200) {
-          let message = "<br/>お名前: " + data.name +
-          "<br/>メールアドレス: " + data.mailf +
-          "<br/>職種: " + data.category +
-          "<br/>お電話番号: " + data.tell +
-          "<br/>備考: " + data.remark +
-          "<br/>メッセージ: <br/><br/>" + data.message
 
-          const sendGridRes = await fetch('https://api.staticforms.xyz/submit', {
-          body: JSON.stringify({
-          // メッセージ内容をいかに格納
-            // message: message
-            name: data.name,
-            email: data.mailf,
-            subject: '自社HP 求人のお問い合わせ',
-            honeypot: '',
-            message: message,
-            replyTo: '@',
-            accessKey: process.env.NEXT_PUBLIC_MAIL_KEY
-          }),
-          headers: {
-          'Content-Type': 'application/json'
-          },
-          method: 'POST'
-          })
+          const userID = process.env.NEXT_PUBLIC_REACT_APP_USER_ID;
+          const serviceID = process.env.NEXT_PUBLIC_REACT_APP_SERVICE_ID;
+          const templateID = process.env.NEXT_PUBLIC_REACT_APP_TEMPLATE_ID;
 
-          // console.log("sendGridRes",sendGridRes);
-          if (sendGridRes.status === 200) {
-            reset()
-            alert("正しく送信されました。\nお問い合わせありがとうございます。")
-          } else {
-            alert("正しく送信されませんでした。もう一度やり直してください。")
-            console.error("sendGridRes.status",sendGridRes.status);
+          let message = "\nお名前: " + data.name +
+          "\nメールアドレス: " + data.mailf +
+          "\n職種: " + data.category +
+          "\nお電話番号: " + data.tell +
+          "\n備考: " + data.remark +
+          "\nメッセージ: \n\n" + data.message
+
+          if (
+            userID !== undefined &&
+            serviceID !== undefined &&
+            templateID !== undefined
+          ){
+            init(userID);
+          
+            const emailjsServiceId = serviceID;
+            const emailjsTemplateId = templateID;
+  
+            // emailjsのテンプレートに渡すパラメータを宣言
+            const templateParams = {
+                from_name: "HP採用のお問合せ",
+                message: message
+            };
+  
+            // ServiceId,Template_ID,テンプレートに渡すパラメータを引数にemailjsを呼び出し
+            send(emailjsServiceId,emailjsTemplateId, templateParams).
+            then(()=>{
+              alert("正しく送信されました。\nお問い合わせありがとうございます。")
+            });
           }
+
+          // const sendGridRes = await fetch('https://api.staticforms.xyz/submit', {
+          // body: JSON.stringify({
+          // // メッセージ内容をいかに格納
+          //   // message: message
+          //   name: data.name,
+          //   email: data.mailf,
+          //   subject: '自社HP 求人のお問い合わせ',
+          //   honeypot: '',
+          //   message: message,
+          //   replyTo: '@',
+          //   accessKey: process.env.NEXT_PUBLIC_MAIL_KEY
+          // }),
+          // headers: {
+          // 'Content-Type': 'application/json'
+          // },
+          // method: 'POST'
+          // })
+
+          // // console.log("sendGridRes",sendGridRes);
+          // if (sendGridRes.status === 200) {
+          //   reset()
+          //   alert("正しく送信されました。\nお問い合わせありがとうございます。")
+          // } else {
+          //   alert("正しく送信されませんでした。もう一度やり直してください。")
+          //   console.error("sendGridRes.status",sendGridRes.status);
+          // }
         } else {
           alert("認証エラーが発生しました。もう一度やり直してください。")
           console.error("recaptchaRes.status", recaptchaRes.status)

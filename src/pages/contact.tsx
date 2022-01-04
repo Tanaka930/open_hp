@@ -5,6 +5,9 @@ import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 import Annotation from "@/molecules/form/annotation";
 import SubmitButton from "@/molecules/form/submitButton";
 import RecaptchaText from "@/molecules/recaptchaText";
+import { init,send } from 'emailjs-com';
+
+
 
 type FormData = {
   title: string;
@@ -43,38 +46,76 @@ export default function Contact() {
       }); 
       // console.log("recaptchaRes", recaptchaRes)
       if (recaptchaRes.status === 200) {
-        let message = "<br/>タイトル: " + data.title + 
-        "<br/>カテゴリ: " + data.category +
-        "<br/>氏名: " + data.name +
-        "<br/>メールアドレス: " + data.email +
-        "<br/>お問い合わせ内容:<br/><br/>" + data.message
 
-        const sendGridRes = await fetch('https://api.staticforms.xyz/submit', {
-        body: JSON.stringify({
-        // メッセージ内容をいかに格納
-          // message: message
-          name: data.name,
-          email: data.email,
-          subject: '自社HP お問い合わせ',
-          honeypot: '',
-          message: message,
-          replyTo: '@',
-          accessKey: process.env.NEXT_PUBLIC_MAIL_KEY
-        }),
-        headers: {
-        'Content-Type': 'application/json'
-        },
-        method: 'POST'
-        })
+        const userID = process.env.NEXT_PUBLIC_REACT_APP_USER_ID;
+        const serviceID = process.env.NEXT_PUBLIC_REACT_APP_SERVICE_ID;
+        const templateID = process.env.NEXT_PUBLIC_REACT_APP_TEMPLATE_ID;
+
+        let message = "\nタイトル: " + data.title + 
+        "\nカテゴリ: " + data.category +
+        "\n氏名: " + data.name +
+        "\nメールアドレス: " + data.email +
+        "\nお問い合わせ内容:\n\n" + data.message
+
+
+        if (
+          userID !== undefined &&
+          serviceID !== undefined &&
+          templateID !== undefined
+        ){
+          init(userID);
+        
+          const emailjsServiceId = serviceID;
+          const emailjsTemplateId = templateID;
+
+          // emailjsのテンプレートに渡すパラメータを宣言
+          const templateParams = {
+              from_name: "HPお問合せ",
+              message: message
+          };
+
+          // ServiceId,Template_ID,テンプレートに渡すパラメータを引数にemailjsを呼び出し
+          send(emailjsServiceId,emailjsTemplateId, templateParams).
+          then(()=>{
+            alert("正しく送信されました。\nお問い合わせありがとうございます。")
+          });
+        }
+
+
+
+
+        // const sendGridRes = await fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSf_2kjCLqJt1vXT86P8Dbmv1Oy3mopiFTwiR_JzSWz4W4-3Wg/formResponse', 
+        // {
+        //   body: JSON.stringify({
+        //   // メッセージ内容をいかに格納
+        //     // message: message
+        //     // name: data.name,
+        //     // email: data.email,
+        //     // subject: '自社HP お問い合わせ',
+        //     // honeypot: '',
+        //     // message: message,
+        //     // replyTo: '@',
+        //     // accessKey: process.env.NEXT_PUBLIC_MAIL_KEY
+        //     id: "1FAIpQLSf_2kjCLqJt1vXT86P8Dbmv1Oy3mopiFTwiR_JzSWz4W4-3Wg",
+        //     items:{
+        //       id: "877284658",
+        //       value: message
+        //     }
+        //   }),
+        //   headers: {
+        //   'Content-Type': 'application/json'
+        //   },
+        //   method: 'POST'
+        // })
 
         // console.log("sendGridRes",sendGridRes);
-        if (sendGridRes.status === 200) {
-          reset()
-          alert("正しく送信されました。\nお問い合わせありがとうございます。")
-        } else {
-          alert("正しく送信されませんでした。もう一度やり直してください。")
-          // console.error("sendGridRes.status",sendGridRes.status);
-        }
+        // if (sendGridRes.status === 200) {
+        //   reset()
+        //   alert("正しく送信されました。\nお問い合わせありがとうございます。")
+        // } else {
+        //   alert("正しく送信されませんでした。もう一度やり直してください。")
+        //   // console.error("sendGridRes.status",sendGridRes.status);
+        // }
       } else {
         alert("認証エラーが発生しました。もう一度やり直してください。")
         // console.error("recaptchaRes.status", recaptchaRes.status)

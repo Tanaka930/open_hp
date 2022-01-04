@@ -3,6 +3,7 @@ import Seo from '@/components/Seo';
 import TopContentType2 from '@/components/layout/topContentType2';
 import { useForm } from "react-hook-form";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { init,send } from 'emailjs-com';
 
 type FormData = {
   name: string;
@@ -46,6 +47,10 @@ export default function JobId({jobs}:{jobs:any}) {
 
           if (recaptchaRes.status === 200) {
 
+            const userID = process.env.NEXT_PUBLIC_REACT_APP_USER_ID;
+            const serviceID = process.env.NEXT_PUBLIC_REACT_APP_SERVICE_ID;
+            const templateID = process.env.NEXT_PUBLIC_REACT_APP_TEMPLATE_ID;
+
             let message = "お名前: " + data.name +
             "\n求人名: " + jobs.title +
             "\nメールアドレス: " + data.mailf +
@@ -54,31 +59,54 @@ export default function JobId({jobs}:{jobs:any}) {
             "\n備考: " + data.remark +
             "\nメッセージ: \n\n" + data.message
 
-            const sendGridRes = await fetch('https://api.staticforms.xyz/submit', {
-            body: JSON.stringify({
-            // メッセージ内容をいかに格納
-            // message: message
-              name: data.name,
-              email: data.mailf,
-              honeypot: '',
-              message: message,
-              replyTo: '@',
-              accessKey: process.env.NEXT_PUBLIC_MAIL_KEY
-            }),
-            headers: {
-            'Content-Type': 'application/json'
-            },
-            method: 'POST'
-            })
-
-            // console.log("sendGridRes",sendGridRes);
-            if (sendGridRes.status === 200) {
-              reset()
-              alert("正しく送信されました。\nお問い合わせありがとうございます。")
-            } else {
-              alert("正しく送信されませんでした。もう一度やり直してください。")
-              console.error("sendGridRes.status",sendGridRes.status);
+            if (
+              userID !== undefined &&
+              serviceID !== undefined &&
+              templateID !== undefined
+            ){
+              init(userID);
+            
+              const emailjsServiceId = serviceID;
+              const emailjsTemplateId = templateID;
+    
+              // emailjsのテンプレートに渡すパラメータを宣言
+              const templateParams = {
+                  from_name: "HPお問合せ",
+                  message: message
+              };
+    
+              // ServiceId,Template_ID,テンプレートに渡すパラメータを引数にemailjsを呼び出し
+              send(emailjsServiceId,emailjsTemplateId, templateParams).
+              then(()=>{
+                alert("正しく送信されました。\nお問い合わせありがとうございます。")
+              });
             }
+
+            // const sendGridRes = await fetch('https://api.staticforms.xyz/submit', {
+            // body: JSON.stringify({
+            // // メッセージ内容をいかに格納
+            // // message: message
+            //   name: data.name,
+            //   email: data.mailf,
+            //   honeypot: '',
+            //   message: message,
+            //   replyTo: '@',
+            //   accessKey: process.env.NEXT_PUBLIC_MAIL_KEY
+            // }),
+            // headers: {
+            // 'Content-Type': 'application/json'
+            // },
+            // method: 'POST'
+            // })
+
+            // // console.log("sendGridRes",sendGridRes);
+            // if (sendGridRes.status === 200) {
+            //   reset()
+            //   alert("正しく送信されました。\nお問い合わせありがとうございます。")
+            // } else {
+            //   alert("正しく送信されませんでした。もう一度やり直してください。")
+            //   console.error("sendGridRes.status",sendGridRes.status);
+            // }
 
           } else {
             alert("認証エラーが発生しました。もう一度やり直してください。")

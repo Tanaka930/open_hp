@@ -96,6 +96,7 @@ export default function Recruit(categories: Categories) {
             send(emailjsServiceId,emailjsTemplateId, templateParams).
             then(()=>{
               alert("正しく送信されました。\nお問い合わせありがとうございます。")
+              reset()
             });
           }
 

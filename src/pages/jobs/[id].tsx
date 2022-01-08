@@ -79,6 +79,7 @@ export default function JobId({jobs}:{jobs:any}) {
               send(emailjsServiceId,emailjsTemplateId, templateParams).
               then(()=>{
                 alert("正しく送信されました。\nお問い合わせありがとうございます。")
+                reset()
               });
             }
 

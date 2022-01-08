@@ -13,35 +13,26 @@ interface Explanation{
   alt_text: string
 }
 
-interface Achievement{
-  title: string,
-  image: string
-}
 
 export default function Home(props:any){
-  const achievement: Achievement = {
-    title: '納入実績',
-    // image: '/images/service/dx/nounyu.png'
-    image: props.data.dxAchieveImage.url
-  }
 
   return(
     <>
-      <Seo templateTitle='オープンストアDX事業' />
-      <TopContentType2 title="DX事業" />
+      <Seo templateTitle='オープンストアMA事業' />
+      <TopContentType2 title="MA事業" />
       <div className="px-per10">
         <div className="">
           <img
-            src={props.data.dxImage.url}
+            src={props.data.maImage.url}
             decoding="async"
             className="mx-auto shadow-custom rounded-serviceImage"
           />
         </div>
-        <div className="mt-12 mb-20 mx-auto md:w-85 md:mt-9 md:mb-36"
+        <div className="mt-12 mb-20 mx-auto md:w-85 md:mt-9 md:mb-36" 
           dangerouslySetInnerHTML=
           {
             {
-              __html: `${props.data.dxText}`,
+              __html: `${props.data.maText}`,
             }
           } 
         >
@@ -51,16 +42,14 @@ export default function Home(props:any){
         </div>
         <Suppliers 
           topText='お取引先'
-          image={props.data.dxTransactionImage.url}
+          // image='/images/service/dx/torihiki.png'
+          image={props.data.maTransactionImage.url}
           />
-        <InstallationResults 
-          title={achievement.title}
-          image={achievement.image}
-        />
       </div>
     </>
   )
 }
+
 
 export const getStaticProps = async () => {
   const key = {

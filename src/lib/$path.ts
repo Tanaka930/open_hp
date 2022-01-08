@@ -77,6 +77,9 @@ export const pagesPath = {
     },
     line: {
       $url: (url?: { hash?: string }) => ({ pathname: '/services/line' as const, hash: url?.hash })
+    },
+    ma: {
+      $url: (url?: { hash?: string }) => ({ pathname: '/services/ma' as const, hash: url?.hash })
     }
   },
   $url: (url?: { hash?: string }) => ({ pathname: '/' as const, hash: url?.hash })

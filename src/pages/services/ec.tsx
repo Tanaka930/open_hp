@@ -23,8 +23,10 @@ interface Achievement{
 
 export default function Home(props:any){
   const explanation1: Explanation = {
-    text: 'オープンストアは国内では未だ少ないshopify experts の公認パートナーです。Shopifyの魅力は、多様なカスタマイズ性、充実した外部サービスとの連携、 海外展開(越境)への対応、強固なセキュリティーなど多岐に渡ります。これまで開発に多大な時間と費用を要したECサイトもShopifyを活用すれば、低予算かつ高機能なオリジナルショップを短期間で開設することができます。',
-    image: '/images/service/ec/op_shopify.png',
+    // text: 'オープンストアは国内では未だ少ないshopify experts の公認パートナーです。Shopifyの魅力は、多様なカスタマイズ性、充実した外部サービスとの連携、 海外展開(越境)への対応、強固なセキュリティーなど多岐に渡ります。これまで開発に多大な時間と費用を要したECサイトもShopifyを活用すれば、低予算かつ高機能なオリジナルショップを短期間で開設することができます。',
+    text: props.data.ecText,
+    // image: '/images/service/ec/op_shopify.png',
+    image: props.data.ecImage.url,
     width: '413',
     height: '202',
     alt_text: 'オープンストアとshopify'
@@ -49,9 +51,14 @@ export const getStaticProps = async () => {
   .then(res => res.json())
   .catch(() => null);
 
+  const data = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/service`, key)
+    .then(res => res.json())
+    .catch(() => null);
+
   return {
     props:{
       achievement: achievement.contents,
+      data: data
     }
   };
 };

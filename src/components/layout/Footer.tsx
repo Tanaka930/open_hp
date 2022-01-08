@@ -103,9 +103,13 @@ export default function Footer() {
 
                     <span className="text-xs font-themeText">ー LINEサービス</span>
                   </UnstyledLink>
-                  <UnstyledLink href="/services/dx" className="block cursor-pointer">
+                  <UnstyledLink href="/services/dx" className="block cursor-pointer pb-4">
 
                     <span className="text-xs font-themeText">ー DX事業</span>
+                  </UnstyledLink>
+                  <UnstyledLink href="/services/ma" className="block cursor-pointer">
+
+                    <span className="text-xs font-themeText">ー MA事業</span>
                   </UnstyledLink>
                 </div>
 

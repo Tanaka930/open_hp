@@ -18,7 +18,7 @@ export default function ContentBox(props: Props){
                 decoding="async"
         />
         <h4 className="mt-3 mb-5 text-green-700 font-pro65Medium font-black">{props.title}</h4>
-        <div className="text-base px-per13 py-2 text-left font-pro65Medium font-black"
+        <div className="h-60 lg:h-72 text-base px-per13 py-2 text-left font-pro65Medium font-black"
           dangerouslySetInnerHTML=
             {
               {

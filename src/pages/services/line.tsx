@@ -28,8 +28,10 @@ interface Achievement{
 
 export default function Home(props:any){
   const explanation1: Explanation = {
-    text: '公式LINEでは新規顧客をリピーター化させ、顧客生涯価値の向上及び売上の安定を目的としています。オープンストアには構築のプロが多数在籍しております。',
-    image: '/images/service/line/line1.png',
+    // text: '公式LINEでは新規顧客をリピーター化させ、顧客生涯価値の向上及び売上の安定を目的としています。オープンストアには構築のプロが多数在籍しております。',
+    text: props.data.lineText1,
+    // image: '/images/service/line/line1.png',
+    image: props.data.lineImage1.url,
     width: '485',
     height: '303',
     alt_text: '公式LIEN構築',
@@ -38,8 +40,10 @@ export default function Home(props:any){
 
   }
   const explanation2: Explanation = {
-    text: '高機能なリッチメニューの作成、簡易HPの制作、自動応答Botの設定など運用する上で必要な制作をすべて行なっております。新規顧客獲得から既存顧客の満足度アップやリピーター化に向けてトータルでサポートいたします。',
-    image: '/images/service/line/line2.png',
+    // text: '高機能なリッチメニューの作成、簡易HPの制作、自動応答Botの設定など運用する上で必要な制作をすべて行なっております。新規顧客獲得から既存顧客の満足度アップやリピーター化に向けてトータルでサポートいたします。',
+    text: props.data.lineText2,
+    // image: '/images/service/line/line2.png',
+    image: props.data.lineImage2.url,
     width: '485',
     height: '303',
     alt_text: '公式LIEN構築',
@@ -47,8 +51,10 @@ export default function Home(props:any){
     subTitle: 'service2'
   }
   const explanation3: Explanation = {
-    text: '公式LINEを活用した顧客管理も簡単かつ効率的にできます。お客様一人ひとりの情報や、ターゲットを絞ったメッセージ配信も可能です。また、的確な顧客分析は、リピーターの増加につながります。',
-    image: '/images/service/line/line3.png',
+    // text: '公式LINEを活用した顧客管理も簡単かつ効率的にできます。お客様一人ひとりの情報や、ターゲットを絞ったメッセージ配信も可能です。また、的確な顧客分析は、リピーターの増加につながります。',
+    text: props.data.lineText2,
+    // image: '/images/service/line/line3.png',
+    image: props.data.lineImage2.url,
     width: '485',
     height: '303',
     alt_text: '公式LIEN管理',
@@ -106,9 +112,14 @@ export const getStaticProps = async () => {
   .then(res => res.json())
   .catch(() => null);
 
+  const data = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/service`, key)
+  .then(res => res.json())
+  .catch(() => null);
+
   return {
     props:{
       achievement: achievement.contents,
+      data: data
     }
   };
 };

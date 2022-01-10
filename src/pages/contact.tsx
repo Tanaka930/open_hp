@@ -6,6 +6,7 @@ import Annotation from "@/molecules/form/annotation";
 import SubmitButton from "@/molecules/form/submitButton";
 import RecaptchaText from "@/molecules/recaptchaText";
 import { init,send } from 'emailjs-com';
+import {useState, useRef} from 'react';
 
 
 
@@ -28,9 +29,18 @@ export default function Contact() {
 
   const { executeRecaptcha } = useGoogleReCaptcha();
 
+  const processing = useRef(false);
+
   const onSubmit  = async (data: FormData) => {
     // console.log("executeRecaptcha", executeRecaptcha);
     if (executeRecaptcha) {
+
+      if(processing.current){
+        return
+      }
+
+      processing.current = true;
+
       const reCaptchaToken = await executeRecaptcha('contactPage');
       // console.log("reCaptchaToken",reCaptchaToken);
       const apiEndPoint = './api/recaptcha'; 
@@ -79,51 +89,22 @@ export default function Contact() {
           then(()=>{
             alert("正しく送信されました。\nお問い合わせありがとうございます。")
             reset()
+            processing.current = false;
           });
         }
-
-
-
-
-        // const sendGridRes = await fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSf_2kjCLqJt1vXT86P8Dbmv1Oy3mopiFTwiR_JzSWz4W4-3Wg/formResponse', 
-        // {
-        //   body: JSON.stringify({
-        //   // メッセージ内容をいかに格納
-        //     // message: message
-        //     // name: data.name,
-        //     // email: data.email,
-        //     // subject: '自社HP お問い合わせ',
-        //     // honeypot: '',
-        //     // message: message,
-        //     // replyTo: '@',
-        //     // accessKey: process.env.NEXT_PUBLIC_MAIL_KEY
-        //     id: "1FAIpQLSf_2kjCLqJt1vXT86P8Dbmv1Oy3mopiFTwiR_JzSWz4W4-3Wg",
-        //     items:{
-        //       id: "877284658",
-        //       value: message
-        //     }
-        //   }),
-        //   headers: {
-        //   'Content-Type': 'application/json'
-        //   },
-        //   method: 'POST'
-        // })
-
-        // console.log("sendGridRes",sendGridRes);
-        // if (sendGridRes.status === 200) {
-        //   reset()
-        //   alert("正しく送信されました。\nお問い合わせありがとうございます。")
-        // } else {
-        //   alert("正しく送信されませんでした。もう一度やり直してください。")
-        //   // console.error("sendGridRes.status",sendGridRes.status);
-        // }
+        else{
+          alert("エラーが発生しました。もう一度やり直してください。")
+          processing.current = false;
+        }
       } else {
         alert("認証エラーが発生しました。もう一度やり直してください。")
         // console.error("recaptchaRes.status", recaptchaRes.status)
+        processing.current = false;
       }
     } else {
       alert("エラーが発生しました。もう一度やり直してください。")
       // console.error("recaptcha認証エラー")
+      processing.current = false;
     }
   };
 
@@ -173,6 +154,7 @@ export default function Contact() {
                     <option value="EC事業">EC事業</option>
                     <option value="LINE事業">LINE事業</option>
                     <option value="DX事業">DX事業</option>
+                    <option value="MA事業">MA事業</option>
                     <option value="業務委託">業務委託</option>
                     <option value="その他">その他</option>
                   </select>
@@ -241,7 +223,7 @@ export default function Contact() {
                   {errors.message && <span className="text-red-600 text-sm pt-2">{errors.message.message}</span>}
                 </div>
               </div>
-              <div className="flex items-center justify-center w-full mt-9">
+              <div className={`flex items-center justify-center w-full mt-9`}>
                 <SubmitButton />
               </div>
             </form>

@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { init,send } from 'emailjs-com';
 
+import {useState, useRef} from 'react';
+
 type FormData = {
   name: string;
   mailf: string;
@@ -25,10 +27,19 @@ export default function JobId({jobs}:{jobs:any}) {
 
     const { executeRecaptcha } = useGoogleReCaptcha();
 
+    const processing = useRef(false);
+
     const onSubmit = async (data: any) => {
       if(data.mailf == data.mails){
         // console.log("executeRecaptcha", executeRecaptcha);
         if (executeRecaptcha) {
+
+          if(processing.current){
+            return
+          }
+    
+          processing.current = true;
+
           const reCaptchaToken = await executeRecaptcha('contactPage');
           // console.log("reCaptchaToken",reCaptchaToken);
           const apiEndPoint = '../api/recaptcha';
@@ -80,45 +91,20 @@ export default function JobId({jobs}:{jobs:any}) {
               then(()=>{
                 alert("正しく送信されました。\nお問い合わせありがとうございます。")
                 reset()
+                processing.current = false;
               });
             }
-
-            // const sendGridRes = await fetch('https://api.staticforms.xyz/submit', {
-            // body: JSON.stringify({
-            // // メッセージ内容をいかに格納
-            // // message: message
-            //   name: data.name,
-            //   email: data.mailf,
-            //   honeypot: '',
-            //   message: message,
-            //   replyTo: '@',
-            //   accessKey: process.env.NEXT_PUBLIC_MAIL_KEY
-            // }),
-            // headers: {
-            // 'Content-Type': 'application/json'
-            // },
-            // method: 'POST'
-            // })
-
-            // // console.log("sendGridRes",sendGridRes);
-            // if (sendGridRes.status === 200) {
-            //   reset()
-            //   alert("正しく送信されました。\nお問い合わせありがとうございます。")
-            // } else {
-            //   alert("正しく送信されませんでした。もう一度やり直してください。")
-            //   console.error("sendGridRes.status",sendGridRes.status);
-            // }
-
           } else {
             alert("認証エラーが発生しました。もう一度やり直してください。")
-            console.error("recaptchaRes.status", recaptchaRes.status)
+            processing.current = false;
           }
         } else {
           alert("エラーが発生しました。もう一度やり直してください。")
-          console.error("recaptcha認証エラー")
+          processing.current = false;
         }
       }else{
         alert("メールアドレスが一致しません。もう一度ご確認ください。")
+        processing.current = false;
       }
     }
 

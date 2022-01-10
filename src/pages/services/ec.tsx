@@ -32,9 +32,11 @@ export default function Home(props:any){
     alt_text: 'オープンストアとshopify'
   }
 
+  const seoText:string=`オリジナルブランドの作成からECサイトの構築、集客、運用まで一括でサポートいたします。オープンストアにはEC構築、運用のエキスパートが多数在籍しておりますので、安心してお任せください。`
+
   return(
     <>
-      <Seo templateTitle='オープンストアEC事業' />
+      <Seo templateTitle='オープンストアEC事業' text={seoText} />
       <TopContentType2 title="Shopify構築" />
       <UnderText image={explanation1.image} text={explanation1.text} altText={explanation1.text} width={explanation1.width} height={explanation1.height} />
       <Achievement datas={props.achievement} bgColor="gray-50" children={<BackServiceButton />} />

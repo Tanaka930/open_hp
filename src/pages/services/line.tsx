@@ -62,9 +62,11 @@ export default function Home(props:any){
     subTitle: 'service3'
   }
 
+  const seoText:string =`LINEを通じた顧客管理、リピーターの獲得をサポートいたします。公式LINEに関することは気軽にご相談ください。オープンストアならではのノウハウをお客様にあった形でご提案いたします。`
+
   return(
     <>
-      <Seo templateTitle='オープンストアLINE事業' />
+      <Seo templateTitle='オープンストアLINE事業' text={seoText} />
       <TopContentType2 title="LINEサービス" />
       <section className="bg-gray-50">
         <LeftText 

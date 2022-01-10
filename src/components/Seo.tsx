@@ -18,6 +18,7 @@ const defaultMeta = {
 type SeoProps = {
   date?: string;
   templateTitle?: string;
+  text?: string;
 } & Partial<typeof defaultMeta>;
 
 // 実行する処理
@@ -28,6 +29,8 @@ export default function Seo(props: SeoProps){
     ...props,
   };
 
+  let metaText:string = ""
+
   // サイトネームがある時、は名前をセットする
   meta['title'] = props.templateTitle
     ? `${props.templateTitle} | ${meta.siteName}`
@@ -35,8 +38,14 @@ export default function Seo(props: SeoProps){
 
   meta.image = '	https://d350jvzsjcjxs3.cloudfront.net/images/layout/Logo_green2.png'
 
+  if(typeof props.text === "undefined"){
+    metaText = meta.description
+  }else{
+    metaText = props.text
+  }
+
   meta.date = openGraph({
-    description: meta.description,
+    description: metaText,
     siteName: props.templateTitle ? meta.siteName : meta.title,
     templateTitle: props.templateTitle,
   });

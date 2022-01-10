@@ -15,10 +15,10 @@ interface Explanation{
 
 
 export default function Home(props:any){
-
+  const seoText:string="弊社ではMA事業を新規に立ち上げました。"
   return(
     <>
-      <Seo templateTitle='オープンストアMA事業' />
+      <Seo templateTitle='オープンストアMA事業' text={seoText} />
       <TopContentType2 title="MA事業" />
       <div className="px-per10">
         <div className="">

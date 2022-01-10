@@ -111,7 +111,20 @@ export default function JobId({jobs}:{jobs:any}) {
 
     return(
       <>
-        <Seo templateTitle={`オープンストア ${jobs.title}`} />
+        <Seo templateTitle={`オープンストア求人 ${jobs.title}`} 
+        text={
+          "求人名:" + jobs.title + "\n" +
+          "給与:" + jobs.Salary + "\n" +
+          "賞与:" + jobs.bonus + "\n" +
+          "勤務地:" + jobs.location + "\n" +
+          "勤務時間:" + jobs.workTime + "\n" +
+          "休日:" + jobs.holiday + "\n" +
+          "各種保険:" + jobs.insurance + "\n" +
+          "福利厚生:" + jobs.welfare + "\n" +
+          "評価:" + jobs.evaluation + "\n" +
+          "備考:" + jobs.remarks + "\n"
+        }
+        />
         <TopContentType2 title={jobs.category.title} />
         <section className="font-pro65Medium font-black">
           <div className="flex items-center justify-center">

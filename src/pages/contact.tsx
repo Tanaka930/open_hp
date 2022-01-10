@@ -108,10 +108,12 @@ export default function Contact() {
     }
   };
 
+  const seoText = `「Shopifyについて」「LINE構築について」「店舗DXについて」など、当社の事業に関することでご質問などがあれば、お気軽にお問い合わせください。`
+
   // 以下のテンプレートはマークアップ時に整形する
   return (
     <>
-      <Seo templateTitle='Contact' />
+      <Seo templateTitle='Contact' text={seoText}/>
       <TopContent title="CONTACT" text="お問い合わせ" />
       <div className="px-per10 font-pro65Medium font-black">
         <div className="max-w-5xl mx-auto mb-20 md:mb-40">

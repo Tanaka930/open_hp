@@ -84,6 +84,7 @@ export default function User(){
     }else{
       return(
         <>
+          <Seo templateTitle='blog' />
           <BlogList blogList={blogs.blogList} blogCategory={blogs.blogCategory} blogUser={blogs.blogUser} pageNum={blogs.pageNum} totalCount={blogs.totalCount} searchSt={false} newBlogList={blogs.newBlogList} popularBlog={blogs.popularBlog}/>
         </>
       );

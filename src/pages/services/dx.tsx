@@ -24,10 +24,11 @@ export default function Home(props:any){
     // image: '/images/service/dx/nounyu.png'
     image: props.data.dxAchieveImage.url
   }
+  const seoText:string=`キャッシュレス決済の導入から、通信環境の提供まで幅広くご提案いたします。お取引数、４０００店舗超と確かな実績があります。経験豊富な専属の担当者がサポートさせていただきます。`
 
   return(
     <>
-      <Seo templateTitle='オープンストアDX事業' />
+      <Seo templateTitle='オープンストアDX事業' text={seoText}/>
       <TopContentType2 title="DX事業" />
       <div className="px-per10">
         <div className="">

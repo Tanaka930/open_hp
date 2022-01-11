@@ -25,7 +25,7 @@ export default function LeftText(props: Props){
         <div className="lg:w-4/12 lg:mr-10 pt-16 pb-20 lg:py-20">
           <span className="text-minimam text-yellow-main font-pro65Medium font-black">{props.subTitle}</span>
           <h2 className="text-xl text-left w-auto text-green-700 font-pro65Medium font-black">{props.title}</h2>
-          <div className='text-base mt-6'
+          <div className='text-base mt-6 font-pro65Medium font-black'
               dangerouslySetInnerHTML={
                 {
               __html: `${props.text}`,

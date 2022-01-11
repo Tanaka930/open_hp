@@ -28,17 +28,19 @@ export default function Home(props:any){
             className="mx-auto shadow-custom rounded-serviceImage"
           />
         </div>
-        <div className="mt-12 mb-20 mx-auto md:w-85 md:mt-9 md:mb-36" 
-          dangerouslySetInnerHTML=
-          {
+        <div className="flex justify-center">
+          <div className="text-base mt-12 mb-20 md:w-85 md:mt-9 md:mb-36  font-pro65Medium font-black" 
+            dangerouslySetInnerHTML=
             {
-              __html: `${props.data.maText}`,
-            }
-          } 
-        >
-          {/* <p>
-            公式LINEでは新規顧客をリピーター化させ、顧客生涯価値の向上及び売上の安定を目的としています。オープンストアには構築のプロが多数在籍しております。
-          </p> */}
+              {
+                __html: `${props.data.maText}`,
+              }
+            } 
+          >
+            {/* <p>
+              公式LINEでは新規顧客をリピーター化させ、顧客生涯価値の向上及び売上の安定を目的としています。オープンストアには構築のプロが多数在籍しております。
+            </p> */}
+          </div>
         </div>
         <div className="mb-20">
           <UnstyledLink href='https://www.ma.innovation.co.jp/'>

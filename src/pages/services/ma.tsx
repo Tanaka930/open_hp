@@ -51,7 +51,6 @@ export default function Home(props:any){
               />
           </UnstyledLink>
           {/* <div className="py-16 w-full text-center text-xl font-pro65Medium font-black">株式会社Innovation M&A Partners</div> */}
-          <div className="py-16 w-full text-center text-xl font-pro65Medium font-black">株式会社〇〇</div>
         </div>
       </div>
     </>

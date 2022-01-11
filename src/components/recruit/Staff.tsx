@@ -22,7 +22,7 @@ export default function Staff(props: Props){
               decoding="async"
               />
           </div>
-          <div className='w-full text-base lg:px-12'
+          <div className='w-full text-base lg:px-12 font-pro65Medium font-black'
               dangerouslySetInnerHTML={{
               __html: `${text}`,
             }}

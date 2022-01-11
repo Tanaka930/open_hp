@@ -7,6 +7,8 @@ type Props = {
   text: string;
   linkCheck: boolean;
   link: string;
+  width?: string;
+  pointSize?: string;
 }
 
 export default function ServiceContent(props: Props){
@@ -19,8 +21,8 @@ export default function ServiceContent(props: Props){
           <div className="mt-9 md:mt-14">
             <PrimaryButton
               href={props.link}
-              className='text-white border-yellow-main bg-yellow-main hover:bg-green-600 hover:border-green-600'
-              span='bg-white'
+              className={`${props.width} text-white border-yellow-main bg-yellow-main hover:bg-green-600 hover:border-green-600`}
+              span={`bg-white ${props.pointSize}`}
             >
               VIEW MORE
             </PrimaryButton>

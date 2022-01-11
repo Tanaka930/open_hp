@@ -322,7 +322,7 @@ export const getStaticProps = async () => {
   .then(res => res.json())
   .catch(() => null);
   // ページ生成用
-  const page_data = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/recruitment`, key)
+  const page_data = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/content`, key)
   .then(res => res.json())
   .catch(() => null);
   // 一覧表示用のリスト

@@ -2,8 +2,8 @@ import Seo from '@/components/Seo';
 import TopContentType2 from '@/components/layout/topContentType2';
 // 説明文1用のコンポーネント
 import Suppliers from '@/components/layout/suppliers';
-// 実績用のコンポーネント
-import InstallationResults from '@/components/layout/InstallationResults';
+
+import UnstyledLink from '@/components/links/UnstyledLink';
 
 interface Explanation{
   text: string,
@@ -40,11 +40,19 @@ export default function Home(props:any){
             公式LINEでは新規顧客をリピーター化させ、顧客生涯価値の向上及び売上の安定を目的としています。オープンストアには構築のプロが多数在籍しております。
           </p> */}
         </div>
-        <Suppliers 
-          topText='お取引先'
-          // image='/images/service/dx/torihiki.png'
-          image={props.data.maTransactionImage.url}
-          />
+        <div className="mb-20">
+          <UnstyledLink href='https://www.ma.innovation.co.jp/'>
+            <Suppliers 
+              topText='お取引先'
+              // image='/images/service/dx/torihiki.png'
+              image={props.data.maTransactionImage.url}
+              width='289'
+              height='103'
+              />
+          </UnstyledLink>
+          {/* <div className="py-16 w-full text-center text-xl font-pro65Medium font-black">株式会社Innovation M&A Partners</div> */}
+          <div className="py-16 w-full text-center text-xl font-pro65Medium font-black">株式会社〇〇</div>
+        </div>
       </div>
     </>
   )

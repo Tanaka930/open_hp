@@ -53,6 +53,8 @@ export default function Home(props:any){
         <Suppliers 
           topText='お取引先'
           image={props.data.dxTransactionImage.url}
+          width='700'
+          height='317'
           />
         <InstallationResults 
           title={achievement.title}

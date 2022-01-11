@@ -8,70 +8,74 @@ import SectionTitle from '@/components/layout/sectionText'
 import UnstyledLink from '@/components/links/UnstyledLink'
 
 export default function JobTypeId(props:any){
-  return(
-    <>
-      <Seo templateTitle={`オープンストア｜${props.jobType.title}`} text={props.jobType.Introduction} />
-      <TopContent title={props.jobType.title} text="採用情報" />
-      {/* 職種の説明 */}
-      <section className='h-auto w-full'>
-        <div className='justify-center lg:mx-20'>
-          <div className='w-full text-base lg:px-12 font-pro65Medium font-black'
-                    dangerouslySetInnerHTML={{
-                    __html: `${props.jobType.Introduction}`,
-                  }}
-                >
-          </div>
-        </div>
-      </section>
-      {/* 求人リスト */}
-      <section>
-        <SectionTitle title="Jobs" subTitle="求人一覧" position="center" />
-        <div className="flex w-full justify-center">
-          <div className="w-full lg:w-6/12 from-pink-50 to-indigo-100 place-items-center">
-            <div className="w-full rounded py-12 md:py-0">
-              {props.job.map((jobData:any, index: number) => (
-                <div className="bg-white px-4 w-auto">
-                  <div className="h-1 w-full mx-auto border-b"></div>
-                  <UnstyledLink href={`/jobs/${jobData.id}`} className='cursor-pointer'>
-                  <div className="transition hover:bg-green-50">
-                    <div className="transition flex space-x-5 px-5 items-center h-16 text-left">
-                      <h3 className='text-lg md:text-2xl w-full'>{jobData.title}</h3>
-                      <span className="fas fa-plus cursor-pointer" ></span>
-                    </div>
-                  </div>
-                  </UnstyledLink>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* 以下スタッフ関連 */}
-      {props.jobTyleUser.map((content:any) =>(
+  if(typeof props.jobType != "undefined"){
+    return(
+      <>
+        <Seo templateTitle={`オープンストア｜${props.jobType.title}`} text={props.jobType.Introduction} />
+        <TopContent title={props.jobType.title} text="採用情報" />
+        {/* 職種の説明 */}
         <section className='h-auto w-full'>
-          <SectionTitle title="Voice of the employees" subTitle={content.name} position="center" />
           <div className='justify-center lg:mx-20'>
-            <div className='text-center w-full mb-16 lg:mb-28'>
-              <Image 
-                src={content.staffImage.url} 
-                width={content.staffImage.width}
-                height={content.staffImage.height}
-                alt={content.text} 
-                className="rounded-3xl object-cover"
-                decoding="async"
-                />
-            </div>
             <div className='w-full text-base lg:px-12 font-pro65Medium font-black'
-                dangerouslySetInnerHTML={{
-                __html: `${content.text}`,
-              }}
-            >
+                      dangerouslySetInnerHTML={{
+                      __html: `${props.jobType.Introduction}`,
+                    }}
+                  >
             </div>
           </div>
         </section>
-      ))}
-    </>
-  );
+        {/* 求人リスト */}
+        <section>
+          <SectionTitle title="Jobs" subTitle="求人一覧" position="center" />
+          <div className="flex w-full justify-center">
+            <div className="w-full lg:w-6/12 from-pink-50 to-indigo-100 place-items-center">
+              <div className="w-full rounded py-12 md:py-0">
+                {props.job.map((jobData:any, index: number) => (
+                  <div className="bg-white px-4 w-auto">
+                    <div className="h-1 w-full mx-auto border-b"></div>
+                    <UnstyledLink href={`/jobs/${jobData.id}`} className='cursor-pointer'>
+                      <div className="transition hover:bg-green-50">
+                        <div className="transition flex space-x-5 px-5 items-center h-16 text-left">
+                          <h3 className='text-lg md:text-2xl w-full'>{jobData.title}</h3>
+                          <span className="fas fa-plus cursor-pointer" ></span>
+                        </div>
+                      </div>
+                    </UnstyledLink>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* 以下スタッフ関連 */}
+        {props.jobTyleUser.map((content:any) =>(
+          <section className='h-auto w-full'>
+            <SectionTitle title="Voice of the employees" subTitle={content.name} position="center" />
+            <div className='justify-center lg:mx-20'>
+              <div className='text-center w-full mb-16 lg:mb-28'>
+                <Image 
+                  src={content.staffImage.url} 
+                  width={content.staffImage.width}
+                  height={content.staffImage.height}
+                  alt={content.text} 
+                  className="rounded-3xl object-cover"
+                  decoding="async"
+                  />
+              </div>
+              <div className='w-full text-base lg:px-12 font-pro65Medium font-black'
+                  dangerouslySetInnerHTML={{
+                  __html: `${content.text}`,
+                }}
+              >
+              </div>
+            </div>
+          </section>
+        ))}
+      </>
+    );
+  }else{
+    return(<></>);
+  }
 }
 
 export const getStaticPaths = async() => {

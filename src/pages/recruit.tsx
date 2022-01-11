@@ -139,7 +139,7 @@ export default function Recruit(categories: Categories) {
       <TopContent title="RECRUIT" text="採用情報" />
       <Culture pageData={categories.pageData}/>
       <Human />
-      <Staff pageData={categories.pageData}/>
+      {/* <Staff pageData={categories.pageData}/> */}
       <Job categories={categories}/>
 
       <section className="w-full">

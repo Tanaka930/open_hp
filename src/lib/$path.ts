@@ -43,6 +43,11 @@ export const pagesPath = {
   contact: {
     $url: (url?: { hash?: string }) => ({ pathname: '/contact' as const, hash: url?.hash })
   },
+  jobType: {
+    _id: (id: string | number) => ({
+      $url: (url?: { hash?: string }) => ({ pathname: '/jobType/[id]' as const, query: { id }, hash: url?.hash })
+    })
+  },
   jobs: {
     _id: (id: string | number) => ({
       $url: (url?: { hash?: string }) => ({ pathname: '/jobs/[id]' as const, query: { id }, hash: url?.hash })

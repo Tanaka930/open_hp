@@ -2,8 +2,8 @@ import Seo from '@/components/Seo';
 import TopContentType2 from '@/components/layout/topContentType2';
 // 説明文1用のコンポーネント
 import Suppliers from '@/components/layout/suppliers';
-// 実績用のコンポーネント
-import InstallationResults from '@/components/layout/InstallationResults';
+
+import UnstyledLink from '@/components/links/UnstyledLink';
 
 interface Explanation{
   text: string,
@@ -28,23 +28,32 @@ export default function Home(props:any){
             className="mx-auto shadow-custom rounded-serviceImage"
           />
         </div>
-        <div className="mt-12 mb-20 mx-auto md:w-85 md:mt-9 md:mb-36" 
-          dangerouslySetInnerHTML=
-          {
+        <div className="flex justify-center">
+          <div className="text-base mt-12 mb-20 md:w-85 md:mt-9 md:mb-36  font-pro65Medium font-black" 
+            dangerouslySetInnerHTML=
             {
-              __html: `${props.data.maText}`,
-            }
-          } 
-        >
-          {/* <p>
-            公式LINEでは新規顧客をリピーター化させ、顧客生涯価値の向上及び売上の安定を目的としています。オープンストアには構築のプロが多数在籍しております。
-          </p> */}
+              {
+                __html: `${props.data.maText}`,
+              }
+            } 
+          >
+            {/* <p>
+              公式LINEでは新規顧客をリピーター化させ、顧客生涯価値の向上及び売上の安定を目的としています。オープンストアには構築のプロが多数在籍しております。
+            </p> */}
+          </div>
         </div>
-        <Suppliers 
-          topText='お取引先'
-          // image='/images/service/dx/torihiki.png'
-          image={props.data.maTransactionImage.url}
-          />
+        <div className="mb-20">
+          <UnstyledLink href='https://www.ma.innovation.co.jp/'>
+            <Suppliers 
+              topText='お取引先'
+              // image='/images/service/dx/torihiki.png'
+              image={props.data.maTransactionImage.url}
+              width='289'
+              height='103'
+              />
+          </UnstyledLink>
+          {/* <div className="py-16 w-full text-center text-xl font-pro65Medium font-black">株式会社Innovation M&A Partners</div> */}
+        </div>
       </div>
     </>
   )

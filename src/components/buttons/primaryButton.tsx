@@ -19,7 +19,7 @@ export default function PrimaryButton({
   className,
   children,
   href,
-  span
+  span,
 }: ButtonLinkProps) {
   return (
     <>

@@ -32,7 +32,7 @@ export default function Culture(props: Props){
               decoding="async"
               />
           </div>
-          <div className='text-base mt-12 md:mt-0 lg:w-1/2'
+          <div className='text-base mt-12 md:mt-0 lg:w-1/2 font-pro65Medium font-black'
               dangerouslySetInnerHTML={{
               __html: `${text}`,
             }}

@@ -11,12 +11,12 @@ export default function Service(props:any){
       <section className='bg-gray-50 h-auto'>
         <div className="">
           <div className='w-full text-center space-y-16 lg:space-y-0 lg:space-x-32 lg:flex lg:justify-center py-18'>
-            <ServiceContent image= {props.content.ecImage.url} title="Shopify構築" text = {props.content.ecText} linkCheck = {true} link="/services/ec"/>
-            <ServiceContent image= {props.content.lineImage.url} title="LINEサービス" text = {props.content.lineText} linkCheck = {true} link="/services/line"/>
+            <ServiceContent image= {props.content.ecImage.url} title="Shopify構築" text = {props.content.ecText} linkCheck = {true} link="/services/ec" width="w-full inline-block text-2xl" pointSize="h-4 w-4"/>
+            <ServiceContent image= {props.content.lineImage.url} title="LINEサービス" text = {props.content.lineText} linkCheck = {true} link="/services/line" width="w-full inline-block text-2xl" pointSize="h-4 w-4"/>
           </div>
           <div className='w-full mt-16 lg:mt-20 text-center space-y-16 lg:space-y-0 lg:space-x-32 lg:flex lg:justify-center py-18'>
-            <ServiceContent image= {props.content.dxImage.url} title="DX事業" text = {props.content.dxText} linkCheck = {true} link="/services/dx"/>
-            <ServiceContent image= {props.content.maImage.url} title="MA事業" text = {props.content.maText} linkCheck = {true} link="/services/ma"/>
+            <ServiceContent image= {props.content.dxImage.url} title="DX事業" text = {props.content.dxText} linkCheck = {true} link="/services/dx" width="w-full inline-block text-2xl" pointSize="h-4 w-4"/>
+            <ServiceContent image= {props.content.maImage.url} title="MA事業" text = {props.content.maText} linkCheck = {true} link="/services/ma" width="w-full inline-block text-2xl" pointSize="h-4 w-4"/>
           </div>
         </div>
       </section>

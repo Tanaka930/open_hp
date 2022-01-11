@@ -23,7 +23,7 @@ export default function UnderText(props:Props){
               />
           </div>
           <div className="flex justify-center">
-            <div className='text-base w-full lg:w-1/2 lg:pb-16'
+            <div className='text-base w-full lg:w-1/2 lg:pb-16 font-pro65Medium font-black'
               dangerouslySetInnerHTML={{
                 __html: `${props.text}`,
               }}

@@ -99,10 +99,13 @@ module.exports = {
       },
       fontSize: {
         'base': ['1.0rem',{
-          letterSpacing: '0.1em',
+          letterSpacing: '0.21em',
           lineHeight: '32px',
         }],
         'minimam': '11px'
+      },
+      letterSpacing:{
+        topText: '0.28rem'
       },
       padding: {
         per10: '10%',

@@ -3,6 +3,8 @@ import Image from 'next/image'
 type Props = {
   topText: string;
   image: string;
+  width: string;
+  height: string;
 }
 
 export default function Suppliers(props: Props){
@@ -13,8 +15,8 @@ export default function Suppliers(props: Props){
       <div className="text-center">
         <Image
           src={props.image}
-          width={700}
-          height={317}
+          width={props.width}
+          height={props.height}
           decoding="async"
         />
       </div>

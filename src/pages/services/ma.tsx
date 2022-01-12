@@ -52,7 +52,7 @@ export default function Home(props:any){
               height='103'
               />
           </UnstyledLink>
-          {/* <div className="py-16 w-full text-center text-xl font-pro65Medium font-black">株式会社Innovation M&A Partners</div> */}
+          <div className="py-16 w-full text-center text-xl font-pro65Medium font-black">株式会社Innovation M&A Partners</div>
         </div>
       </div>
     </>

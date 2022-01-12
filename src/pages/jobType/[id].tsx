@@ -9,6 +9,7 @@ import UnstyledLink from '@/components/links/UnstyledLink'
 
 export default function JobTypeId(props:any){
   if(typeof props.jobType != "undefined"){
+    
     return(
       <>
         <Seo templateTitle={`オープンストア｜${props.jobType.title}`} text={props.jobType.Introduction} />

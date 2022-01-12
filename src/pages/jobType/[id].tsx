@@ -6,9 +6,15 @@ import TopContent from "@/components/layout/TopContent"
 import Image from 'next/image'
 import SectionTitle from '@/components/layout/sectionText'
 import UnstyledLink from '@/components/links/UnstyledLink'
+import Inner from "@/components/jobType/inner"
 
 export default function JobTypeId(props:any){
   if(typeof props.jobType != "undefined"){
+
+    let jobWidthSize = "" 
+    if(props.job.length > 2){
+      jobWidthSize = "lg:w-6/12"
+    }
     
     return(
       <>
@@ -27,22 +33,24 @@ export default function JobTypeId(props:any){
         </section>
         {/* 求人リスト */}
         <section>
-          <SectionTitle title="Jobs" subTitle="求人一覧" position="center" />
+          <SectionTitle title="Jobs" subTitle="求人" position="center" />
           <div className="flex w-full justify-center">
-            <div className="w-full lg:w-6/12 from-pink-50 to-indigo-100 place-items-center">
+            
+            <div className={`w-full ${jobWidthSize} from-pink-50 to-indigo-100 place-items-center`}>
               <div className="w-full rounded py-12 md:py-0">
                 {props.job.map((jobData:any, index: number) => (
-                  <div className="bg-white px-4 w-auto">
-                    <div className="h-1 w-full mx-auto border-b"></div>
-                    <UnstyledLink href={`/jobs/${jobData.id}`} className='cursor-pointer'>
-                      <div className="transition hover:bg-green-50">
-                        <div className="transition flex space-x-5 px-5 items-center h-16 text-left">
-                          <h3 className='text-lg md:text-2xl w-full'>{jobData.title}</h3>
-                          <span className="fas fa-plus cursor-pointer" ></span>
-                        </div>
-                      </div>
-                    </UnstyledLink>
-                  </div>
+                  <Inner jobData={jobData} count={props.job.length}/>
+                  // <div className="bg-white px-4 w-auto">
+                  //   <div className="h-1 w-full mx-auto border-b"></div>
+                  //   <UnstyledLink href={`/jobs/${jobData.id}`} className='cursor-pointer'>
+                  //     <div className="transition hover:bg-green-50">
+                  //       <div className="transition flex space-x-5 px-5 items-center h-16 text-left">
+                  //         <h3 className='text-lg md:text-2xl w-full'>{jobData.title}</h3>
+                  //         <span className="fas fa-plus cursor-pointer" ></span>
+                  //       </div>
+                  //     </div>
+                  //   </UnstyledLink>
+                  // </div>
                 ))}
               </div>
             </div>

@@ -133,9 +133,9 @@ export default function JobId({jobs}:{jobs:any}) {
             </span>
           </div>
           <div className="flex items-center justify-center">
-            <div className="container w-full md:w-7/12">
+            <div className="container w-full ">
               <div className="hidden md:block">
-                <table className="w-full flex-row flex-no-wrap bg-white rounded-lg overflow-hidden shadow-lg my-5">
+                <table className="w-auto flex-row flex-no-wrap bg-white rounded-lg overflow-hidden shadow-lg my-5">
                   <thead className="text-white">
                     <tr className="bg-green-200 wrap table-row rounded-l-lg rounded-none mb-0">
                       <th className="p-3 text-left md:w-1/4"></th>
@@ -145,43 +145,61 @@ export default function JobId({jobs}:{jobs:any}) {
                   <tbody className="flex-1 test-base md:text-xl">
                     <tr className="flex-col flex-no wrap table-row mb-2 sm:mb-0">
                       <td className="border-grey-light border p-6">応募概要</td>
-                      <td className="border-grey-light border p-6 truncate">{jobs.title}</td>
+                      <td className="border-grey-light border p-6 ">{jobs.title}</td>
                     </tr>
                     <tr className="flex-col flex-no wrap table-row mb-2 sm:mb-0">
                       <td className="border-grey-light border p-6">給与</td>
-                      <td className="border-grey-light border p-6 truncate">{jobs.Salary}</td>
+                      <td className="border-grey-light border p-6 ">{jobs.Salary}</td>
                     </tr>
                     <tr className="flex-col flex-no wrap table-row mb-2 sm:mb-0">
                       <td className="border-grey-light border p-6">賞与</td>
-                      <td className="border-grey-light border p-6 truncate">{jobs.bonus}</td>
+                      <td className="border-grey-light border p-6 ">{jobs.bonus}</td>
                     </tr>
                     <tr className="flex-col flex-no wrap table-row mb-2 sm:mb-0">
                       <td className="border-grey-light border p-6">勤務地</td>
-                      <td className="border-grey-light border p-6 truncate">{jobs.location}</td>
+                      <td className="border-grey-light border p-6 ">{jobs.location}</td>
                     </tr>
                     <tr className="flex-col flex-no wrap table-row mb-2 sm:mb-0">
                       <td className="border-grey-light border p-6">勤務時間</td>
-                      <td className="border-grey-light border p-6 truncate">{jobs.workTime}</td>
+                      <td className="border-grey-light border p-6 ">{jobs.workTime}</td>
                     </tr>
                     <tr className="flex-col flex-no wrap table-row mb-2 sm:mb-0">
                       <td className="border-grey-light border p-6">休日</td>
-                      <td className="border-grey-light border p-6 truncate">{jobs.holiday}</td>
+                      <td className="border-grey-light border p-6 "><div
+                          dangerouslySetInnerHTML={{
+                            __html: `${jobs.holiday}`,
+                          }}
+                        /></td>
                     </tr>
                     <tr className="flex-col flex-no wrap table-row mb-2 sm:mb-0">
                       <td className="border-grey-light border p-6">各種保険</td>
-                      <td className="border-grey-light border p-6 truncate">{jobs.insurance}</td>
+                      <td className="border-grey-light border p-6 ">{jobs.insurance}</td>
                     </tr>
                     <tr className="flex-col flex-no wrap table-row mb-2 sm:mb-0">
                       <td className="border-grey-light border p-6">福利厚生</td>
-                      <td className="border-grey-light border p-6 truncate">{jobs.welfare}</td>
+                      <td className="border-grey-light border p-6 "><div
+                          dangerouslySetInnerHTML={{
+                            __html: `${jobs.welfare}`,
+                          }}
+                        /></td>
                     </tr>
                     <tr className="flex-col flex-no wrap table-row mb-2 sm:mb-0">
                       <td className="border-grey-light border p-6">評価</td>
-                      <td className="border-grey-light border p-6 truncate">{jobs.evaluation}</td>
+                      <td className="border-grey-light border p-6 "><div
+                          dangerouslySetInnerHTML={{
+                            __html: `${jobs.evaluation}`,
+                          }}
+                        /></td>
                     </tr>
                     <tr className="flex-col flex-no wrap table-row mb-2 sm:mb-0">
                       <td className="border-grey-light border p-6">備考</td>
-                      <td className="border-grey-light border p-6 truncate">{jobs.remarks}</td>
+                      <td className="border-grey-light border p-6 ">
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: `${jobs.remarks}`,
+                          }}
+                        />
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -196,63 +214,79 @@ export default function JobId({jobs}:{jobs:any}) {
                   </thead>
                   <tbody className="flex-1 test-base md:text-xl">
                     <tr className="flex-col flex-no wrap table-row mb-2 sm:mb-0">
-                      <td className="border-grey-light border p-6 truncate">
-                        <span className="font-bold">応募概要</span><br/>
+                      <td className="border-grey-light border p-6 ">
+                        <span className="font-bold">応募概要</span><br/><br/>
                         {jobs.title}
                       </td>
                     </tr>
                     <tr className="flex-col flex-no wrap table-row mb-2 sm:mb-0">
-                      <td className="border-grey-light border p-6 truncate">
-                      <span className="font-bold">給与</span><br/>
+                      <td className="border-grey-light border p-6 ">
+                      <span className="font-bold">給与</span><br/><br/>
                         {jobs.Salary}
                       </td>
                     </tr>
                     <tr className="flex-col flex-no wrap table-row mb-2 sm:mb-0">
-                      <td className="border-grey-light border p-6 truncate">
-                      <span className="font-bold">賞与</span><br/>
+                      <td className="border-grey-light border p-6 ">
+                      <span className="font-bold">賞与</span><br/><br/>
                         {jobs.bonus}
                       </td>
                     </tr>
                     <tr className="flex-col flex-no wrap table-row mb-2 sm:mb-0">
-                      <td className="border-grey-light border p-6 truncate">
-                      <span className="font-bold">勤務地</span><br/>
+                      <td className="border-grey-light border p-6 ">
+                      <span className="font-bold">勤務地</span><br/><br/>
                         {jobs.location}
                       </td>
                     </tr>
                     <tr className="flex-col flex-no wrap table-row mb-2 sm:mb-0">
-                      <td className="border-grey-light border p-6 truncate">
-                      <span className="font-bold">勤務時間</span><br/>
+                      <td className="border-grey-light border p-6 ">
+                      <span className="font-bold">勤務時間</span><br/><br/>
                         {jobs.workTime}
                       </td>
                     </tr>
                     <tr className="flex-col flex-no wrap table-row mb-2 sm:mb-0">
-                      <td className="border-grey-light border p-6 truncate">
-                      <span className="font-bold">休日</span><br/>
-                        {jobs.holiday}
+                      <td className="border-grey-light border p-6 ">
+                      <span className="font-bold">休日</span><br/><br/>
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: `${jobs.holiday}`,
+                          }}
+                        />
                       </td>
                     </tr>
                     <tr className="flex-col flex-no wrap table-row mb-2 sm:mb-0">
-                      <td className="border-grey-light border p-6 truncate">
-                      <span className="font-bold">各種保険</span><br/>
+                      <td className="border-grey-light border p-6 ">
+                      <span className="font-bold">各種保険</span><br/><br/>
                         {jobs.insurance}
                       </td>
                     </tr>
                     <tr className="flex-col flex-no wrap table-row mb-2 sm:mb-0">
-                      <td className="border-grey-light border p-6 truncate">
-                      <span className="font-bold">福利厚生</span><br/>
-                        {jobs.welfare}
+                      <td className="border-grey-light border p-6 ">
+                      <span className="font-bold">福利厚生</span><br/><br/>
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: `${jobs.welfare}`,
+                          }}
+                        />
                       </td>
                     </tr>
                     <tr className="flex-col flex-no wrap table-row mb-2 sm:mb-0">
-                      <td className="border-grey-light border p-6 truncate">
-                      <span className="font-bold">評価</span><br/>
-                        {jobs.evaluation}
+                      <td className="border-grey-light border p-6 ">
+                      <span className="font-bold">評価</span><br/><br/>
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: `${jobs.evaluation}`,
+                          }}
+                        />
                       </td>
                     </tr>
                     <tr className="flex-col flex-no wrap table-row mb-2 sm:mb-0">
-                      <td className="border-grey-light border p-6 truncate">
-                      <span className="font-bold">備考</span><br/>
-                        {jobs.remarks}
+                      <td className="border-grey-light border p-6 ">
+                      <span className="font-bold">備考</span><br/><br/>
+                      <div
+                          dangerouslySetInnerHTML={{
+                            __html: `${jobs.remarks}`,
+                          }}
+                        />
                       </td>
                     </tr>
                   </tbody>
@@ -266,6 +300,11 @@ export default function JobId({jobs}:{jobs:any}) {
               body {
                 height: 100%;
               }
+              table {
+                width: 100%;
+                table-layout: fixed;
+                overflow-wrap: break-word;
+                }
 
               @media (min-width: 640px) {
 

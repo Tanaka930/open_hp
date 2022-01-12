@@ -43,7 +43,7 @@ export default function Contact() {
 
       const reCaptchaToken = await executeRecaptcha('contactPage');
       // console.log("reCaptchaToken",reCaptchaToken);
-      const apiEndPoint = './api/recaptcha'; 
+      const apiEndPoint = './api/recaptcha';
       const recaptchaRes = await fetch(apiEndPoint, {
         body: JSON.stringify({
           // トークン認証
@@ -53,7 +53,7 @@ export default function Contact() {
           'Content-Type': 'application/json',
         },
         method: 'POST',
-      }); 
+      });
       // console.log("recaptchaRes", recaptchaRes)
       if (recaptchaRes.status === 200) {
 
@@ -61,7 +61,7 @@ export default function Contact() {
         const serviceID = process.env.NEXT_PUBLIC_REACT_APP_SERVICE_ID;
         const templateID = process.env.NEXT_PUBLIC_REACT_APP_TEMPLATE_ID;
 
-        let message = "\nタイトル: " + data.title + 
+        let message = "\nタイトル: " + data.title +
         "\nカテゴリ: " + data.category +
         "\n氏名: " + data.name +
         "\nメールアドレス: " + data.email +
@@ -74,7 +74,7 @@ export default function Contact() {
           templateID !== undefined
         ){
           init(userID);
-        
+
           const emailjsServiceId = serviceID;
           const emailjsTemplateId = templateID;
 
@@ -125,7 +125,7 @@ export default function Contact() {
                     タイトル
                     <Annotation />
                   </label>
-                  <input 
+                  <input
                     autoComplete="title"
                     {...register("title", {
                       required: "入力必須項目です。",
@@ -156,7 +156,7 @@ export default function Contact() {
                     <option value="EC事業">EC事業</option>
                     <option value="LINE事業">LINE事業</option>
                     <option value="DX事業">DX事業</option>
-                    <option value="MA事業">MA事業</option>
+                    <option value="M/&A仲介サービス">M&amp;A仲介サービス</option>
                     <option value="業務委託">業務委託</option>
                     <option value="その他">その他</option>
                   </select>
@@ -183,7 +183,7 @@ export default function Contact() {
                   />
                   {errors.name && <span className="text-red-600 text-sm pt-2">{errors.name.message}</span>}
                 </div>
-                
+
                 <div className="w-full mt-10 md:w-1/2 flex flex-col md:ml-6 md:mt-0">
                   <label htmlFor="email" className="flex items-center text-xl">
                     メールアドレス
@@ -191,7 +191,7 @@ export default function Contact() {
                   </label>
                   <input
                     autoComplete="email"
-                    {...register("email", { 
+                    {...register("email", {
                       required: "入力必須項目です。",
                       pattern: {
                         value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
@@ -216,7 +216,7 @@ export default function Contact() {
                       required: "入力必須項目です。",
                       maxLength: {
                         value: 10000,
-                        message: "全角500文字以内で入力してください。" 
+                        message: "全角500文字以内で入力してください。"
                       }
                     })}
                     className="h-40 text-base leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-3 bg-gray-100 border rounded border-gray-200"

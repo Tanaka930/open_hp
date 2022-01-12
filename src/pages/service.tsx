@@ -16,7 +16,7 @@ export default function Service(props:any){
           </div>
           <div className='w-full mt-16 lg:mt-20 text-center space-y-16 lg:space-y-0 lg:space-x-32 lg:flex lg:justify-center py-18'>
             <ServiceContent image= {props.content.dxImage.url} title="DX事業" text = {props.content.dxText} linkCheck = {true} link="/services/dx" width="w-full inline-block text-2xl" pointSize="h-4 w-4"/>
-            <ServiceContent image= {props.content.maImage.url} title="MA事業" text = {props.content.maText} linkCheck = {true} link="/services/ma" width="w-full inline-block text-2xl" pointSize="h-4 w-4"/>
+            <ServiceContent image= {props.content.maImage.url} title="M&amp;A仲介サービス" text = {props.content.maText} linkCheck = {true} link="/services/ma" width="w-full inline-block text-2xl" pointSize="h-4 w-4"/>
           </div>
         </div>
       </section>

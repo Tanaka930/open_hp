@@ -65,7 +65,7 @@ export default function Footer() {
                 <div className="w-1/2 pt-5 md:pt-6">
                   <UnstyledLink href="https://www.instagram.com/open_store_inc/" className="flex items-center cursor-pointer pb-5">
                       <Image
-                        width={17} height={17} 
+                        width={17} height={17}
                         src="/images/icons/Instagram.png"
                         alt="openstore-instagram-logo"
                         decoding="async"
@@ -75,7 +75,7 @@ export default function Footer() {
 
                   <UnstyledLink href="https://www.facebook.com/openstorejapan" className="flex items-center cursor-pointer pb-5">
                     <Image
-                      width={17} height={17} 
+                      width={17} height={17}
                       src="/images/icons/facebook.png"
                       alt="openstore-facebook-logo"
                       decoding="async"
@@ -85,7 +85,7 @@ export default function Footer() {
 
                   <UnstyledLink href="https://page.line.me/246xdhfu" className="flex items-center cursor-pointer">
                     <Image
-                      width={17} height={17} 
+                      width={17} height={17}
                       src="/images/icons/LINE.png"
                       alt="openstore-line-logo"
                       decoding="async"
@@ -109,7 +109,7 @@ export default function Footer() {
                   </UnstyledLink>
                   <UnstyledLink href="/services/ma" className="block cursor-pointer">
 
-                    <span className="text-xs font-themeText">ー MA事業</span>
+                    <span className="text-xs font-themeText">ー M&amp;A仲介サービス</span>
                   </UnstyledLink>
                 </div>
 
@@ -130,7 +130,7 @@ export default function Footer() {
                   <p  className="mt-3.5">〒532-0012</p>
                 </li>
                 <li className="mt-3.5">
-                  
+
                   <a href="mailto:contact@openstore-japan.com<" target="blank" className="">contact@openstore-japan.com</a>
                 </li>
                 <li className="mt-3.5">

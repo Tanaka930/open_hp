@@ -20,7 +20,7 @@ export default function Service(props:Props){
         </div>
         <div className='w-full mt-8 text-center space-y-8 lg:space-y-0 lg:space-x-32 lg:flex justify-center py-18'>
           <ServiceContent image= {props.data.dxImage.url} title="DX事業" text = {props.data.dxText} linkCheck = {false} link = ""/>
-          <ServiceContent image= {props.data.maImage.url} title="MA事業" text = {props.data.maText} linkCheck = {false} link = ""/>
+          <ServiceContent image= {props.data.maImage.url} title="M&amp;A仲介サービス" text = {props.data.maText} linkCheck = {false} link = ""/>
         </div>
         <div className='mt-12 lg:mt-16 md:mb-10 text-center'>
           <PrimaryButton

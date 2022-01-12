@@ -15,11 +15,11 @@ interface Explanation{
 
 
 export default function Home(props:any){
-  const seoText:string="弊社ではMA事業を新規に立ち上げました。"
+  const seoText:string="弊社ではM&A仲介サービスを新規に立ち上げました。"
   return(
     <>
-      <Seo templateTitle='オープンストアMA事業' text={seoText} />
-      <TopContentType2 title="MA事業" />
+      <Seo templateTitle='オープンストアM&amp;A仲介サービス' text={seoText} />
+      <TopContentType2 title="M&amp;A仲介サービス" />
       <div className="px-per10">
         <div className="">
           <img
@@ -29,13 +29,13 @@ export default function Home(props:any){
           />
         </div>
         <div className="flex justify-center">
-          <div className="text-base mt-12 mb-20 md:w-85 md:mt-9 md:mb-36  font-pro65Medium font-black" 
+          <div className="text-base mt-12 mb-20 md:w-85 md:mt-9 md:mb-36  font-pro65Medium font-black"
             dangerouslySetInnerHTML=
             {
               {
                 __html: `${props.data.maText}`,
               }
-            } 
+            }
           >
             {/* <p>
               公式LINEでは新規顧客をリピーター化させ、顧客生涯価値の向上及び売上の安定を目的としています。オープンストアには構築のプロが多数在籍しております。
@@ -44,7 +44,7 @@ export default function Home(props:any){
         </div>
         <div className="mb-20">
           <UnstyledLink href='https://www.ma.innovation.co.jp/'>
-            <Suppliers 
+            <Suppliers
               topText='お取引先'
               // image='/images/service/dx/torihiki.png'
               image={props.data.maTransactionImage.url}
@@ -52,7 +52,7 @@ export default function Home(props:any){
               height='103'
               />
           </UnstyledLink>
-          <div className="py-16 w-full text-center text-xl font-pro65Medium font-black">株式会社Innovation M&A Partners</div>
+          <div className="py-16 w-full text-center text-xl font-pro65Medium font-black">株式会社Innovation M&amp;A Partners</div>
         </div>
       </div>
     </>

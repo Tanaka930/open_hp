@@ -21,6 +21,9 @@ export default function PrimaryButton({
   href,
   span,
 }: ButtonLinkProps) {
+  if (typeof(span) === "string" && span.indexOf('h-') == -1) {
+    span = span + " h-2 w-2"
+  }
   return (
     <>
       <UnstyledLink 
@@ -32,7 +35,7 @@ export default function PrimaryButton({
       }
       >
         {children}
-        <span className={`inline-block h-2 w-2 rounded-full ml-7 mr-2.5  mb-px ${span}`}></span>
+        <span className={`${span} inline-block rounded-full ml-7 mr-2.5  mb-px`}></span>
       </UnstyledLink>
     </>
   );

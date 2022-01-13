@@ -109,7 +109,7 @@ export default function Footer() {
                   </UnstyledLink>
                   <UnstyledLink href="/services/ma" className="block cursor-pointer">
 
-                    <span className="text-xs font-themeText">ー M&amp;A仲介サービス</span>
+                    <span className="text-xs font-themeText">ー M&amp;Aサービス</span>
                   </UnstyledLink>
                 </div>
 

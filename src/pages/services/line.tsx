@@ -54,7 +54,7 @@ export default function Home(props:any){
     // text: '公式LINEを活用した顧客管理も簡単かつ効率的にできます。お客様一人ひとりの情報や、ターゲットを絞ったメッセージ配信も可能です。また、的確な顧客分析は、リピーターの増加につながります。',
     text: props.data.lineText2,
     // image: '/images/service/line/line3.png',
-    image: props.data.lineImage2.url,
+    image: props.data.lineImage3.url,
     width: '485',
     height: '303',
     alt_text: '公式LIEN管理',
@@ -69,8 +69,8 @@ export default function Home(props:any){
       <Seo templateTitle='オープンストアLINE事業' text={seoText} />
       <TopContentType2 title="LINEサービス" />
       <section className="bg-gray-50">
-        <LeftText 
-          text={explanation1.text} 
+        <LeftText
+          text={explanation1.text}
           image={explanation1.image}
           width={explanation1.width}
           height={explanation1.height}
@@ -78,8 +78,8 @@ export default function Home(props:any){
           title={explanation1.title}
           subTitle={explanation1.subTitle}
           />
-        <RightText 
-          text={explanation2.text} 
+        <RightText
+          text={explanation2.text}
           image={explanation2.image}
           width={explanation2.width}
           height={explanation2.height}
@@ -87,8 +87,8 @@ export default function Home(props:any){
           title = {explanation2.title}
           subTitle = {explanation2.subTitle}
           />
-        <LeftText 
-          text={explanation3.text} 
+        <LeftText
+          text={explanation3.text}
           image={explanation3.image}
           width={explanation3.width}
           height={explanation3.height}

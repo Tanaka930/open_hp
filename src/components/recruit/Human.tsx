@@ -5,7 +5,7 @@ export default function Human(){
   const text2:string = "課題に対して主体的に向き合い、謙虚な姿勢で果敢にチャレンジし続ける人";
   const text3:string = "自ら新しい情報を収集し、進んで周りに発信できる人";
   const text4:string = "古い慣習に囚われず、変化を楽しめる人";
-  const text5:string = "理念に共鳴でき、周囲への感謝の気持ちを忘れず、チームのために和衷協同する人";
+  const text5:string = "理念に共鳴でき、周囲への感謝の気持ちを忘れずチームのために和衷協同する人";
 
   const textList:string[] = [
     text1,

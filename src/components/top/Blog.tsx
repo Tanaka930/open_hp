@@ -77,13 +77,13 @@ export default function blog(props:Props){
                     <div className="xl:w-1/3 sm:w-1/2 p-4" key={content.id}>
                       <UnstyledLink href={`/blog/${content.id}`} >
                         <div className="pt-2 pb-4 px-2 rounded-lg cursor-pointer">
-                          <img 
+                          <img
                             src={content.thumbnail.url}
                             width={225}
                             height={161}
                             className="shadow-2xl rounded-3xl  w-full object-cover object-center h-40 overflow-hidden"
                             alt={content.previewWord}
-                            decoding="async" 
+                            decoding="async"
                           />
                           <h3 className="tracking-widest text-dayColor text-sm sm:text-xs font-medium mt-8 mb-2">
                             <Moment format="YYYY.MM.DD" className="font-bold text-white font-YuGothic pt-1">
@@ -115,13 +115,13 @@ export default function blog(props:Props){
                     <div className="xl:w-1/3 sm:w-1/2 p-4" key={content.id}>
                       <UnstyledLink href={`/blog/${content.id}`} >
                         <div className="pt-2 pb-4 px-2 rounded-lg cursor-pointer">
-                          <img 
+                          <img
                             src={content.thumbnail.url}
                             width={225}
                             height={161}
                             className="shadow-2xl rounded-3xl  w-full object-cover object-center h-40 overflow-hidden"
                             alt={content.previewWord}
-                            decoding="async" 
+                            decoding="async"
                           />
                           <h3 className="tracking-widest text-dayColor text-sm sm:text-xs font-medium mt-8 mb-2">
                             <Moment format="YYYY.MM.DD" className="font-bold text-white font-YuGothic pt-1">

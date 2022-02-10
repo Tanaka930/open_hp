@@ -21,7 +21,7 @@ export default function Search(){
     if (blogsQuery != null) {
 
       void (async (): Promise<void> => {
-        
+
         const key = {
           headers: {'X-MICROCMS-API-KEY': String(process.env.NEXT_PUBLIC_MICRO_CMS_API_KEY)},
         };
@@ -33,16 +33,16 @@ export default function Search(){
           )}&offset=0&limit=${process.env.onePageContent}`,
           key,
         ).then((res) => res.json()).catch(() => null);
-      
+
         // カテゴリー情報を取得
         const blog_cate = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/blog_category`, key)
         .then(res => res.json())
-        .catch(() => null); 
-      
+        .catch(() => null);
+
         // 執筆者情報を取得
         const blog_user = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/user`, key)
         .then(res => res.json())
-        .catch(() => null); 
+        .catch(() => null);
 
         // 最新のブログ情報を取得
         const new_blog = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/blog?offset=0&limit=3`, key)
@@ -53,7 +53,7 @@ export default function Search(){
         const popular_blog = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/blog?filters=check[equals]true&offset=0&limit=3`, key)
         .then(res => res.json())
         .catch(() => null);
-      
+
         var blogs = {
           blogList: blog_data.contents,
           blogCategory: blog_cate.contents,
@@ -70,7 +70,7 @@ export default function Search(){
   }, [blogsQuery]);
 
 
-  if(typeof blogs !== 'undefined'){ 
+  if(typeof blogs !== 'undefined'){
     if(blogs.blogList.length != 0){
       return(
         <>

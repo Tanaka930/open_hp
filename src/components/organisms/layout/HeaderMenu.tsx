@@ -5,11 +5,12 @@ import Image from 'next/image';
 const navigation = [
   { name: 'HOME', href: '/' },
   { name: 'NEWS', href: '/news' },
-  { name: 'RECRUIT', href: '/recruit' },
+  { name: 'SERVICE', href: '/service' },
   { name: 'BLOG', href: '/blog' },
   { name: 'ABOUT', href: '/about'  },
   { name: 'CONTACT', href: '/contact' },
-  { name: 'SERVICE', href: '/service' },
+  { name: 'RECRUIT', href: '/recruit' },
+  { name: 'PARTNER', href: '/partner' },
 ]
 
 type Props = {
@@ -52,8 +53,8 @@ export default function HeaderMenu(props: Props) {
                   href="https://www.facebook.com/openstorejapan"
                   className="flex items-center"
                 >
-                  <Image 
-                    width={18} height={18} 
+                  <Image
+                    width={18} height={18}
                     src="/images/icons/facebook.png"
                   />
                   <span className="text-sm align-top pl-1 pr-5 lg:text-base">
@@ -66,7 +67,7 @@ export default function HeaderMenu(props: Props) {
                   className="flex items-center"
                 >
                   <Image
-                    width={18} height={18}  
+                    width={18} height={18}
                     src="/images/icons/Instagram.png"
                   />
                   <span className="text-sm align-top pl-1 pr-5 lg:text-base">
@@ -74,14 +75,14 @@ export default function HeaderMenu(props: Props) {
                   </span>
                 </UnstyledLink>
               </div>
-              
+
               <UnstyledLink
                 href="https://page.line.me/246xdhfu"
                 className="flex items-center"
                 >
-                <Image 
-                  width={18} height={18} 
-                  src="/images/icons/LINE.png"    
+                <Image
+                  width={18} height={18}
+                  src="/images/icons/LINE.png"
                 />
                 <span className="text-sm align-top pl-1 lg:text-base">
                   LINE
@@ -95,7 +96,7 @@ export default function HeaderMenu(props: Props) {
             >
               <UnstyledLink href="/">
                 <Image
-                  width={props.logoWidth} height={props.logoHeight} 
+                  width={props.logoWidth} height={props.logoHeight}
                   src="/images/layout/Logo.png"
                   alt="openstore-logo"
                   decoding="async"
@@ -127,8 +128,8 @@ export default function HeaderMenu(props: Props) {
             <div className="">
               <div className="flex pb-7">
                 <UnstyledLink href="https://www.facebook.com/openstorejapan">
-                  <Image 
-                    width={18} height={18} 
+                  <Image
+                    width={18} height={18}
                     src="/images/icons/facebook.png"
                     className="align-bottom"
                   />
@@ -139,7 +140,7 @@ export default function HeaderMenu(props: Props) {
 
                 <UnstyledLink href="https://www.instagram.com/open_store_inc/">
                   <Image
-                    width={18} height={18}  
+                    width={18} height={18}
                     src="/images/icons/Instagram.png"
                     className="align-bottom"
                   />
@@ -148,10 +149,10 @@ export default function HeaderMenu(props: Props) {
                   </span>
                 </UnstyledLink>
               </div>
-              
+
               <UnstyledLink href="https://page.line.me/246xdhfu">
-                <Image 
-                  width={18} height={18} 
+                <Image
+                  width={18} height={18}
                   src="/images/icons/LINE.png"
                   className="align-bottom"
                 />

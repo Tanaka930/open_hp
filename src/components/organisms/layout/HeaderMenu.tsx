@@ -10,7 +10,7 @@ const navigation = [
   { name: 'ABOUT', href: '/about'  },
   { name: 'CONTACT', href: '/contact' },
   { name: 'RECRUIT', href: '/recruit' },
-  { name: 'ookura', href: '/ookura' },
+  { name: 'PARTNER', href: '/partner' },
 ]
 
 type Props = {

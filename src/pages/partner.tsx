@@ -9,11 +9,11 @@ export default function Partner(props:any){
       <TopContent title="PARTNER" text="パートナー企業一覧" />
       <section className='bg-gray-50 h-auto'>
         <div className="flex flex-wrap m-auto justify-around items-center">
-          <img src={props.content.imapImage.url} className="w-1/4 m-4" alt="" />
-          <img src={props.content.peersImage.url} className="w-1/4 m-4" alt="" />
-          <img src={props.content.benefit_japanImage.url} className="w-1/4 m-4" alt="" />
-          <img src={props.content.brownImage.url} className="w-1/4 m-4" alt="" />
-          <img src={props.content.seven_seasImage.url} className="w-1/4 m-4" alt="" />
+          <img src={props.content.imapImage.url} className="lg:w-1/4 md:w-5/12 m-4" alt="" />
+          <img src={props.content.peersImage.url} className="lg:w-1/4 md:w-5/12 m-4" alt="" />
+          <img src={props.content.benefit_japanImage.url} className="lg:w-1/4 md:w-5/12 m-4" alt="" />
+          <img src={props.content.brownImage.url} className="lg:w-1/4 md:w-5/12 m-4" alt="" />
+          <img src={props.content.seven_seasImage.url} className="lg:w-1/4 md:w-5/12 m-4" alt="" />
         </div>
       </section>
     </>

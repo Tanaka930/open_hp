@@ -39,14 +39,15 @@ export default function BlogDetail(props: Props){
 
             </div>
 
-            
+
 
             <div className="w-full lg:w-1/3">
               <div className="border border-dotted"></div>
               <BlogSearch />
               <div className="border border-dotted"></div>
 
-              <div id="whoobe-swr0n" className="pt-4 bg-white w-full justify-center items-center px-6 py-4 flex flex-col">
+              {/*2/17日 西さん指摘箇所 執筆者削除(コメントアウト) */}
+              {/* <div id="whoobe-swr0n" className="pt-4 bg-white w-full justify-center items-center px-6 py-4 flex flex-col">
                 <div className='text-xl my-2'>
                   執筆者
                 </div>
@@ -55,7 +56,7 @@ export default function BlogDetail(props: Props){
                 <div className="mb-10 text-center capitalize" id="whoobe-m2doo">{props.blog.upUser.position}</div>
               </div>
 
-              <div className="border border-dotted"></div>
+              <div className="border border-dotted"></div> */}
 
 
               <div className="mb-4">
@@ -78,7 +79,8 @@ export default function BlogDetail(props: Props){
               <div className="border border-dotted"></div>
 
 
-              <div className="mb-4">
+              {/*2/17日 西さん指摘箇所 執筆者削除(コメントアウト) */}
+              {/* <div className="mb-4">
                 <h5 className="font-bold text-lg uppercase text-gray-700 px-1 mb-2"> 執筆者 </h5>
                 <ul>
                   {props.blogUser.map((user:any) => (
@@ -95,7 +97,7 @@ export default function BlogDetail(props: Props){
                   ))}
                 </ul>
               </div>
-              <div className="border border-dotted"></div>
+              <div className="border border-dotted"></div> */}
 
               <div>
                 <h5 className="mt-4 font-bold text-lg uppercase text-gray-700 px-1 mb-2"> 最新記事 </h5>

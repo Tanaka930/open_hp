@@ -39,10 +39,12 @@ export default function BlogListBox(props: Props){
                   </p>
                 </div>
                 <div className="flex mt-3">
-                  <img src={blog.upUser.userImage.url}
-                    className="h-10 w-10 rounded-full mr-2 object-cover" />
+                  {/*2/17日 西さん指摘箇所 執筆者削除(コメントアウト) */}
+                  {/* <img src={blog.upUser.userImage.url}
+                    className="h-10 w-10 rounded-full mr-2 object-cover" /> */}
                   <div>
-                    <p className="font-semibold text-gray-700 text-sm capitalize"> {blog.upUser.user} </p>
+                    {/*2/17日 西さん指摘箇所 執筆者削除(コメントアウト) */}
+                    {/* <p className="font-semibold text-gray-700 text-sm capitalize"> {blog.upUser.user} </p> */}
                     <p className="text-gray-600 text-xs">
                     <Moment format="YYYY年MM月DD日">
                       {blog.createDay}

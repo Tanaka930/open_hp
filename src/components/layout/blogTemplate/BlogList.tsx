@@ -87,7 +87,8 @@ export default function BlogList(props: Props){
 {/* カテゴリ一覧 -end */}
 
 {/* 執筆者 -start */}
-              <div className="mb-4">
+              {/*2/17日 西さん指摘箇所 執筆者削除(コメントアウト) */}
+              {/* <div className="mb-4">
                 <h5 className="mt-4 font-bold text-lg uppercase text-gray-700 px-1 mb-2"> 執筆者 </h5>
                 <ul>
                   {props.blogUser.map((user:any) => (
@@ -104,7 +105,7 @@ export default function BlogList(props: Props){
                   ))}
                 </ul>
               </div>
-              <div className="border border-dotted"></div>
+              <div className="border border-dotted"></div> */}
 {/* 執筆者 -end */}
 
 {/* 最新記事 -start */}

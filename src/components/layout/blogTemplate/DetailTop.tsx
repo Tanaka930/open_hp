@@ -10,8 +10,8 @@ export default function NewBlog(props: Props){
     return(
       <>
         <div className="block md:flex md:space-x-2 lg:p-0">
-          <a 
-            className="mb-4 md:mb-0 w-full relative rounded inline-block h-96" 
+          <a
+            className="mb-4 md:mb-0 w-full relative rounded inline-block h-96"
           >
             <div className="absolute left-0 bottom-0 w-full h-full z-5 image1"></div>
             <style jsx>{`
@@ -25,13 +25,15 @@ export default function NewBlog(props: Props){
                 {props.BlogObject.title}
               </h2>
               <div className="flex mt-3">
-                <img src={props.BlogObject.upUser.userImage.url}
-                  className="h-10 w-10 rounded-full mr-2 object-cover" />
+                {/*2/17日 西さん指摘箇所 執筆者削除(コメントアウト) */}
+                {/* <img src={props.BlogObject.upUser.userImage.url}
+                  className="h-10 w-10 rounded-full mr-2 object-cover" /> */}
                 <div>
-                  <p className="font-semibold text-gray-200 text-sm"> {props.BlogObject.upUser.user} </p>
-                  <p className="font-semibold text-gray-400 text-xs"> 
+                  {/*2/17日 西さん指摘箇所 執筆者削除(コメントアウト) */}
+                  {/* <p className="font-semibold text-gray-200 text-sm"> {props.BlogObject.upUser.user} </p> */}
+                  <p className="font-semibold text-gray-400 text-xs">
                     <Moment format="YYYY年MM月DD日">
-                      {props.BlogObject.createDay} 
+                      {props.BlogObject.createDay}
                     </Moment>
                     </p>
                 </div>

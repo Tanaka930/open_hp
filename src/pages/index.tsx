@@ -9,7 +9,7 @@ import News from '@/components/top/News'
 import Blog from '@/components/top/Blog'
 
 export default function Home(props:any){
-  console.log(props.blogs);
+  // console.log(props.blogs);
   return(
     <>
       <Seo templateTitle='Home' />

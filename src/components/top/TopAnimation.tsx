@@ -26,7 +26,18 @@ const Wrap = styled.div<{isActive:boolean}>`
   }
 `
 
-export default function TopAnimation(){
+interface ShortCode {
+  code: string
+  body: string
+}
+
+interface Data {
+  data:any
+  aboutTextTop:Array<ShortCode>;
+  aboutTextBottom:Array<ShortCode>;
+}
+
+export default function TopAnimation(data:Data){
   const [isActive, setIsActive] = useState<boolean>(true);
   const isWide = useMedia({ maxWidth: "767px" });
 
@@ -49,6 +60,23 @@ export default function TopAnimation(){
     }
   }
 
+  // fetch
+  const [post, setPost] = useState<any>([]);
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/content`, {
+      headers: {
+        'X-MICROCMS-API-KEY': String(process.env.NEXT_PUBLIC_MICRO_CMS_API_KEY),
+      },
+      method: 'GET',
+    })
+      .then((res) => res.json())
+      .then((date) => {
+        setPost(date);
+        // console.log(date.aboutTextTop);
+      });
+  }, []);
+
   return(
     <>
       <div className={styles.top}>
@@ -70,10 +98,12 @@ export default function TopAnimation(){
 
               <div className="text-base w-fll pt-10 xl:pt-12 pb-7 font-pro65Medium font-black tracking-topText">
                 <span className="leading-10 font-pro55Roman">
-                  オープンストアは、お客様との対話に重きを置き、本質的な課題を汲み取りお客様にとって最適な販路拡大や集客方法におけるノウハウなどを一貫してサポートします。
+                  {post.aboutTextTop}
+                  {/* オープンストアは、お客様との対話に重きを置き、本質的な課題を汲み取りお客様にとって最適な販路拡大や集客方法におけるノウハウなどを一貫してサポートします。 */}
                   <br/>
                   <br/>
-                  「やり方がわからない。時間がない。もう歳だから。ニーズがない。結果が補償できない。」などの多くの障壁がありますが、そういった障壁を一つひとつ共に乗り越え、夢の実現に向けてのお手伝いを、是非、私たちオープンストアにお任せください。
+                  {post.aboutTextBottom}
+                  {/* 「やり方がわからない。時間がない。もう歳だから。ニーズがない。結果が補償できない。」などの多くの障壁がありますが、そういった障壁を一つひとつ共に乗り越え、夢の実現に向けてのお手伝いを、是非、私たちオープンストアにお任せください。 */}
                 </span>
               </div>
               <PrimaryButton

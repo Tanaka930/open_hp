@@ -64,6 +64,9 @@ export const pagesPath = {
       })
     }
   },
+  partner: {
+    $url: (url?: { hash?: string }) => ({ pathname: '/partner' as const, hash: url?.hash })
+  },
   policy: {
     $url: (url?: { hash?: string }) => ({ pathname: '/policy' as const, hash: url?.hash })
   },

@@ -10,14 +10,14 @@ export default function Staff(props: Props){
   return(
     <>
       <section className='h-auto w-full'>
-        <SectionTitle title="Voice of the employees" subTitle="スタッフの声" position="center" />
+        <SectionTitle title="Voice of the employees" subTitle="上農社員" position="center" />
         <div className='justify-center lg:mx-20'>
           <div className='text-center w-full mb-16 lg:mb-28'>
-            <Image 
-              src={props.pageData.staffImage.url} 
+            <Image
+              src={props.pageData.staffImage.url}
               width={props.pageData.staffImage.width}
               height={props.pageData.staffImage.height}
-              alt={text} 
+              alt={text}
               className="rounded-3xl object-cover"
               decoding="async"
               />

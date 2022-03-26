@@ -5,7 +5,7 @@ import SectionTitle from '@/components/layout/sectionText'
 type Props = {
   datas: any[];
   bgColor: string;
-  children: JSX.Element; 
+  children: JSX.Element;
 }
 
 export default function Achievement(props: Props){
@@ -22,7 +22,7 @@ export default function Achievement(props: Props){
                   <div className='float-left md:w-1/2'>
                   <UnstyledLink href={`${data.link}`}>
                     <div className='xl:mx-32 mb-14 xl:mb-32' >
-                      <Image 
+                      <Image
                         src={`${data.image.url}`}
                         width={400}
                         height={400}

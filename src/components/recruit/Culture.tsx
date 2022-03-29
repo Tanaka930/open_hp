@@ -21,32 +21,32 @@ export default function Culture(props: Props){
       <section className='h-auto w-full'>
         {/* <h2 className='text-2xl lg:text-5xl w-full pb-2 lg:pb-6 lg:w-1/2  text-left'>Philosophy</h2>
         <h3 className='text-sm lg:text-2xl w-full lg:w-1/2 pb-4 xl:pb-8 text-left text-green-700 font-YuGothic'>ー 社風 ー</h3> */}
-        <SectionTitle title="Philosophy" subTitle="社風" position="left" />
+        <SectionTitle title="Philosophy" subTitle="社風" position="center" />
         <div className='lg:flex lg:justify-center '>
-          <div className='text-center block lg:hidden w-auto'>
-            <Image 
+          {/* <div className='text-center block lg:hidden w-auto'>
+            <Image
               src={isMobileSite ? props.pageData.cultureImage2.url : props.pageData.cultureImage.url }
               width={isMobileSite ? props.pageData.cultureImage2.width : props.pageData.cultureImage.width }
               height={isMobileSite ? props.pageData.cultureImage2.height : props.pageData.cultureImage.height }
-              alt={`${text}`} 
+              alt={`${text}`}
               decoding="async"
               />
-          </div>
+          </div> */}
           <div className='text-base mt-12 md:mt-0 lg:w-1/2 font-pro65Medium font-black'
               dangerouslySetInnerHTML={{
               __html: `${text}`,
             }}
           >
           </div>
-          <div className='hidden lg:block'>
-            <Image 
+          {/* <div className='hidden lg:block'>
+            <Image
               src={isMobileSite ? props.pageData.cultureImage2.url : props.pageData.cultureImage.url }
               width={isMobileSite ? props.pageData.cultureImage2.width : props.pageData.cultureImage.width }
               height={isMobileSite ? props.pageData.cultureImage2.height : props.pageData.cultureImage.height }
-              alt={`${text}`} 
+              alt={`${text}`}
               decoding="async"
               />
-            </div>
+            </div> */}
         </div>
       </section>
     </>

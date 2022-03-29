@@ -31,7 +31,7 @@ export default function BlogDetail(props: Props){
               <span>
                 <SnsShareButton title={props.blog.title} blogId={props.blog.id}/>
               </span>
-              <h1 className="text-gray-800 text-4xl font-bold mt-2 mb-2 leading-tight">
+              <h1 className="text-gray-800 text-3xl md:text-4xl  font-bold mt-2 mb-2 leading-tight">
                 {props.blog.title}
               </h1>
               <span className="text-green-700 text-sm hidden md:block mt-4"> カテゴリー： {props.blog.category.category} </span>

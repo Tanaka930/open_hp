@@ -10,7 +10,7 @@ type Props = {
 export default function ContentBox(props: Props){
   return(
     <>
-      <div className={`lg:h-${props.height} text-2xl py-4 md:py-8 md:py-16 lg:text-2xl rounded-3xl border-green-700 border-2 bg-white shadow-xl`}>
+      <div className={`lg:h-${props.height} text-2xl py-12 md:py-8 md:py-16 lg:text-2xl rounded-3xl border-green-700 border-2 bg-white shadow-xl`}>
         <Image src={props.image}
                 width={125}
                 height={125}

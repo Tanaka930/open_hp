@@ -11,11 +11,11 @@ import Inner from "@/components/jobType/inner"
 export default function JobTypeId(props:any){
   if(typeof props.jobType != "undefined"){
 
-    let jobWidthSize = "" 
+    let jobWidthSize = ""
     if(props.job.length > 2){
       jobWidthSize = "lg:w-6/12"
     }
-    
+
     return(
       <>
         <Seo templateTitle={`オープンストア｜${props.jobType.title}`} text={props.jobType.Introduction} />
@@ -35,10 +35,10 @@ export default function JobTypeId(props:any){
         <section>
           <SectionTitle title="Jobs" subTitle="求人" position="center" />
           <div className="flex w-full justify-center">
-            
+
             <div className={`w-full ${jobWidthSize} from-pink-50 to-indigo-100 place-items-center`}>
               <div className="w-full rounded py-12 md:py-0">
-                {props.job.map((jobData:any, index: number) => (
+                {props.job.map((jobData:any, index:number) => (
                   <Inner jobData={jobData} count={props.job.length}/>
                   // <div className="bg-white px-4 w-auto">
                   //   <div className="h-1 w-full mx-auto border-b"></div>
@@ -62,11 +62,11 @@ export default function JobTypeId(props:any){
             <SectionTitle title="Voice of the employees" subTitle={content.name} position="center" />
             <div className='justify-center lg:mx-20'>
               <div className='text-center w-full mb-16 lg:mb-28'>
-                <Image 
-                  src={content.staffImage.url} 
+                <Image
+                  src={content.staffImage.url}
                   width={content.staffImage.width}
                   height={content.staffImage.height}
-                  alt={content.text} 
+                  alt={content.text}
                   className="rounded-3xl object-cover"
                   decoding="async"
                   />
@@ -116,7 +116,7 @@ export const getStaticProps = async (context:any) => {
 
   const job = await fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/jobs?filters=category[equals]${id}`, key)
   .then(res => res.json())
-  .catch(() => null);  
+  .catch(() => null);
 
   return{
     props:{

@@ -9,7 +9,7 @@ export default function Job({categories}:{categories:any}){
   return(
     <>
       <section className='h-auto w-full'>
-        <SectionTitle title="Job infomation" subTitle="求人情報" position="center" />
+        <SectionTitle title="Job information" subTitle="求人情報" position="center" />
         <div className="flex w-full justify-center">
           <div className="w-full lg:w-6/12 from-pink-50 to-indigo-100 place-items-center">
             <div className="w-full rounded py-12 md:py-0">

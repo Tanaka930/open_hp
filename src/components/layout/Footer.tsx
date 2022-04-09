@@ -111,7 +111,7 @@ export default function Footer() {
 
                     <span className="text-xs font-themeText">ー M&amp;Aサービス</span>
                   </UnstyledLink>
-                  <UnstyledLink href="https://openstore-recruit.com/university/" className="block cursor-pointer">
+                  <UnstyledLink href="https://openstore-recruit.com/" className="block cursor-pointer">
 
                     <span className="text-xs font-themeText">ー インターン事業</span>
                   </UnstyledLink>

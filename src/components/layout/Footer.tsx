@@ -83,6 +83,16 @@ export default function Footer() {
                     <span className="pl-1 text-base tracking-tight font-themeText">facebook</span>
                   </UnstyledLink>
 
+                  <UnstyledLink href="https://twitter.com/openstore_japan" className="flex items-center cursor-pointer pb-5">
+                    <Image
+                      width={17} height={17}
+                      src="/images/icons/twitter.png"
+                      alt="openstore-facebook-logo"
+                      decoding="async"
+                    />
+                    <span className="pl-1 text-base tracking-tight font-themeText">twitter</span>
+                  </UnstyledLink>
+
                   <UnstyledLink href="https://page.line.me/246xdhfu" className="flex items-center cursor-pointer">
                     <Image
                       width={17} height={17}

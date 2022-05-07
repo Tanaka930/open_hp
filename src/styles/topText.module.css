@@ -1,0 +1,66 @@
+.topTextYuor {
+  color: #0c8e86;
+}
+
+.topTextBox {
+  position: relative;
+  top: 40%;
+  left: 10%;
+  z-index: 1;
+}
+
+@media screen and (max-width: 767px) {
+  .topTextBox {
+    font-size: 3rem;
+    top: 60%;
+    left: 5%;
+  }
+}
+
+.topTextNo1 {
+  font-size: 48px;
+  line-height: 96px;
+}
+
+@media screen and (max-width: 767px) {
+  .topTextNo1 {
+    line-height: 48px;
+    font-size: 32px;
+  }
+}
+
+.topTextNo2 {
+  font-size: 48px;
+  line-height: 96px;
+}
+
+@media screen and (max-width: 767px) {
+  .topTextNo2 {
+    line-height: 48px;
+    font-size: 32px;
+  }
+}
+
+.topTextEn {
+  font-size: 21px;
+  line-height: 42px;
+}
+
+@media screen and (max-width: 767px) {
+  .topTextEn {
+    font-size: 16px;
+  }
+}
+
+/* .companyLogo {
+  position: relative;
+  top: 5%;
+  left: 10%;
+} */
+.companyText {
+  position: relative;
+  top: 10%;
+  left: 10%;
+  font-size: 3rem;
+}
+/*# sourceMappingURL=topText.module.css.map */

@@ -6,7 +6,7 @@ import { Fade } from "react-awesome-reveal";
 
 type Props = {
   data: any;
-  bottom: any;
+  // bottom: any;
 }
 
 export default function Service(props:Props){

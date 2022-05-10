@@ -18,6 +18,7 @@ export default function Partner(props:any){
           <a className="lg:w-2/12 md:w-5/12 w-4/6 m-4" href="https://line.me/ja/"><img src={props.content.line_logoImage.url} alt="" /></a>
           <a className="lg:w-2/12 md:w-5/12 w-4/6 m-4" href="https://www.shopify.jp/"><img src={props.content.shopifyImage.url} alt="" /></a>
           <a className="lg:w-2/12 md:w-5/12 w-4/6 m-4" href="https://www.recruit.co.jp/"><img src={props.content.recruitImage.url} alt="" /></a>
+          <a className="lg:w-2/12 md:w-5/12 w-4/6 m-4" href="https://www.recruit.co.jp/"><img src={props.content.smaregiImage.url} alt="" /></a>
           <a className="lg:w-2/12 md:w-5/12 w-4/6 m-4" href="https://kepco.jp/"><img src={props.content.kansaiImage.url} alt="" /></a>
           <a className="lg:w-2/12 md:w-5/12 w-4/6 m-4" href="https://www.ma.innovation.co.jp/"><img src={props.content.imapImage.url} alt="" /></a>
           <a className="lg:w-2/12 md:w-5/12 w-4/6 m-4" href="https://usen.com/"><img src={props.content.usenImage.url} alt="" /></a>

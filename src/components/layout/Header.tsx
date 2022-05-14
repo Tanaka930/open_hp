@@ -28,7 +28,7 @@ export default function Header() {
               <div className="flex-shrink-0">
                 <UnstyledLink href='/'>
                   <img
-                    className="h-4 md:h-7"
+                    className="h-5 md:h-7"
                     src="/images/layout/Logo.png"
                     alt="openstore"
                     decoding="async"

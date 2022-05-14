@@ -67,7 +67,7 @@ export default function blog(props:Props){
                     }
                   `}
           </style>
-          <section className="z-50 mb-10 pb-32">
+          {/* <section className="z-50 mb-10 pb-32">
             <div className="body-font">
               <SectionTitle title="TOPIC" subTitle="トピック" position="left" />
 
@@ -101,11 +101,11 @@ export default function blog(props:Props){
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
         </>
       ):(
         <>
-          <section className="z-50 mb-40 pb-32 bg-green-700 mr-per10 rounded-r-serviceImage">
+          {/* <section className="z-50 mb-40 pb-32 bg-green-700 mr-per10 rounded-r-serviceImage">
             <div className="body-font">
               <SectionTitle title="TOPIC" subTitle="トピック" position="left" />
 
@@ -139,7 +139,7 @@ export default function blog(props:Props){
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
         </>
       )}
     </>

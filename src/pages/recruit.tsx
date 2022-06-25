@@ -13,7 +13,7 @@ import { useForm } from "react-hook-form";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 import { init,send } from 'emailjs-com';
 
-import {useState, useRef} from 'react'
+import {useState, useRef} from 'react';
 
 
 interface Category {

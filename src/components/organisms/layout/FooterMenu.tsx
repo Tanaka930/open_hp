@@ -19,9 +19,8 @@ export default function FooterMenu(links: Links) {
         {links.links.map((link) => (
           <div key={link.label}>
             <UnstyledLink href={link.href} className="">
-
+            <span className="inline-block w-2 h-2 rounded-full bg-green-500 mr-4 align-middle"></span>
                 {link.label}
-              <span className="inline-block w-2 h-2 rounded-full bg-green-500 ml-4 align-middle"></span>
             </UnstyledLink>
           </div>
         ))}

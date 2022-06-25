@@ -20,7 +20,7 @@ export default function Human(){
       <section className='h-auto w-full bg-gray-50'>
         {/* <h2 className='text-2xl lg:text-5xl w-full pb-2 lg:pb-4 text-center'>Ideal candidate profile</h2>
         <h3 className='text-sm lg:text-2xl w-full pb-8 xl:pb-28 text-center text-green-700 font-YuGothic'>ー 求める人物像 ー</h3> */}
-        <SectionTitle title="Ideal candidate profile" subTitle="求める人物像" position="center" />
+        <SectionTitle title="PEOPLE" subTitle="求める人物像" position="center" />
         <div className='px-8 md:pt-2 md:pb-12 md:px-12 flex justify-center w-full'>
           <ul className='text-base list-decimal space-y-4 md:text-2xl font-pro65Medium font-black '>
             {textList.map((text:string, index: number) => (

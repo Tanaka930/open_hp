@@ -1,5 +1,7 @@
 import Seo from "@/components/Seo"
 import TopContent from "@/components/layout/TopContent"
+//リクルートのトップ部分コンポーネント
+import RecruitTop from '@/components/recruit/RecruitTop'
 // 文化用のコンポーネント
 import Culture from '@/components/recruit/Culture'
 // 求める人物像のコンポーネント
@@ -12,8 +14,8 @@ import SectionTitle from '@/components/layout/sectionText'
 import { useForm } from "react-hook-form";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 import { init,send } from 'emailjs-com';
-
 import {useState, useRef} from 'react';
+// import image from "public/images/recruit/";
 
 
 interface Category {
@@ -136,13 +138,16 @@ export default function Recruit(categories: Categories) {
   return (
     <>
       <Seo templateTitle='RECRUIT' text={seoText} />
+      {/* <div className="bg-[url('./images/recruit/recruitTopImg.png')]"> */}
       <TopContent title="RECRUIT" text="採用情報" />
+      <RecruitTop pageData={categories.pageData} />
+      {/* </div> */}
       <Culture pageData={categories.pageData}/>
       <Human />
       {/* <Staff pageData={categories.pageData}/> */}
       <Job categories={categories}/>
 
-      <section className="w-full">
+      <section className="w-full" style={{background:"#F7F4EC"}}>
         <div className="">
           <SectionTitle title="CONTACT" subTitle="応募する" position="center" />
           <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 mb-12">

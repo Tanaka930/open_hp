@@ -9,6 +9,8 @@
     "path": "pathpida -o ./src/lib"
   },
   "dependencies": {
+    "@emotion/babel-plugin": "^11.9.2",
+    "@emotion/react": "^11.9.3",
     "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^1.0.5",
     "@sendgrid/mail": "^7.6.0",
@@ -39,7 +41,7 @@
     "react-share": "^4.4.0",
     "react-tabs": "^3.2.3",
     "sass": "^1.43.4",
-    "styled-components": "^5.3.3",
+    "styled-components": "^5.3.5",
     "tailwindcss": "^2.2.19",
     "use-media": "^1.4.0"
   },

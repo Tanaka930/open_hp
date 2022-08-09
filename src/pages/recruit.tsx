@@ -136,13 +136,6 @@ export default function Recruit(categories: Categories) {
                           オープンストアで活躍されている人物像は、年齢や性別問わず、チャレンジ精神が強く何事に も偏見を持たず素直に取り組むという特徴があります。オープンストアで働いていると、日々 変化の連続であるため、全員がスキルアップできる可能性があります。何かを変えたい人、現 状に満足していない人、どんな理由でも大丈夫です。どんな人でも、どんな形でも、担いたい 業務やポジションは能動的に掴むことができる環境があります。 お気軽にお問い合わせください。`
   // 以下のテンプレートはマークアップ時に整形する
 
-  const img = require(`public/images/recruit/recruitTopImg.png`);
-  // const background = {
-  //   backgroundImage: `url('public/images/recruit/recruitTopImg.png')`,
-  //   width:"100%",
-  //   height:"100%"
-  // }
-
   return (
     <>
       <Seo templateTitle='RECRUIT' text={seoText} />
@@ -161,7 +154,7 @@ export default function Recruit(categories: Categories) {
       <Culture pageData={categories.pageData}/>
       <Human />
       </div>
-      
+
       {/* <Staff pageData={categories.pageData}/> */}
       <Job categories={categories}/>
 

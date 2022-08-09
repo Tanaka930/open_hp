@@ -21,7 +21,7 @@ export default function Culture(props: Props){
       <section className='h-auto w-full' style={{backgroundColor:"#FBFBFB"}}>
         {/* <h2 className='text-2xl lg:text-5xl w-full pb-2 lg:pb-6 lg:w-1/2  text-left'>Philosophy</h2>
         <h3 className='text-sm lg:text-2xl w-full lg:w-1/2 pb-4 xl:pb-8 text-left text-green-700 font-YuGothic'>ー 社風 ー</h3> */}
-        <SectionTitle title="Philosophy" subTitle="社風" position="center" />
+        <SectionTitle title="Corporate Culture" subTitle="社風" position="center" />
         <div className='lg:flex lg:justify-center '>
           {/* <div className='text-center block lg:hidden w-auto'>
             <Image

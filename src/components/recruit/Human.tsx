@@ -1,4 +1,5 @@
 import SectionTitle from '@/components/layout/sectionText';
+import Image from 'next/image';
 
 export default function Human(){
   const text1:string = "自分の欠点を素直に認めることができ、他者の価値観を自ら理解しようとする人";
@@ -28,6 +29,86 @@ export default function Human(){
             ))}
           </ul>
         </div>
+        <div className="flex justify-between">
+            <div className="items w-3/12 relative">
+              <img className='w-full' src="/images/recruit/AdobeStock_504523062_Preview.png" alt="" />
+              {/* <Image
+                      className=""
+                      width={250} height={360}
+                      src="/images/recruit/AdobeStock_504523062_Preview.png"
+                      alt="openstore-logo"
+                      decoding="async"
+                    /> */}
+              <div className="items__text">
+                <h3 className='text-lg mb-3.5'>なぜそうなるか、を考え続ける仕事</h3>
+                <p className='text-sm'>オープンストアで活躍されている人物には、年齢や性別問わず、
+                  チャレンジ精神が強く何事にも偏見を持たず素直に取り組むという特徴があります。
+                  オープンストアで働いていると、日々変化の連続であるため</p>
+                  <style JSX>{`
+                    .items__text {
+                      width: 119%;
+                      position: absolute;
+                      background-color: #fff;
+                      padding: 5%;
+                      top: 73%;
+                      transform: translateX(11%);
+                    }
+                  `}</style>
+              </div>
+            </div>
+            <div className="items w-3/12 relative">
+              <img className='w-full' src="/images/recruit/AdobeStock_504523062_Preview.png" alt="" />
+              {/* <Image
+                      className=""
+                      width={250} height={360}
+                      src="/images/recruit/AdobeStock_504523062_Preview.png"
+                      alt="openstore-logo"
+                      decoding="async"
+                    /> */}
+              <div className="items__text">
+                <h3 className='text-lg mb-3.5'>なぜそうなるか、を考え続ける仕事</h3>
+                <p className='text-sm'>オープンストアで活躍されている人物には、年齢や性別問わず、
+                  チャレンジ精神が強く何事にも偏見を持たず素直に取り組むという特徴があります。
+                  オープンストアで働いていると、日々変化の連続であるため</p>
+                  <style JSX>{`
+                    .items__text {
+                      width: 119%;
+                      position: absolute;
+                      background-color: #fff;
+                      padding: 5%;
+                      top: 73%;
+                      transform: translateX(11%);
+                    }
+                  `}</style>
+              </div>
+            </div>
+            <div className="items w-3/12 relative">
+              <img className='w-full' src="/images/recruit/AdobeStock_504523062_Preview.png" alt="" />
+              {/* <Image
+                      className=""
+                      width={250} height={360}
+                      src="/images/recruit/AdobeStock_504523062_Preview.png"
+                      alt="openstore-logo"
+                      decoding="async"
+                    /> */}
+              <div className="items__text">
+                <h3 className='text-lg mb-3.5'>なぜそうなるか、を考え続ける仕事</h3>
+                <p className='text-sm'>オープンストアで活躍されている人物には、年齢や性別問わず、
+                  チャレンジ精神が強く何事にも偏見を持たず素直に取り組むという特徴があります。
+                  オープンストアで働いていると、日々変化の連続であるため</p>
+                  <style JSX>{`
+                    .items__text {
+                      width: 119%;
+                      position: absolute;
+                      background-color: #fff;
+                      padding: 5%;
+                      top: 73%;
+                      transform: translateX(11%);
+                    }
+                  `}</style>
+              </div>
+            </div>
+          </div>
       </section>
     </>
   );

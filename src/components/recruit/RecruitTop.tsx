@@ -23,7 +23,7 @@ export default function Culture(props: Props){
         {/* <h2 className='text-2xl lg:text-5xl w-full pb-2 lg:pb-6 lg:w-1/2  text-left'>Philosophy</h2>
         <h3 className='text-sm lg:text-2xl w-full lg:w-1/2 pb-4 xl:pb-8 text-left text-green-700 font-YuGothic'>ー 社風 ー</h3> */}
         {/* <SectionTitle title="Philosophy" subTitle="社風" position="center" /> */}
-        <div className='text-center text-2xl text-shadow'
+        <div className='text-center text-2xl text-shadow text-white'
               dangerouslySetInnerHTML={{
               __html: `${title}`,
             }}
@@ -40,7 +40,7 @@ export default function Culture(props: Props){
               decoding="async"
               />
           </div> */}
-          <div className='text-base mt-12 md:mt-0 lg:w-1/2 font-pro65Medium font-black text-center'
+          <div className='text-base mt-12 md:mt-0 lg:w-1/2 font-pro65Medium font-black text-center text-white'
               dangerouslySetInnerHTML={{
               __html: `${text}`,
             }}

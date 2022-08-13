@@ -29,85 +29,57 @@ export default function Human(){
             ))}
           </ul>
         </div>
-        <div className="flex justify-between">
-            <div className="items w-3/12 relative">
+        <div className="py-20 md:flex justify-between">
+            <div className="items md:w-3/12 relative">
               <img className='w-full' src="/images/recruit/AdobeStock_504523062_Preview.png" alt="" />
-              {/* <Image
-                      className=""
-                      width={250} height={360}
-                      src="/images/recruit/AdobeStock_504523062_Preview.png"
-                      alt="openstore-logo"
-                      decoding="async"
-                    /> */}
               <div className="items__text">
                 <h3 className='text-lg mb-3.5'>なぜそうなるか、を考え続ける仕事</h3>
                 <p className='text-sm'>オープンストアで活躍されている人物には、年齢や性別問わず、
                   チャレンジ精神が強く何事にも偏見を持たず素直に取り組むという特徴があります。
                   オープンストアで働いていると、日々変化の連続であるため</p>
-                  <style JSX>{`
-                    .items__text {
-                      width: 119%;
-                      position: absolute;
-                      background-color: #fff;
-                      padding: 5%;
-                      top: 73%;
-                      transform: translateX(11%);
-                    }
-                  `}</style>
               </div>
             </div>
-            <div className="items w-3/12 relative">
+            <div className="items md:w-3/12 relative">
               <img className='w-full' src="/images/recruit/AdobeStock_504523062_Preview.png" alt="" />
-              {/* <Image
-                      className=""
-                      width={250} height={360}
-                      src="/images/recruit/AdobeStock_504523062_Preview.png"
-                      alt="openstore-logo"
-                      decoding="async"
-                    /> */}
               <div className="items__text">
                 <h3 className='text-lg mb-3.5'>なぜそうなるか、を考え続ける仕事</h3>
                 <p className='text-sm'>オープンストアで活躍されている人物には、年齢や性別問わず、
                   チャレンジ精神が強く何事にも偏見を持たず素直に取り組むという特徴があります。
                   オープンストアで働いていると、日々変化の連続であるため</p>
-                  <style JSX>{`
-                    .items__text {
-                      width: 119%;
-                      position: absolute;
-                      background-color: #fff;
-                      padding: 5%;
-                      top: 73%;
-                      transform: translateX(11%);
-                    }
-                  `}</style>
               </div>
             </div>
-            <div className="items w-3/12 relative">
-              <img className='w-full' src="/images/recruit/AdobeStock_504523062_Preview.png" alt="" />
-              {/* <Image
-                      className=""
-                      width={250} height={360}
-                      src="/images/recruit/AdobeStock_504523062_Preview.png"
-                      alt="openstore-logo"
-                      decoding="async"
-                    /> */}
+            <div className="items md:w-3/12 relative">
+              <img className='w-full item__image' src="/images/recruit/AdobeStock_504523062_Preview.png" alt="" />
               <div className="items__text">
                 <h3 className='text-lg mb-3.5'>なぜそうなるか、を考え続ける仕事</h3>
                 <p className='text-sm'>オープンストアで活躍されている人物には、年齢や性別問わず、
                   チャレンジ精神が強く何事にも偏見を持たず素直に取り組むという特徴があります。
                   オープンストアで働いていると、日々変化の連続であるため</p>
-                  <style JSX>{`
-                    .items__text {
-                      width: 119%;
-                      position: absolute;
-                      background-color: #fff;
-                      padding: 5%;
-                      top: 73%;
-                      transform: translateX(11%);
-                    }
-                  `}</style>
               </div>
             </div>
+            <style JSX>{`
+                    .items {
+                      margin-bottom:30%;
+                    }
+                    .items__text {
+                      width:100%;
+                      position: absolute;
+                        background-color: #fff;
+                        padding: 5%;
+                        top: 73%;
+                        transform: translateX(11%);
+                    }
+                    @media screen and (min-width:768px){
+                      .items__text {
+                        width: 119%;
+                        position: absolute;
+                        background-color: #fff;
+                        padding: 5%;
+                        top: 73%;
+                        transform: translateX(11%);
+                      }
+                    }
+                  `}</style>
           </div>
       </section>
     </>

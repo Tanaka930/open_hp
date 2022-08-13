@@ -6,6 +6,8 @@ import RecruitTop from '@/components/recruit/RecruitTop'
 import Culture from '@/components/recruit/Culture'
 // 求める人物像のコンポーネント
 import Human from '@/components/recruit/Human'
+// 募集要項のコンポーネント
+import RecruitOverview from '@/components/recruit/RecruitOverview'
 // スタッフの声用のコンポーネント
 import Staff from '@/components/recruit/Staff'
 // 求人用のコンポーネント
@@ -15,7 +17,7 @@ import { useForm } from "react-hook-form";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 import { init,send } from 'emailjs-com';
 import {useState, useRef} from 'react';
-import Image from 'next/image'
+import Image from 'next/image';
 // import image from "public/images/recruit/";
 
 
@@ -148,14 +150,16 @@ export default function Recruit(categories: Categories) {
             .team {
                 width:100%;
                 height:100%;
+                background-size:cover;
                 background: url('${`/images/recruit/recruitTopImg.png`}');
             }
         `}</style>
+      </div>
       <Culture pageData={categories.pageData}/>
       <Human />
-      </div>
 
       {/* <Staff pageData={categories.pageData}/> */}
+      <RecruitOverview />
       <Job categories={categories}/>
 
       <section className="w-full" style={{background:"#F7F4EC"}}>

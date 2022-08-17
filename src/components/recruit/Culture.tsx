@@ -1,5 +1,5 @@
 import useMedia from 'use-media';
-import Image from 'next/image'
+import Image from 'next/image';
 import SectionTitle from '@/components/layout/sectionText'
 
 type Props = {
@@ -18,11 +18,68 @@ export default function Culture(props: Props){
 
   return(
     <>
-      <section className='h-auto w-full' style={{backgroundColor:"#FBFBFB"}}>
+      <section className='afterContent h-auto w-full' style={{backgroundColor:"#FBFBFB"}}>
+      <style JSX>{`
+            .afterContent {
+              position:relative;
+              z-index:-3;
+            }
+            .afterContent::after{
+              content: "";
+              position: absolute;
+              display: inline-block;
+              vertical-align: middle;
+              right: 0;
+              top: 0;
+              width: 450px;
+              height: 700px;
+             background: url('${`/images/recruit/cultureImage.png`}') no-repeat;
+             background-size: cover;
+             z-index:-1;
+            }
+            @media screen and (max-width:768px){
+              .afterContent::after{
+                width:85%;
+                height:18%;
+                top:3%;
+              }
+            }
+        `}</style>
         {/* <h2 className='text-2xl lg:text-5xl w-full pb-2 lg:pb-6 lg:w-1/2  text-left'>Philosophy</h2>
         <h3 className='text-sm lg:text-2xl w-full lg:w-1/2 pb-4 xl:pb-8 text-left text-green-700 font-YuGothic'>ー 社風 ー</h3> */}
-        <SectionTitle title="Corporate Culture" subTitle="社風" position="center" />
-        <div className='lg:flex lg:justify-center '>
+        <div className='afterBorder'>
+        <style JSX>{`
+            .afterBorder {
+              position:relative;
+              width:50%;
+              transform:translateX(6rem);
+            }
+            .afterBorder::after{
+              content: '';
+              width: 35%;
+              height: 3px;
+              display: inline-block;
+              background-color: #F3C11D;
+              position: absolute;
+              left: 108%;
+              transform: rotate(65deg);
+              z-index: 1;
+              bottom: 42%;
+            }
+            @media screen and (max-width:768px){
+              .afterBorder {
+                width:100%;
+                transform:translateX(0rem);
+                margin-top:130%;
+              }
+              .afterBorder::after{
+                left: -6%;
+                bottom: 106%;
+              }
+            }
+        `}</style>
+        <SectionTitle title="Corporate Culture" subTitle="社風" position="left" />
+        <div className=''>
           {/* <div className='text-center block lg:hidden w-auto'>
             <Image
               src={isMobileSite ? props.pageData.cultureImage2.url : props.pageData.cultureImage.url }
@@ -32,7 +89,7 @@ export default function Culture(props: Props){
               decoding="async"
               />
           </div> */}
-          <div className='text-base mt-12 md:mt-0 lg:w-1/2 font-pro65Medium font-black'
+          <div className='text-base mt-12 md:mt-0 font-pro65Medium font-black'
               dangerouslySetInnerHTML={{
               __html: `${text}`,
             }}
@@ -47,6 +104,8 @@ export default function Culture(props: Props){
               decoding="async"
               />
             </div> */}
+        </div>
+
         </div>
       </section>
     </>

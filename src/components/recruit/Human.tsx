@@ -29,7 +29,7 @@ export default function Human(){
             ))}
           </ul>
         </div>
-        <div className="py-20 md:flex justify-between">
+        <div className="pb-0 pt-20 md:py-20 md:flex justify-between">
             <div className="items md:w-3/12 relative">
               <img className='w-full' src="/images/recruit/AdobeStock_504523062_Preview.png" alt="" />
               <div className="items__text">
@@ -70,6 +70,9 @@ export default function Human(){
                         transform: translateX(11%);
                     }
                     @media screen and (min-width:768px){
+                      .items {
+                        margin-bottom:0;
+                      }
                       .items__text {
                         width: 119%;
                         position: absolute;

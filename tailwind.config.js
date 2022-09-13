@@ -86,6 +86,12 @@ module.exports = {
         'ec_top':"url('/images/service/ec/EC-TOP.png')",
         'lien_top':"url('/images/service/line/linetop.png')",
         'dx_top':"url('/images/service/dx/dxtop.png')",
+
+        // RECRUIT画像
+        'recruit_top':"url('/images/recruit/recruitTopImg.png')",
+        'culture_image':"url('/images/recruit/cultureImage.png')",
+        'Recruit_overview':"url('/images/recruit/RecruitmentOverview.png')",
+
         // Footer
         'footer-pc':"url('/images/layout/footer-pc.png')",
         'footer-sp':"url('/images/layout/footer-sp.png')",
@@ -115,7 +121,7 @@ module.exports = {
         per10: '10%',
       },
       borderRadius: {
-        serviceImage: '30px', 
+        serviceImage: '30px',
       }
     },
   },

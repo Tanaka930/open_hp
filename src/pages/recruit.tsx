@@ -18,6 +18,7 @@ import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
 import { init,send } from 'emailjs-com';
 import {useState, useRef} from 'react';
 import Image from 'next/image';
+// import "../styles/style.module.scss";
 // import image from "public/images/recruit/";
 
 
@@ -143,17 +144,9 @@ export default function Recruit(categories: Categories) {
       <Seo templateTitle='RECRUIT' text={seoText} />
 
       {/* ここでbackground-imageの追加を行っている。 */}
-      <div className="team">
+      <div id="recruit_top" className="bg-recruit_top">
       <TopContent title="RECRUIT" text="採用情報" />
       <RecruitTop pageData={categories.pageData} />
-         <style JSX>{`
-            .team {
-                width:100%;
-                height:100%;
-                background-size:cover;
-                background: url('${`/images/recruit/recruitTopImg.png`}');
-            }
-        `}</style>
       </div>
       <Culture pageData={categories.pageData}/>
       <Human />
@@ -210,7 +203,6 @@ export default function Recruit(categories: Categories) {
                     {errors.mailf && <span className="text-red-600 text-sm pt-2">{errors.mailf.message}</span>}
                   </div>
                 </div>
-
 
                 <div className="md:flex items-center mt-12">
                   <div className="w-full flex flex-col">

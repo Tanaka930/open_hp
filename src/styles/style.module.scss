@@ -1,0 +1,52 @@
+// Culture.tsx
+.afterContent {
+  position: relative;
+  z-index: -3;
+  &::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    vertical-align: middle;
+    right: 0;
+    top: 0;
+    width: 450px;
+    height: 700px;
+    // background: url("${`/images/recruit/cultureImage.png`}") no-repeat;
+    background-size: cover;
+    z-index: -1;
+    @media screen and (max-width: 768px) {
+      width: 85%;
+      height: 18%;
+      top: 3%;
+    }
+  }
+}
+
+.afterBorder {
+  position: relative;
+  width: 50%;
+  transform: translateX(6rem);
+}
+.afterBorder::after {
+  content: "";
+  width: 35%;
+  height: 3px;
+  display: inline-block;
+  background-color: #f3c11d;
+  position: absolute;
+  left: 108%;
+  transform: rotate(65deg);
+  z-index: 1;
+  bottom: 42%;
+}
+@media screen and (max-width: 768px) {
+  .afterBorder {
+    width: 100%;
+    transform: translateX(0rem);
+    margin-top: 130%;
+  }
+  .afterBorder::after {
+    left: -6%;
+    bottom: 106%;
+  }
+}

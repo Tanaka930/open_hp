@@ -3,7 +3,7 @@ import PrimaryButton from "@/components/buttons/primaryButton";
 export default function RecruitOverview(){
   return(
     <>
-    <section className='h-auto w-full team2'>
+    <section id='Recruit_overview' className='bg-Recruit_overview h-auto w-full'>
     <div>
       <h3 className='text-white pb-8 text-3xl'>募集概要</h3>
       <p className='text-white'>今まで運動をしてこなかった方も</p>
@@ -17,14 +17,14 @@ export default function RecruitOverview(){
             >
               indeedで詳しく見る
             </PrimaryButton>
-      <style JSX>{`
+      {/* <style jsx>{`
             .team2 {
                 width:100%;
                 height:100%;
                 background-size:cover;
                 background: url('${`/images/recruit/RecruitmentOverview.png`}');
             }
-      `}</style>
+      `}</style> */}
     </div>
     </section>
     </>

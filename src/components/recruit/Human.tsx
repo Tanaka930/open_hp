@@ -57,7 +57,7 @@ export default function Human(){
                   オープンストアで働いていると、日々変化の連続であるため</p>
               </div>
             </div>
-            <style JSX>{`
+            <style jsx>{`
                     .items {
                       margin-bottom:30%;
                     }

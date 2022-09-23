@@ -8,9 +8,11 @@ export default function ServiceDoing(){
           <h2 className='md:text-left font-bold text-3xl mb-1'>店舗DXへの取り組み</h2>
           <p className='md:text-left text-center font-color font-semibold mb-11 text-sm'>What we’re doing</p>
           <img className='service__xd-2' src={'/images/service/service_dx-2.png'} />
-          <p>「今までの常識が非常識に、非常識が常識に」というようにコロナ禍を機に
-            「働き方改革によるリモートワーク制度の普及、消費動向の変化、オンラインショッピングの増加、
-            スマホ普及の急進」など世の中が目まぐるしく変化しています。
+          <p>オープンストアは未来を今に近づける“ソーシャルDX”カンパニーとして、
+            店舗・施設DXとライフスタイルDXにより社会の未来を変革するために、
+            「集客・再来店UP」「コスト削減」「業務効率化」という3つの事業に取り組んでいます。
+             DX導入により業務を効率化することで、人と人とのコミュニケーションが活性化し、
+             笑顔で元気あふれる空間づくりをお手伝いします。
           </p>
         </div>
         <img className='service__xd' src={'/images/service/service_dx.png'} />
@@ -29,7 +31,7 @@ export default function ServiceDoing(){
             color:#F7F4EC;
             z-index: -1;
             font-size: 16rem;
-            bottom: 43%;
+            bottom: 21%;
             font-weight: bold;
           }
           @media screen and (max-width: 768px) {

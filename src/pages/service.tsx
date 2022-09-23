@@ -11,7 +11,14 @@ export default function Service(props:any){
   return(
     <>
       <Seo templateTitle='Service' />
+      <div className="service__border">
       <TopContent title="SERVICE" text="事業内容" />
+      <style jsx>{`
+        .service__border{
+          
+        }
+        `}</style>
+      </div>
       <ServiceDoing />
       <ServiceFlow />
       <ServiceShopify />

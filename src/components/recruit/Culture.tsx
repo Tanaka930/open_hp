@@ -18,59 +18,18 @@ export default function Culture(props: Props){
 
   return(
     <>
-      <section className='afterContent h-auto w-full' style={{backgroundColor:"#FBFBFB"}}>
+      <section className='relative h-auto w-full' style={{backgroundColor:"#FBFBFB"}}>
+        <img className='absolute right-0 md:top-0 top-20 md:w-4/12 w-10/12 md:h-4/6 h-1/5 h-80' src={'/images/recruit/cultureImage.png'} alt="" />
         {/* <h2 className='text-2xl lg:text-5xl w-full pb-2 lg:pb-6 lg:w-1/2  text-left'>Philosophy</h2>
         <h3 className='text-sm lg:text-2xl w-full lg:w-1/2 pb-4 xl:pb-8 text-left text-green-700 font-YuGothic'>ー 社風 ー</h3> */}
         {/* <Image className='' width={450} height={700} src="/images/recruit/cultureImage.png" /> */}
         <div className='afterBorder'>
         <style jsx>{`
-        .afterContent {
-          position: relative;
-          z-index: -3;
-        }
-
-        .afterContent::after {
-          content: "";
-          position: absolute;
-          display: inline-block;
-          vertical-align: middle;
-          right: 0;
-          top: 0;
-          width: 450px;
-          height: 700px;
-          background-image: url("${`/images/recruit/cultureImage.png`}") no-repeat;
-          background-size: cover;
-          z-index: -1;
-        }
-
-        @media screen and (max-width: 768px) {
-         .afterContent {
-         width: 85%;
-         height: 18%;
-         top: 3%;
-         }
-        }
-
-
-          `}</style>
-
-        <style jsx global>{`
         .afterBorder {
           position: relative;
           width: 50%;
           transform: translateX(6rem);
         }
-
-        {/* .afterBorder::before {
-          content: url(/images/recruit/cultureImage.png);
-          width: 25%;
-          height: 50%;
-          display: inline-block;
-          position: absolute;
-          right: 0;
-          z-index: -1;
-          bottom: ;
-        } */}
 
         .afterBorder::after {
           content: "";
@@ -79,10 +38,10 @@ export default function Culture(props: Props){
           display: inline-block;
           background-color: #f3c11d;
           position: absolute;
-          left: 108%;
+          left: 112%;
           transform: rotate(65deg);
           z-index: 1;
-          bottom: 42%;
+          bottom: 38%;
         }
 
         @media screen and (max-width: 768px) {
@@ -97,6 +56,7 @@ export default function Culture(props: Props){
         }
         }
           `}</style>
+
         <SectionTitle title="Corporate Culture" subTitle="社風" position="left" />
         <div className=''>
           {/* <div className='text-center block lg:hidden w-auto'>

@@ -1,5 +1,5 @@
 import Seo from '@/components/Seo';
-import TopContentType2 from '@/components/layout/topContentType2';
+import TopContent from '@/components/layout/TopContent';
 // 実績用のコンポーネント追加
 import Achievement from '@/components/layout/Achievement'
 import BackServiceButton from '@/components/organisms/backServiceButton'
@@ -37,7 +37,7 @@ export default function Home(props:any){
   return(
     <>
       <Seo templateTitle='オープンストアEC事業' text={seoText} />
-      <TopContentType2 title="Shopify構築" />
+      <TopContent title="Shopify Expert" text="Shopify エキスパート" />
       <UnderText image={explanation1.image} text={explanation1.text} altText={explanation1.text} width={explanation1.width} height={explanation1.height} />
       <Achievement datas={props.achievement} bgColor="gray-50" children={<BackServiceButton />} />
     </>

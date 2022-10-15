@@ -10,7 +10,7 @@ export default function TopContent(props: Props) {
       <div>
         <div className="h-16"></div>
         {/* <div className={}></div> */}
-        <div className="flex flex-col items-center justify-center my-12 md:mt-16">
+        <div className="flex flex-col items-center justify-center my-12 md:mt-16 md:pt-16 pt-0">
           <h2 className="titleColor text-yellow-main text-2xl md:text-5xl font-pro65Medium font-black">
             {props.title}
           </h2>

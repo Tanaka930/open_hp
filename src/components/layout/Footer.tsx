@@ -104,7 +104,7 @@ export default function Footer() {
                   </UnstyledLink>
                 </div>
 
-                <div className="w-1/2 pt-2 ml-5">
+                <div className="w-1/2 pt-6 ml-5">
                   <UnstyledLink href="/services/ec" className="block cursor-pointer pb-4">
 
                     <span className="text-xs font-themeText">ー Shopify事業</span>

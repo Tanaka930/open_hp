@@ -6,8 +6,10 @@ export default function Partner(props:any){
   return(
     <>
       <Seo templateTitle='Partner' />
+      <div className="afterBorder">
       <TopContent title="PARTNER" text="パートナー企業一覧" />
-      <section className='bg-gray-50 h-auto'>
+      </div>
+      <section className='h-auto'>
         <div className="flex flex-wrap m-auto justify-around items-center">
           <a className="lg:w-2/12 md:w-5/12 w-4/6 m-4" href="https://www.softbank.jp/"><img src={props.content.softbankImage.url} alt="" /></a>
           <a className="lg:w-2/12 md:w-5/12 w-4/6 m-4" href="https://www.nttdocomo.co.jp/"><img src={props.content.docomoImage.url} alt="" /></a>
@@ -27,6 +29,35 @@ export default function Partner(props:any){
           <a className="lg:w-2/12 md:w-5/12 w-4/6 m-4" href="https://www.brown-trust.com/"><img className='m-auto' src={props.content.brownImage.url} alt="" /></a>
         </div>
       </section>
+      <style jsx>{`
+
+        .afterBorder {
+          position: relative;
+        }
+
+        .afterBorder::after {
+          content: "";
+          width: 13%;
+          height: 3px;
+          display: inline-block;
+          background-color: #f3c11d;
+          position: absolute;
+          left: 52%;
+          transform: rotate(70deg);
+          z-index: 1;
+          bottom: 55%;
+        }
+
+        @media screen and (max-width: 768px) {
+        .afterBorder {
+        }
+        .afterBorder::after {
+          width: 38%;
+          left: 58%;
+          bottom: 42%;
+        }
+        }
+          `}</style>
     </>
   )
 }

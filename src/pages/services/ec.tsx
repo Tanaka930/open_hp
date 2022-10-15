@@ -37,9 +37,39 @@ export default function Home(props:any){
   return(
     <>
       <Seo templateTitle='オープンストアEC事業' text={seoText} />
+      <div className="afterBorder">
       <TopContent title="Shopify Expert" text="Shopify エキスパート" />
+      </div>
       <UnderText image={explanation1.image} text={explanation1.text} altText={explanation1.text} width={explanation1.width} height={explanation1.height} />
       <Achievement datas={props.achievement} bgColor="gray-50" children={<BackServiceButton />} />
+      <style jsx>{`
+        .afterBorder {
+          position: relative;
+        }
+
+        .afterBorder::after {
+          content: "";
+          width: 15%;
+          height: 3px;
+          display: inline-block;
+          background-color: #f3c11d;
+          position: absolute;
+          left: 55%;
+          transform: rotate(70deg);
+          z-index: 1;
+          bottom: 44%;
+        }
+
+        @media screen and (max-width: 768px) {
+        .afterBorder {
+        }
+        .afterBorder::after {
+          width: 32%;
+          left: 60%;
+          bottom: 41%;
+        }
+        }
+          `}</style>
     </>
   )
 }

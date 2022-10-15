@@ -142,10 +142,21 @@ export default function Recruit(categories: Categories) {
   return (
     <>
       <Seo templateTitle='RECRUIT' text={seoText} />
-
       {/* ここでbackground-imageの追加を行っている。 */}
       <div id="recruit_top" className="bg-recruit_top">
-      <TopContent title="RECRUIT" text="採用情報" />
+      <div className="afterBorder">
+      {/* <TopContent title="RECRUIT" text="採用情報" /> */}
+      <div>
+        <div className="h-16"></div>
+        {/* <div className={}></div> */}
+        <div className="flex flex-col items-center justify-center my-12 md:mt-16 md:pt-16 pt-0">
+          <h2 className="titleColor text-yellow-main text-2xl md:text-5xl font-pro65Medium font-black">
+          RECRUIT
+          </h2>
+          <h4 className="leadColor text-sm text-green-500 font-bold pt-4 font-YuGothic md:text-2xl">採用情報</h4>
+        </div>
+      </div>
+      </div>
       <RecruitTop pageData={categories.pageData} />
       </div>
       <Culture pageData={categories.pageData}/>
@@ -318,6 +329,43 @@ export default function Recruit(categories: Categories) {
           </div>
         </div>
       </section>
+      <style jsx>{`
+
+        .titleColor{
+          color:#FFFFFF;
+        }
+
+        .leadColor{
+          color:#F3C11D;
+        }
+
+        .afterBorder {
+          position: relative;
+        }
+
+        .afterBorder::after {
+          content: "";
+          width: 17%;
+          height: 3px;
+          display: inline-block;
+          background-color: #f3c11d;
+          position: absolute;
+          left: 52%;
+          transform: rotate(70deg);
+          z-index: 1;
+          bottom: 0%;
+        }
+
+        @media screen and (max-width: 768px) {
+        .afterBorder {
+        }
+        .afterBorder::after {
+          width: 38%;
+          left: 52%;
+          bottom: 30%;
+        }
+        }
+          `}</style>
     </>
   )
 }

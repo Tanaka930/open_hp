@@ -7,14 +7,23 @@ import Service from '@/components/top/Service'
 import News from '@/components/top/News'
 // ブログ表示用のコンポーネント
 import Blog from '@/components/top/Blog'
+import HomeTopContent from "@/components/top/HomeTopContent"
+import HomeOurMission from "@/components/top/HomeOurMission"
+import TopContent from '@/components/layout/TopContent';
+import ServiceDoing from '@/components/top/service/ServiceDoing';
 
 export default function Home(props:any){
   return(
     <>
       <Seo templateTitle='Home' />
-      <TopAnimation />
-      <Blog blogs={props.blogs.contents} />
-      <Service data={props.content} />
+      <HomeTopContent />
+      <HomeOurMission />
+      {/* service部分 */}
+      <TopContent title="SERVICE" text="事業内容" />
+      <ServiceDoing />
+      {/* <TopAnimation /> */}
+      {/* <Blog blogs={props.blogs.contents} /> */}
+      {/* <Service data={props.content} /> */}
       <News newses={props.news.contents}/>
     </>
   )

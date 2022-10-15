@@ -15,7 +15,29 @@ export default function Service(props:any){
       <TopContent title="SERVICE" text="事業内容" />
       <style jsx>{`
         .service__border{
-          
+          position: relative;
+        }
+
+        .service__border::before{
+          content: "";
+          width: 16%;
+          height: 3px;
+          display: inline-block;
+          background-color: #f3c11d;
+          position: absolute;
+          left: 52%;
+          transform: rotate(70deg);
+          z-index: 1;
+          top: 40%;
+        }
+
+        @media screen and (max-width: 768px) {
+          .service__border {
+         }
+          .service__border::before {
+            width: 51%;
+            left: 44%;
+         }
         }
         `}</style>
       </div>

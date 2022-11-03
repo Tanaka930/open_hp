@@ -1,9 +1,11 @@
+import Link from 'next/link'
+
 export default function HomeTopContent(){
   return(
     <>
-    <section className="">
-    <div className="top__borderBackground top__border">
-      <div className="w-2/4 md:my-44 my-12">
+    <section className="top__borderBackground">
+    <div className="top__border">
+      <div className="md:w-2/4 w-full md:my-44 mt-12 mb-96">
         <h1 className="titleText font-bold leading-normal">
           <span className="color">PROVIDE</span>
           <br />SATISFACTION
@@ -12,18 +14,32 @@ export default function HomeTopContent(){
         {/* <div className="top__image__2">
         <img className='top__image__size absolute' src={'/images/top/top__image.png'} alt="" />
         </div> */}
-        <p className="w-8/12 mt-8">オープンストアは企業や店舗が抱える課題を一つひとつ汲み取り、
+        <p className="transform md:w-8/12 w-9/12 mt-8">
+          オープンストアは企業や店舗が抱える課題を一つひとつ汲み取り、
           新たなサービスや仕組み作りに伴走できる唯一の
           パートナーとして在り続けます。障壁を一つひとつ乗り越え、
           夢の実現に向かう皆様のお手伝いを、
           是非、私たちオープンストアにお任せください。
         </p>
+        <div className="button">
+        <Link href='/about'>
+            <a className='button__style text-white border-yellow-main bg-yellow-main hover:bg-green-600 hover:border-green-600 text-lg'>
+              もっと見る
+            </a>
+        </Link>
+        </div>
       </div>
       <div className="top__image">
         <img className='top__image__size absolute' src={'/images/top/top__image.png'} alt="" />
       </div>
     </div>
     <style jsx>{`
+        @media screen and (max-width: 768px) {
+         section {
+          padding:36px 0 10rem 20px
+         }
+        }
+
         .titleText {
           font-size:6rem;
         }
@@ -42,6 +58,12 @@ export default function HomeTopContent(){
 
         .color{
           color:#0C8E86;
+        }
+
+        @media screen and (max-width: 768px) {
+          .transform {
+           transform: translateY(320%);
+          }
         }
 
         .top__image {
@@ -93,16 +115,20 @@ export default function HomeTopContent(){
          }
 
          .top__image__size{
-          height:70%;
-          width: 100%;
-          right: -7%;
+          height:120%;
+          width: 85%;
+          right: 0%;
           z-index:-1;
+          top:40%;
         }
 
           .top__image::before {
-            height:70%;
-            width: 100%;
-         }
+            height:110%;
+            width: 75%;
+            top: 51%;
+            left:25%;
+            border-radius: 0 0 0 8px;
+            }
         }
 
         .top__borderBackground{
@@ -112,11 +138,11 @@ export default function HomeTopContent(){
         .top__borderBackground::after{
           content: "";
           width: 70%;
-          height: 60%;
+          height: 30%;
           display: inline-block;
           background-color: #F7F4EC;
           position: absolute;
-          left:24%;
+          left:17%;
           transform: rotate(70deg);
           z-index: -1;
           top: 0%;
@@ -127,6 +153,10 @@ export default function HomeTopContent(){
          }
 
           .top__borderBackground::after {
+            width:100%;
+            left:-10%;
+            height:14%;
+            z-index:-10;
          }
         }
 
@@ -153,8 +183,32 @@ export default function HomeTopContent(){
          }
 
           .top__border::after {
+            width: 70%;
+            left: -21%;
+            transform: rotate(-70deg);
+            z-index: -1;
+            top: 66%;
          }
         }
+
+        .button {
+          transform: translateY(1650%);
+          display: none;
+        }
+
+        .button__style {
+          padding: 0.75rem 7.5rem;
+          margin-left: 5.5%;
+          border-radius: 50px;
+          box-shadow: 0 3px 8px 0 rgb(0 0 0 / 50%);
+        }
+
+        @media screen and (max-width: 768px) {
+          .button {
+            display: block;
+         }
+        }
+
         `}</style>
     </section>
     </>

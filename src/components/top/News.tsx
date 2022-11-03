@@ -48,8 +48,14 @@ export default function News({newses}: {newses:any}){
           .triangle {
             position: relative;
             overflow: hidden;
-            padding: 15rem 0;
+            padding: 15rem 10%;
             margin-bottom: 5%;
+          }
+
+          @media screen and (max-width: 768px) {
+            .triangle {
+            padding: 5rem 10%;
+          }
           }
 
           .triangle::before {

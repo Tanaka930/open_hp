@@ -15,7 +15,7 @@ type ButtonLinkProps = {
   variant?: keyof typeof ButtonVariant;
 } & UnstyledLinkProps;
 
-export default function PrimaryButton({
+export default function PrimaryButton2({
   className,
   children,
   href,
@@ -35,7 +35,6 @@ export default function PrimaryButton({
       }
       >
         {children}
-        <span className={`${span} inline-block rounded-full ml-7 mr-2.5 mb-px`}></span>
       </UnstyledLink>
     </>
   );

@@ -37,15 +37,67 @@ export default function Header() {
               </div>
             </div>
 
-            <div className="-mr-2 flex ">
+            <div className="pc">
+              <div className='flex justify-between font-bold items-center header-height'>
+              <a href="/about">事業内容</a>
+              <a href="">私たちについて</a>
+              <a href="">会社概要</a>
+              <a href="">採用情報</a>
+              <a href="">パートナー企業</a>
+              <a href="">お知らせ</a>
+              <div className="header-contact">
+              <a href="/contact">✉お問い合わせ</a>
+              </div>
+              </div>
+            </div>
+
+            <div className="iphone">
+            <div className="-mr-2 flex">
               {/* menu button */}
               <p className={`${isActive ? 'z-20 leading-10' : 'hidden' }`}>close</p>
               <HamburgerStand isActive={isActive} buttonWidth={isWide ? 33 : 33} toggleButton={menuFunction} className="z-20" buttonColor="" barColor="#010305"/>
             </div>
           </div>
+          </div>
         </div>
         <HeaderMenu isActive={isActive} toggleButton={menuFunction} logoWidth={isWide ? 234.78 : 400} logoHeight={isWide ? 29 : 39} />
       </div>
+      <style jsx>{`
+        .header-height {
+          height:96px;
+        }
+
+        .header-contact{
+          height: 100%;
+          display: flex;
+          align-items: center;
+          padding: 0 2%;
+          background-color:#F3C11D;
+          color:#fff;
+        }
+
+      .pc{
+          display:block;
+          width:75%;
+        }
+
+      @media screen and (max-width: 768px) {
+        .pc{
+          display:none;
+        }
+      }
+
+      .iphone{
+        display:none;
+      }
+
+      @media screen and (max-width: 768px) {
+        .iphone{
+          display:block;
+        }
+      }
+
+      `}</style>
     </>
   )
 }

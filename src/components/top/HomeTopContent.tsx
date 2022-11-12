@@ -1,6 +1,24 @@
-import Link from 'next/link'
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 export default function HomeTopContent(){
+
+        // fetch
+        const [post, setPost] = useState<any>([]);
+
+        useEffect(() => {
+          fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/content`, {
+            headers: {
+              'X-MICROCMS-API-KEY': String(process.env.NEXT_PUBLIC_MICRO_CMS_API_KEY),
+            },
+            method: 'GET',
+          })
+            .then((res) => res.json())
+            .then((date) => {
+              setPost(date);
+            });
+        }, []);
+
   return(
     <>
     <section className="top__borderBackground">
@@ -15,11 +33,7 @@ export default function HomeTopContent(){
         <img className='top__image__size absolute' src={'/images/top/top__image.png'} alt="" />
         </div> */}
         <p className="transform md:w-8/12 w-9/12 mt-8">
-          オープンストアは企業や店舗が抱える課題を一つひとつ汲み取り、
-          新たなサービスや仕組み作りに伴走できる唯一の
-          パートナーとして在り続けます。障壁を一つひとつ乗り越え、
-          夢の実現に向かう皆様のお手伝いを、
-          是非、私たちオープンストアにお任せください。
+        {post.aboutTextTop}
         </p>
         <div className="button">
         <Link href='/about'>

@@ -1,18 +1,39 @@
 import PrimaryButton from '@/components/buttons/primaryButton';
+import { useEffect, useState } from 'react';
 import Link from 'next/link'
 
 export default function HomeOurMission(){
+
+      // fetch
+      const [post, setPost] = useState<any>([]);
+
+      useEffect(() => {
+        fetch(`${process.env.NEXT_PUBLIC_MICRO_CMS_DOMAIN}/api/v1/content`, {
+          headers: {
+            'X-MICROCMS-API-KEY': String(process.env.NEXT_PUBLIC_MICRO_CMS_API_KEY),
+          },
+          method: 'GET',
+        })
+          .then((res) => res.json())
+          .then((date) => {
+            setPost(date);
+          });
+      }, []);
+
   return(
     <>
     <section className="md:w-4/6 w-full background relative">
       <div className="top__border">
         <h1 className="color text-4xl font-bold mb-2.5 md:text-left text-center">OUR MISSION</h1>
         <p className="color_2 font-bold text-xl mb-12 md:text-left text-center">オープンストアの掲げるミッション</p>
-        <h1 className="text-5xl font-bold mb-10 md:text-left text-center">変化に順応させる</h1>
-        <p className="md:w-7/12 w-full mb-16">「今までの非常識が常識に、常識が非常識に」
-        というようにコロナ禍を機に世の中が目まぐるしく変化しています。</p>
+        <h1 className="text-5xl font-bold mb-10 md:text-left text-center">
+          変化に順応させる
+        </h1>
+        <p className="md:w-7/12 w-full mb-16">
+        {post.aboutTextBottom}
+        </p>
         <div className="button">
-        <Link href='/about'>
+        <Link href='/members'>
             <a className='button__style text-white border-yellow-main bg-yellow-main hover:bg-green-600 hover:border-green-600 text-lg'>
               私たちについて
             </a>

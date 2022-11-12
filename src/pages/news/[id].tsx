@@ -17,8 +17,8 @@ export default function NewsId({news}:{news:any}) {
         <div className="flex flex-col items-center py-8">
           <div className="flex flex-col w-full mb-12 text-left">
             <div className="w-full mx-auto lg:w-1/2">
-              <h1 className="mx-auto mb-6 text-2xl font-semibold text-black lg:text-3xl">{news.title}</h1>
-              <img className="rounded-sm" src={image} />
+              <h1 className="mx-auto md:mt-16 mt-8 mb-6 text-2xl text-center font-semibold text-black lg:text-3xl">{news.title}</h1>
+              <img className="rounded-sm w-full" src={image} />
               <h2 className="mx-auto mt-4 mb-4 text-xl font-semibold text-black">オープンストアニュース</h2>
               <p className="mx-auto text-base font-medium leading-relaxed text-gray-800">{news.text}</p>
             </div>
@@ -50,7 +50,7 @@ export const getStaticPaths = async() => {
   const offset:number = 0;
   const limit:number = 80;
 
-  const news = await client.get({ 
+  const news = await client.get({
     endpoint: "news",
     queries: {
       offset,
@@ -58,7 +58,7 @@ export const getStaticPaths = async() => {
     }
   });
   const paths = news.contents.map((content:any) => `/news/${content.id}`);
-  
+
   return { paths, fallback: true };
 }
 

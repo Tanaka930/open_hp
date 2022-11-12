@@ -5,6 +5,7 @@ import TopAnimation from '@/components/top/TopAnimation'
 import Service from '@/components/top/Service'
 // ニュース一覧表示用のコンポーネント
 import News from '@/components/top/News'
+
 // ブログ表示用のコンポーネント
 import Blog from '@/components/top/Blog'
 import HomeTopContent from "@/components/top/HomeTopContent"

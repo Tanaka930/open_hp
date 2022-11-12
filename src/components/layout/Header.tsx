@@ -39,12 +39,12 @@ export default function Header() {
 
             <div className="pc">
               <div className='flex justify-between font-bold items-center header-height'>
-              <a href="/about">事業内容</a>
-              <a href="">私たちについて</a>
-              <a href="">会社概要</a>
-              <a href="">採用情報</a>
-              <a href="">パートナー企業</a>
-              <a href="">お知らせ</a>
+              <a href="/service">事業内容</a>
+              <a href="/members">私たちについて</a>
+              <a href="/company">会社概要</a>
+              <a href="/recruit">採用情報</a>
+              <a href="/partner">パートナー企業</a>
+              <a href="/news">お知らせ</a>
               <div className="header-contact">
               <a href="/contact">✉お問い合わせ</a>
               </div>

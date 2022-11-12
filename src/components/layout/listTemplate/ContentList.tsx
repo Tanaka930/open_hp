@@ -11,7 +11,7 @@ export default function ContentList({contents, contentTitle}: {contents:any , co
       <section className="bg-gray-100 body-font">
         <div className="container px-5 pt-12 pb-24 mx-auto max-w-7x1">
           <div className="flex flex-wrap -m-4">
-            {contents.news.map((content:any) => (   
+            {contents.news.map((content:any) => (
               <div className="xl:w-1/3 md:w-1/2 p-4" key={content.id}>
                 <UnstyledLink href={`/${contentTitle}/${content.id}`} >
                   <div className="bg-white pt-2 pb-4 px-2 rounded-lg cursor-pointer">
@@ -24,7 +24,7 @@ export default function ContentList({contents, contentTitle}: {contents:any , co
                     <h2 className="text-lg text-gray-900 font-bold mb-6">{content.title}</h2>
                     <p className="leading-relaxed text-base">
                       {content.text.substr( 0, 50 )}
-                    </p> 
+                    </p>
                   </div>
                 </UnstyledLink>
               </div>

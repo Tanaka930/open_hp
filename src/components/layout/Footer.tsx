@@ -5,16 +5,16 @@ import FooterTop from '@/components/organisms/layout/footerTop';
 import { useMedia } from 'use-media';
 
 const links1 = [
-  { label: 'HOME', href: '/'  },
-  { label: 'ABOUT', href: '/about'  },
+  { label: 'HOME', href: '/'},
+  { label: 'ABOUT', href: '/company'},
   // { label: 'News', href: '/news' },
-  { label: 'RECRUIT', href: '/recruit' },
+  { label: 'RECRUIT', href: '/recruit'},
 ]
 
 const links2 = [
-  { label: ' BLOG', href: '/blog' },
-  { label: 'CONTACT', href: '/contact' },
-  { label: 'SERVICE', href: '/service' },
+  { label: 'BLOG', href: '/blog'},
+  { label: 'CONTACT', href: '/contact'},
+  { label: 'SERVICE', href: '/service'},
   // { label: 'EC', href: '/services/ec'  },
   // { label: 'DX', href: '/services/dx' },
   // { label: 'LINE', href: '/services/line' },

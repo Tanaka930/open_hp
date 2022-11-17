@@ -32,7 +32,7 @@ export default function HomeTopContent(){
         {/* <div className="top__image__2">
         <img className='top__image__size absolute' src={'/images/top/top__image.png'} alt="" />
         </div> */}
-        <p className="transform md:w-8/12 w-9/12 mt-8">
+        <p className="transform md:w-8/12 w-9/12 md:mt-8 aboutTextTop">
         {post.aboutTextTop}
         </p>
         <div className="button">
@@ -67,6 +67,7 @@ export default function HomeTopContent(){
         @media screen and (max-width: 768px) {
           .titleText {
           font-size:2.2rem;
+          margin-bottom:20%;
          }
         }
 
@@ -76,7 +77,7 @@ export default function HomeTopContent(){
 
         @media screen and (max-width: 768px) {
           .transform {
-           transform: translateY(320%);
+           transform: translateY(335%);
           }
         }
 
@@ -110,6 +111,7 @@ export default function HomeTopContent(){
           right: -1%;
           height: 150%;
           width: 50%;
+          z-index:9;
         }
 
         .top__image::before {
@@ -121,7 +123,7 @@ export default function HomeTopContent(){
           top: 36%;
           left: 59%;
           border-radius: 8px;
-          z-index: -1;
+          z-index: 6;
          }
 
         @media screen and (max-width: 768px) {
@@ -132,7 +134,7 @@ export default function HomeTopContent(){
           height:120%;
           width: 85%;
           right: 0%;
-          z-index:-1;
+          z-index:9;
           top:40%;
         }
 
@@ -147,6 +149,7 @@ export default function HomeTopContent(){
 
         .top__borderBackground{
           position: relative;
+          z-index:5;
         }
 
         .top__borderBackground::after{
@@ -167,7 +170,7 @@ export default function HomeTopContent(){
          }
 
           .top__borderBackground::after {
-            width:100%;
+            width:115%;
             left:-10%;
             height:14%;
             z-index:-10;
@@ -187,7 +190,7 @@ export default function HomeTopContent(){
           position: absolute;
           left: 20%;
           transform: rotate(-70deg);
-          z-index: 1;
+          z-index: -1;
           top: 130%;
           box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
         }
@@ -200,8 +203,14 @@ export default function HomeTopContent(){
             width: 70%;
             left: -21%;
             transform: rotate(-70deg);
-            z-index: -1;
+            z-index: 9;
             top: 66%;
+         }
+        }
+
+        @media screen and (max-width: 768px) {
+          .aboutTextTop {
+          margin: 2rem auto 0 auto;
          }
         }
 

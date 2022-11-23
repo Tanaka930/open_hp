@@ -40,8 +40,8 @@ export default function Header() {
             <div className="pc">
               <div className='flex justify-between font-bold items-center header-height'>
               <a href="/service">事業内容</a>
-              <a href="/members">私たちについて</a>
-              <a href="/company">会社概要</a>
+              <a href="/about">私たちについて</a>
+              <a href="/about">会社概要</a>
               <a href="/recruit">採用情報</a>
               <a href="/partner">パートナー企業</a>
               <a href="/news">お知らせ</a>

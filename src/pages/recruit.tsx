@@ -146,25 +146,22 @@ export default function Recruit(categories: Categories) {
       <div id="recruit_top" className="bg-recruit_top">
       <div className="afterBorder">
       {/* <TopContent title="RECRUIT" text="採用情報" /> */}
-      <div>
         <div className="h-16"></div>
-        {/* <div className={}></div> */}
-        <div className="flex flex-col items-center justify-center my-12 md:mt-16 md:pt-16 pt-0">
+        {/* <div className="flex flex-col items-center justify-center my-12 md:mt-16 md:pt-16 pt-0">
           <h2 className="titleColor text-yellow-main text-2xl md:text-5xl font-pro65Medium font-black">
           RECRUIT
           </h2>
           <h4 className="leadColor text-sm text-green-500 font-bold pt-4 font-YuGothic md:text-2xl">採用情報</h4>
-        </div>
+        </div> */}
       </div>
+      {/* <RecruitTop pageData={categories.pageData} /> */}
       </div>
-      <RecruitTop pageData={categories.pageData} />
-      </div>
-      <Culture pageData={categories.pageData}/>
-      <Human />
+      {/* <Culture pageData={categories.pageData}/>
+      <Human /> */}
 
       {/* <Staff pageData={categories.pageData}/> */}
-      <RecruitOverview />
-      <Job categories={categories}/>
+      {/* <RecruitOverview />
+      <Job categories={categories}/> */}
 
       <section className="w-full" style={{background:"#F7F4EC"}}>
         <div className="">

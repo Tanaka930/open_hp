@@ -149,7 +149,7 @@ export default function Footer() {
                   <a href="mailto:contact@openstore-japan.com<" target="blank" className="">contact@openstore-japan.com</a>
                 </li>
                 <li className="mt-3.5">
-                  <a href="tel:0667709626" className="">(06)6770-9626</a>
+                  <a href="tel:0661238211" className="">(06)6123-8211</a>
                 </li>
               </ul>
             </div>

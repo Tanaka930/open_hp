@@ -38,11 +38,11 @@ export default function Header() {
             </div>
 
             <div className="pc">
-              <div className='flex justify-between font-bold items-center header-height'>
+              <div className='flex justify-between font-bold items-center header-height text-sm'>
               <a href="/service">事業内容</a>
               <a href="/about">私たちについて</a>
               <a href="/about">会社概要</a>
-              <a href="/recruit">採用情報</a>
+              <a href="/null">採用情報</a>
               <a href="/partner">パートナー企業</a>
               <a href="/news">お知らせ</a>
               <div className="header-contact">
@@ -51,7 +51,7 @@ export default function Header() {
               </div>
             </div>
 
-            <div className="iphone">
+            <div className="ipad">
             <div className="-mr-2 flex">
               {/* menu button */}
               <p className={`${isActive ? 'z-20 leading-10' : 'hidden' }`}>close</p>
@@ -81,18 +81,18 @@ export default function Header() {
           width:75%;
         }
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 1220px) {
         .pc{
           display:none;
         }
       }
 
-      .iphone{
+      .ipad{
         display:none;
       }
 
-      @media screen and (max-width: 768px) {
-        .iphone{
+      @media screen and (max-width: 1220px) {
+        .ipad{
           display:block;
         }
       }

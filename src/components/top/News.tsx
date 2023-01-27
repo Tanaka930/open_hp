@@ -79,6 +79,12 @@ export default function News2({newses}: {newses:any}){
             margin: 3% 1.5%;
           }
 
+          @media screen and (max-width: 1150px){
+            .news-item {
+            width: 30%;
+           }
+          }
+
           .news-image {
             width:100%;
             border-radius: 20px;
@@ -87,12 +93,24 @@ export default function News2({newses}: {newses:any}){
           .tab {
             background: #F3C11D;
             color: #fff;
-            width: 24%;
+            width: 30%;
             text-align: center;
             border-radius: 100px;
             font-size: 13px;
             padding: 1% 0;
             margin: 7% 4% 5% 0;
+          }
+
+          @media screen and (max-width: 1800px){
+            .tab {
+            width: 37%;
+          }
+          }
+
+          @media screen and (max-width: 1150px){
+            .tab {
+            width: 37%;
+            }
           }
 
           @media screen and (max-width: 768px) {
@@ -110,7 +128,7 @@ export default function News2({newses}: {newses:any}){
             width: 30%;
             text-align: center;
             border-radius: 100px;
-            font-size: 20px;
+            font-size: 15px;
             padding: 1% 0;
             margin: 5% 4% 5% 0;
           }

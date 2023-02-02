@@ -6,9 +6,9 @@ import { useMedia } from 'use-media';
 
 const links1 = [
   { label: 'HOME', href: '/'},
-  { label: 'ABOUT', href: '/company'},
+  { label: 'ABOUT', href: '/about'},
   // { label: 'News', href: '/news' },
-  { label: 'RECRUIT', href: '/recruit'},
+  { label: 'RECRUIT', href: '/null'},
 ]
 
 const links2 = [
